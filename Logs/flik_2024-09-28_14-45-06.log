@@ -1,0 +1,1245 @@
+2024-09-28 14:45:06,642 INFO: Initializing PS4Controller
+2024-09-28 14:45:06,878 DEBUG: Pygame initialized
+2024-09-28 14:45:06,878 DEBUG: Joystick initialized
+2024-09-28 14:45:06,879 DEBUG: Number of buttons on the controller: 13
+2024-09-28 14:45:06,924 INFO: Configuration loaded successfully
+2024-09-28 14:45:06,928 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-28 14:45:06,938 INFO: Baudrate set to 1000000
+2024-09-28 14:45:06,939 INFO: Control table loaded successfully.
+2024-09-28 14:45:06,939 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-28 14:45:06,939 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-28 14:45:06,940 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-28 14:45:06,940 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-28 14:45:06,940 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-28 14:45:06,940 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-28 14:45:06,940 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-28 14:45:06,940 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-28 14:45:06,940 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-28 14:45:06,940 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-28 14:45:06,940 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-09-28 14:45:06,941 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-28 14:45:06,941 INFO: Disabling torque for group Right_Whegs
+2024-09-28 14:45:06,941 DEBUG: Torque disabled for group Right_Whegs
+2024-09-28 14:45:06,941 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-28 14:45:06,942 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-28 14:45:06,942 INFO: Enabling torque for group Right_Whegs
+2024-09-28 14:45:06,942 DEBUG: Torque enabled for group Right_Whegs
+2024-09-28 14:45:06,942 DEBUG: Reading back drive mode for verification...
+2024-09-28 14:45:06,942 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-28 14:45:06,942 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-28 14:45:06,942 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-28 14:45:06,942 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-28 14:45:06,945 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-28 14:45:06,945 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-28 14:45:06,945 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-28 14:45:06,946 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-28 14:45:06,946 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-28 14:45:06,946 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-28 14:45:06,946 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-28 14:45:06,946 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-28 14:45:06,946 INFO: Disabling torque for group Left_Whegs
+2024-09-28 14:45:06,946 DEBUG: Torque disabled for group Left_Whegs
+2024-09-28 14:45:06,946 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-28 14:45:06,947 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-28 14:45:06,947 INFO: Enabling torque for group Left_Whegs
+2024-09-28 14:45:06,947 DEBUG: Torque enabled for group Left_Whegs
+2024-09-28 14:45:06,947 DEBUG: Reading back drive mode for verification...
+2024-09-28 14:45:06,947 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-28 14:45:06,947 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-28 14:45:06,947 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-28 14:45:06,947 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-28 14:45:06,950 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-28 14:45:06,951 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-28 14:45:06,951 INFO: Motor 1 drive mode correctly set to normal
+2024-09-28 14:45:06,951 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-28 14:45:06,951 INFO: Motor 2 drive mode correctly set to normal
+2024-09-28 14:45:06,951 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-28 14:45:06,951 INFO: Motor 3 drive mode correctly set to normal
+2024-09-28 14:45:06,951 INFO: Set the right side whegs to reverse direction
+2024-09-28 14:45:06,952 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-09-28 14:45:06,952 INFO: Set position limits for the pivot motors
+2024-09-28 14:45:06,952 DEBUG: Using selector: EpollSelector
+2024-09-28 14:45:06,953 DEBUG: Executing Gait 1
+2024-09-28 14:45:06,954 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=5
+2024-09-28 14:45:06,954 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:06,954 INFO: Initialising Gait 1
+2024-09-28 14:45:06,954 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-09-28 14:45:06,954 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-28 14:45:06,954 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,954 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,954 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,954 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,954 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,954 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,959 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 14:45:06,960 DEBUG: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-28 14:45:06,960 DEBUG: Target positions set for group 'Wheg_Group': 180
+2024-09-28 14:45:06,960 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-28 14:45:06,960 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-28 14:45:06,960 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,961 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:06,964 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-28 14:45:06,964 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-28 14:45:06,964 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-28 14:45:06,964 INFO: Initialised Gait 1, waiting for 1 seconds
+2024-09-28 14:45:06,964 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 14:45:06,964 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,964 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,964 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,965 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,965 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,965 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,965 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,965 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:06,972 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:06,972 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 14:45:06,972 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,973 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,973 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,973 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,973 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,973 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,973 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,973 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:06,980 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:06,981 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 14:45:06,981 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,981 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,981 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,981 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,981 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,981 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,981 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,981 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:06,988 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:06,989 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-28 14:45:06,989 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,989 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,989 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,989 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,989 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,989 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,989 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,989 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:06,996 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:06,997 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-28 14:45:06,997 INFO: 1         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 10}
+2024-09-28 14:45:06,997 INFO: 2         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 12}
+2024-09-28 14:45:06,997 INFO: 3         {'present_position': 2047}{'present_velocity': 1}  {'present_load': 11}
+2024-09-28 14:45:06,997 INFO: 4         {'present_position': 2046}{'present_velocity': 4294967295}{'present_load': 0}
+2024-09-28 14:45:06,997 INFO: 5         {'present_position': 2045}{'present_velocity': 1}  {'present_load': 12}
+2024-09-28 14:45:06,998 INFO: 6         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 11}
+2024-09-28 14:45:06,998 INFO: 7         {'present_position': 2053}{'present_velocity': 0}  {'present_load': 65502}
+2024-09-28 14:45:06,998 INFO: 8         {'present_position': 2041}{'present_velocity': 0}  {'present_load': 0}
+2024-09-28 14:45:06,998 ERROR: Hardware error detected on motor 1: Error code {'hardware_error_status': 0}
+2024-09-28 14:45:06,998 ERROR: Error while reporting robot states: unsupported operand type(s) for &: 'dict' and 'int'
+2024-09-28 14:45:07,964 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-28 14:45:07,965 INFO: Disabling torque for group Wheg_Group
+2024-09-28 14:45:07,965 DEBUG: Torque disabled for group Wheg_Group
+2024-09-28 14:45:07,966 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-28 14:45:07,966 INFO: Enabling torque for group Wheg_Group
+2024-09-28 14:45:07,966 DEBUG: Torque enabled for group Wheg_Group
+2024-09-28 14:45:07,966 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-28 14:45:07,966 INFO: Setting profile velocity for group Wheg_Group
+2024-09-28 14:45:07,966 DEBUG: Hard profile velocity limit: 100
+2024-09-28 14:45:07,967 INFO: Profile velocities set for group Wheg_Group: {1: 21.85, 2: 21.85, 3: 21.85, 4: 21.85, 5: 21.85, 6: 21.85}
+2024-09-28 14:45:07,967 INFO: New gait 0 is now active.
+2024-09-28 14:45:07,978 DEBUG: Executing Gait 1
+2024-09-28 14:45:07,978 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:07,978 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:07,988 DEBUG: Executing Gait 1
+2024-09-28 14:45:07,988 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:07,989 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:07,999 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 14:45:07,999 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:07,999 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:07,999 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:08,000 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:08,000 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:08,000 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:08,000 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:08,000 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:08,007 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:08,007 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 14:45:08,007 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,008 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,008 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,008 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,008 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,008 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,008 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,008 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:08,015 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:08,015 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 14:45:08,016 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,016 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,016 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,016 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,016 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,016 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,016 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,016 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:08,023 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:08,023 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-28 14:45:08,024 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,024 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,024 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,024 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,024 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,024 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,024 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,024 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:08,031 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:08,031 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-28 14:45:08,031 INFO: 1         {'present_position': 2046}{'present_velocity': 0}  {'present_load': 0}
+2024-09-28 14:45:08,032 INFO: 2         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 6}
+2024-09-28 14:45:08,032 INFO: 3         {'present_position': 2047}{'present_velocity': 0}  {'present_load': 8}
+2024-09-28 14:45:08,032 INFO: 4         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 7}
+2024-09-28 14:45:08,032 INFO: 5         {'present_position': 2045}{'present_velocity': 0}  {'present_load': 8}
+2024-09-28 14:45:08,032 INFO: 6         {'present_position': 2046}{'present_velocity': 4294967295}{'present_load': 0}
+2024-09-28 14:45:08,032 INFO: 7         {'present_position': 2053}{'present_velocity': 0}  {'present_load': 65502}
+2024-09-28 14:45:08,032 INFO: 8         {'present_position': 2041}{'present_velocity': 0}  {'present_load': 0}
+2024-09-28 14:45:08,033 ERROR: Hardware error detected on motor 1: Error code {'hardware_error_status': 0}
+2024-09-28 14:45:08,033 ERROR: Error while reporting robot states: unsupported operand type(s) for &: 'dict' and 'int'
+2024-09-28 14:45:08,033 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,033 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,033 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,044 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,044 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,044 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,054 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,054 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,055 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,065 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,065 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,065 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,076 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,076 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,076 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,086 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,086 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,086 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,097 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,097 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,097 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,107 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,107 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,108 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,118 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,118 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,118 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,128 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,129 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,129 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,139 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,139 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,139 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,150 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,150 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,150 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,160 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,160 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,160 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,171 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,171 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,171 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,182 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,182 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,182 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,192 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,192 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,192 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,203 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,203 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,203 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,213 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,214 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,214 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,224 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,224 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,224 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,235 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,235 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,235 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,246 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,246 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,246 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,256 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,256 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,256 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,267 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,267 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,267 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,277 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,277 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,278 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,288 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,288 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,288 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,298 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,299 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,299 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,309 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,309 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,309 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,320 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,320 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,320 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,330 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,331 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,331 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,341 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,341 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,341 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,352 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,352 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,352 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,362 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,363 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,363 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,373 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,373 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,373 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,384 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,384 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,384 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,394 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,394 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,394 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,405 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,405 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,405 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,415 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,416 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,416 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,426 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,426 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,426 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,437 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,437 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,437 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,447 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,448 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,448 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,458 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,458 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,458 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,469 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,469 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,469 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,479 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,480 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,480 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,490 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,490 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,490 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,501 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,501 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,501 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,511 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,511 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,511 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,522 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,522 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,522 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,533 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,533 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,533 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,543 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,544 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,544 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,554 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,554 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,554 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,565 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,565 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,565 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,575 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,575 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,575 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,586 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,586 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,586 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,596 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,597 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,597 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,607 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,607 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,607 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,618 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,618 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,618 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,629 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,629 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,629 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,639 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,639 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,640 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,650 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,650 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,650 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,660 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,661 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,661 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,671 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,671 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,671 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,682 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,682 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,682 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,692 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,692 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,693 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,703 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,703 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,703 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,714 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,714 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,714 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,725 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,725 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,725 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,735 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,735 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,735 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,746 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,746 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,746 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,756 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,757 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,757 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,767 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,767 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,767 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,778 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,778 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,778 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,788 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,788 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,789 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,799 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,799 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,799 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,810 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,810 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,810 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,820 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,820 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,820 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,831 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,831 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,831 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,841 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,842 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,842 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,852 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,852 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,852 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,863 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,863 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,863 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,873 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,874 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,874 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,884 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,884 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,884 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,895 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,895 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,895 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,905 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,906 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,906 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,916 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,916 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,916 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,927 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,927 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,927 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,937 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,937 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,938 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,948 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,948 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,948 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,959 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,959 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,959 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,969 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,970 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,970 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,980 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,980 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,980 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:08,991 DEBUG: Executing Gait 1
+2024-09-28 14:45:08,991 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:08,991 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,001 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,001 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,001 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,012 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,012 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,012 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,023 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,023 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,023 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,033 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,033 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,033 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,034 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 14:45:09,034 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,034 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,034 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,034 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,034 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,034 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,034 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,034 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:09,042 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 14:45:09,042 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,042 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:09,050 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 14:45:09,050 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,050 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:09,058 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-28 14:45:09,058 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,058 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:09,065 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:09,066 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-28 14:45:09,066 INFO: 1         {'present_position': 2045}{'present_velocity': 0}  {'present_load': 7}
+2024-09-28 14:45:09,066 INFO: 2         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 0}
+2024-09-28 14:45:09,066 INFO: 3         {'present_position': 2047}{'present_velocity': 1}  {'present_load': 4}
+2024-09-28 14:45:09,067 INFO: 4         {'present_position': 2046}{'present_velocity': 0}  {'present_load': 1}
+2024-09-28 14:45:09,067 INFO: 5         {'present_position': 2044}{'present_velocity': 1}  {'present_load': 8}
+2024-09-28 14:45:09,067 INFO: 6         {'present_position': 2045}{'present_velocity': 0}  {'present_load': 8}
+2024-09-28 14:45:09,067 INFO: 7         {'present_position': 2053}{'present_velocity': 0}  {'present_load': 65502}
+2024-09-28 14:45:09,067 INFO: 8         {'present_position': 2041}{'present_velocity': 0}  {'present_load': 0}
+2024-09-28 14:45:09,067 ERROR: Hardware error detected on motor 1: Error code {'hardware_error_status': 0}
+2024-09-28 14:45:09,067 ERROR: Error while reporting robot states: unsupported operand type(s) for &: 'dict' and 'int'
+2024-09-28 14:45:09,068 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,068 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,068 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,078 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,078 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,078 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,089 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,089 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,089 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,099 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,100 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,100 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,110 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,110 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,110 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,121 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,121 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,121 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,131 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,132 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,132 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,142 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,142 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,142 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,153 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,153 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,153 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,163 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,163 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,163 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,174 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,174 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,174 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,185 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,185 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,185 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,195 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,195 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,195 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,206 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,206 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,206 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,216 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,217 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,217 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,227 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,227 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,227 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,238 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,238 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,238 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,248 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,249 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,249 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,259 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,259 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,259 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,270 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,270 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,270 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,280 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,280 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,280 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,291 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,291 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,291 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,301 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,301 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,302 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,312 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,312 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,312 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,323 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,323 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,323 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,333 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,333 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,333 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,344 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,344 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,344 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,354 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,354 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,354 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,365 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,365 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,365 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,376 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,376 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,376 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,386 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,386 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,386 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,397 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,397 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,397 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,407 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,408 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,408 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,418 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,418 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,418 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,429 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,429 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,429 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,439 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,439 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,439 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,450 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,450 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,450 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,460 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,460 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,461 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,471 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,471 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,471 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,482 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,482 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,482 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,492 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,492 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,492 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,503 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,503 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,503 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,513 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,514 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,514 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,524 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,524 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,524 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,535 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,535 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,535 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,545 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,545 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,545 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,556 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,556 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,556 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,566 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,567 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,567 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,577 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,577 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,577 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,588 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,588 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,588 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,598 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,598 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,598 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,609 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,609 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,609 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,619 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,620 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,620 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,630 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,630 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,630 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,641 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,641 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,641 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,651 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,651 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,651 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,662 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,662 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,662 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,672 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,673 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,673 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,683 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,683 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,683 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,694 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,694 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,694 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,704 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,704 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,704 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,715 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,715 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,715 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,726 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,726 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,726 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,736 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,736 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,736 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,747 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,747 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,747 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,758 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,758 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,758 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,768 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,768 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,768 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,779 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,779 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,779 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,789 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,789 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,790 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,800 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,800 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,800 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,810 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,811 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,811 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,821 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,821 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,821 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,832 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,832 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,832 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,842 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,842 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,843 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,853 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,853 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,853 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,863 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,864 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,864 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,874 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,874 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,874 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,885 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,885 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,885 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,895 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,896 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,896 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,906 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,906 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,906 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,917 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,917 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,917 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,927 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,927 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,928 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,938 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,938 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,938 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,949 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,949 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,949 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,959 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,959 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,960 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,970 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,970 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,970 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,981 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,981 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,981 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:09,991 DEBUG: Executing Gait 1
+2024-09-28 14:45:09,991 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:09,992 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,002 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,002 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,002 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,013 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,013 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,013 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,023 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,023 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,023 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,034 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,034 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,034 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,044 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,045 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,045 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,055 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,055 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,056 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,066 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,066 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,066 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,068 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 14:45:10,068 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,068 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,069 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,069 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,069 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,069 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,069 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,069 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:10,076 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:10,077 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 14:45:10,077 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,077 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,077 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,077 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,077 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,077 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,077 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,077 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:10,084 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:10,085 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 14:45:10,085 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,085 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,085 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,085 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,085 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,085 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,085 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,085 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:10,092 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:10,093 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-28 14:45:10,093 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,093 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,093 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,093 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,093 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,093 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,093 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,093 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:10,100 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:10,100 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-28 14:45:10,101 INFO: 1         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 10}
+2024-09-28 14:45:10,101 INFO: 2         {'present_position': 2047}{'present_velocity': 0}  {'present_load': 12}
+2024-09-28 14:45:10,101 INFO: 3         {'present_position': 2047}{'present_velocity': 0}  {'present_load': 9}
+2024-09-28 14:45:10,101 INFO: 4         {'present_position': 2047}{'present_velocity': 0}  {'present_load': 11}
+2024-09-28 14:45:10,101 INFO: 5         {'present_position': 2045}{'present_velocity': 1}  {'present_load': 2}
+2024-09-28 14:45:10,101 INFO: 6         {'present_position': 2046}{'present_velocity': 4294967295}{'present_load': 0}
+2024-09-28 14:45:10,101 INFO: 7         {'present_position': 2053}{'present_velocity': 0}  {'present_load': 65502}
+2024-09-28 14:45:10,101 INFO: 8         {'present_position': 2041}{'present_velocity': 0}  {'present_load': 0}
+2024-09-28 14:45:10,101 ERROR: Hardware error detected on motor 1: Error code {'hardware_error_status': 0}
+2024-09-28 14:45:10,102 ERROR: Error while reporting robot states: unsupported operand type(s) for &: 'dict' and 'int'
+2024-09-28 14:45:10,102 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,102 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,102 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,113 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,113 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,113 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,123 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,123 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,123 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,134 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,134 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,134 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,145 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,145 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,145 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,155 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,155 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,155 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,166 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,166 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,166 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,176 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,177 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,177 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,187 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,187 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,187 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,198 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,198 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,198 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,208 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,208 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,209 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,219 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,219 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,219 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,230 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,230 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,230 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,240 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,241 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,241 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,251 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,251 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,251 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,262 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,262 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,262 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,272 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,273 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,273 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,283 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,283 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,283 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,294 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,294 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,294 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,304 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,304 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,304 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,315 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,315 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,315 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,325 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,326 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,326 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,336 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,336 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,336 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,347 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,347 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,347 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,357 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,358 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,358 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,369 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,369 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,369 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,380 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,380 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,381 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,391 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,392 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,392 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,402 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,403 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,403 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,413 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,414 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,414 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,425 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,425 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,425 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,436 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,436 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,436 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,447 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,447 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,447 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,458 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,458 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,458 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,469 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,469 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,469 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,481 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,481 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,481 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,492 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,493 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,493 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,504 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,504 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,504 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,515 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,515 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,515 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,526 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,526 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,526 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,537 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,537 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,538 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,548 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,549 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,549 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,560 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,560 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,560 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,571 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,571 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,571 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,582 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,582 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,582 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,593 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,593 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,594 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,604 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,605 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,605 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,615 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,616 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,616 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,627 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,627 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,627 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,638 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,638 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,638 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,649 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,649 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,649 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,660 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,660 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,660 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,671 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,671 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,671 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,682 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,682 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,683 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,693 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,693 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,694 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,704 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,705 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,705 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,716 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,716 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,716 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,727 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,727 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,728 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,738 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,738 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,739 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,749 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,750 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,750 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,760 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,761 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,761 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,772 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,772 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,772 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,783 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,783 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,783 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,794 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,794 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,794 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,805 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,805 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,806 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,817 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,817 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,817 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,828 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,828 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,829 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,839 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,840 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,840 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,851 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,851 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,851 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,862 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,862 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,862 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,873 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,873 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,873 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,884 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,884 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,884 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,895 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,895 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,896 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,906 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,906 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,907 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,918 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,918 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,918 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,929 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,929 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,929 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,940 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,940 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,940 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,951 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,951 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,952 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,962 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,962 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,963 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,973 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,974 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,974 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,985 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,985 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,985 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:10,996 DEBUG: Executing Gait 1
+2024-09-28 14:45:10,996 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:10,997 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,007 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,008 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,008 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,019 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,019 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,020 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,030 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,031 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,031 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,041 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,042 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,042 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,053 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,053 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,053 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,064 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,064 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,064 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,075 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,075 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,075 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,086 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,086 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,087 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,097 DEBUG: Executing Gait 1
+2024-09-28 14:45:11,097 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 14:45:11,098 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 14:45:11,102 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 14:45:11,102 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,102 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,103 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,103 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,103 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,103 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,103 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,103 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 14:45:11,111 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:11,112 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 14:45:11,112 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,112 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,112 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,112 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,112 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,113 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,113 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,113 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 14:45:11,121 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:11,121 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 14:45:11,121 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,122 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,122 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,122 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,122 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,122 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,122 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,122 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 14:45:11,130 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:11,131 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-28 14:45:11,131 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,131 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,131 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,131 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,131 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,132 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,132 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,132 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-28 14:45:11,139 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:11,139 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-28 14:45:11,140 INFO: 1         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 2}
+2024-09-28 14:45:11,140 INFO: 2         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 4}
+2024-09-28 14:45:11,140 INFO: 3         {'present_position': 2047}{'present_velocity': 1}  {'present_load': 11}
+2024-09-28 14:45:11,141 INFO: 4         {'present_position': 2047}{'present_velocity': 0}  {'present_load': 2}
+2024-09-28 14:45:11,141 INFO: 5         {'present_position': 2044}{'present_velocity': 0}  {'present_load': 0}
+2024-09-28 14:45:11,142 INFO: 6         {'present_position': 2046}{'present_velocity': 1}  {'present_load': 3}
+2024-09-28 14:45:11,142 INFO: 7         {'present_position': 2053}{'present_velocity': 0}  {'present_load': 65502}
+2024-09-28 14:45:11,142 INFO: 8         {'present_position': 2041}{'present_velocity': 0}  {'present_load': 0}
+2024-09-28 14:45:11,143 ERROR: Hardware error detected on motor 1: Error code {'hardware_error_status': 0}
+2024-09-28 14:45:11,143 ERROR: Error while reporting robot states: unsupported operand type(s) for &: 'dict' and 'int'
+2024-09-28 14:45:11,144 INFO: Tasks were cancelled due to shutdown, proceeding to cleanup...
+2024-09-28 14:45:11,144 INFO: Initiating safe shutdown...
+2024-09-28 14:45:11,144 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-28 14:45:11,145 INFO: Disabling torque for group All_Motors
+2024-09-28 14:45:11,146 DEBUG: Torque disabled for group All_Motors
+2024-09-28 14:45:11,146 DEBUG: Operating mode set to 'velocity' for group All_Motors
+2024-09-28 14:45:11,147 INFO: Enabling torque for group All_Motors
+2024-09-28 14:45:11,147 DEBUG: Torque enabled for group All_Motors
+2024-09-28 14:45:11,147 DEBUG: Setting velocity limit for motors in group All_Motors
+2024-09-28 14:45:11,148 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-09-28 14:45:11,148 INFO: Velocity limit set to 100 for group All_Motors
+2024-09-28 14:45:11,149 INFO: Enabling torque for group All_Motors
+2024-09-28 14:45:11,149 DEBUG: Torque enabled for group All_Motors
+2024-09-28 14:45:11,150 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-09-28 14:45:11,150 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-09-28 14:45:11,151 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['operating_mode']
+2024-09-28 14:45:11,151 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,151 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,151 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,151 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,151 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,152 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,152 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,152 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 14:45:11,160 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 14:45:11,160 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-28 14:45:11,160 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-09-28 14:45:11,161 INFO: Disabling torque for group All_Motors
+2024-09-28 14:45:11,161 DEBUG: Torque disabled for group All_Motors
+2024-09-28 14:45:11,162 DEBUG: Operating mode set to 'position' for group All_Motors
+2024-09-28 14:45:11,162 INFO: Enabling torque for group All_Motors
+2024-09-28 14:45:11,163 DEBUG: Torque enabled for group All_Motors
+2024-09-28 14:45:11,163 DEBUG: Setting profile velocity for motors in group All_Motors
+2024-09-28 14:45:11,163 INFO: Setting profile velocity for group All_Motors
+2024-09-28 14:45:11,164 DEBUG: Hard profile velocity limit: 100
+2024-09-28 14:45:11,164 INFO: Profile velocities set for group All_Motors: {1: 21.85, 2: 21.85, 3: 21.85, 4: 21.85, 5: 21.85, 6: 21.85, 7: 21.85, 8: 21.85}
+2024-09-28 14:45:11,165 DEBUG: Setting position 180° for all motors in group 'All_Motors'
+2024-09-28 14:45:11,165 DEBUG: Target positions set for group 'All_Motors': 180
+2024-09-28 14:45:11,165 INFO: Closing PS4Controller and quitting pygame
+2024-09-28 14:45:11,244 INFO: Port closed successfully.
+2024-09-28 14:45:11,245 INFO: Shutdown complete.

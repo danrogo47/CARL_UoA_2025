@@ -1,0 +1,144 @@
+2024-09-28 13:59:51,483 INFO: Initializing PS4Controller
+2024-09-28 13:59:51,706 DEBUG: Pygame initialized
+2024-09-28 13:59:51,707 DEBUG: Joystick initialized
+2024-09-28 13:59:51,707 DEBUG: Number of buttons on the controller: 13
+2024-09-28 13:59:51,749 INFO: Configuration loaded successfully
+2024-09-28 13:59:51,752 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-28 13:59:51,762 INFO: Baudrate set to 1000000
+2024-09-28 13:59:51,763 INFO: Control table loaded successfully.
+2024-09-28 13:59:51,763 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-28 13:59:51,763 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-28 13:59:51,763 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-28 13:59:51,763 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-28 13:59:51,763 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-28 13:59:51,764 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-28 13:59:51,764 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-28 13:59:51,764 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-28 13:59:51,764 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-28 13:59:51,764 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-28 13:59:51,764 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-09-28 13:59:51,764 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-28 13:59:51,764 INFO: Disabling torque for group Right_Whegs
+2024-09-28 13:59:51,765 DEBUG: Torque disabled for group Right_Whegs
+2024-09-28 13:59:51,765 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-28 13:59:51,765 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-28 13:59:51,766 INFO: Enabling torque for group Right_Whegs
+2024-09-28 13:59:51,766 DEBUG: Torque enabled for group Right_Whegs
+2024-09-28 13:59:51,766 DEBUG: Reading back drive mode for verification...
+2024-09-28 13:59:51,766 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-28 13:59:51,766 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-28 13:59:51,766 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-28 13:59:51,767 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-28 13:59:51,769 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-28 13:59:51,769 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-28 13:59:51,769 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-28 13:59:51,770 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-28 13:59:51,770 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-28 13:59:51,770 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-28 13:59:51,770 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-28 13:59:51,770 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-28 13:59:51,770 INFO: Disabling torque for group Left_Whegs
+2024-09-28 13:59:51,770 DEBUG: Torque disabled for group Left_Whegs
+2024-09-28 13:59:51,771 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-28 13:59:51,771 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-28 13:59:51,771 INFO: Enabling torque for group Left_Whegs
+2024-09-28 13:59:51,771 DEBUG: Torque enabled for group Left_Whegs
+2024-09-28 13:59:51,771 DEBUG: Reading back drive mode for verification...
+2024-09-28 13:59:51,772 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-28 13:59:51,772 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-28 13:59:51,772 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-28 13:59:51,772 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-28 13:59:51,775 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-28 13:59:51,775 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-28 13:59:51,775 INFO: Motor 1 drive mode correctly set to normal
+2024-09-28 13:59:51,775 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-28 13:59:51,775 INFO: Motor 2 drive mode correctly set to normal
+2024-09-28 13:59:51,775 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-28 13:59:51,775 INFO: Motor 3 drive mode correctly set to normal
+2024-09-28 13:59:51,776 INFO: Set the right side whegs to reverse direction
+2024-09-28 13:59:51,776 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-09-28 13:59:51,776 INFO: Set position limits for the pivot motors
+2024-09-28 13:59:51,777 DEBUG: Using selector: EpollSelector
+2024-09-28 13:59:51,778 DEBUG: Executing Gait 1
+2024-09-28 13:59:51,778 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=5
+2024-09-28 13:59:51,778 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:59:51,778 INFO: Initialising Gait 1
+2024-09-28 13:59:51,778 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-09-28 13:59:51,779 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-28 13:59:51,779 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,779 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,779 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,779 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,779 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,779 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,784 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 13:59:51,784 DEBUG: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-28 13:59:51,784 DEBUG: Target positions set for group 'Wheg_Group': 180
+2024-09-28 13:59:51,785 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-28 13:59:51,785 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-28 13:59:51,785 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,785 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 13:59:51,788 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-28 13:59:51,788 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-28 13:59:51,788 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-28 13:59:51,788 INFO: Initialised Gait 1, waiting for 1 seconds
+2024-09-28 14:00:32,751 INFO: Program interrupted. Proceeding to shutdown.
+2024-09-28 14:00:32,751 INFO: Initiating safe shutdown...
+2024-09-28 14:00:32,751 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-28 14:00:32,752 INFO: Disabling torque for group All_Motors
+2024-09-28 14:00:32,752 ERROR: unhandled exception during asyncio.run() shutdown
+task: <Task finished name='Task-1' coro=<FLIKRobot.main_loop() done, defined at /home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/main.py:437> exception=error(5, 'Input/output error')>
+Traceback (most recent call last):
+  File "/home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/main.py", line 440, in main_loop
+    await asyncio.gather(
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1922, in _run_once
+    handle._run()
+  File "/usr/lib/python3.11/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/main.py", line 170, in control_pivots_with_dpad
+    while self.allow_pivot_control:
+  File "/usr/lib/python3.11/asyncio/runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/main.py", line 460, in main_loop
+    self.dynamixel.set_velocity_group('All_Motors', {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0})  # Stop all motors
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/dynamixel_control.py", line 479, in set_velocity_group
+    self.set_operating_mode_group(group_name, 'velocity')
+  File "/home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/dynamixel_control.py", line 292, in set_operating_mode_group
+    self.torque_off_group(group_name)
+  File "/home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/dynamixel_control.py", line 404, in torque_off_group
+    self.sync_write_group(group_name, 'torque_enable', torque_values)
+  File "/home/flik/Documents/Repos/Bio-Inspired-Shape-Shifting-Robot/dynamixel_control.py", line 180, in sync_write_group
+    result = sync_write.txPacket()
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/flik/Documents/VirtualEnvs/flikenv/lib/python3.11/site-packages/dynamixel_sdk/group_sync_write.py", line 93, in txPacket
+    return self.ph.syncWriteTxOnly(self.port, self.start_address, self.data_length, self.param,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/flik/Documents/VirtualEnvs/flikenv/lib/python3.11/site-packages/dynamixel_sdk/protocol2_packet_handler.py", line 750, in syncWriteTxOnly
+    _, result, _ = self.txRxPacket(port, txpacket)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/flik/Documents/VirtualEnvs/flikenv/lib/python3.11/site-packages/dynamixel_sdk/protocol2_packet_handler.py", line 323, in txRxPacket
+    result = self.txPacket(port, txpacket)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/flik/Documents/VirtualEnvs/flikenv/lib/python3.11/site-packages/dynamixel_sdk/protocol2_packet_handler.py", line 241, in txPacket
+    port.clearPort()
+  File "/home/flik/Documents/VirtualEnvs/flikenv/lib/python3.11/site-packages/dynamixel_sdk/port_handler.py", line 51, in clearPort
+    self.ser.flush()
+  File "/home/flik/Documents/VirtualEnvs/flikenv/lib/python3.11/site-packages/serial/serialposix.py", line 673, in flush
+    termios.tcdrain(self.fd)
+termios.error: (5, 'Input/output error')

@@ -1,0 +1,130 @@
+2024-09-25 23:36:46,839 INFO: Initializing PS4Controller
+2024-09-25 23:36:47,047 DEBUG: Pygame initialized
+2024-09-25 23:36:47,048 DEBUG: Joystick initialized
+2024-09-25 23:36:47,048 DEBUG: Number of buttons on the controller: 13
+2024-09-25 23:36:47,091 INFO: Configuration loaded successfully
+2024-09-25 23:36:47,094 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-25 23:36:47,104 INFO: Baudrate set to 1000000
+2024-09-25 23:36:47,104 INFO: Control table loaded successfully.
+2024-09-25 23:36:47,105 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-25 23:36:47,105 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-25 23:36:47,105 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-25 23:36:47,105 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-25 23:36:47,105 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-25 23:36:47,105 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-25 23:36:47,105 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-25 23:36:47,106 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-25 23:36:47,106 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-25 23:36:47,106 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-25 23:36:47,106 INFO: Initialized PS4 controller, Dynamixel, and Robot State
+2024-09-25 23:36:47,106 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-25 23:36:47,107 INFO: Torque disabled for group Right_Whegs
+2024-09-25 23:36:47,107 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-25 23:36:47,107 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-25 23:36:47,108 INFO: Torque enabled for group Right_Whegs
+2024-09-25 23:36:47,108 DEBUG: Reading back drive mode for verification...
+2024-09-25 23:36:47,108 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-25 23:36:47,108 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-25 23:36:47,108 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-25 23:36:47,108 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-25 23:36:47,111 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-25 23:36:47,111 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-25 23:36:47,111 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-25 23:36:47,111 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-25 23:36:47,111 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-25 23:36:47,111 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-25 23:36:47,111 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-25 23:36:47,112 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-25 23:36:47,112 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,112 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,112 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,112 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,112 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,112 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,112 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,112 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,120 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-25 23:36:47,120 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-25 23:36:47,120 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-25 23:36:47,120 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-25 23:36:47,120 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-25 23:36:47,120 INFO: Switching to new gait: 0
+2024-09-25 23:36:47,121 INFO: Initializing Gait 1
+2024-09-25 23:36:47,121 INFO: Torque disabled for group Wheg_Group
+2024-09-25 23:36:47,122 INFO: Operating mode set to 'position' for group Wheg_Group
+2024-09-25 23:36:47,122 INFO: Torque enabled for group Wheg_Group
+2024-09-25 23:36:47,122 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-25 23:36:47,123 INFO: Profile velocity set to 50 for group Wheg_Group
+2024-09-25 23:36:47,123 INFO: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-25 23:36:47,123 INFO: Target positions set for group 'Wheg_Group'
+2024-09-25 23:36:47,124 INFO: Torque disabled for group Pivot_Group
+2024-09-25 23:36:47,124 INFO: Operating mode set to 'position' for group Pivot_Group
+2024-09-25 23:36:47,124 INFO: Torque enabled for group Pivot_Group
+2024-09-25 23:36:47,125 DEBUG: Setting profile velocity for motors in group Pivot_Group
+2024-09-25 23:36:47,125 INFO: Profile velocity set to 20 for group Pivot_Group
+2024-09-25 23:36:47,125 INFO: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-25 23:36:47,126 INFO: Target positions set for group 'Pivot_Group'
+2024-09-25 23:36:47,126 DEBUG: Executing Gait 1
+2024-09-25 23:36:47,126 INFO: Torque disabled for group Pivot_Group
+2024-09-25 23:36:47,127 INFO: Operating mode set to 'position' for group Pivot_Group
+2024-09-25 23:36:47,127 INFO: Torque enabled for group Pivot_Group
+2024-09-25 23:36:47,127 DEBUG: Setting profile velocity for motors in group Pivot_Group
+2024-09-25 23:36:47,127 INFO: Profile velocity set to 20 for group Pivot_Group
+2024-09-25 23:36:47,128 INFO: Setting individual positions for motors in group 'Pivot_Group': {7: 2047, 8: 2047}
+2024-09-25 23:36:47,128 INFO: Target positions set for group 'Pivot_Group'
+2024-09-25 23:36:47,128 INFO: Front pivot angle set to 180 degrees (ticks: 2047)
+2024-09-25 23:36:47,128 INFO: Rear pivot angle set to 180 degrees (ticks: 2047)
+2024-09-25 23:36:47,229 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-25 23:36:47,229 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,229 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,229 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,229 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,229 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,229 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,229 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,229 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,237 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-25 23:36:47,237 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-25 23:36:47,237 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-25 23:36:47,237 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-25 23:36:47,237 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-25 23:36:47,237 DEBUG: Executing Gait 1
+2024-09-25 23:36:47,238 INFO: Torque disabled for group Pivot_Group
+2024-09-25 23:36:47,238 INFO: Operating mode set to 'position' for group Pivot_Group
+2024-09-25 23:36:47,238 INFO: Torque enabled for group Pivot_Group
+2024-09-25 23:36:47,238 DEBUG: Setting profile velocity for motors in group Pivot_Group
+2024-09-25 23:36:47,239 INFO: Profile velocity set to 20 for group Pivot_Group
+2024-09-25 23:36:47,239 INFO: Setting individual positions for motors in group 'Pivot_Group': {7: 2047, 8: 2047}
+2024-09-25 23:36:47,239 INFO: Target positions set for group 'Pivot_Group'
+2024-09-25 23:36:47,239 INFO: Front pivot angle set to 180 degrees (ticks: 2047)
+2024-09-25 23:36:47,239 INFO: Rear pivot angle set to 180 degrees (ticks: 2047)
+2024-09-25 23:36:47,340 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-25 23:36:47,340 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,340 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,340 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,340 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,340 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,340 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,340 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,341 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-25 23:36:47,348 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-25 23:36:47,348 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-25 23:36:47,348 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-25 23:36:47,348 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-25 23:36:47,348 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-25 23:36:47,349 DEBUG: Executing Gait 1
+2024-09-25 23:36:47,349 INFO: Torque disabled for group Pivot_Group
+2024-09-25 23:36:47,349 INFO: Operating mode set to 'position' for group Pivot_Group
+2024-09-25 23:36:47,350 INFO: Torque enabled for group Pivot_Group
+2024-09-25 23:36:47,350 DEBUG: Setting profile velocity for motors in group Pivot_Group
+2024-09-25 23:36:47,350 INFO: Profile velocity set to 20 for group Pivot_Group
+2024-09-25 23:36:47,350 INFO: Setting individual positions for motors in group 'Pivot_Group': {7: 2047, 8: 2047}
+2024-09-25 23:36:47,350 INFO: Target positions set for group 'Pivot_Group'
+2024-09-25 23:36:47,351 INFO: Front pivot angle set to 180 degrees (ticks: 2047)
+2024-09-25 23:36:47,351 INFO: Rear pivot angle set to 180 degrees (ticks: 2047)
+2024-09-25 23:36:47,366 INFO: Terminating program...
+2024-09-25 23:36:47,367 ERROR: Sync write failed with error: [TxRxResult] Protocol does not support this function!
+2024-09-25 23:36:47,367 ERROR: Sync write failed with error: [TxRxResult] Protocol does not support this function!
+2024-09-25 23:36:47,367 INFO: Closing PS4Controller and quitting pygame
+2024-09-25 23:36:47,450 ERROR: Failed to close the port: 'PortHandler' object has no attribute 'is_port_open'
+2024-09-25 23:36:47,452 INFO: Shutdown complete.

@@ -1,0 +1,108 @@
+2024-09-28 13:44:18,572 INFO: Initializing PS4Controller
+2024-09-28 13:44:18,832 DEBUG: Pygame initialized
+2024-09-28 13:44:18,833 DEBUG: Joystick initialized
+2024-09-28 13:44:18,834 DEBUG: Number of buttons on the controller: 13
+2024-09-28 13:44:18,876 INFO: Configuration loaded successfully
+2024-09-28 13:44:18,879 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-28 13:44:18,889 INFO: Baudrate set to 1000000
+2024-09-28 13:44:18,890 INFO: Control table loaded successfully.
+2024-09-28 13:44:18,890 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-28 13:44:18,890 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-28 13:44:18,890 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-28 13:44:18,891 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-28 13:44:18,891 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-28 13:44:18,891 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-28 13:44:18,891 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-28 13:44:18,891 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-28 13:44:18,892 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-28 13:44:18,892 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-28 13:44:18,892 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-09-28 13:44:18,892 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-28 13:44:18,892 INFO: Disabling torque for group Right_Whegs
+2024-09-28 13:44:18,893 DEBUG: Torque disabled for group Right_Whegs
+2024-09-28 13:44:18,893 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-28 13:44:18,893 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-28 13:44:18,894 INFO: Enabling torque for group Right_Whegs
+2024-09-28 13:44:18,894 DEBUG: Torque enabled for group Right_Whegs
+2024-09-28 13:44:18,894 DEBUG: Reading back drive mode for verification...
+2024-09-28 13:44:18,894 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-28 13:44:18,894 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-28 13:44:18,894 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-28 13:44:18,894 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-28 13:44:18,897 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-28 13:44:18,897 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-28 13:44:18,897 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-28 13:44:18,898 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-28 13:44:18,898 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-28 13:44:18,898 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-28 13:44:18,898 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-28 13:44:18,898 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-28 13:44:18,898 INFO: Disabling torque for group Left_Whegs
+2024-09-28 13:44:18,899 DEBUG: Torque disabled for group Left_Whegs
+2024-09-28 13:44:18,899 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-28 13:44:18,899 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-28 13:44:18,899 INFO: Enabling torque for group Left_Whegs
+2024-09-28 13:44:18,900 DEBUG: Torque enabled for group Left_Whegs
+2024-09-28 13:44:18,900 DEBUG: Reading back drive mode for verification...
+2024-09-28 13:44:18,900 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-28 13:44:18,900 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-28 13:44:18,900 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-28 13:44:18,900 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-28 13:44:18,903 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-28 13:44:18,903 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-28 13:44:18,904 INFO: Motor 1 drive mode correctly set to normal
+2024-09-28 13:44:18,904 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-28 13:44:18,904 INFO: Motor 2 drive mode correctly set to normal
+2024-09-28 13:44:18,904 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-28 13:44:18,904 INFO: Motor 3 drive mode correctly set to normal
+2024-09-28 13:44:18,904 INFO: Set the right side whegs to reverse direction
+2024-09-28 13:44:18,905 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-09-28 13:44:18,905 INFO: Set position limits for the pivot motors
+2024-09-28 13:44:18,905 DEBUG: Using selector: EpollSelector
+2024-09-28 13:44:18,906 INFO: Initiating safe shutdown...
+2024-09-28 13:44:18,906 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-28 13:44:18,906 INFO: Disabling torque for group All_Motors
+2024-09-28 13:44:18,907 DEBUG: Torque disabled for group All_Motors
+2024-09-28 13:44:18,907 DEBUG: Operating mode set to 'velocity' for group All_Motors
+2024-09-28 13:44:18,907 INFO: Enabling torque for group All_Motors
+2024-09-28 13:44:18,908 DEBUG: Torque enabled for group All_Motors
+2024-09-28 13:44:18,908 DEBUG: Setting velocity limit for motors in group All_Motors
+2024-09-28 13:44:18,908 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-09-28 13:44:18,908 INFO: Velocity limit set to 100 for group All_Motors
+2024-09-28 13:44:18,909 INFO: Enabling torque for group All_Motors
+2024-09-28 13:44:18,909 DEBUG: Torque enabled for group All_Motors
+2024-09-28 13:44:18,909 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-09-28 13:44:18,909 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-09-28 13:44:18,909 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['operating_mode']
+2024-09-28 13:44:18,910 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,910 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,910 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,910 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,910 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,910 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,910 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,910 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 13:44:18,917 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:44:18,917 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-28 13:44:18,918 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-09-28 13:44:18,918 INFO: Disabling torque for group All_Motors
+2024-09-28 13:44:18,918 DEBUG: Torque disabled for group All_Motors
+2024-09-28 13:44:18,919 DEBUG: Operating mode set to 'position' for group All_Motors
+2024-09-28 13:44:18,919 INFO: Enabling torque for group All_Motors
+2024-09-28 13:44:18,919 DEBUG: Torque enabled for group All_Motors
+2024-09-28 13:44:18,919 DEBUG: Setting profile velocity for motors in group All_Motors
+2024-09-28 13:44:18,919 INFO: Setting profile velocity for group All_Motors
+2024-09-28 13:44:18,919 DEBUG: Hard profile velocity limit: 100
+2024-09-28 13:44:18,920 INFO: Profile velocities set for group All_Motors: {1: 21.85, 2: 21.85, 3: 21.85, 4: 21.85, 5: 21.85, 6: 21.85, 7: 21.85, 8: 21.85}
+2024-09-28 13:44:18,920 DEBUG: Setting position 180° for all motors in group 'All_Motors'
+2024-09-28 13:44:18,920 DEBUG: Target positions set for group 'All_Motors': 180
+2024-09-28 13:44:18,920 INFO: Closing PS4Controller and quitting pygame
+2024-09-28 13:44:19,010 INFO: Port closed successfully.
+2024-09-28 13:44:19,010 INFO: Shutdown complete.
+2024-09-28 13:44:19,010 ERROR: Controller connection lost!
+2024-09-28 13:44:19,011 ERROR: Controller is disconnected.
+2024-09-28 13:44:19,011 ERROR: Controller connection lost!
+2024-09-28 13:44:19,011 ERROR: Controller is disconnected.
+2024-09-28 13:44:19,011 ERROR: Controller connection lost!
+2024-09-28 13:44:19,011 ERROR: Controller is disconnected.
+2024-09-28 13:44:19,011 DEBUG: Executing Gait 1

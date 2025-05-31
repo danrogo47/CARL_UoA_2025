@@ -1,0 +1,1345 @@
+2024-10-29 18:10:50,417 INFO: Initializing PS4Controller
+2024-10-29 18:10:50,707 INFO: Configuration loaded successfully
+2024-10-29 18:10:50,711 INFO: Port /dev/ttyACM0 opened successfully
+2024-10-29 18:10:50,721 INFO: Baudrate set to 1000000
+2024-10-29 18:10:50,722 INFO: Control table loaded successfully.
+2024-10-29 18:10:50,722 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-10-29 18:10:50,723 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-10-29 18:10:50,723 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-10-29 18:10:50,724 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-10-29 18:10:50,724 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-10-29 18:10:50,725 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-10-29 18:10:50,725 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-10-29 18:10:50,725 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-10-29 18:10:50,726 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-10-29 18:10:50,726 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-10-29 18:10:50,727 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-10-29 18:10:50,887 INFO: Disabling torque for group Right_Whegs
+2024-10-29 18:10:50,889 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-10-29 18:10:50,892 INFO: Enabling torque for group Right_Whegs
+2024-10-29 18:10:50,895 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 18:10:50,895 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 18:10:50,896 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 18:10:50,897 INFO: Disabling torque for group Left_Whegs
+2024-10-29 18:10:50,898 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-10-29 18:10:50,899 INFO: Enabling torque for group Left_Whegs
+2024-10-29 18:10:50,899 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 18:10:50,899 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 18:10:50,900 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 18:10:50,901 INFO: Set the right side whegs to reverse direction
+2024-10-29 18:10:50,901 INFO: Disabling torque for group Pivot_Group
+2024-10-29 18:10:50,902 INFO: Drive mode set for group Pivot_Group with reverse_direction=False
+2024-10-29 18:10:50,902 INFO: Enabling torque for group Pivot_Group
+2024-10-29 18:10:50,903 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-29 18:10:50,904 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-29 18:10:50,905 INFO: Position limits set for group Pivot_Group: min=45° (ticks=511), max=315° (ticks=3583)
+2024-10-29 18:10:50,905 INFO: Set position limits for the pivot motors
+2024-10-29 18:10:50,914 INFO: Initialising Gait 1
+2024-10-29 18:10:50,914 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:10:50,920 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:10:50,924 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:10:50,925 ERROR: Error controlling pivots: 'dpad_down'
+2024-10-29 18:10:53,926 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:10:53,927 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:10:53,928 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:10:53,928 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:10:53,929 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:10:53,930 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:10:53,931 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:10:53,931 INFO: New gait 1 is now active.
+2024-10-29 18:10:58,288 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-29 18:10:58,299 INFO: Initialising Gait 2
+2024-10-29 18:10:58,300 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:10:58,305 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:10:58,306 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:10:58,306 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:10:58,307 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:10:58,309 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:10:58,310 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:10:58,310 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:10:58,311 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:10:58,312 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:10:58,315 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:11:01,349 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:11:01,350 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:11:01,353 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:11:01,357 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:11:01,360 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:11:01,361 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:11:01,362 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:11:01,363 INFO: New gait 2 is now active.
+2024-10-29 18:11:01,387 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 69.92, 3: 8.74, 4: 69.92, 5: 8.74, 6: 69.92}
+2024-10-29 18:11:01,388 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:11:01,399 INFO: Gait 2 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-29 18:11:04,782 INFO: Profile velocities set for group Wheg_Group: {1: 104.88, 2: 13.11, 3: 104.88, 4: 13.11, 5: 104.88, 6: 13.11}
+2024-10-29 18:11:04,783 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:11:04,793 INFO: Gait 2 step executed at 3.00RPM, wait for 2.25 seconds
+2024-10-29 18:11:07,105 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:11:07,106 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:11:07,117 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:11:08,871 INFO: Profile velocities set for group Wheg_Group: {1: 139.83893310546875, 2: 17.479866638183594, 3: 139.83893310546875, 4: 17.479866638183594, 5: 139.83893310546875, 6: 17.479866638183594}
+2024-10-29 18:11:08,871 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:11:08,882 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:11:10,597 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:11:10,598 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:11:10,609 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:11:12,360 INFO: Profile velocities set for group Wheg_Group: {1: 139.83893310546875, 2: 17.479866638183594, 3: 139.83893310546875, 4: 17.479866638183594, 5: 139.83893310546875, 6: 17.479866638183594}
+2024-10-29 18:11:12,361 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:11:12,372 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:11:14,087 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:11:14,088 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:11:14,099 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:11:15,850 INFO: Profile velocities set for group Wheg_Group: {1: 139.83893310546875, 2: 17.479866638183594, 3: 139.83893310546875, 4: 17.479866638183594, 5: 139.83893310546875, 6: 17.479866638183594}
+2024-10-29 18:11:15,851 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:11:15,862 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:11:17,577 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 160.533203125, 2: 179.341796875, 3: 161.939453125, 4: 195.25, 5: 154.1171875, 6: 197.798828125}
+2024-10-29 18:11:17,578 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:11:17,684 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:11:18,209 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:11:18,210 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:11:18,221 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:11:30,025 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-29 18:11:30,027 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 18:11:30,028 INFO: Disabling torque for group All_Motors
+2024-10-29 18:11:30,031 INFO: Enabling torque for group All_Motors
+2024-10-29 18:11:30,032 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:11:30,033 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:11:30,033 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 18:11:30,034 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 18:11:30,035 INFO: Enabling torque for group All_Motors
+2024-10-29 18:11:30,035 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:11:30,036 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:11:30,037 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 18:11:30,137 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-29 18:11:30,138 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 18:11:30,139 INFO: Disabling torque for group All_Motors
+2024-10-29 18:11:30,141 INFO: Enabling torque for group All_Motors
+2024-10-29 18:11:30,143 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:11:30,146 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:11:30,146 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 18:11:30,147 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 18:11:30,147 INFO: Enabling torque for group All_Motors
+2024-10-29 18:11:30,148 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:11:30,149 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:11:30,150 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 18:12:20,600 INFO: Emergency Stop Deactivated. Resuming control...
+2024-10-29 18:12:20,610 INFO: Initialising Gait 1
+2024-10-29 18:12:20,611 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:12:20,616 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:12:20,617 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:12:20,617 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:20,621 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:20,622 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:20,623 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:20,624 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:20,625 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:20,626 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:12:20,630 WARNING: Motor 7 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:12:20,630 INFO: Setting operating mode 'position' for group 'Pivot_Group'
+2024-10-29 18:12:20,631 INFO: Disabling torque for group Pivot_Group
+2024-10-29 18:12:20,631 INFO: Enabling torque for group Pivot_Group
+2024-10-29 18:12:20,632 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-29 18:12:20,633 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-29 18:12:20,634 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-29 18:12:20,635 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-29 18:12:20,635 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:12:23,674 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:12:23,675 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:23,676 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:23,676 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:23,677 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:23,677 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:23,678 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:23,679 INFO: New gait 1 is now active.
+2024-10-29 18:12:24,347 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-29 18:12:24,357 INFO: Initialising Gait 2
+2024-10-29 18:12:24,357 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:12:24,362 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:12:24,363 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:12:24,363 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:24,364 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:24,367 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:24,368 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:24,368 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:24,369 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:24,370 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:12:24,374 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:12:26,760 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:12:27,375 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:12:27,376 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:27,377 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:27,378 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:27,379 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:27,380 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:27,381 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:27,381 INFO: New gait 2 is now active.
+2024-10-29 18:12:27,388 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:27,389 INFO: Drive mode set for group Wheg_Group with reverse_direction={1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 0}
+2024-10-29 18:12:27,389 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:27,390 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:27,391 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:27,392 INFO: Reversed the direction of all whegs, waiting for 3 seconds
+2024-10-29 18:12:30,393 INFO: Direction of whegs reversed.
+2024-10-29 18:12:30,464 INFO: Initialising Gait 2
+2024-10-29 18:12:30,464 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:12:30,472 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:12:30,472 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:12:30,473 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:30,475 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:30,476 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:30,477 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:30,478 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:30,479 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:30,480 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:12:30,484 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:12:33,486 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:12:33,486 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:33,488 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:33,489 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:33,490 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:33,490 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:33,491 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:33,491 INFO: New gait 2 is now active.
+2024-10-29 18:12:33,514 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 69.92, 3: 8.74, 4: 69.92, 5: 8.74, 6: 69.92}
+2024-10-29 18:12:33,515 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:12:33,526 INFO: Gait 2 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-29 18:12:36,908 INFO: Profile velocities set for group Wheg_Group: {1: 104.88, 2: 13.11, 3: 104.88, 4: 13.11, 5: 104.88, 6: 13.11}
+2024-10-29 18:12:36,909 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:12:36,919 INFO: Gait 2 step executed at 3.00RPM, wait for 2.25 seconds
+2024-10-29 18:12:39,230 INFO: Profile velocities set for group Wheg_Group: {1: 15.04641357421875, 2: 120.37130859375, 3: 15.04641357421875, 4: 120.37130859375, 5: 15.04641357421875, 6: 120.37130859375}
+2024-10-29 18:12:39,231 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:12:39,242 INFO: Gait 2 step executed at 3.44RPM, wait for 1.96 seconds
+2024-10-29 18:12:41,228 INFO: Profile velocities set for group Wheg_Group: {1: 120.9196923828125, 2: 15.114961547851562, 3: 120.9196923828125, 4: 15.114961547851562, 5: 120.9196923828125, 6: 15.114961547851562}
+2024-10-29 18:12:41,228 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:12:41,239 INFO: Gait 2 step executed at 3.46RPM, wait for 1.95 seconds
+2024-10-29 18:12:43,262 INFO: Profile velocities set for group Wheg_Group: {1: 14.669399719238282, 2: 117.35519775390625, 3: 14.669399719238282, 4: 117.35519775390625, 5: 14.669399719238282, 6: 117.35519775390625}
+2024-10-29 18:12:43,262 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:12:43,274 INFO: Gait 2 step executed at 3.36RPM, wait for 2.01 seconds
+2024-10-29 18:12:45,343 INFO: Profile velocities set for group Wheg_Group: {1: 119.8229248046875, 2: 14.977865600585938, 3: 119.8229248046875, 4: 14.977865600585938, 5: 119.8229248046875, 6: 14.977865600585938}
+2024-10-29 18:12:45,343 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:12:45,354 INFO: Gait 2 step executed at 3.43RPM, wait for 1.97 seconds
+2024-10-29 18:12:47,348 INFO: Profile velocities set for group Wheg_Group: {1: 13.092796325683594, 2: 104.74237060546875, 3: 13.092796325683594, 4: 104.74237060546875, 5: 13.092796325683594, 6: 104.74237060546875}
+2024-10-29 18:12:47,349 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:12:47,360 INFO: Gait 2 step executed at 3.00RPM, wait for 2.25 seconds
+2024-10-29 18:12:48,292 INFO: R3 pressed. Turning mode requested
+2024-10-29 18:12:49,628 INFO: Initialising Turn Mode
+2024-10-29 18:12:49,629 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 160, 5: 200, 6: 160}
+2024-10-29 18:12:49,634 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:12:49,635 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:12:49,635 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:49,636 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:49,637 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:49,638 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:49,638 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:49,639 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:49,640 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:12:49,644 INFO: Initialised turn mode, waiting for 3 seconds
+2024-10-29 18:12:52,684 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:12:52,685 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:52,686 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:52,688 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:52,689 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:52,690 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:52,691 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:52,691 INFO: Turn mode activated.
+2024-10-29 18:12:52,716 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:12:52,722 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:12:52,723 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:12:52,723 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:52,724 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:52,725 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:52,726 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:52,726 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:52,727 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:52,733 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 159.697265625, 2: 193.095703125, 3: 159.78515625, 4: 159.78515625, 5: 202.67578125, 6: 159.78515625}
+2024-10-29 18:12:52,733 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:52,839 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:53,399 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 196.69921875, 2: 161.3671875, 3: 194.58984375, 4: 196.5234375, 5: 170.5078125, 6: 195.8203125}
+2024-10-29 18:12:53,399 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:53,506 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:54,020 INFO: Profile velocities set for group Wheg_Group: {1: 6.803453063964844, 2: 54.427624511718754, 3: 6.803453063964844, 4: 54.427624511718754, 5: 6.803453063964844, 6: 54.427624511718754}
+2024-10-29 18:12:54,020 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:12:54,025 WARNING: Motor 1 is not in Extended Position Control Mode. Setting mode now.
+2024-10-29 18:12:54,026 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:12:54,026 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:54,028 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:54,028 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:54,029 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:54,029 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:54,030 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:54,036 INFO: Gait 4 step executed at 1.56RPM, wait for -4.26 seconds
+2024-10-29 18:12:54,049 INFO: Profile velocities set for group Wheg_Group: {1: 54.427624511718754, 2: 6.803453063964844, 3: 54.427624511718754, 4: 6.803453063964844, 5: 54.427624511718754, 6: 6.803453063964844}
+2024-10-29 18:12:54,050 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:12:54,060 INFO: Gait 4 step executed at 1.56RPM, wait for -4.26 seconds
+2024-10-29 18:12:54,074 INFO: Profile velocities set for group Wheg_Group: {1: 6.803453063964844, 2: 54.427624511718754, 3: 6.803453063964844, 4: 54.427624511718754, 5: 6.803453063964844, 6: 54.427624511718754}
+2024-10-29 18:12:54,074 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:12:54,084 INFO: Gait 4 step executed at 1.56RPM, wait for -4.26 seconds
+2024-10-29 18:12:54,147 INFO: Profile velocities set for group Wheg_Group: {1: 54.1534326171875, 2: 6.769179077148437, 3: 54.1534326171875, 4: 6.769179077148437, 5: 54.1534326171875, 6: 6.769179077148437}
+2024-10-29 18:12:54,149 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:12:54,161 INFO: Gait 4 step executed at 1.55RPM, wait for -4.28 seconds
+2024-10-29 18:12:54,174 INFO: Profile velocities set for group Wheg_Group: {1: 6.769179077148437, 2: 54.1534326171875, 3: 6.769179077148437, 4: 54.1534326171875, 5: 6.769179077148437, 6: 54.1534326171875}
+2024-10-29 18:12:54,175 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:12:54,185 INFO: Gait 4 step executed at 1.55RPM, wait for -4.28 seconds
+2024-10-29 18:12:54,198 INFO: Profile velocities set for group Wheg_Group: {1: 54.1534326171875, 2: 6.769179077148437, 3: 54.1534326171875, 4: 6.769179077148437, 5: 54.1534326171875, 6: 6.769179077148437}
+2024-10-29 18:12:54,199 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:12:54,209 INFO: Gait 4 step executed at 1.55RPM, wait for -4.28 seconds
+2024-10-29 18:12:54,222 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 196.787109375, 2: 152.490234375, 3: 193.798828125, 4: 206.71875, 5: 162.94921875, 6: 206.806640625}
+2024-10-29 18:12:54,223 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:54,329 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:54,891 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 144.31640625, 2: 143.26171875, 3: 143.0859375, 4: 214.365234375, 5: 181.40625, 6: 214.365234375}
+2024-10-29 18:12:54,891 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:54,998 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:55,512 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 99.84375, 2: 133.154296875, 3: 98.61328125, 4: 219.55078125, 5: 261.73828125, 6: 219.638671875}
+2024-10-29 18:12:55,512 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:55,618 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:56,132 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 53.0859375, 2: 123.92578125, 3: 52.3828125, 4: 224.736328125, 5: 307.880859375, 6: 224.736328125}
+2024-10-29 18:12:56,133 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:56,240 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:56,799 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 3.1640625, 2: 118.916015625, 3: 2.724609375, 4: 230.80078125, 5: 357.802734375, 6: 230.185546875}
+2024-10-29 18:12:56,800 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:56,908 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:57,421 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 252.7578125, 2: 117.24609375, 3: 252.40625, 4: 235.37109375, 5: 45.12109375, 6: 235.37109375}
+2024-10-29 18:12:57,421 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:57,527 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:58,040 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 216.634765625, 2: 116.19140625, 3: 211.9765625, 4: 241.435546875, 5: 91.087890625, 6: 240.46875}
+2024-10-29 18:12:58,041 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:58,197 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:12:58,710 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 183.5, 2: 114.609375, 3: 178.490234375, 4: 247.236328125, 5: 123.87109375, 6: 246.005859375}
+2024-10-29 18:12:58,710 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:12:58,816 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-29 18:12:58,817 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:12:58,822 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:12:58,823 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:12:58,823 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:12:58,825 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:12:58,825 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:58,826 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:12:58,827 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:12:58,828 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:01,829 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:01,830 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:01,831 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:01,832 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:01,833 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:01,833 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:01,834 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:01,835 INFO: Profile velocities set for group Wheg_Group: {1: 7.523206787109375, 2: 60.185654296875, 3: 7.523206787109375, 4: 60.185654296875, 5: 7.523206787109375, 6: 60.185654296875}
+2024-10-29 18:13:01,836 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:13:01,846 INFO: Gait 4 step executed at 1.72RPM, wait for -3.85 seconds
+2024-10-29 18:13:01,859 INFO: Profile velocities set for group Wheg_Group: {1: 65.6694921875, 2: 8.2086865234375, 3: 65.6694921875, 4: 8.2086865234375, 5: 65.6694921875, 6: 8.2086865234375}
+2024-10-29 18:13:01,860 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:13:01,871 INFO: Gait 4 step executed at 1.88RPM, wait for -3.52 seconds
+2024-10-29 18:13:01,884 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 207.158203125, 2: 152.314453125, 3: 201.97265625, 4: 206.015625, 5: 149.0625, 6: 201.181640625}
+2024-10-29 18:13:01,885 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:01,991 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:02,504 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 151.962890625, 2: 143.61328125, 3: 148.359375, 4: 213.046875, 5: 157.32421875, 6: 209.70703125}
+2024-10-29 18:13:02,505 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:02,611 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:03,125 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 97.20703125, 2: 126.03515625, 3: 92.724609375, 4: 220.166015625, 5: 260.15625, 6: 216.474609375}
+2024-10-29 18:13:03,125 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:03,232 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:03,746 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 40.95703125, 2: 118.828125, 3: 37.177734375, 4: 226.93359375, 5: 315.615234375, 6: 223.330078125}
+2024-10-29 18:13:03,746 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:03,852 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:04,366 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 280.619140625, 2: 116.806640625, 3: 277.3671875, 4: 233.61328125, 5: 12.689453125, 6: 230.185546875}
+2024-10-29 18:13:04,367 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:04,472 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:04,986 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 229.115234375, 2: 114.9609375, 3: 223.578125, 4: 240.908203125, 5: 67.97265625, 6: 237.041015625}
+2024-10-29 18:13:04,986 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:05,092 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:05,606 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 192.728515625, 2: 113.02734375, 3: 185.08203125, 4: 247.32421875, 5: 110.423828125, 6: 241.962890625}
+2024-10-29 18:13:05,606 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:05,712 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-29 18:13:05,713 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:13:05,718 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:13:05,719 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:13:05,719 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:05,720 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:05,721 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:05,722 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:05,723 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:05,723 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:08,726 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:08,726 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:08,728 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:08,728 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:08,729 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:08,729 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:08,731 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:08,732 INFO: Profile velocities set for group Wheg_Group: {1: 8.2086865234375, 2: 65.6694921875, 3: 8.2086865234375, 4: 65.6694921875, 5: 8.2086865234375, 6: 65.6694921875}
+2024-10-29 18:13:08,732 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:13:08,743 INFO: Gait 4 step executed at 1.88RPM, wait for -3.52 seconds
+2024-10-29 18:13:08,756 INFO: Profile velocities set for group Wheg_Group: {1: 63.475957031250005, 2: 7.934494628906251, 3: 63.475957031250005, 4: 7.934494628906251, 5: 63.475957031250005, 6: 7.934494628906251}
+2024-10-29 18:13:08,757 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:13:08,767 INFO: Gait 4 step executed at 1.82RPM, wait for -3.65 seconds
+2024-10-29 18:13:08,780 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 208.125, 2: 150.556640625, 3: 205.6640625, 4: 206.3671875, 5: 148.798828125, 6: 200.302734375}
+2024-10-29 18:13:08,780 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:08,887 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:09,400 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 155.126953125, 2: 143.876953125, 3: 154.775390625, 4: 212.6953125, 5: 153.6328125, 6: 208.30078125}
+2024-10-29 18:13:09,401 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:09,508 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:10,021 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 101.42578125, 2: 125.244140625, 3: 99.31640625, 4: 218.583984375, 5: 256.552734375, 6: 214.453125}
+2024-10-29 18:13:10,022 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:10,127 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:10,641 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 46.93359375, 2: 122.255859375, 3: 45.439453125, 4: 224.82421875, 5: 310.4296875, 6: 220.341796875}
+2024-10-29 18:13:10,642 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:10,748 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:11,261 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 288.353515625, 2: 117.24609375, 3: 287.38671875, 4: 230.625, 5: 5.5703125, 6: 226.318359375}
+2024-10-29 18:13:11,262 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:11,369 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:11,882 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 235.53125, 2: 115.3125, 3: 233.7734375, 4: 236.6015625, 5: 59.447265625, 6: 232.294921875}
+2024-10-29 18:13:11,883 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:11,989 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:12,503 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 194.486328125, 2: 115.3125, 3: 188.24609375, 4: 243.544921875, 5: 110.248046875, 6: 238.271484375}
+2024-10-29 18:13:12,503 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:12,610 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:13,123 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 194.046875, 2: 111.181640625, 3: 187.982421875, 4: 247.32421875, 5: 110.072265625, 6: 241.34765625}
+2024-10-29 18:13:13,124 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:13,230 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-29 18:13:13,230 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:13:13,236 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:13:13,236 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:13:13,236 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:13,237 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:13,238 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:13,239 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:13,240 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:13,240 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:16,294 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:16,295 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:16,299 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:16,301 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:16,302 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:16,302 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:16,303 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:16,304 INFO: Profile velocities set for group Wheg_Group: {1: 7.591754760742187, 2: 60.7340380859375, 3: 7.591754760742187, 4: 60.7340380859375, 5: 7.591754760742187, 6: 60.7340380859375}
+2024-10-29 18:13:16,305 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:13:16,316 INFO: Gait 4 step executed at 1.74RPM, wait for -3.81 seconds
+2024-10-29 18:13:16,329 INFO: Profile velocities set for group Wheg_Group: {1: 65.1211083984375, 2: 8.140138549804687, 3: 65.1211083984375, 4: 8.140138549804687, 5: 65.1211083984375, 6: 8.140138549804687}
+2024-10-29 18:13:16,330 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:13:16,341 INFO: Gait 4 step executed at 1.86RPM, wait for -3.55 seconds
+2024-10-29 18:13:16,354 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 208.30078125, 2: 150.1171875, 3: 206.279296875, 4: 206.71875, 5: 148.271484375, 6: 200.56640625}
+2024-10-29 18:13:16,354 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:16,460 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:16,974 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 153.28125, 2: 142.822265625, 3: 153.45703125, 4: 213.662109375, 5: 154.16015625, 6: 209.091796875}
+2024-10-29 18:13:16,974 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:17,080 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:17,594 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 98.349609375, 2: 121.728515625, 3: 96.6796875, 4: 220.60546875, 5: 259.27734375, 6: 216.2109375}
+2024-10-29 18:13:17,594 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:17,701 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:18,214 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 42.099609375, 2: 118.828125, 3: 41.1328125, 4: 227.548828125, 5: 314.82421875, 6: 222.890625}
+2024-10-29 18:13:18,215 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:18,321 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:18,835 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 281.76171875, 2: 115.927734375, 3: 281.234375, 4: 234.228515625, 5: 11.810546875, 6: 229.74609375}
+2024-10-29 18:13:18,835 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:18,941 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:19,455 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 230.873046875, 2: 113.90625, 3: 226.7421875, 4: 241.083984375, 5: 67.26953125, 6: 236.513671875}
+2024-10-29 18:13:19,456 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:19,562 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:20,076 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 194.92578125, 2: 110.7421875, 3: 188.333984375, 4: 247.763671875, 5: 109.6328125, 6: 241.611328125}
+2024-10-29 18:13:20,077 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:20,183 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-29 18:13:20,183 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:13:20,188 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:13:20,189 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:13:20,189 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:20,190 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:20,191 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:20,192 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:20,192 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:20,193 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:23,226 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:23,227 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:23,229 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:23,231 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:23,232 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:23,232 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:23,233 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:23,234 INFO: Profile velocities set for group Wheg_Group: {1: 7.934494628906251, 2: 63.475957031250005, 3: 7.934494628906251, 4: 63.475957031250005, 5: 7.934494628906251, 6: 63.475957031250005}
+2024-10-29 18:13:23,235 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:13:23,245 INFO: Gait 4 step executed at 1.82RPM, wait for -3.65 seconds
+2024-10-29 18:13:23,258 INFO: Profile velocities set for group Wheg_Group: {1: 69.78237060546876, 2: 8.722796325683595, 3: 69.78237060546876, 4: 8.722796325683595, 5: 69.78237060546876, 6: 8.722796325683595}
+2024-10-29 18:13:23,258 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:13:23,269 INFO: Gait 4 step executed at 2.00RPM, wait for -3.31 seconds
+2024-10-29 18:13:23,282 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 208.564453125, 2: 150.8203125, 3: 206.103515625, 4: 206.3671875, 5: 148.7109375, 6: 200.302734375}
+2024-10-29 18:13:23,282 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:23,389 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:23,903 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 149.853515625, 2: 142.55859375, 3: 148.359375, 4: 213.22265625, 5: 154.86328125, 6: 209.00390625}
+2024-10-29 18:13:23,904 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:24,010 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:24,524 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 91.669921875, 2: 123.57421875, 3: 89.6484375, 4: 220.517578125, 5: 266.66015625, 6: 215.68359375}
+2024-10-29 18:13:24,524 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:24,630 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:25,143 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 32.080078125, 2: 117.421875, 3: 30.76171875, 4: 227.109375, 5: 325.37109375, 6: 222.71484375}
+2024-10-29 18:13:25,144 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:25,250 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:25,764 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 268.490234375, 2: 116.3671875, 3: 267.435546875, 4: 233.96484375, 5: 25.9609375, 6: 229.5703125}
+2024-10-29 18:13:25,764 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:25,871 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:26,385 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 219.447265625, 2: 114.873046875, 3: 213.03125, 4: 241.787109375, 5: 84.759765625, 6: 236.42578125}
+2024-10-29 18:13:26,385 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:26,491 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:27,005 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 194.75, 2: 111.533203125, 3: 188.0703125, 4: 247.412109375, 5: 110.072265625, 6: 241.259765625}
+2024-10-29 18:13:27,005 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:27,112 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-29 18:13:27,112 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:13:27,117 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:13:27,118 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:13:27,118 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:27,119 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:27,120 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:27,120 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:27,121 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:27,122 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:30,170 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:30,171 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:30,174 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:30,176 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:30,177 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:30,177 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:30,178 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:30,179 INFO: Profile velocities set for group Wheg_Group: {1: 9.648193969726563, 2: 77.1855517578125, 3: 9.648193969726563, 4: 77.1855517578125, 5: 9.648193969726563, 6: 77.1855517578125}
+2024-10-29 18:13:30,179 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:13:30,190 INFO: Gait 4 step executed at 2.21RPM, wait for -2.99 seconds
+2024-10-29 18:13:30,203 INFO: Profile velocities set for group Wheg_Group: {1: 84.314541015625, 2: 10.539317626953125, 3: 84.314541015625, 4: 10.539317626953125, 5: 84.314541015625, 6: 10.539317626953125}
+2024-10-29 18:13:30,203 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:13:30,214 INFO: Gait 4 step executed at 2.41RPM, wait for -2.74 seconds
+2024-10-29 18:13:30,227 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 208.740234375, 2: 150.732421875, 3: 206.103515625, 4: 206.3671875, 5: 148.798828125, 6: 200.21484375}
+2024-10-29 18:13:30,227 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:30,333 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:30,847 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 136.93359375, 2: 137.021484375, 3: 135.087890625, 4: 214.541015625, 5: 154.6875, 6: 211.201171875}
+2024-10-29 18:13:30,847 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:30,954 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:31,467 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 66.357421875, 2: 120.5859375, 3: 64.86328125, 4: 224.296875, 5: 291.62109375, 6: 219.814453125}
+2024-10-29 18:13:31,468 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:31,574 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:32,087 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 289.583984375, 2: 116.54296875, 3: 288.529296875, 4: 232.646484375, 5: 4.779296875, 6: 228.33984375}
+2024-10-29 18:13:32,088 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:32,195 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:32,708 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 224.544921875, 2: 114.43359375, 3: 219.095703125, 4: 241.875, 5: 76.5859375, 6: 236.953125}
+2024-10-29 18:13:32,709 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:32,815 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:13:33,329 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 194.486328125, 2: 111.4453125, 3: 187.982421875, 4: 247.8515625, 5: 110.072265625, 6: 241.34765625}
+2024-10-29 18:13:33,330 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:13:33,436 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-29 18:13:33,437 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:13:33,442 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:13:33,443 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:13:33,443 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:33,444 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:33,445 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:33,445 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:33,446 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:33,446 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:36,416 INFO: share pressed. Turning mode deactivating
+2024-10-29 18:13:36,448 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:36,449 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:36,450 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:36,450 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:36,451 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:36,452 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:36,453 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:36,454 INFO: Profile velocities set for group Wheg_Group: {1: 9.819563903808595, 2: 78.55651123046876, 3: 9.819563903808595, 4: 78.55651123046876, 5: 9.819563903808595, 6: 78.55651123046876}
+2024-10-29 18:13:36,454 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:13:36,465 INFO: Gait 4 step executed at 2.25RPM, wait for -2.94 seconds
+2024-10-29 18:13:36,465 WARNING: No motors found for group 'All_Whegs'
+2024-10-29 18:13:36,466 WARNING: Set direction of whegs to forward
+2024-10-29 18:13:36,466 INFO: Turn mode deactivating
+2024-10-29 18:13:36,527 INFO: share pressed. Turning mode deactivating
+2024-10-29 18:13:43,302 INFO: Triangle pressed. Preparing to change to next gait: 3
+2024-10-29 18:13:43,313 INFO: Initialsing Gait 3
+2024-10-29 18:13:43,313 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 160, 4: 200, 5: 160, 6: 160}
+2024-10-29 18:13:43,318 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:13:43,320 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:13:43,321 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:43,322 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:43,322 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:43,323 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:43,324 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:43,325 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:43,325 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:13:43,329 INFO: Initialised Gait 3, waiting for 3 seconds
+2024-10-29 18:13:43,409 INFO: Triangle pressed. Preparing to change to next gait: 3
+2024-10-29 18:13:46,348 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:46,350 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:46,354 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:46,357 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:46,358 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:46,360 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:46,361 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:46,362 INFO: New gait 3 is now active.
+2024-10-29 18:13:49,212 INFO: Triangle pressed. Preparing to change to next gait: 1
+2024-10-29 18:13:49,222 INFO: Initialising Gait 1
+2024-10-29 18:13:49,223 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:13:49,228 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:13:49,229 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:13:49,230 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:49,231 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:49,232 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:49,233 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:49,233 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:49,234 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:49,235 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:13:49,238 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:13:52,271 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:13:52,272 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:13:52,274 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:13:52,276 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:52,277 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:52,278 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:13:52,279 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:52,279 INFO: New gait 1 is now active.
+2024-10-29 18:13:55,869 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:13:55,870 INFO: Incrementing motor positions by 360 degrees for group 'Wheg_Group'
+2024-10-29 18:13:55,881 INFO: Gait 1 step executed at 10.00RPM, wait for 6.00 seconds
+2024-10-29 18:14:01,934 INFO: Profile velocities set for group Wheg_Group: {1: 61.18, 2: 61.18, 3: 61.18, 4: 61.18, 5: 61.18, 6: 61.18}
+2024-10-29 18:14:01,935 INFO: Incrementing motor positions by 360 degrees for group 'Wheg_Group'
+2024-10-29 18:14:01,945 INFO: Gait 1 step executed at 14.00RPM, wait for 4.29 seconds
+2024-10-29 18:14:05,360 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-29 18:14:06,249 INFO: Initialising Gait 2
+2024-10-29 18:14:06,250 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:14:06,255 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:14:06,256 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:14:06,256 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:14:06,257 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:14:06,258 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:14:06,259 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:14:06,259 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:14:06,260 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:14:06,261 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:14:06,264 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:14:09,267 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:14:09,268 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:14:09,269 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:14:09,270 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:14:09,270 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:14:09,271 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:14:09,272 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:14:09,272 INFO: New gait 2 is now active.
+2024-10-29 18:14:40,274 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 175, 8: 180}
+2024-10-29 18:14:40,277 INFO: Front pivot angle set to 175 degrees (ticks: 175)
+2024-10-29 18:14:40,278 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:40,583 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 170, 8: 180}
+2024-10-29 18:14:40,588 INFO: Front pivot angle set to 170 degrees (ticks: 170)
+2024-10-29 18:14:40,588 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:40,840 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 165, 8: 180}
+2024-10-29 18:14:40,843 INFO: Front pivot angle set to 165 degrees (ticks: 165)
+2024-10-29 18:14:40,844 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:41,118 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 180}
+2024-10-29 18:14:41,121 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:41,122 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:41,427 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 155, 8: 180}
+2024-10-29 18:14:41,433 INFO: Front pivot angle set to 155 degrees (ticks: 155)
+2024-10-29 18:14:41,433 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:41,685 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 150, 8: 180}
+2024-10-29 18:14:41,688 INFO: Front pivot angle set to 150 degrees (ticks: 150)
+2024-10-29 18:14:41,689 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:41,965 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 145, 8: 180}
+2024-10-29 18:14:41,969 INFO: Front pivot angle set to 145 degrees (ticks: 145)
+2024-10-29 18:14:41,969 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:42,274 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 140, 8: 180}
+2024-10-29 18:14:42,279 INFO: Front pivot angle set to 140 degrees (ticks: 140)
+2024-10-29 18:14:42,279 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:42,531 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 135, 8: 180}
+2024-10-29 18:14:42,534 INFO: Front pivot angle set to 135 degrees (ticks: 135)
+2024-10-29 18:14:42,535 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:42,815 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 130, 8: 180}
+2024-10-29 18:14:42,819 INFO: Front pivot angle set to 130 degrees (ticks: 130)
+2024-10-29 18:14:42,819 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:43,071 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 125, 8: 180}
+2024-10-29 18:14:43,074 INFO: Front pivot angle set to 125 degrees (ticks: 125)
+2024-10-29 18:14:43,075 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:43,886 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 130, 8: 180}
+2024-10-29 18:14:43,889 INFO: Front pivot angle set to 130 degrees (ticks: 130)
+2024-10-29 18:14:43,890 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:44,196 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 135, 8: 180}
+2024-10-29 18:14:44,201 INFO: Front pivot angle set to 135 degrees (ticks: 135)
+2024-10-29 18:14:44,201 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:44,452 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 140, 8: 180}
+2024-10-29 18:14:44,456 INFO: Front pivot angle set to 140 degrees (ticks: 140)
+2024-10-29 18:14:44,456 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:44,738 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 145, 8: 180}
+2024-10-29 18:14:44,742 INFO: Front pivot angle set to 145 degrees (ticks: 145)
+2024-10-29 18:14:44,743 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:44,995 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 150, 8: 180}
+2024-10-29 18:14:44,998 INFO: Front pivot angle set to 150 degrees (ticks: 150)
+2024-10-29 18:14:44,999 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:45,274 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 155, 8: 180}
+2024-10-29 18:14:45,278 INFO: Front pivot angle set to 155 degrees (ticks: 155)
+2024-10-29 18:14:45,279 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:45,586 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 180}
+2024-10-29 18:14:45,591 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:45,591 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:46,660 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 185}
+2024-10-29 18:14:46,664 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:46,665 INFO: Rear pivot angle set to 185 degrees (ticks: 185)
+2024-10-29 18:14:46,970 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 190}
+2024-10-29 18:14:46,974 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:46,975 INFO: Rear pivot angle set to 190 degrees (ticks: 190)
+2024-10-29 18:14:47,226 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 195}
+2024-10-29 18:14:47,230 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:47,231 INFO: Rear pivot angle set to 195 degrees (ticks: 195)
+2024-10-29 18:14:47,504 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 200}
+2024-10-29 18:14:47,508 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:47,509 INFO: Rear pivot angle set to 200 degrees (ticks: 200)
+2024-10-29 18:14:47,813 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 205}
+2024-10-29 18:14:47,818 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:47,819 INFO: Rear pivot angle set to 205 degrees (ticks: 205)
+2024-10-29 18:14:48,070 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 210}
+2024-10-29 18:14:48,074 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:48,075 INFO: Rear pivot angle set to 210 degrees (ticks: 210)
+2024-10-29 18:14:48,353 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 215}
+2024-10-29 18:14:48,356 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:48,357 INFO: Rear pivot angle set to 215 degrees (ticks: 215)
+2024-10-29 18:14:48,608 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 220}
+2024-10-29 18:14:48,612 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:48,612 INFO: Rear pivot angle set to 220 degrees (ticks: 220)
+2024-10-29 18:14:48,891 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 225}
+2024-10-29 18:14:48,895 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:48,895 INFO: Rear pivot angle set to 225 degrees (ticks: 225)
+2024-10-29 18:14:49,200 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 230}
+2024-10-29 18:14:49,205 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:49,206 INFO: Rear pivot angle set to 230 degrees (ticks: 230)
+2024-10-29 18:14:49,457 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 235}
+2024-10-29 18:14:49,461 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:49,461 INFO: Rear pivot angle set to 235 degrees (ticks: 235)
+2024-10-29 18:14:49,990 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 240}
+2024-10-29 18:14:49,994 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:49,995 INFO: Rear pivot angle set to 240 degrees (ticks: 240)
+2024-10-29 18:14:50,275 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 235}
+2024-10-29 18:14:50,278 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:50,279 INFO: Rear pivot angle set to 235 degrees (ticks: 235)
+2024-10-29 18:14:50,529 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 230}
+2024-10-29 18:14:50,533 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:50,533 INFO: Rear pivot angle set to 230 degrees (ticks: 230)
+2024-10-29 18:14:50,813 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 225}
+2024-10-29 18:14:50,817 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:50,818 INFO: Rear pivot angle set to 225 degrees (ticks: 225)
+2024-10-29 18:14:51,069 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 220}
+2024-10-29 18:14:51,073 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:51,073 INFO: Rear pivot angle set to 220 degrees (ticks: 220)
+2024-10-29 18:14:51,353 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 215}
+2024-10-29 18:14:51,357 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:51,357 INFO: Rear pivot angle set to 215 degrees (ticks: 215)
+2024-10-29 18:14:51,665 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 210}
+2024-10-29 18:14:51,669 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:51,670 INFO: Rear pivot angle set to 210 degrees (ticks: 210)
+2024-10-29 18:14:51,921 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 205}
+2024-10-29 18:14:51,925 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:51,925 INFO: Rear pivot angle set to 205 degrees (ticks: 205)
+2024-10-29 18:14:52,209 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 200}
+2024-10-29 18:14:52,212 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:52,213 INFO: Rear pivot angle set to 200 degrees (ticks: 200)
+2024-10-29 18:14:52,463 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 195}
+2024-10-29 18:14:52,467 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:52,467 INFO: Rear pivot angle set to 195 degrees (ticks: 195)
+2024-10-29 18:14:52,744 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 190}
+2024-10-29 18:14:52,748 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:52,749 INFO: Rear pivot angle set to 190 degrees (ticks: 190)
+2024-10-29 18:14:52,999 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 185}
+2024-10-29 18:14:53,003 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:53,003 INFO: Rear pivot angle set to 185 degrees (ticks: 185)
+2024-10-29 18:14:53,281 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 180}
+2024-10-29 18:14:53,284 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:53,285 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-10-29 18:14:53,536 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 160, 8: 175}
+2024-10-29 18:14:53,540 INFO: Front pivot angle set to 160 degrees (ticks: 160)
+2024-10-29 18:14:53,540 INFO: Rear pivot angle set to 175 degrees (ticks: 175)
+2024-10-29 18:15:27,941 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:15:27,957 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:15:27,959 INFO: Drive mode set for group Wheg_Group with reverse_direction={1: 0, 2: 0, 3: 0, 4: 1, 5: 1, 6: 1}
+2024-10-29 18:15:27,960 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:15:27,960 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:15:27,961 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:15:27,962 INFO: Reversed the direction of all whegs, waiting for 3 seconds
+2024-10-29 18:15:30,962 INFO: Direction of whegs reversed.
+2024-10-29 18:15:31,019 INFO: Triangle pressed. Preparing to change to next gait: 3
+2024-10-29 18:15:31,030 INFO: Initialsing Gait 3
+2024-10-29 18:15:31,030 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 160, 4: 200, 5: 160, 6: 160}
+2024-10-29 18:15:31,036 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:15:31,038 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:15:31,038 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:15:31,039 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:15:31,040 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:15:31,041 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:15:31,042 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:15:31,043 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:15:31,044 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:15:31,047 INFO: Initialised Gait 3, waiting for 3 seconds
+2024-10-29 18:15:31,130 INFO: Triangle pressed. Preparing to change to next gait: 3
+2024-10-29 18:15:34,086 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:15:34,088 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:15:34,092 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:15:34,093 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:15:34,094 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:15:34,095 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:15:34,095 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:15:34,096 INFO: New gait 3 is now active.
+2024-10-29 18:15:34,119 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:15:34,120 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:15:34,130 INFO: Gait 3 step executed at 10.00 RPM, wait for 5.36 seconds
+2024-10-29 18:15:39,513 INFO: Profile velocities set for group Wheg_Group: {1: 61.18, 2: 61.18, 3: 61.18, 4: 61.18, 5: 61.18, 6: 61.18}
+2024-10-29 18:15:39,514 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:15:39,524 INFO: Gait 3 step executed at 14.00 RPM, wait for 3.83 seconds
+2024-10-29 18:15:43,382 INFO: Profile velocities set for group Wheg_Group: {1: 78.66, 2: 78.66, 3: 78.66, 4: 78.66, 5: 78.66, 6: 78.66}
+2024-10-29 18:15:43,383 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:15:43,393 INFO: Gait 3 step executed at 18.00 RPM, wait for 2.99 seconds
+2024-10-29 18:15:46,406 INFO: Profile velocities set for group Wheg_Group: {1: 96.14, 2: 96.14, 3: 96.14, 4: 96.14, 5: 96.14, 6: 96.14}
+2024-10-29 18:15:46,406 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:15:46,417 INFO: Gait 3 step executed at 22.00 RPM, wait for 2.45 seconds
+2024-10-29 18:15:48,890 INFO: Profile velocities set for group Wheg_Group: {1: 113.62, 2: 113.62, 3: 113.62, 4: 113.62, 5: 113.62, 6: 113.62}
+2024-10-29 18:15:48,890 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:15:48,901 INFO: Gait 3 step executed at 26.00 RPM, wait for 2.08 seconds
+2024-10-29 18:15:51,002 INFO: Profile velocities set for group Wheg_Group: {1: 122.87290954589844, 2: 122.87290954589844, 3: 122.87290954589844, 4: 122.87290954589844, 5: 122.87290954589844, 6: 122.87290954589844}
+2024-10-29 18:15:51,003 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:15:51,013 INFO: Gait 3 step executed at 28.12 RPM, wait for 1.92 seconds
+2024-10-29 18:15:53,007 INFO: Profile velocities set for group Wheg_Group: {1: 105.39290954589843, 2: 105.39290954589843, 3: 105.39290954589843, 4: 105.39290954589843, 5: 105.39290954589843, 6: 105.39290954589843}
+2024-10-29 18:15:53,007 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:15:53,018 INFO: Gait 3 step executed at 24.12 RPM, wait for 2.24 seconds
+2024-10-29 18:15:55,278 INFO: Profile velocities set for group Wheg_Group: {1: 88.94166259765625, 2: 88.94166259765625, 3: 88.94166259765625, 4: 88.94166259765625, 5: 88.94166259765625, 6: 88.94166259765625}
+2024-10-29 18:15:55,279 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:15:55,289 INFO: Gait 3 step executed at 20.35 RPM, wait for 2.65 seconds
+2024-10-29 18:15:57,964 INFO: Profile velocities set for group Wheg_Group: {1: 83.80056457519531, 2: 83.80056457519531, 3: 83.80056457519531, 4: 83.80056457519531, 5: 83.80056457519531, 6: 83.80056457519531}
+2024-10-29 18:15:57,965 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:15:57,976 INFO: Gait 3 step executed at 19.18 RPM, wait for 2.81 seconds
+2024-10-29 18:16:00,805 WARNING: Motors are not in the correct positions for Gait 3. Positions: {1: 178.166015625, 2: 136.2421875, 3: 153.029296875, 4: 175.08984375, 5: 144.15234375, 6: 154.171875}
+2024-10-29 18:16:00,806 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:16:00,912 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:16:01,484 WARNING: Motors are not in the correct positions for Gait 3. Positions: {1: 178.693359375, 2: 136.2421875, 3: 155.05078125, 4: 175.177734375, 5: 144.064453125, 6: 156.28125}
+2024-10-29 18:16:01,485 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:16:01,591 CRITICAL: Motors are not moving, resetting positions, and waiting for 3 seconds.
+2024-10-29 18:16:01,592 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 160, 4: 200, 5: 160, 6: 160}
+2024-10-29 18:16:01,597 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:16:01,597 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:16:01,598 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:16:01,599 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:16:01,600 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:16:01,600 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:16:01,601 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:16:01,602 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:16:02,142 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:16:02,143 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:16:02,145 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:16:02,147 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:16:02,149 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:16:02,149 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:16:02,150 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:16:02,151 INFO: Profile velocities set for group Wheg_Group: {1: 81.23001556396484, 2: 81.23001556396484, 3: 81.23001556396484, 4: 81.23001556396484, 5: 81.23001556396484, 6: 81.23001556396484}
+2024-10-29 18:16:02,151 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:16:02,162 INFO: Gait 3 step executed at 18.59 RPM, wait for 2.89 seconds
+2024-10-29 18:16:05,119 INFO: Profile velocities set for group Wheg_Group: {1: 68.3772705078125, 2: 68.3772705078125, 3: 68.3772705078125, 4: 68.3772705078125, 5: 68.3772705078125, 6: 68.3772705078125}
+2024-10-29 18:16:05,119 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:16:05,130 INFO: Gait 3 step executed at 15.65 RPM, wait for 3.43 seconds
+2024-10-29 18:16:51,287 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:16:51,288 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:16:51,298 INFO: Gait 3 step executed at 10.00 RPM, wait for 5.36 seconds
+2024-10-29 18:16:56,709 INFO: Profile velocities set for group Wheg_Group: {1: 61.18, 2: 61.18, 3: 61.18, 4: 61.18, 5: 61.18, 6: 61.18}
+2024-10-29 18:16:56,709 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:16:56,721 INFO: Gait 3 step executed at 14.00 RPM, wait for 3.83 seconds
+2024-10-29 18:17:00,644 INFO: Profile velocities set for group Wheg_Group: {1: 78.66, 2: 78.66, 3: 78.66, 4: 78.66, 5: 78.66, 6: 78.66}
+2024-10-29 18:17:00,645 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:17:00,656 INFO: Gait 3 step executed at 18.00 RPM, wait for 2.99 seconds
+2024-10-29 18:17:03,671 INFO: Profile velocities set for group Wheg_Group: {1: 96.14, 2: 96.14, 3: 96.14, 4: 96.14, 5: 96.14, 6: 96.14}
+2024-10-29 18:17:03,671 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:17:03,682 INFO: Gait 3 step executed at 22.00 RPM, wait for 2.45 seconds
+2024-10-29 18:17:06,155 INFO: Profile velocities set for group Wheg_Group: {1: 92.54043121337891, 2: 92.54043121337891, 3: 92.54043121337891, 4: 92.54043121337891, 5: 92.54043121337891, 6: 92.54043121337891}
+2024-10-29 18:17:06,156 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:17:06,166 INFO: Gait 3 step executed at 21.18 RPM, wait for 2.54 seconds
+2024-10-29 18:17:08,734 INFO: Profile velocities set for group Wheg_Group: {1: 110.02043121337891, 2: 110.02043121337891, 3: 110.02043121337891, 4: 110.02043121337891, 5: 110.02043121337891, 6: 110.02043121337891}
+2024-10-29 18:17:08,735 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:17:08,746 INFO: Gait 3 step executed at 25.18 RPM, wait for 2.14 seconds
+2024-10-29 18:17:10,952 INFO: Profile velocities set for group Wheg_Group: {1: 96.13919982910157, 2: 96.13919982910157, 3: 96.13919982910157, 4: 96.13919982910157, 5: 96.13919982910157, 6: 96.13919982910157}
+2024-10-29 18:17:10,952 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:17:10,963 INFO: Gait 3 step executed at 22.00 RPM, wait for 2.45 seconds
+2024-10-29 18:17:11,641 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:17:13,437 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:17:13,437 INFO: Drive mode set for group Wheg_Group with reverse_direction={1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 0}
+2024-10-29 18:17:13,438 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:17:13,438 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:13,439 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:13,440 INFO: Reversed the direction of all whegs, waiting for 3 seconds
+2024-10-29 18:17:16,440 INFO: Direction of whegs reversed.
+2024-10-29 18:17:16,504 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-29 18:17:16,505 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 18:17:16,507 INFO: Disabling torque for group All_Motors
+2024-10-29 18:17:16,510 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,511 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,511 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,512 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 18:17:16,513 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 18:17:16,513 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,514 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,515 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,516 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 18:17:16,642 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-29 18:17:16,644 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 18:17:16,645 INFO: Disabling torque for group All_Motors
+2024-10-29 18:17:16,648 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,649 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,650 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,650 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 18:17:16,651 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 18:17:16,652 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,653 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,654 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,655 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 18:17:16,783 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-29 18:17:16,784 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 18:17:16,785 INFO: Disabling torque for group All_Motors
+2024-10-29 18:17:16,788 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,790 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,790 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,791 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 18:17:16,792 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 18:17:16,792 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,793 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,794 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,795 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 18:17:16,922 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-29 18:17:16,923 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 18:17:16,925 INFO: Disabling torque for group All_Motors
+2024-10-29 18:17:16,927 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,928 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,929 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,929 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 18:17:16,930 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 18:17:16,931 INFO: Enabling torque for group All_Motors
+2024-10-29 18:17:16,931 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:17:16,932 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:17:16,933 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 18:17:19,426 INFO: Emergency Stop Deactivated. Resuming control...
+2024-10-29 18:17:19,437 INFO: Initialising Gait 1
+2024-10-29 18:17:19,437 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:17:19,443 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:17:19,443 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:17:19,444 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:17:19,446 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:17:19,447 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:19,448 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:19,448 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:19,449 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:19,450 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:17:19,453 WARNING: Motor 7 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:17:19,453 INFO: Setting operating mode 'position' for group 'Pivot_Group'
+2024-10-29 18:17:19,454 INFO: Disabling torque for group Pivot_Group
+2024-10-29 18:17:19,455 INFO: Enabling torque for group Pivot_Group
+2024-10-29 18:17:19,456 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-29 18:17:19,457 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-29 18:17:19,457 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-29 18:17:19,457 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-29 18:17:19,458 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:17:22,458 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:17:22,459 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:17:22,460 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:17:22,461 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:22,462 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:22,462 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:22,463 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:22,463 INFO: New gait 1 is now active.
+2024-10-29 18:17:23,502 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-29 18:17:23,513 INFO: Initialising Gait 2
+2024-10-29 18:17:23,513 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:17:23,518 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:17:23,519 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:17:23,519 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:17:23,521 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:17:23,522 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:23,523 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:23,524 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:23,524 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:23,525 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:17:23,529 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:17:23,623 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-29 18:17:26,565 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:17:26,566 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:17:26,568 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:17:26,570 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:26,571 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:26,572 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:26,572 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:26,573 INFO: New gait 2 is now active.
+2024-10-29 18:17:27,629 INFO: Triangle pressed. Preparing to change to next gait: 3
+2024-10-29 18:17:27,641 INFO: Initialsing Gait 3
+2024-10-29 18:17:27,642 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 160, 4: 200, 5: 160, 6: 160}
+2024-10-29 18:17:27,647 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:17:27,648 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:17:27,650 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:17:27,651 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:17:27,652 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:27,653 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:27,653 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:27,654 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:27,654 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:17:27,658 INFO: Initialised Gait 3, waiting for 3 seconds
+2024-10-29 18:17:27,751 INFO: Triangle pressed. Preparing to change to next gait: 3
+2024-10-29 18:17:30,698 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:17:30,699 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:17:30,701 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:17:30,702 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:30,703 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:30,704 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:17:30,705 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:30,705 INFO: New gait 3 is now active.
+2024-10-29 18:17:30,728 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:17:30,728 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:17:30,739 INFO: Gait 3 step executed at 10.00 RPM, wait for 5.36 seconds
+2024-10-29 18:17:36,167 INFO: Profile velocities set for group Wheg_Group: {1: 61.18, 2: 61.18, 3: 61.18, 4: 61.18, 5: 61.18, 6: 61.18}
+2024-10-29 18:17:36,168 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:17:36,179 INFO: Gait 3 step executed at 14.00 RPM, wait for 3.83 seconds
+2024-10-29 18:17:40,084 INFO: Profile velocities set for group Wheg_Group: {1: 59.123294067382815, 2: 59.123294067382815, 3: 59.123294067382815, 4: 59.123294067382815, 5: 59.123294067382815, 6: 59.123294067382815}
+2024-10-29 18:17:40,085 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:17:40,096 INFO: Gait 3 step executed at 13.53 RPM, wait for 3.97 seconds
+2024-10-29 18:17:44,153 INFO: Profile velocities set for group Wheg_Group: {1: 58.60918426513672, 2: 58.60918426513672, 3: 58.60918426513672, 4: 58.60918426513672, 5: 58.60918426513672, 6: 58.60918426513672}
+2024-10-29 18:17:44,154 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 0, 4: 320, 5: 40, 6: 0} degrees for group 'Wheg_Group'
+2024-10-29 18:17:44,165 INFO: Gait 3 step executed at 13.41 RPM, wait for 4.00 seconds
+2024-10-29 18:17:48,251 INFO: Profile velocities set for group Wheg_Group: {1: 68.8913803100586, 2: 68.8913803100586, 3: 68.8913803100586, 4: 68.8913803100586, 5: 68.8913803100586, 6: 68.8913803100586}
+2024-10-29 18:17:48,251 INFO: Incrementing motor positions by {1: 0, 2: 320, 3: 40, 4: 0, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:17:48,262 INFO: Gait 3 step executed at 15.76 RPM, wait for 3.41 seconds
+2024-10-29 18:17:51,752 INFO: Profile velocities set for group Wheg_Group: {1: 55.010415649414064, 2: 55.010415649414064, 3: 55.010415649414064, 4: 55.010415649414064, 5: 55.010415649414064, 6: 55.010415649414064}
+2024-10-29 18:17:51,753 INFO: Incrementing motor positions by {1: 40, 2: 0, 3: 320, 4: 40, 5: 0, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:17:51,763 INFO: Gait 3 step executed at 12.59 RPM, wait for 4.26 seconds
+2024-10-29 18:18:13,110 INFO: Triangle pressed. Preparing to change to next gait: 1
+2024-10-29 18:18:13,121 INFO: Initialising Gait 1
+2024-10-29 18:18:13,121 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:18:13,127 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:18:13,127 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:18:13,128 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:18:13,129 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:18:13,131 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:13,132 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:13,132 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:13,133 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:13,134 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:18:13,137 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:18:16,138 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:18:16,139 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:18:16,140 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:18:16,141 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:16,141 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:16,142 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:16,143 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:16,143 INFO: New gait 1 is now active.
+2024-10-29 18:18:16,713 INFO: R3 pressed. Turning mode requested
+2024-10-29 18:18:16,724 INFO: Initialising Turn Mode
+2024-10-29 18:18:16,724 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 160, 5: 200, 6: 160}
+2024-10-29 18:18:16,730 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:18:16,730 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:18:16,731 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:18:16,732 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:18:16,733 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:16,733 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:16,735 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:16,736 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:16,737 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:18:16,740 INFO: Initialised turn mode, waiting for 3 seconds
+2024-10-29 18:18:19,741 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:18:19,741 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:18:19,742 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:18:19,743 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:19,744 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:19,745 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:18:19,746 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:18:19,746 INFO: Turn mode activated.
+2024-10-29 18:18:19,764 WARNING: No motors found for group 'All_Whegs'
+2024-10-29 18:18:19,765 WARNING: Set direction of whegs to forward
+2024-10-29 18:18:19,766 INFO: Turn mode deactivating
+2024-10-29 18:18:19,773 INFO: Profile velocities set for group Wheg_Group: {1: 5.055479736328125, 2: 5.055479736328125, 3: 5.055479736328125, 4: 5.055479736328125, 5: 5.055479736328125, 6: 5.055479736328125}
+2024-10-29 18:18:19,774 INFO: Incrementing motor positions by 360 degrees for group 'Wheg_Group'
+2024-10-29 18:18:19,785 INFO: Gait 1 step executed at 1.16RPM, wait for 51.86 seconds
+2024-10-29 18:19:11,668 ERROR: Hardware error detected on motor 2: Error code 32
+2024-10-29 18:19:11,669 ERROR: Motor 2: Overload Error detected.
+2024-10-29 18:19:11,669 ERROR: Hardware error detected on motor 5: Error code 32
+2024-10-29 18:19:11,670 ERROR: Motor 5: Overload Error detected.
+2024-10-29 18:19:11,670 WARNING: Hardware error detected on motor 5. Rebooting motor and resetting gait...
+2024-10-29 18:19:11,672 INFO: Motor 5 successfully rebooted.
+2024-10-29 18:19:11,673 INFO: Motor 5 rebooted successfully.
+2024-10-29 18:19:11,673 INFO: Initialising Gait 1
+2024-10-29 18:19:11,674 INFO: Reboot requested, resetting torque all motors
+2024-10-29 18:19:11,737 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:11,773 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:11,809 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:11,845 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:11,845 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-29 18:19:11,969 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:12,005 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:12,020 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-29 18:19:12,180 INFO: Enabling torque for group All_Motors
+2024-10-29 18:19:12,181 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:19:12,183 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:19:12,185 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:19:12,192 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:19:12,193 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:19:12,193 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:12,194 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:12,195 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:12,196 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:12,196 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:12,198 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:12,199 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:19:12,202 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:19:15,238 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:19:15,239 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:15,243 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:15,244 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:15,245 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:15,246 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:15,246 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:15,247 INFO: New gait 1 is now active.
+2024-10-29 18:19:15,265 ERROR: Hardware error detected on motor 2: Error code 32
+2024-10-29 18:19:15,266 ERROR: Motor 2: Overload Error detected.
+2024-10-29 18:19:15,266 WARNING: Hardware error detected on motor 2. Rebooting motor and resetting gait...
+2024-10-29 18:19:15,268 INFO: Motor 2 successfully rebooted.
+2024-10-29 18:19:15,268 INFO: Motor 2 rebooted successfully.
+2024-10-29 18:19:15,268 INFO: Initialising Gait 1
+2024-10-29 18:19:15,269 INFO: Reboot requested, resetting torque all motors
+2024-10-29 18:19:15,324 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:15,360 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:15,396 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:15,431 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:15,432 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-29 18:19:15,558 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:15,594 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:19:15,609 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-29 18:19:15,769 INFO: Enabling torque for group All_Motors
+2024-10-29 18:19:15,771 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:19:15,773 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:19:15,775 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:19:15,781 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:19:15,782 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:19:15,782 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:15,783 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:15,784 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:15,785 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:15,785 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:15,786 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:15,786 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:19:15,790 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:19:17,611 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:19:17,731 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:19:18,791 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:19:18,791 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:18,792 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:18,793 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:18,794 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:18,794 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:18,795 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:18,795 INFO: New gait 1 is now active.
+2024-10-29 18:19:18,800 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:18,801 INFO: Drive mode set for group Wheg_Group with reverse_direction={1: 0, 2: 0, 3: 0, 4: 1, 5: 1, 6: 1}
+2024-10-29 18:19:18,802 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:18,803 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:18,803 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:18,804 INFO: Reversed the direction of all whegs, waiting for 3 seconds
+2024-10-29 18:19:21,804 INFO: Direction of whegs reversed.
+2024-10-29 18:19:21,883 INFO: Initialising Gait 1
+2024-10-29 18:19:21,884 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 18:19:21,889 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:19:21,890 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:19:21,890 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:21,891 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:21,892 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:21,893 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:21,893 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:21,894 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:21,895 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:19:21,898 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 18:19:24,899 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:19:24,900 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:24,901 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:24,902 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:24,903 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:24,903 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:24,904 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:24,904 INFO: New gait 1 is now active.
+2024-10-29 18:19:25,014 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 8.74, 3: 8.74, 4: 8.74, 5: 8.74, 6: 8.74}
+2024-10-29 18:19:25,014 INFO: Incrementing motor positions by 360 degrees for group 'Wheg_Group'
+2024-10-29 18:19:25,025 INFO: Gait 1 step executed at 2.00RPM, wait for 30.00 seconds
+2024-10-29 18:19:40,487 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-29 18:19:55,044 INFO: Initialising Gait 2
+2024-10-29 18:19:55,044 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:19:55,049 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:19:55,050 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:19:55,050 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:55,051 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:55,052 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:55,053 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:55,053 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:55,054 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:55,054 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:19:55,058 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:19:58,068 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:19:58,069 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:19:58,071 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:19:58,072 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:58,073 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:58,073 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:19:58,074 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:19:58,074 INFO: New gait 2 is now active.
+2024-10-29 18:19:58,097 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 69.92, 3: 8.74, 4: 69.92, 5: 8.74, 6: 69.92}
+2024-10-29 18:19:58,098 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:19:58,108 INFO: Gait 2 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-29 18:20:01,521 INFO: Profile velocities set for group Wheg_Group: {1: 104.88, 2: 13.11, 3: 104.88, 4: 13.11, 5: 104.88, 6: 13.11}
+2024-10-29 18:20:01,521 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:20:01,532 INFO: Gait 2 step executed at 3.00RPM, wait for 2.25 seconds
+2024-10-29 18:20:03,867 INFO: Profile velocities set for group Wheg_Group: {1: 17.13712677001953, 2: 137.09701416015625, 3: 17.13712677001953, 4: 137.09701416015625, 5: 17.13712677001953, 6: 137.09701416015625}
+2024-10-29 18:20:03,867 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:20:03,878 INFO: Gait 2 step executed at 3.92RPM, wait for 1.73 seconds
+2024-10-29 18:20:05,695 INFO: Profile velocities set for group Wheg_Group: {1: 139.83893310546875, 2: 17.479866638183594, 3: 139.83893310546875, 4: 17.479866638183594, 5: 139.83893310546875, 6: 17.479866638183594}
+2024-10-29 18:20:05,696 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:20:05,706 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:20:07,422 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:20:07,423 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:20:07,434 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:20:09,149 INFO: Profile velocities set for group Wheg_Group: {1: 139.83893310546875, 2: 17.479866638183594, 3: 139.83893310546875, 4: 17.479866638183594, 5: 139.83893310546875, 6: 17.479866638183594}
+2024-10-29 18:20:09,149 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:20:09,160 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:20:10,876 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 158.56640625, 2: 179.8359375, 3: 160.939453125, 4: 196.18359375, 5: 154.962890625, 6: 197.150390625}
+2024-10-29 18:20:10,876 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 18:20:10,983 INFO: Motors are moving. Continuing with the gait.
+2024-10-29 18:20:11,507 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:20:11,507 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:20:11,518 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:20:13,234 INFO: Profile velocities set for group Wheg_Group: {1: 138.19378173828125, 2: 17.274222717285156, 3: 138.19378173828125, 4: 17.274222717285156, 5: 138.19378173828125, 6: 17.274222717285156}
+2024-10-29 18:20:13,234 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:20:13,245 INFO: Gait 2 step executed at 3.95RPM, wait for 1.71 seconds
+2024-10-29 18:20:14,544 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:20:14,668 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:20:15,054 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:15,055 INFO: Drive mode set for group Wheg_Group with reverse_direction={1: 1, 2: 1, 3: 1, 4: 0, 5: 0, 6: 0}
+2024-10-29 18:20:15,057 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:15,058 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:15,058 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:15,059 INFO: Reversed the direction of all whegs, waiting for 3 seconds
+2024-10-29 18:20:18,059 INFO: Direction of whegs reversed.
+2024-10-29 18:20:18,139 INFO: Initialising Gait 2
+2024-10-29 18:20:18,140 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:20:18,145 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:20:18,146 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:20:18,146 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:18,147 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:18,148 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:18,148 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:18,149 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:18,150 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:18,151 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:20:18,154 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:20:21,198 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:20:21,198 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:21,200 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:21,201 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:21,202 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:21,203 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:21,203 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:21,204 INFO: New gait 2 is now active.
+2024-10-29 18:20:21,227 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 69.92, 3: 8.74, 4: 69.92, 5: 8.74, 6: 69.92}
+2024-10-29 18:20:21,228 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:20:21,238 INFO: Gait 2 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-29 18:20:24,665 INFO: Profile velocities set for group Wheg_Group: {1: 104.88, 2: 13.11, 3: 104.88, 4: 13.11, 5: 104.88, 6: 13.11}
+2024-10-29 18:20:24,665 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:20:24,676 INFO: Gait 2 step executed at 3.00RPM, wait for 2.25 seconds
+2024-10-29 18:20:26,983 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:20:26,983 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:20:26,994 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:20:28,710 INFO: Profile velocities set for group Wheg_Group: {1: 139.83893310546875, 2: 17.479866638183594, 3: 139.83893310546875, 4: 17.479866638183594, 5: 139.83893310546875, 6: 17.479866638183594}
+2024-10-29 18:20:28,710 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-29 18:20:28,721 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:20:30,436 INFO: Profile velocities set for group Wheg_Group: {1: 17.479866638183594, 2: 139.83893310546875, 3: 17.479866638183594, 4: 139.83893310546875, 5: 17.479866638183594, 6: 139.83893310546875}
+2024-10-29 18:20:30,437 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-29 18:20:30,447 INFO: Gait 2 step executed at 4.00RPM, wait for 1.69 seconds
+2024-10-29 18:20:31,997 INFO: Share pressed. Reversing the direction of the whegs
+2024-10-29 18:20:32,163 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:32,164 INFO: Drive mode set for group Wheg_Group with reverse_direction={1: 0, 2: 0, 3: 0, 4: 1, 5: 1, 6: 1}
+2024-10-29 18:20:32,165 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:32,165 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:32,166 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:32,166 INFO: Reversed the direction of all whegs, waiting for 3 seconds
+2024-10-29 18:20:35,167 INFO: Direction of whegs reversed.
+2024-10-29 18:20:35,285 INFO: Initialising Gait 2
+2024-10-29 18:20:35,286 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-29 18:20:35,292 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:20:35,293 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:20:35,293 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:35,295 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:35,296 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:35,296 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:35,297 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:35,298 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:35,299 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:20:35,302 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-29 18:20:36,659 INFO: R3 pressed. Turning mode requested
+2024-10-29 18:20:38,303 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:20:38,304 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:38,305 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:38,306 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:38,306 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:38,307 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:38,307 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:38,308 INFO: New gait 2 is now active.
+2024-10-29 18:20:38,308 INFO: Initialising Turn Mode
+2024-10-29 18:20:38,309 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 160, 5: 200, 6: 160}
+2024-10-29 18:20:38,314 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:20:38,314 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:20:38,315 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:38,316 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:38,316 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:38,317 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:38,317 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:38,318 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:38,319 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 18:20:38,322 INFO: Initialised turn mode, waiting for 3 seconds
+2024-10-29 18:20:41,324 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:20:41,324 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:41,325 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:41,326 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:41,327 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:41,327 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:41,329 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:41,329 INFO: Turn mode activated.
+2024-10-29 18:20:41,420 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 160, 5: 200, 6: 160}
+2024-10-29 18:20:41,425 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 18:20:41,426 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 18:20:41,426 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:41,427 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:41,428 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:41,429 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:41,429 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:41,430 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:41,936 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 69.92, 3: 8.74, 4: 69.92, 5: 8.74, 6: 69.92}
+2024-10-29 18:20:41,937 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: -320, 5: -40, 6: -320} degrees for group 'Wheg_Group'
+2024-10-29 18:20:41,942 WARNING: Motor 1 is not in Extended Position Control Mode. Setting mode now.
+2024-10-29 18:20:41,943 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 18:20:41,943 INFO: Disabling torque for group Wheg_Group
+2024-10-29 18:20:41,944 INFO: Enabling torque for group Wheg_Group
+2024-10-29 18:20:41,945 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:41,946 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:41,946 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 18:20:41,947 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 18:20:41,953 INFO: Gait 4 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-29 18:20:45,392 ERROR: Hardware error detected on motor 5: Error code 32
+2024-10-29 18:20:45,393 ERROR: Motor 5: Overload Error detected.
+2024-10-29 18:20:45,393 WARNING: Hardware error detected on motor 5. Rebooting motor and resetting gait...
+2024-10-29 18:20:45,395 INFO: Motor 5 successfully rebooted.
+2024-10-29 18:20:45,395 INFO: Motor 5 rebooted successfully.
+2024-10-29 18:20:45,431 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,467 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,504 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,540 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,576 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,612 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,648 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,684 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-29 18:20:45,684 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-29 18:20:55,916 INFO: Initiating safe shutdown...
+2024-10-29 18:20:55,917 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 18:20:55,917 INFO: Disabling torque for group All_Motors
+2024-10-29 18:20:55,918 INFO: Enabling torque for group All_Motors
+2024-10-29 18:20:55,919 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:20:55,920 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:20:55,920 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 18:20:55,921 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 18:20:55,922 INFO: Enabling torque for group All_Motors
+2024-10-29 18:20:55,923 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 18:20:55,923 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 18:20:55,924 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 18:20:55,925 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-10-29 18:20:55,960 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!

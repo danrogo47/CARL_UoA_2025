@@ -1,0 +1,319 @@
+2024-10-29 12:02:17,887 INFO: Initializing PS4Controller
+2024-10-29 12:02:18,146 INFO: Configuration loaded successfully
+2024-10-29 12:02:18,150 INFO: Port /dev/ttyACM0 opened successfully
+2024-10-29 12:02:18,160 INFO: Baudrate set to 1000000
+2024-10-29 12:02:18,161 INFO: Control table loaded successfully.
+2024-10-29 12:02:18,161 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-10-29 12:02:18,162 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-10-29 12:02:18,162 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-10-29 12:02:18,162 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-10-29 12:02:18,163 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-10-29 12:02:18,163 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-10-29 12:02:18,164 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-10-29 12:02:18,164 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-10-29 12:02:18,164 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-10-29 12:02:18,165 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-10-29 12:02:18,165 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-10-29 12:02:18,324 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:18,326 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-10-29 12:02:18,327 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:18,329 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:18,332 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:18,333 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:18,333 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:18,334 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-10-29 12:02:18,335 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:18,335 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:18,336 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:18,337 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:18,337 INFO: Set the right side whegs to reverse direction
+2024-10-29 12:02:18,338 INFO: Disabling torque for group Pivot_Group
+2024-10-29 12:02:18,339 INFO: Drive mode set for group Pivot_Group with reverse_direction=False
+2024-10-29 12:02:18,339 INFO: Enabling torque for group Pivot_Group
+2024-10-29 12:02:18,340 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-29 12:02:18,340 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-29 12:02:18,342 INFO: Position limits set for group Pivot_Group: min=45° (ticks=511), max=315° (ticks=3583)
+2024-10-29 12:02:18,342 INFO: Set position limits for the pivot motors
+2024-10-29 12:02:18,352 INFO: Initialising Gait 1
+2024-10-29 12:02:18,352 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 12:02:18,357 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 12:02:18,361 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 12:02:18,361 ERROR: Error controlling pivots: 'dpad_down'
+2024-10-29 12:02:19,634 INFO: Initiating safe shutdown...
+2024-10-29 12:02:19,634 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 12:02:19,634 INFO: Disabling torque for group All_Motors
+2024-10-29 12:02:19,635 INFO: Enabling torque for group All_Motors
+2024-10-29 12:02:19,636 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:19,637 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:19,637 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 12:02:19,638 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 12:02:19,639 INFO: Enabling torque for group All_Motors
+2024-10-29 12:02:19,639 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:19,640 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:19,640 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 12:02:19,641 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-10-29 12:02:19,649 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 12:02:19,649 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-10-29 12:02:19,655 INFO: Disabling torque for group All_Motors
+2024-10-29 12:02:19,661 INFO: Enabling torque for group All_Motors
+2024-10-29 12:02:19,664 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:19,666 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:19,667 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:19,668 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:19,669 INFO: Closing PS4Controller and quitting pygame
+2024-10-29 12:02:19,759 INFO: Port closed successfully.
+2024-10-29 12:02:19,760 INFO: Shutdown complete.
+2024-10-29 12:02:20,297 INFO: Initializing PS4Controller
+2024-10-29 12:02:20,573 INFO: Configuration loaded successfully
+2024-10-29 12:02:20,576 INFO: Port /dev/ttyACM0 opened successfully
+2024-10-29 12:02:20,586 INFO: Baudrate set to 1000000
+2024-10-29 12:02:20,587 INFO: Control table loaded successfully.
+2024-10-29 12:02:20,587 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-10-29 12:02:20,587 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-10-29 12:02:20,587 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-10-29 12:02:20,587 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-10-29 12:02:20,587 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-10-29 12:02:20,588 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-10-29 12:02:20,588 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-10-29 12:02:20,588 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-10-29 12:02:20,588 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-10-29 12:02:20,588 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-10-29 12:02:20,588 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-10-29 12:02:20,602 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:20,605 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-10-29 12:02:20,608 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:20,609 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:20,610 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:20,611 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:20,611 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:20,612 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-10-29 12:02:20,613 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:20,614 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:20,614 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:20,615 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:20,615 INFO: Set the right side whegs to reverse direction
+2024-10-29 12:02:20,616 INFO: Disabling torque for group Pivot_Group
+2024-10-29 12:02:20,617 INFO: Drive mode set for group Pivot_Group with reverse_direction=False
+2024-10-29 12:02:20,617 INFO: Enabling torque for group Pivot_Group
+2024-10-29 12:02:20,619 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-29 12:02:20,621 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-29 12:02:20,622 INFO: Position limits set for group Pivot_Group: min=45° (ticks=511), max=315° (ticks=3583)
+2024-10-29 12:02:20,623 INFO: Set position limits for the pivot motors
+2024-10-29 12:02:20,631 INFO: Initialising Gait 1
+2024-10-29 12:02:20,632 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-29 12:02:20,637 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 12:02:20,641 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-29 12:02:20,642 ERROR: Error controlling pivots: 'dpad_down'
+2024-10-29 12:02:22,289 INFO: R3 pressed. Turning mode requested
+2024-10-29 12:02:23,643 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 12:02:23,643 INFO: Disabling torque for group Wheg_Group
+2024-10-29 12:02:23,644 INFO: Enabling torque for group Wheg_Group
+2024-10-29 12:02:23,645 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:23,646 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:23,646 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:23,647 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:23,648 INFO: New gait 1 is now active.
+2024-10-29 12:02:23,648 INFO: Initialising Turn Mode
+2024-10-29 12:02:23,648 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 165, 2: 195, 3: 165, 4: 195, 5: 165, 6: 195}
+2024-10-29 12:02:23,654 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 12:02:23,654 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 12:02:23,655 INFO: Disabling torque for group Wheg_Group
+2024-10-29 12:02:23,656 INFO: Enabling torque for group Wheg_Group
+2024-10-29 12:02:23,656 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:23,657 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:23,658 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:23,659 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:23,660 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-29 12:02:23,663 INFO: Initialised turn mode, waiting for 3 seconds
+2024-10-29 12:02:26,699 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 12:02:26,701 INFO: Disabling torque for group Wheg_Group
+2024-10-29 12:02:26,706 INFO: Enabling torque for group Wheg_Group
+2024-10-29 12:02:26,707 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:26,709 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:26,710 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:26,711 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:26,712 INFO: Turn mode activated.
+2024-10-29 12:02:26,735 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:26,736 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:26,737 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:26,738 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:26,739 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:26,740 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:26,741 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:27,742 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:27,744 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:27,744 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:27,745 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:27,745 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:27,746 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:27,747 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:28,759 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:28,760 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:28,761 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:28,761 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:28,762 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:28,762 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:28,763 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:29,764 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:29,765 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:29,766 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:29,766 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:29,767 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:29,768 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:29,768 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:30,781 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:30,781 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:30,782 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:30,783 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:30,783 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:30,784 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:30,784 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:31,785 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:31,787 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:31,788 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:31,790 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:31,791 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:31,793 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:31,794 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:32,861 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:32,863 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:32,865 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:32,868 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:32,870 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:32,871 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:32,872 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:33,874 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:33,875 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:33,875 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:33,876 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:33,876 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:33,877 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:33,878 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:34,890 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:34,891 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:34,892 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:34,892 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:34,893 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:34,893 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:34,895 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:35,896 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:35,897 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:35,897 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:35,898 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:35,899 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:35,900 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:35,900 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:36,906 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 195.1171875, 2: 166.201171875, 3: 195.1171875, 4: 166.2890625, 5: 195.205078125, 6: 165.41015625}
+2024-10-29 12:02:36,907 WARNING: Waiting for 1 second before checking for movement
+2024-10-29 12:02:37,040 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-29 12:02:37,040 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 165, 2: 195, 3: 165, 4: 195, 5: 165, 6: 195}
+2024-10-29 12:02:37,045 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 12:02:37,046 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-29 12:02:37,047 INFO: Disabling torque for group Wheg_Group
+2024-10-29 12:02:37,048 INFO: Enabling torque for group Wheg_Group
+2024-10-29 12:02:37,049 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:37,050 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:37,051 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:37,051 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:40,064 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-29 12:02:40,068 INFO: Disabling torque for group Wheg_Group
+2024-10-29 12:02:40,072 INFO: Enabling torque for group Wheg_Group
+2024-10-29 12:02:40,074 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:40,075 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:40,076 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-29 12:02:40,077 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-29 12:02:40,078 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 96.14, 3: 8.74, 4: 96.14, 5: 8.74, 6: 96.14}
+2024-10-29 12:02:40,079 INFO: Incrementing motor positions by {1: 30, 2: 330, 3: 30, 4: 330, 5: 30, 6: 330} degrees for group 'Wheg_Group'
+2024-10-29 12:02:40,090 INFO: Gait 4 step executed at 2.00RPM, wait for 2.52 seconds
+2024-10-29 12:02:42,641 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:42,641 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:42,643 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:42,643 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:42,644 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:42,645 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:42,646 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:43,647 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:43,648 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:43,648 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:43,649 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:43,650 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:43,651 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:43,651 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:44,658 INFO: Profile velocities set for group Wheg_Group: {1: 144.20853302001953, 2: 13.109866638183593, 3: 144.20853302001953, 4: 13.109866638183593, 5: 144.20853302001953, 6: 13.109866638183593}
+2024-10-29 12:02:44,658 INFO: Incrementing motor positions by {1: 330, 2: 30, 3: 330, 4: 30, 5: 330, 6: 30} degrees for group 'Wheg_Group'
+2024-10-29 12:02:44,669 INFO: Gait 4 step executed at 3.00RPM, wait for 1.69 seconds
+2024-10-29 12:02:46,380 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:46,381 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:46,383 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:46,383 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:46,385 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:46,386 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:46,387 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:47,388 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:47,389 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:47,390 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:47,391 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:47,391 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:47,392 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:47,393 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:48,399 INFO: Profile velocities set for group Wheg_Group: {1: 13.109866638183593, 2: 144.20853302001953, 3: 13.109866638183593, 4: 144.20853302001953, 5: 13.109866638183593, 6: 144.20853302001953}
+2024-10-29 12:02:48,400 INFO: Incrementing motor positions by {1: 30, 2: 330, 3: 30, 4: 330, 5: 30, 6: 330} degrees for group 'Wheg_Group'
+2024-10-29 12:02:48,410 INFO: Gait 4 step executed at 3.00RPM, wait for 1.69 seconds
+2024-10-29 12:02:50,116 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:50,118 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:50,119 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:50,119 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:50,120 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:50,121 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:50,122 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:51,122 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:51,123 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:51,124 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:51,125 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:51,125 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:51,126 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:51,127 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:52,134 INFO: Profile velocities set for group Wheg_Group: {1: 144.20853302001953, 2: 13.109866638183593, 3: 144.20853302001953, 4: 13.109866638183593, 5: 144.20853302001953, 6: 13.109866638183593}
+2024-10-29 12:02:52,135 INFO: Incrementing motor positions by {1: 330, 2: 30, 3: 330, 4: 30, 5: 330, 6: 30} degrees for group 'Wheg_Group'
+2024-10-29 12:02:52,147 INFO: Gait 4 step executed at 3.00RPM, wait for 1.69 seconds
+2024-10-29 12:02:53,853 WARNING: Direction of whegs is not set correctly. Setting the direction to turn right.
+2024-10-29 12:02:53,854 INFO: Disabling torque for group Left_Whegs
+2024-10-29 12:02:53,854 INFO: Drive mode set for group Left_Whegs with reverse_direction=True
+2024-10-29 12:02:53,855 INFO: Enabling torque for group Left_Whegs
+2024-10-29 12:02:53,856 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-29 12:02:53,856 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:53,857 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-29 12:02:54,858 INFO: Disabling torque for group Right_Whegs
+2024-10-29 12:02:54,859 INFO: Drive mode set for group Right_Whegs with reverse_direction=False
+2024-10-29 12:02:54,860 INFO: Enabling torque for group Right_Whegs
+2024-10-29 12:02:54,861 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-29 12:02:54,861 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-29 12:02:54,862 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-29 12:02:54,862 WARNING: Direction of whegs set to turn left
+2024-10-29 12:02:55,869 INFO: Profile velocities set for group Wheg_Group: {1: 12.767126770019532, 2: 140.43839447021486, 3: 12.767126770019532, 4: 140.43839447021486, 5: 12.767126770019532, 6: 140.43839447021486}
+2024-10-29 12:02:55,869 INFO: Incrementing motor positions by {1: 30, 2: 330, 3: 30, 4: 330, 5: 30, 6: 330} degrees for group 'Wheg_Group'
+2024-10-29 12:02:55,880 INFO: Gait 4 step executed at 2.92RPM, wait for 1.74 seconds
+2024-10-29 12:02:55,911 INFO: Initiating safe shutdown...
+2024-10-29 12:02:55,911 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-29 12:02:55,912 INFO: Disabling torque for group All_Motors
+2024-10-29 12:02:55,913 INFO: Enabling torque for group All_Motors
+2024-10-29 12:02:55,913 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:55,914 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:55,915 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-29 12:02:55,915 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-29 12:02:55,916 INFO: Enabling torque for group All_Motors
+2024-10-29 12:02:55,917 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:55,918 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:55,919 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-29 12:02:55,919 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-10-29 12:02:55,927 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-29 12:02:55,927 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-10-29 12:02:55,928 INFO: Disabling torque for group All_Motors
+2024-10-29 12:02:55,929 INFO: Enabling torque for group All_Motors
+2024-10-29 12:02:55,929 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:55,930 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:55,930 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-29 12:02:55,931 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-29 12:02:55,932 INFO: Closing PS4Controller and quitting pygame
+2024-10-29 12:02:56,027 INFO: Port closed successfully.
+2024-10-29 12:02:56,028 INFO: Shutdown complete.

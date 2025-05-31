@@ -1,0 +1,1733 @@
+2024-09-27 17:54:41,642 INFO: Initializing PS4Controller
+2024-09-27 17:54:41,850 DEBUG: Pygame initialized
+2024-09-27 17:54:41,851 DEBUG: Joystick initialized
+2024-09-27 17:54:41,851 DEBUG: Number of buttons on the controller: 13
+2024-09-27 17:54:41,891 INFO: Configuration loaded successfully
+2024-09-27 17:54:41,894 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-27 17:54:41,904 INFO: Baudrate set to 1000000
+2024-09-27 17:54:41,905 INFO: Control table loaded successfully.
+2024-09-27 17:54:41,905 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-27 17:54:41,905 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-27 17:54:41,906 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-27 17:54:41,906 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-27 17:54:41,906 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-27 17:54:41,906 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-27 17:54:41,907 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-27 17:54:41,907 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-27 17:54:41,907 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-27 17:54:41,907 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-27 17:54:41,907 INFO: Initialized PS4 controller, Dynamixel, and Robot State
+2024-09-27 17:54:41,907 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-27 17:54:41,907 INFO: Disabling torque for group Right_Whegs
+2024-09-27 17:54:41,908 DEBUG: Torque disabled for group Right_Whegs
+2024-09-27 17:54:41,908 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-27 17:54:41,908 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-27 17:54:41,908 INFO: Enabling torque for group Right_Whegs
+2024-09-27 17:54:41,909 DEBUG: Torque enabled for group Right_Whegs
+2024-09-27 17:54:41,909 DEBUG: Reading back drive mode for verification...
+2024-09-27 17:54:41,909 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-27 17:54:41,909 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-27 17:54:41,909 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-27 17:54:41,909 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-27 17:54:41,912 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-27 17:54:41,912 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-27 17:54:41,912 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-27 17:54:41,912 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-27 17:54:41,912 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-27 17:54:41,913 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-27 17:54:41,913 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-27 17:54:41,913 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-27 17:54:41,913 INFO: Disabling torque for group Left_Whegs
+2024-09-27 17:54:41,913 DEBUG: Torque disabled for group Left_Whegs
+2024-09-27 17:54:41,914 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-27 17:54:41,914 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-27 17:54:41,914 INFO: Enabling torque for group Left_Whegs
+2024-09-27 17:54:41,914 DEBUG: Torque enabled for group Left_Whegs
+2024-09-27 17:54:41,914 DEBUG: Reading back drive mode for verification...
+2024-09-27 17:54:41,915 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-27 17:54:41,915 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-27 17:54:41,915 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-27 17:54:41,915 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-27 17:54:41,918 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-27 17:54:41,918 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-27 17:54:41,918 INFO: Motor 1 drive mode correctly set to normal
+2024-09-27 17:54:41,918 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-27 17:54:41,919 INFO: Motor 2 drive mode correctly set to normal
+2024-09-27 17:54:41,919 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-27 17:54:41,919 INFO: Motor 3 drive mode correctly set to normal
+2024-09-27 17:54:41,919 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:41,919 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,919 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,919 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,919 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,920 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,920 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,920 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,920 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:41,927 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:41,927 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:41,928 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:41,928 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-27 17:54:41,928 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:41,928 INFO: Switching to new gait: 0
+2024-09-27 17:54:41,928 INFO: Initialising Gait 1
+2024-09-27 17:54:41,928 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-09-27 17:54:41,928 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:41,928 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,929 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,929 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,929 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,929 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,929 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,934 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:41,934 DEBUG: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-27 17:54:41,934 DEBUG: Target positions set for group 'Wheg_Group': 180
+2024-09-27 17:54:41,934 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-27 17:54:41,935 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:41,935 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,935 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,938 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:41,938 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-27 17:54:41,938 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-27 17:54:41,938 DEBUG: Executing Gait 1
+2024-09-27 17:54:41,938 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:41,939 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:41,939 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,939 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:41,942 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:41,942 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:41,942 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:41,942 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:41,942 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:41,942 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:41,943 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,043 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,044 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,044 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,044 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,044 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,044 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,044 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,044 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,044 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,052 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,052 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,052 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,052 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-27 17:54:42,052 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,052 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,052 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,053 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,053 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,053 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,056 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,056 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,056 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,056 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,056 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,056 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,057 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,157 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,157 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,157 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,157 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,158 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,158 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,158 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,158 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,158 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,165 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,165 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,166 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,166 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,166 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,166 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,166 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,166 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,166 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,166 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,169 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,169 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,169 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,169 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,170 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,170 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,170 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,271 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,271 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,271 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,271 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,271 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,271 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,271 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,271 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,271 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,279 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,279 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,279 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,279 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,279 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,279 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,280 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,280 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,280 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,280 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,283 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,283 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,283 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,283 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,283 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,283 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,284 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,384 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,384 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,384 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,384 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,384 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,384 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,385 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,385 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,385 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,392 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,392 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,392 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,393 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,393 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,393 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,393 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,393 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,393 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,393 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,396 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,396 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,396 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,396 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,397 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,397 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,397 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,497 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,497 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,497 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,497 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,498 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,498 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,498 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,498 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,498 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,505 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,505 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,506 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,506 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,506 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,506 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,506 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,506 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,506 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,506 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,509 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,509 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,509 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,510 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,510 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,510 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,510 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,610 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,611 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,611 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,611 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,611 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,611 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,611 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,611 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,611 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,619 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,619 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,619 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,619 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,619 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,619 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,619 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,619 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,620 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,620 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,623 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,623 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,623 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,623 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,623 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,623 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,623 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,724 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,724 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,724 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,724 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,724 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,724 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,724 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,724 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,724 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,732 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,732 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,732 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,732 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,733 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,733 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,733 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,733 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,733 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,733 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,736 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,736 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,736 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,736 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,736 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,736 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,737 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,837 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,837 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,837 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,837 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,837 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,838 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,838 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,838 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,838 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,845 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,846 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,846 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,846 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,846 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,846 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,846 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,846 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,846 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,846 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,849 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,849 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,849 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,849 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,850 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,850 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,850 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,951 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:42,951 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,951 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,951 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,951 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,951 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,951 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,951 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,951 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:42,959 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:42,959 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:42,959 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:42,959 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:42,959 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:42,959 DEBUG: Executing Gait 1
+2024-09-27 17:54:42,959 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:42,960 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:42,960 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,960 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:42,963 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:42,963 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:42,963 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:42,963 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,963 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:42,964 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:42,964 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,064 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,065 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,065 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,065 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,065 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,065 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,065 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,065 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,065 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,073 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,073 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,073 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,073 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,073 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,073 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,073 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,074 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,074 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,074 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,077 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,077 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,077 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,077 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,077 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,077 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,077 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,178 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,178 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,178 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,178 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,178 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,178 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,178 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,178 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,179 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,186 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,186 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,186 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,186 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,186 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,187 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,187 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,187 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,187 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,187 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,190 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,190 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,190 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,190 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,191 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,191 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,191 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,291 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,292 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,292 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,292 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,292 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,292 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,292 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,292 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,292 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,299 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,300 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,300 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,300 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,300 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,300 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,300 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,300 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,300 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,300 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,303 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,304 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,304 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,304 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,304 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,304 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,304 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,405 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,405 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,405 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,405 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,405 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,405 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,405 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,405 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,405 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,413 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,413 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,413 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,413 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,413 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,413 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,413 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,414 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,414 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,414 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,417 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,417 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,417 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,417 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,417 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,417 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,418 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,518 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,518 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,518 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,518 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,518 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,518 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,518 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,519 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,519 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,526 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,527 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,527 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,527 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,527 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,527 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,527 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,527 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,527 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,527 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,530 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,530 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,530 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,531 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,531 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,531 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,531 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,631 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,632 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,632 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,632 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,632 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,632 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,632 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,632 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,632 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,639 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,640 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,640 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,640 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,640 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,640 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,640 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,640 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,640 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,640 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,643 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,643 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,643 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,644 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,644 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,644 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,644 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,745 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,745 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,745 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,745 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,745 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,745 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,745 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,745 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,745 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,753 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,753 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,753 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,753 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,753 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,753 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,753 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,754 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,754 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,754 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,757 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,757 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,757 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,757 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,757 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,757 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,758 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,858 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,858 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,858 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,858 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,858 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,858 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,859 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,859 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,859 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,866 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,866 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,866 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,867 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,867 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,867 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,867 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,867 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,867 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,867 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,870 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,870 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,870 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,870 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,871 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,871 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,871 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,971 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:43,971 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,971 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,972 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,972 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,972 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,972 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,972 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,972 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:43,979 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:43,980 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:43,980 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:43,980 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:43,980 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:43,980 DEBUG: Executing Gait 1
+2024-09-27 17:54:43,980 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:43,980 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:43,980 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,980 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:43,983 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:43,983 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:43,983 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:43,983 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,984 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:43,984 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:43,984 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,084 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:44,084 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,084 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,085 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,085 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,085 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,085 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,085 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,085 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,092 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:44,093 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:44,093 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:44,093 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:44,093 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:44,093 DEBUG: Executing Gait 1
+2024-09-27 17:54:44,093 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:44,093 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:44,093 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,093 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,096 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:44,096 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:44,096 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:44,097 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,097 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,097 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,097 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,197 DEBUG: Button triangle (index 2) pressed.
+2024-09-27 17:54:44,198 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:44,198 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,198 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,198 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,198 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,198 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,198 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,198 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,198 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,206 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:44,206 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:44,206 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:44,206 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:44,206 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:44,206 INFO: Switching to new gait: 1
+2024-09-27 17:54:44,206 INFO: Initialising Gait 2
+2024-09-27 17:54:44,206 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-27 17:54:44,206 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:44,206 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,207 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,207 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,207 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,207 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,207 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,212 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:44,212 DEBUG: Setting motor 1 to 160° (1820 ticks)
+2024-09-27 17:54:44,212 DEBUG: Setting motor 2 to 200° (2275 ticks)
+2024-09-27 17:54:44,212 DEBUG: Setting motor 3 to 160° (1820 ticks)
+2024-09-27 17:54:44,212 DEBUG: Setting motor 4 to 200° (2275 ticks)
+2024-09-27 17:54:44,212 DEBUG: Setting motor 5 to 160° (1820 ticks)
+2024-09-27 17:54:44,212 DEBUG: Setting motor 6 to 200° (2275 ticks)
+2024-09-27 17:54:44,212 DEBUG: Setting individual positions for motors in group 'Wheg_Group': {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-27 17:54:44,213 DEBUG: Target positions set for group 'Wheg_Group': {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-27 17:54:44,213 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-27 17:54:44,213 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:44,213 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,213 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,216 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:44,216 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-27 17:54:44,216 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-27 17:54:44,217 DEBUG: Executing Gait 2
+2024-09-27 17:54:44,217 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:44,217 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:44,217 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,217 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,220 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:44,220 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:44,220 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:44,220 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,221 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,221 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,221 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,321 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:44,321 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,321 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,321 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,321 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,322 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,322 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,322 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,322 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,329 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:44,329 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:44,330 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:44,330 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-27 17:54:44,330 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:44,330 DEBUG: Executing Gait 2
+2024-09-27 17:54:44,330 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:44,330 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:44,330 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,330 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,333 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:44,333 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:44,333 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:44,334 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,334 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,334 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,334 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,434 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:44,434 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,435 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,435 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,435 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,435 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,435 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,435 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,435 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,442 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:44,443 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:44,443 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:44,443 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:44,443 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:44,443 DEBUG: Executing Gait 2
+2024-09-27 17:54:44,443 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:44,443 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:44,443 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,443 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,446 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:44,446 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:44,446 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:44,446 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,447 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,447 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,447 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,547 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:44,547 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,548 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,548 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,548 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,548 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,548 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,548 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,548 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,555 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:44,556 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:44,556 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:44,556 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:44,556 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:44,556 DEBUG: Executing Gait 2
+2024-09-27 17:54:44,556 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:44,556 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:44,556 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,556 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,559 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:44,559 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:44,560 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:44,560 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,560 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,560 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,560 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,661 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:44,661 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,661 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,661 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,661 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,661 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,661 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,661 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,661 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,669 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:44,669 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:44,669 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:44,669 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-27 17:54:44,669 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-27 17:54:44,669 DEBUG: Executing Gait 2
+2024-09-27 17:54:44,669 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:44,669 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:44,669 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,669 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,672 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:44,673 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:44,673 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:44,673 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,673 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:44,673 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,673 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:44,773 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:44,774 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:44,774 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,774 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,774 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,774 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,774 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,774 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,774 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,774 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,782 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:44,782 DEBUG: Trigger inputs: L2=-1.0, R2=-0.694122314453125
+2024-09-27 17:54:44,782 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:44,782 DEBUG: Adjusting wheg speed: trigger_value=-0.694122314453125, current_rpm=0.0
+2024-09-27 17:54:44,782 DEBUG: Adjusted wheg speed: target_rpm=4.588165283203125, current_rpm=2.5
+2024-09-27 17:54:44,782 DEBUG: Executing Gait 2
+2024-09-27 17:54:44,782 DEBUG: Odd gait cycle
+2024-09-27 17:54:44,782 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:44,783 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:44,783 INFO: Profile velocities set for group Wheg_Group: {1: 28, 2: 227, 3: 28, 4: 227, 5: 28, 6: 227}
+2024-09-27 17:54:44,783 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:44,784 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:44,784 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:44,784 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,784 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,784 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,784 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,784 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,784 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:44,789 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:44,789 WARNING: Motor 1 is not in Extended Position Control Mode. Setting mode now.
+2024-09-27 17:54:44,789 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-27 17:54:44,789 INFO: Disabling torque for group Wheg_Group
+2024-09-27 17:54:44,790 DEBUG: Torque disabled for group Wheg_Group
+2024-09-27 17:54:44,790 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-27 17:54:44,790 INFO: Enabling torque for group Wheg_Group
+2024-09-27 17:54:44,790 DEBUG: Torque enabled for group Wheg_Group
+2024-09-27 17:54:44,790 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-27 17:54:44,790 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:44,791 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:44,791 INFO: Profile velocities set for group Wheg_Group: {1: 4550, 2: 4550, 3: 4550, 4: 4550, 5: 4550, 6: 4550}
+2024-09-27 17:54:44,791 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:44,791 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:44,791 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,791 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,791 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,792 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,792 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,792 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:44,797 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:44,797 DEBUG: Motor 1: Current Position: 160.00°, New Position: 200.00°
+2024-09-27 17:54:44,797 DEBUG: Motor 2: Current Position: 199.74°, New Position: 519.74°
+2024-09-27 17:54:44,797 DEBUG: Motor 3: Current Position: 160.00°, New Position: 200.00°
+2024-09-27 17:54:44,797 DEBUG: Motor 4: Current Position: 199.91°, New Position: 519.91°
+2024-09-27 17:54:44,797 DEBUG: Motor 5: Current Position: 159.82°, New Position: 199.82°
+2024-09-27 17:54:44,797 DEBUG: Motor 6: Current Position: 199.82°, New Position: 519.82°
+2024-09-27 17:54:44,798 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:44,798 INFO: Waiting for rotation 2.6666666666666665 seconds at 2.5 RPM
+2024-09-27 17:54:47,465 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:47,465 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:47,466 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,466 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,470 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:47,470 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:47,470 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:47,470 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:47,471 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:47,471 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:47,472 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:47,472 INFO: Front pivot angle: 180
+2024-09-27 17:54:47,473 INFO: Rear pivot angle: 180
+2024-09-27 17:54:47,473 INFO: Wheg RPMs: {'LR_WHEG': 0, 'LM_WHEG': 0, 'LF_WHEG': 0, 'RR_WHEG': 0, 'RM_WHEG': 0, 'RF_WHEG': 0}
+2024-09-27 17:54:47,473 INFO: Motor Positions: {1: {'present_position': 1820}, 2: {'present_position': 2272}, 3: {'present_position': 1820}, 4: {'present_position': 2274}, 5: {'present_position': 1821}, 6: {'present_position': 2273}, 7: {'present_position': 2052}, 8: {'present_position': 2044}}
+2024-09-27 17:54:47,473 INFO: L2 Trigger: -1.0, R2 Trigger: -0.694122314453125
+2024-09-27 17:54:47,474 INFO: Button States: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': True, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-27 17:54:47,474 INFO: D-Pad Input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:47,575 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:47,575 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:47,575 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,575 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,576 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,576 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,576 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,576 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,576 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,576 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,584 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:47,585 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:47,585 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:47,585 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=2.5
+2024-09-27 17:54:47,585 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=5.0
+2024-09-27 17:54:47,585 DEBUG: Executing Gait 2
+2024-09-27 17:54:47,585 DEBUG: Even gait cycle
+2024-09-27 17:54:47,586 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:47,586 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:47,587 INFO: Profile velocities set for group Wheg_Group: {1: 455, 2: 56, 3: 455, 4: 56, 5: 455, 6: 56}
+2024-09-27 17:54:47,587 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:47,587 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:47,588 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:47,588 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,588 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,588 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,588 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,588 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,589 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:47,594 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:47,594 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:47,595 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:47,595 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,595 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,595 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,595 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,596 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,596 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:47,601 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:47,601 DEBUG: Motor 1: Current Position: 199.82°, New Position: 519.82°
+2024-09-27 17:54:47,602 DEBUG: Motor 2: Current Position: 519.74°, New Position: 559.74°
+2024-09-27 17:54:47,602 DEBUG: Motor 3: Current Position: 199.82°, New Position: 519.82°
+2024-09-27 17:54:47,602 DEBUG: Motor 4: Current Position: 519.82°, New Position: 559.82°
+2024-09-27 17:54:47,602 DEBUG: Motor 5: Current Position: 199.47°, New Position: 519.47°
+2024-09-27 17:54:47,602 DEBUG: Motor 6: Current Position: 519.74°, New Position: 559.74°
+2024-09-27 17:54:47,603 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:47,603 INFO: Waiting for rotation 1.3333333333333333 seconds at 5.0 RPM
+2024-09-27 17:54:48,937 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:48,938 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:48,938 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:48,938 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:48,941 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:48,942 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:48,942 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:48,942 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:48,943 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:48,943 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:48,943 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:49,044 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:49,044 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:49,044 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,045 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,045 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,045 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,045 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,045 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,045 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,046 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,053 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:49,054 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:49,054 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:49,054 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=5.0
+2024-09-27 17:54:49,054 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=7.5
+2024-09-27 17:54:49,055 DEBUG: Executing Gait 2
+2024-09-27 17:54:49,055 DEBUG: Odd gait cycle
+2024-09-27 17:54:49,055 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:49,055 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:49,056 INFO: Profile velocities set for group Wheg_Group: {1: 85, 2: 682, 3: 85, 4: 682, 5: 85, 6: 682}
+2024-09-27 17:54:49,057 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:49,057 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:49,058 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:49,058 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,058 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,058 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,058 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,059 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,059 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,064 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:49,064 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:49,065 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:49,065 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,065 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,065 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,065 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,066 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,066 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:49,071 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:49,072 DEBUG: Motor 1: Current Position: 519.82°, New Position: 559.82°
+2024-09-27 17:54:49,072 DEBUG: Motor 2: Current Position: 559.03°, New Position: 879.03°
+2024-09-27 17:54:49,072 DEBUG: Motor 3: Current Position: 519.74°, New Position: 559.74°
+2024-09-27 17:54:49,072 DEBUG: Motor 4: Current Position: 559.21°, New Position: 879.21°
+2024-09-27 17:54:49,072 DEBUG: Motor 5: Current Position: 519.47°, New Position: 559.47°
+2024-09-27 17:54:49,072 DEBUG: Motor 6: Current Position: 559.03°, New Position: 879.03°
+2024-09-27 17:54:49,073 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:49,074 INFO: Waiting for rotation 0.8888888888888888 seconds at 7.5 RPM
+2024-09-27 17:54:49,963 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:49,964 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:49,964 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,964 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:49,967 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:49,968 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:49,968 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:49,969 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:49,969 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:49,969 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:49,970 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:50,070 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:50,071 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:50,071 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,071 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,071 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,071 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,072 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,072 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,072 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,072 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,080 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:50,081 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:50,081 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:50,081 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=7.5
+2024-09-27 17:54:50,081 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=10.0
+2024-09-27 17:54:50,081 DEBUG: Executing Gait 2
+2024-09-27 17:54:50,082 DEBUG: Even gait cycle
+2024-09-27 17:54:50,082 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:50,082 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:50,083 INFO: Profile velocities set for group Wheg_Group: {1: 910, 2: 113, 3: 910, 4: 113, 5: 910, 6: 113}
+2024-09-27 17:54:50,083 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:50,083 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:50,084 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:50,084 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,084 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,084 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,085 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,085 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,085 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,090 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:50,091 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:50,091 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:50,091 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,091 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,092 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,092 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,092 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,092 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,098 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:50,098 DEBUG: Motor 1: Current Position: 559.12°, New Position: 879.12°
+2024-09-27 17:54:50,098 DEBUG: Motor 2: Current Position: 878.95°, New Position: 918.95°
+2024-09-27 17:54:50,098 DEBUG: Motor 3: Current Position: 559.12°, New Position: 879.12°
+2024-09-27 17:54:50,098 DEBUG: Motor 4: Current Position: 879.21°, New Position: 919.21°
+2024-09-27 17:54:50,099 DEBUG: Motor 5: Current Position: 558.86°, New Position: 878.86°
+2024-09-27 17:54:50,099 DEBUG: Motor 6: Current Position: 878.86°, New Position: 918.86°
+2024-09-27 17:54:50,100 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:50,100 INFO: Waiting for rotation 0.6666666666666666 seconds at 10.0 RPM
+2024-09-27 17:54:50,767 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:50,768 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:50,768 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,768 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,771 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:50,772 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:50,772 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:50,772 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:50,773 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:50,773 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:50,773 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:50,874 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:50,874 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:50,874 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,874 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,875 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,875 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,875 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,875 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,876 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,876 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,884 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:50,884 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:50,884 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:50,885 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=10.0
+2024-09-27 17:54:50,885 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=12.5
+2024-09-27 17:54:50,885 DEBUG: Executing Gait 2
+2024-09-27 17:54:50,885 DEBUG: Odd gait cycle
+2024-09-27 17:54:50,885 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:50,886 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:50,887 INFO: Profile velocities set for group Wheg_Group: {1: 142, 2: 1137, 3: 142, 4: 1137, 5: 142, 6: 1137}
+2024-09-27 17:54:50,887 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:50,887 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:50,888 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:50,888 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,888 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,888 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,888 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,889 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,889 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:50,894 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:50,894 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:50,895 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:50,895 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,895 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,895 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,895 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,896 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,896 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:50,901 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:50,902 DEBUG: Motor 1: Current Position: 879.03°, New Position: 919.03°
+2024-09-27 17:54:50,902 DEBUG: Motor 2: Current Position: 918.42°, New Position: 1238.42°
+2024-09-27 17:54:50,902 DEBUG: Motor 3: Current Position: 879.03°, New Position: 919.03°
+2024-09-27 17:54:50,902 DEBUG: Motor 4: Current Position: 918.86°, New Position: 1238.86°
+2024-09-27 17:54:50,903 DEBUG: Motor 5: Current Position: 878.95°, New Position: 918.95°
+2024-09-27 17:54:50,903 DEBUG: Motor 6: Current Position: 918.33°, New Position: 1238.33°
+2024-09-27 17:54:50,904 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:50,904 INFO: Waiting for rotation 0.5333333333333333 seconds at 12.5 RPM
+2024-09-27 17:54:51,438 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:51,438 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:51,439 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,439 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,443 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:51,443 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:51,443 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:51,443 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:51,444 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:51,444 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:51,445 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:51,545 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:51,546 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:51,546 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,546 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,546 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,546 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,547 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,547 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,547 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,547 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,555 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:51,556 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:51,556 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:51,556 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=12.5
+2024-09-27 17:54:51,556 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=15.0
+2024-09-27 17:54:51,557 DEBUG: Executing Gait 2
+2024-09-27 17:54:51,557 DEBUG: Even gait cycle
+2024-09-27 17:54:51,557 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:51,557 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:51,558 INFO: Profile velocities set for group Wheg_Group: {1: 1365, 2: 170, 3: 1365, 4: 170, 5: 1365, 6: 170}
+2024-09-27 17:54:51,558 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:51,559 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:51,559 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:51,559 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,559 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,559 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,560 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,560 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,560 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:51,565 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:51,566 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:51,566 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:51,566 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,567 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,567 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,567 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,567 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,567 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:51,573 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:51,573 DEBUG: Motor 1: Current Position: 918.59°, New Position: 1238.59°
+2024-09-27 17:54:51,573 DEBUG: Motor 2: Current Position: 1238.33°, New Position: 1278.33°
+2024-09-27 17:54:51,574 DEBUG: Motor 3: Current Position: 918.51°, New Position: 1238.51°
+2024-09-27 17:54:51,574 DEBUG: Motor 4: Current Position: 1238.77°, New Position: 1278.77°
+2024-09-27 17:54:51,574 DEBUG: Motor 5: Current Position: 918.42°, New Position: 1238.42°
+2024-09-27 17:54:51,574 DEBUG: Motor 6: Current Position: 1238.15°, New Position: 1278.15°
+2024-09-27 17:54:51,575 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:51,575 INFO: Waiting for rotation 0.4444444444444444 seconds at 15.0 RPM
+2024-09-27 17:54:52,020 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:52,021 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:52,021 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,021 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,024 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:52,025 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:52,025 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:52,025 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:52,026 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:52,026 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:52,026 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:52,127 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:52,127 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:52,127 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,127 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,128 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,128 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,128 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,128 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,128 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,128 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,137 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:52,137 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:52,137 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:52,137 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=15.0
+2024-09-27 17:54:52,138 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=17.5
+2024-09-27 17:54:52,138 DEBUG: Executing Gait 2
+2024-09-27 17:54:52,138 DEBUG: Odd gait cycle
+2024-09-27 17:54:52,138 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:52,138 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:52,139 INFO: Profile velocities set for group Wheg_Group: {1: 199, 2: 1592, 3: 199, 4: 1592, 5: 199, 6: 1592}
+2024-09-27 17:54:52,140 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:52,140 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:52,141 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:52,141 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,141 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,141 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,141 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,141 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,142 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,147 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:52,147 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:52,147 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:52,148 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,148 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,148 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,148 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,148 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,148 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,154 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:52,154 DEBUG: Motor 1: Current Position: 1239.21°, New Position: 1279.21°
+2024-09-27 17:54:52,154 DEBUG: Motor 2: Current Position: 1277.89°, New Position: 1597.89°
+2024-09-27 17:54:52,154 DEBUG: Motor 3: Current Position: 1238.51°, New Position: 1278.51°
+2024-09-27 17:54:52,154 DEBUG: Motor 4: Current Position: 1278.51°, New Position: 1598.51°
+2024-09-27 17:54:52,155 DEBUG: Motor 5: Current Position: 1238.51°, New Position: 1278.51°
+2024-09-27 17:54:52,155 DEBUG: Motor 6: Current Position: 1277.98°, New Position: 1597.98°
+2024-09-27 17:54:52,156 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:52,156 INFO: Waiting for rotation 0.38095238095238093 seconds at 17.5 RPM
+2024-09-27 17:54:52,537 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:52,538 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:52,538 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,538 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,542 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:52,542 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:52,542 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:52,543 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:52,543 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:52,543 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:52,544 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:52,544 INFO: Front pivot angle: 180
+2024-09-27 17:54:52,544 INFO: Rear pivot angle: 180
+2024-09-27 17:54:52,545 INFO: Wheg RPMs: {'LR_WHEG': 0, 'LM_WHEG': 0, 'LF_WHEG': 0, 'RR_WHEG': 0, 'RM_WHEG': 0, 'RF_WHEG': 0}
+2024-09-27 17:54:52,545 INFO: Motor Positions: {1: {'present_position': 14095}, 2: {'present_position': 14537}, 3: {'present_position': 14073}, 4: {'present_position': 14543}, 5: {'present_position': 14081}, 6: {'present_position': 14537}, 7: {'present_position': 2052}, 8: {'present_position': 2045}}
+2024-09-27 17:54:52,545 INFO: L2 Trigger: -1.0, R2 Trigger: 0.999969482421875
+2024-09-27 17:54:52,546 INFO: Button States: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': True, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-27 17:54:52,546 INFO: D-Pad Input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:52,646 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:52,647 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:52,647 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,647 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,647 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,648 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,648 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,648 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,648 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,649 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,656 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:52,657 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:52,657 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:52,657 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=17.5
+2024-09-27 17:54:52,658 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=20.0
+2024-09-27 17:54:52,658 DEBUG: Executing Gait 2
+2024-09-27 17:54:52,658 DEBUG: Even gait cycle
+2024-09-27 17:54:52,658 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:52,658 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:52,659 INFO: Profile velocities set for group Wheg_Group: {1: 1820, 2: 227, 3: 1820, 4: 227, 5: 1820, 6: 227}
+2024-09-27 17:54:52,660 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:52,660 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:52,660 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:52,661 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,661 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,661 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,661 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,661 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,662 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:52,667 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:52,667 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:52,667 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:52,668 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,668 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,668 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,668 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,668 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,668 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:52,674 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:52,674 DEBUG: Motor 1: Current Position: 1278.95°, New Position: 1598.95°
+2024-09-27 17:54:52,674 DEBUG: Motor 2: Current Position: 1587.69°, New Position: 1627.69°
+2024-09-27 17:54:52,674 DEBUG: Motor 3: Current Position: 1277.98°, New Position: 1597.98°
+2024-09-27 17:54:52,675 DEBUG: Motor 4: Current Position: 1589.27°, New Position: 1629.27°
+2024-09-27 17:54:52,675 DEBUG: Motor 5: Current Position: 1277.98°, New Position: 1597.98°
+2024-09-27 17:54:52,675 DEBUG: Motor 6: Current Position: 1584.00°, New Position: 1624.00°
+2024-09-27 17:54:52,676 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:52,677 INFO: Waiting for rotation 0.3333333333333333 seconds at 20.0 RPM
+2024-09-27 17:54:53,010 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:53,011 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:53,011 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,011 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,015 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:53,015 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:53,015 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:53,016 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:53,016 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:53,016 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:53,017 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:53,117 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:53,118 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:53,118 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,118 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,118 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,118 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,119 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,119 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,119 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,119 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,127 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:53,128 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:53,128 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:53,128 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=20.0
+2024-09-27 17:54:53,128 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=22.5
+2024-09-27 17:54:53,128 DEBUG: Executing Gait 2
+2024-09-27 17:54:53,128 DEBUG: Odd gait cycle
+2024-09-27 17:54:53,129 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:53,129 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:53,130 INFO: Profile velocities set for group Wheg_Group: {1: 255, 2: 2047, 3: 255, 4: 2047, 5: 255, 6: 2047}
+2024-09-27 17:54:53,130 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:53,130 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:53,130 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:53,131 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,131 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,131 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,131 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,131 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,132 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,137 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:53,137 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:53,137 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:53,138 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,138 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,138 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,138 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,138 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,138 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,144 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:53,144 DEBUG: Motor 1: Current Position: 1557.98°, New Position: 1597.98°
+2024-09-27 17:54:53,144 DEBUG: Motor 2: Current Position: 1627.60°, New Position: 1947.60°
+2024-09-27 17:54:53,144 DEBUG: Motor 3: Current Position: 1549.71°, New Position: 1589.71°
+2024-09-27 17:54:53,145 DEBUG: Motor 4: Current Position: 1629.19°, New Position: 1949.19°
+2024-09-27 17:54:53,145 DEBUG: Motor 5: Current Position: 1555.52°, New Position: 1595.52°
+2024-09-27 17:54:53,145 DEBUG: Motor 6: Current Position: 1624.00°, New Position: 1944.00°
+2024-09-27 17:54:53,146 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:53,146 INFO: Waiting for rotation 0.2962962962962963 seconds at 22.5 RPM
+2024-09-27 17:54:53,443 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:53,444 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:53,444 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,444 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,447 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:53,448 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:53,448 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:53,448 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:53,449 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:53,449 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:53,449 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:53,550 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:53,550 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:53,550 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,550 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,551 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,551 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,551 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,551 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,551 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,552 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,559 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:53,560 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:53,560 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:53,560 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=22.5
+2024-09-27 17:54:53,561 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=25.0
+2024-09-27 17:54:53,561 DEBUG: Executing Gait 2
+2024-09-27 17:54:53,561 DEBUG: Even gait cycle
+2024-09-27 17:54:53,561 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:53,561 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:53,562 INFO: Profile velocities set for group Wheg_Group: {1: 2275, 2: 284, 3: 2275, 4: 284, 5: 2275, 6: 284}
+2024-09-27 17:54:53,562 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:53,563 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:53,563 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:53,564 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,564 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,564 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,564 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,564 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,564 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,570 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:53,570 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:53,570 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:53,571 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,571 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,571 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,571 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,571 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,571 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,577 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:53,577 DEBUG: Motor 1: Current Position: 1597.89°, New Position: 1917.89°
+2024-09-27 17:54:53,577 DEBUG: Motor 2: Current Position: 1882.29°, New Position: 1922.29°
+2024-09-27 17:54:53,578 DEBUG: Motor 3: Current Position: 1589.71°, New Position: 1909.71°
+2024-09-27 17:54:53,578 DEBUG: Motor 4: Current Position: 1884.22°, New Position: 1924.22°
+2024-09-27 17:54:53,578 DEBUG: Motor 5: Current Position: 1595.69°, New Position: 1915.69°
+2024-09-27 17:54:53,578 DEBUG: Motor 6: Current Position: 1873.58°, New Position: 1913.58°
+2024-09-27 17:54:53,579 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:53,579 INFO: Waiting for rotation 0.26666666666666666 seconds at 25.0 RPM
+2024-09-27 17:54:53,847 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:53,847 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:53,848 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,848 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,851 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:53,851 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:53,852 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:53,852 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:53,853 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:53,853 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:53,853 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:53,954 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:53,954 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:53,954 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,955 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,955 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,955 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,956 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,956 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,956 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,956 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,964 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:53,965 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:53,965 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:53,965 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=25.0
+2024-09-27 17:54:53,965 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=27.5
+2024-09-27 17:54:53,965 DEBUG: Executing Gait 2
+2024-09-27 17:54:53,965 DEBUG: Odd gait cycle
+2024-09-27 17:54:53,966 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:53,966 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:53,967 INFO: Profile velocities set for group Wheg_Group: {1: 312, 2: 2502, 3: 312, 4: 2502, 5: 312, 6: 2502}
+2024-09-27 17:54:53,967 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:53,968 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:53,968 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:53,968 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,968 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,969 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,969 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,969 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,969 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:53,974 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:53,975 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:53,975 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:53,975 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,975 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,975 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,976 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,976 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,976 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:53,982 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:53,982 DEBUG: Motor 1: Current Position: 1832.53°, New Position: 1872.53°
+2024-09-27 17:54:53,982 DEBUG: Motor 2: Current Position: 1922.29°, New Position: 2242.29°
+2024-09-27 17:54:53,983 DEBUG: Motor 3: Current Position: 1818.64°, New Position: 1858.64°
+2024-09-27 17:54:53,983 DEBUG: Motor 4: Current Position: 1924.31°, New Position: 2244.31°
+2024-09-27 17:54:53,983 DEBUG: Motor 5: Current Position: 1829.54°, New Position: 1869.54°
+2024-09-27 17:54:53,983 DEBUG: Motor 6: Current Position: 1913.67°, New Position: 2233.67°
+2024-09-27 17:54:53,984 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:53,984 INFO: Waiting for rotation 0.24242424242424243 seconds at 27.5 RPM
+2024-09-27 17:54:54,227 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:54,228 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:54,228 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,228 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,232 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:54,232 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:54,232 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:54,233 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:54,233 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:54,233 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:54,234 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:54,334 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:54,335 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:54,335 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,335 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,335 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,336 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,336 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,336 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,336 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,337 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,344 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:54,345 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:54,345 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:54,345 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=27.5
+2024-09-27 17:54:54,345 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=29.999542236328125
+2024-09-27 17:54:54,346 DEBUG: Executing Gait 2
+2024-09-27 17:54:54,346 DEBUG: Even gait cycle
+2024-09-27 17:54:54,346 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:54,347 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:54,348 INFO: Profile velocities set for group Wheg_Group: {1: 2729, 2: 341, 3: 2729, 4: 341, 5: 2729, 6: 341}
+2024-09-27 17:54:54,348 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:54,348 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:54,349 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:54,349 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,349 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,349 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,349 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,349 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,350 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,355 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:54,355 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:54,355 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:54,356 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,356 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,356 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,356 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,356 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,356 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,362 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:54,362 DEBUG: Motor 1: Current Position: 1872.97°, New Position: 2192.97°
+2024-09-27 17:54:54,363 DEBUG: Motor 2: Current Position: 2141.10°, New Position: 2181.10°
+2024-09-27 17:54:54,363 DEBUG: Motor 3: Current Position: 1859.16°, New Position: 2179.16°
+2024-09-27 17:54:54,363 DEBUG: Motor 4: Current Position: 2144.26°, New Position: 2184.26°
+2024-09-27 17:54:54,363 DEBUG: Motor 5: Current Position: 1869.98°, New Position: 2189.98°
+2024-09-27 17:54:54,363 DEBUG: Motor 6: Current Position: 2128.70°, New Position: 2168.70°
+2024-09-27 17:54:54,364 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:54,364 INFO: Waiting for rotation 0.22222561311597705 seconds at 29.999542236328125 RPM
+2024-09-27 17:54:54,587 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:54,588 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:54,588 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,588 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,591 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:54,592 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:54,592 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:54,592 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:54,593 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:54,593 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:54,593 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:54,694 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:54,694 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:54,694 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,695 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,695 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,695 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,695 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,696 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,696 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,696 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,704 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:54,704 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:54,704 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:54,705 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=29.999542236328125
+2024-09-27 17:54:54,705 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=29.999542236328125
+2024-09-27 17:54:54,705 DEBUG: Executing Gait 2
+2024-09-27 17:54:54,705 DEBUG: Odd gait cycle
+2024-09-27 17:54:54,705 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:54,706 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:54,707 INFO: Profile velocities set for group Wheg_Group: {1: 341, 2: 2729, 3: 341, 4: 2729, 5: 341, 6: 2729}
+2024-09-27 17:54:54,707 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:54,708 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:54,708 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:54,708 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,708 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,709 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,709 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,709 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,709 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,714 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:54,715 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:54,715 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:54,715 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,716 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,716 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,716 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,716 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,716 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:54,722 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:54,722 DEBUG: Motor 1: Current Position: 2080.44°, New Position: 2120.44°
+2024-09-27 17:54:54,722 DEBUG: Motor 2: Current Position: 2181.27°, New Position: 2501.27°
+2024-09-27 17:54:54,723 DEBUG: Motor 3: Current Position: 2063.65°, New Position: 2103.65°
+2024-09-27 17:54:54,723 DEBUG: Motor 4: Current Position: 2184.35°, New Position: 2504.35°
+2024-09-27 17:54:54,723 DEBUG: Motor 5: Current Position: 2078.15°, New Position: 2118.15°
+2024-09-27 17:54:54,723 DEBUG: Motor 6: Current Position: 2168.70°, New Position: 2488.70°
+2024-09-27 17:54:54,724 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:54,724 INFO: Waiting for rotation 0.22222561311597705 seconds at 29.999542236328125 RPM
+2024-09-27 17:54:54,947 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:54,948 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:54,948 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,948 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:54,951 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:54,952 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:54,952 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:54,952 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:54,953 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:54,953 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:54,953 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:55,054 DEBUG: Button r2 (index 7) pressed.
+2024-09-27 17:54:55,054 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:55,054 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,055 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,055 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,055 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,055 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,056 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,056 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,056 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,064 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:55,064 DEBUG: Trigger inputs: L2=-1.0, R2=0.999969482421875
+2024-09-27 17:54:55,065 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:55,065 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=29.999542236328125
+2024-09-27 17:54:55,065 DEBUG: Adjusted wheg speed: target_rpm=29.999542236328125, current_rpm=29.999542236328125
+2024-09-27 17:54:55,065 DEBUG: Executing Gait 2
+2024-09-27 17:54:55,065 DEBUG: Even gait cycle
+2024-09-27 17:54:55,065 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:55,066 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:55,067 INFO: Profile velocities set for group Wheg_Group: {1: 2729, 2: 341, 3: 2729, 4: 341, 5: 2729, 6: 341}
+2024-09-27 17:54:55,067 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:55,068 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:55,068 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:55,068 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,068 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,069 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,069 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,069 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,069 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,074 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:55,075 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:55,075 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:55,075 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,075 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,076 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,076 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,076 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,076 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,082 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:55,082 DEBUG: Motor 1: Current Position: 2120.44°, New Position: 2440.44°
+2024-09-27 17:54:55,083 DEBUG: Motor 2: Current Position: 2391.12°, New Position: 2431.12°
+2024-09-27 17:54:55,083 DEBUG: Motor 3: Current Position: 2103.65°, New Position: 2423.65°
+2024-09-27 17:54:55,083 DEBUG: Motor 4: Current Position: 2396.04°, New Position: 2436.04°
+2024-09-27 17:54:55,083 DEBUG: Motor 5: Current Position: 2118.07°, New Position: 2438.07°
+2024-09-27 17:54:55,083 DEBUG: Motor 6: Current Position: 2376.00°, New Position: 2416.00°
+2024-09-27 17:54:55,084 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:55,085 INFO: Waiting for rotation 0.22222561311597705 seconds at 29.999542236328125 RPM
+2024-09-27 17:54:55,307 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:55,308 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:55,308 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,308 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,312 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:55,312 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:55,312 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:55,312 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:55,313 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:55,313 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:55,314 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:55,414 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:55,415 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,415 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,415 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,415 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,416 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,416 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,416 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,416 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,424 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:55,425 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:55,425 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:55,425 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=29.999542236328125
+2024-09-27 17:54:55,425 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=27.499542236328125
+2024-09-27 17:54:55,425 DEBUG: Executing Gait 2
+2024-09-27 17:54:55,426 DEBUG: Odd gait cycle
+2024-09-27 17:54:55,426 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:55,426 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:55,427 INFO: Profile velocities set for group Wheg_Group: {1: 312, 2: 2502, 3: 312, 4: 2502, 5: 312, 6: 2502}
+2024-09-27 17:54:55,427 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-27 17:54:55,428 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:55,428 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:55,428 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,428 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,429 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,429 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,429 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,429 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,434 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:55,434 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:55,435 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:55,435 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,435 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,435 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,436 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,436 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,436 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,442 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:55,442 DEBUG: Motor 1: Current Position: 2334.15°, New Position: 2374.15°
+2024-09-27 17:54:55,442 DEBUG: Motor 2: Current Position: 2430.51°, New Position: 2750.51°
+2024-09-27 17:54:55,442 DEBUG: Motor 3: Current Position: 2309.71°, New Position: 2349.71°
+2024-09-27 17:54:55,443 DEBUG: Motor 4: Current Position: 2435.25°, New Position: 2755.25°
+2024-09-27 17:54:55,443 DEBUG: Motor 5: Current Position: 2328.44°, New Position: 2368.44°
+2024-09-27 17:54:55,443 DEBUG: Motor 6: Current Position: 2415.38°, New Position: 2735.38°
+2024-09-27 17:54:55,444 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:55,444 INFO: Waiting for rotation 0.24242827787364774 seconds at 27.499542236328125 RPM
+2024-09-27 17:54:55,687 INFO: Running set_position_group for group 'Pivot_Group' with positions: {7: 180, 8: 180}
+2024-09-27 17:54:55,688 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:55,688 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,688 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,691 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-27 17:54:55,692 DEBUG: Setting motor 7 to 180° (2047 ticks)
+2024-09-27 17:54:55,692 DEBUG: Setting motor 8 to 180° (2047 ticks)
+2024-09-27 17:54:55,692 DEBUG: Setting individual positions for motors in group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:55,693 DEBUG: Target positions set for group 'Pivot_Group': {7: 180, 8: 180}
+2024-09-27 17:54:55,693 INFO: Front pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:55,693 INFO: Rear pivot angle set to 180 degrees (ticks: 180)
+2024-09-27 17:54:55,794 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-27 17:54:55,794 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,794 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,795 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,795 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,795 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,795 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,795 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,795 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,804 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:55,804 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-27 17:54:55,804 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-27 17:54:55,804 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=27.499542236328125
+2024-09-27 17:54:55,805 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=24.999542236328125
+2024-09-27 17:54:55,805 DEBUG: Executing Gait 2
+2024-09-27 17:54:55,805 DEBUG: Even gait cycle
+2024-09-27 17:54:55,805 INFO: Setting profile velocity for group Wheg_Group
+2024-09-27 17:54:55,805 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:55,806 INFO: Profile velocities set for group Wheg_Group: {1: 2274, 2: 284, 3: 2274, 4: 284, 5: 2274, 6: 284}
+2024-09-27 17:54:55,807 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-27 17:54:55,807 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-27 17:54:55,808 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-27 17:54:55,808 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,808 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,808 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,808 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,809 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,809 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:55,814 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:55,814 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-27 17:54:55,815 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-27 17:54:55,815 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,815 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,815 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,815 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,816 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,816 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-27 17:54:55,821 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-27 17:54:55,822 DEBUG: Motor 1: Current Position: 2373.54°, New Position: 2693.54°
+2024-09-27 17:54:55,822 DEBUG: Motor 2: Current Position: 2655.21°, New Position: 2695.21°
+2024-09-27 17:54:55,822 DEBUG: Motor 3: Current Position: 2349.45°, New Position: 2669.45°
+2024-09-27 17:54:55,822 DEBUG: Motor 4: Current Position: 2659.34°, New Position: 2699.34°
+2024-09-27 17:54:55,823 DEBUG: Motor 5: Current Position: 2368.00°, New Position: 2688.00°
+2024-09-27 17:54:55,823 DEBUG: Motor 6: Current Position: 2635.25°, New Position: 2675.25°
+2024-09-27 17:54:55,824 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-27 17:54:55,824 INFO: Waiting for rotation 0.26667154956857525 seconds at 24.999542236328125 RPM
+2024-09-27 17:54:56,085 INFO: Terminating program...
+2024-09-27 17:54:56,086 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-27 17:54:56,086 INFO: Disabling torque for group All_Motors
+2024-09-27 17:54:56,087 DEBUG: Torque disabled for group All_Motors
+2024-09-27 17:54:56,088 DEBUG: Operating mode set to 'velocity' for group All_Motors
+2024-09-27 17:54:56,088 INFO: Enabling torque for group All_Motors
+2024-09-27 17:54:56,089 DEBUG: Torque enabled for group All_Motors
+2024-09-27 17:54:56,089 DEBUG: Setting velocity limit for motors in group All_Motors
+2024-09-27 17:54:56,090 INFO: Velocity limit set to 400 for group All_Motors
+2024-09-27 17:54:56,090 INFO: Enabling torque for group All_Motors
+2024-09-27 17:54:56,091 DEBUG: Torque enabled for group All_Motors
+2024-09-27 17:54:56,091 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-09-27 17:54:56,092 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-09-27 17:54:56,092 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['operating_mode']
+2024-09-27 17:54:56,093 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,093 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,093 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,093 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,093 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,093 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,094 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,094 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-27 17:54:56,101 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-27 17:54:56,102 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-27 17:54:56,102 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-09-27 17:54:56,103 INFO: Disabling torque for group All_Motors
+2024-09-27 17:54:56,103 DEBUG: Torque disabled for group All_Motors
+2024-09-27 17:54:56,104 DEBUG: Operating mode set to 'position' for group All_Motors
+2024-09-27 17:54:56,104 INFO: Enabling torque for group All_Motors
+2024-09-27 17:54:56,105 DEBUG: Torque enabled for group All_Motors
+2024-09-27 17:54:56,105 DEBUG: Setting profile velocity for motors in group All_Motors
+2024-09-27 17:54:56,105 INFO: Setting profile velocity for group All_Motors
+2024-09-27 17:54:56,105 DEBUG: Hard profile velocity limit: 400
+2024-09-27 17:54:56,106 INFO: Profile velocities set for group All_Motors: {1: 4550, 2: 4550, 3: 4550, 4: 4550, 5: 4550, 6: 4550, 7: 4550, 8: 4550}
+2024-09-27 17:54:56,107 DEBUG: Setting position 180° for all motors in group 'All_Motors'
+2024-09-27 17:54:56,108 DEBUG: Target positions set for group 'All_Motors': 180
+2024-09-27 17:54:56,108 INFO: Closing PS4Controller and quitting pygame
+2024-09-27 17:54:56,172 ERROR: Failed to close the port: 'PortHandler' object has no attribute 'is_port_open'
+2024-09-27 17:54:56,174 INFO: Shutdown complete.

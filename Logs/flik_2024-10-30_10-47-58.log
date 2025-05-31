@@ -1,0 +1,60 @@
+2024-10-30 10:47:58,932 INFO: Initializing PS4Controller
+2024-10-30 10:47:59,220 INFO: Configuration loaded successfully
+2024-10-30 10:47:59,224 INFO: Port /dev/ttyACM0 opened successfully
+2024-10-30 10:47:59,234 INFO: Baudrate set to 1000000
+2024-10-30 10:47:59,234 INFO: Control table loaded successfully.
+2024-10-30 10:47:59,235 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-10-30 10:47:59,235 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-10-30 10:47:59,236 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-10-30 10:47:59,236 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-10-30 10:47:59,237 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-10-30 10:47:59,237 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-10-30 10:47:59,238 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-10-30 10:47:59,238 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-10-30 10:47:59,239 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-10-30 10:47:59,239 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-10-30 10:47:59,239 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-10-30 10:47:59,395 INFO: Disabling torque for group Right_Whegs
+2024-10-30 10:47:59,397 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-10-30 10:47:59,398 INFO: Enabling torque for group Right_Whegs
+2024-10-30 10:47:59,399 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-30 10:47:59,400 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-30 10:47:59,403 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-30 10:47:59,404 INFO: Disabling torque for group Left_Whegs
+2024-10-30 10:47:59,407 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-10-30 10:47:59,410 INFO: Enabling torque for group Left_Whegs
+2024-10-30 10:47:59,411 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-30 10:47:59,411 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-30 10:47:59,412 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-30 10:47:59,413 INFO: Set the right side whegs to reverse direction
+2024-10-30 10:47:59,413 INFO: Disabling torque for group Pivot_Group
+2024-10-30 10:47:59,414 INFO: Drive mode set for group Pivot_Group with reverse_direction=False
+2024-10-30 10:47:59,414 INFO: Enabling torque for group Pivot_Group
+2024-10-30 10:47:59,415 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-30 10:47:59,415 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-30 10:47:59,416 INFO: Position limits set for group Pivot_Group: min=45° (ticks=511), max=315° (ticks=3583)
+2024-10-30 10:47:59,417 INFO: Set position limits for the pivot motors
+2024-10-30 10:47:59,454 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 10:47:59,454 INFO: Initialising Gait 1
+2024-10-30 10:47:59,455 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-30 10:47:59,490 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 10:47:59,491 ERROR: Error controlling pivots: 'dpad_down'
+2024-10-30 10:47:59,527 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 10:47:59,563 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 10:47:59,599 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 10:47:59,635 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 10:47:59,636 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 10:47:59,640 INFO: Initiating safe shutdown...
+2024-10-30 10:47:59,641 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-30 10:47:59,642 INFO: Disabling torque for group All_Motors
+2024-10-30 10:47:59,645 INFO: Enabling torque for group All_Motors
+2024-10-30 10:47:59,646 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 10:47:59,646 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 10:47:59,647 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-30 10:47:59,647 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-30 10:47:59,648 INFO: Enabling torque for group All_Motors
+2024-10-30 10:47:59,649 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 10:47:59,650 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 10:47:59,650 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-30 10:47:59,651 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-10-30 10:47:59,686 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!

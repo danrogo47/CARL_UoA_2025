@@ -1,0 +1,692 @@
+2024-09-28 11:39:34,690 INFO: Initializing PS4Controller
+2024-09-28 11:39:34,953 DEBUG: Pygame initialized
+2024-09-28 11:39:34,954 DEBUG: Joystick initialized
+2024-09-28 11:39:34,955 DEBUG: Number of buttons on the controller: 13
+2024-09-28 11:39:34,997 INFO: Configuration loaded successfully
+2024-09-28 11:39:34,999 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-28 11:39:35,009 INFO: Baudrate set to 1000000
+2024-09-28 11:39:35,010 INFO: Control table loaded successfully.
+2024-09-28 11:39:35,010 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-28 11:39:35,010 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-28 11:39:35,010 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-28 11:39:35,010 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-28 11:39:35,010 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-28 11:39:35,010 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-28 11:39:35,011 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-28 11:39:35,011 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-28 11:39:35,011 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-28 11:39:35,011 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-28 11:39:35,011 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-09-28 11:39:35,011 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-28 11:39:35,011 INFO: Disabling torque for group Right_Whegs
+2024-09-28 11:39:35,012 DEBUG: Torque disabled for group Right_Whegs
+2024-09-28 11:39:35,012 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-28 11:39:35,012 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-28 11:39:35,013 INFO: Enabling torque for group Right_Whegs
+2024-09-28 11:39:35,013 DEBUG: Torque enabled for group Right_Whegs
+2024-09-28 11:39:35,013 DEBUG: Reading back drive mode for verification...
+2024-09-28 11:39:35,013 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-28 11:39:35,013 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-28 11:39:35,013 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-28 11:39:35,014 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-28 11:39:35,016 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-28 11:39:35,017 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-28 11:39:35,017 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-28 11:39:35,017 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-28 11:39:35,017 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-28 11:39:35,017 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-28 11:39:35,017 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-28 11:39:35,017 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-28 11:39:35,017 INFO: Disabling torque for group Left_Whegs
+2024-09-28 11:39:35,018 DEBUG: Torque disabled for group Left_Whegs
+2024-09-28 11:39:35,018 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-28 11:39:35,018 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-28 11:39:35,018 INFO: Enabling torque for group Left_Whegs
+2024-09-28 11:39:35,019 DEBUG: Torque enabled for group Left_Whegs
+2024-09-28 11:39:35,019 DEBUG: Reading back drive mode for verification...
+2024-09-28 11:39:35,019 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-28 11:39:35,019 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-28 11:39:35,019 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-28 11:39:35,019 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-28 11:39:35,022 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-28 11:39:35,022 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-28 11:39:35,022 INFO: Motor 1 drive mode correctly set to normal
+2024-09-28 11:39:35,022 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-28 11:39:35,022 INFO: Motor 2 drive mode correctly set to normal
+2024-09-28 11:39:35,022 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-28 11:39:35,022 INFO: Motor 3 drive mode correctly set to normal
+2024-09-28 11:39:35,023 INFO: Set the right side whegs to reverse direction
+2024-09-28 11:39:35,023 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-09-28 11:39:35,023 INFO: Set position limits for the pivot motors
+2024-09-28 11:39:35,024 DEBUG: Using selector: EpollSelector
+2024-09-28 11:39:35,025 DEBUG: Executing Gait 1
+2024-09-28 11:39:35,025 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 11:39:35,025 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:35,025 INFO: Initialising Gait 1
+2024-09-28 11:39:35,026 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-09-28 11:39:35,026 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-28 11:39:35,026 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,026 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,026 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,026 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,026 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,026 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,031 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 11:39:35,031 DEBUG: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-28 11:39:35,031 DEBUG: Target positions set for group 'Wheg_Group': 180
+2024-09-28 11:39:35,032 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-28 11:39:35,032 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-28 11:39:35,032 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,032 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:35,035 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-28 11:39:35,035 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-28 11:39:35,035 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-28 11:39:35,035 INFO: Initialised Gait 1, waiting for 1 seconds
+2024-09-28 11:39:35,035 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 11:39:35,035 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,036 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,036 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,036 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,036 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,036 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,036 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,036 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:35,043 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:39:35,044 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 11:39:35,044 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,044 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,044 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,044 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,044 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,044 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,044 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,044 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:39:35,052 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 11:39:35,052 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,052 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:35,060 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:39:35,060 INFO: Motor Positions: {1: {'present_position': 2046}, 2: {'present_position': 2046}, 3: {'present_position': 2047}, 4: {'present_position': 2046}, 5: {'present_position': 2045}, 6: {'present_position': 2046}, 7: {'present_position': 2052}, 8: {'present_position': 2041}}
+2024-09-28 11:39:35,060 INFO: Motor Velocities: {1: {'present_velocity': 1}, 2: {'present_velocity': 1}, 3: {'present_velocity': 1}, 4: {'present_velocity': 4294967295}, 5: {'present_velocity': 1}, 6: {'present_velocity': 4294967295}, 7: {'present_velocity': 0}, 8: {'present_velocity': 0}}
+2024-09-28 11:39:35,060 INFO: Motor Loads: {1: {'present_load': 10}, 2: {'present_load': 12}, 3: {'present_load': 12}, 4: {'present_load': 0}, 5: {'present_load': 4}, 6: {'present_load': 5}, 7: {'present_load': 65507}, 8: {'present_load': 33}}
+2024-09-28 11:39:36,036 INFO: New gait 0 is now active.
+2024-09-28 11:39:36,037 INFO: Waiting for 1.00 seconds before next gait step
+2024-09-28 11:39:37,048 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,048 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 11:39:37,048 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,059 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,059 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,059 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,069 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,069 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,070 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,080 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,080 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,080 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,091 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,091 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,091 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,101 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,102 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,102 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,112 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,112 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,112 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,123 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,123 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,123 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,134 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,134 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,134 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,144 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,144 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,145 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,155 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,155 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,155 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,166 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,166 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,166 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,176 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,176 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,177 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,187 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,187 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,187 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,198 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,198 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,198 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,208 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,209 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,209 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,219 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,219 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,219 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,230 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,230 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,230 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,240 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,241 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,241 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,251 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,251 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,251 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,262 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,262 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,262 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,272 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,273 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,273 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,283 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,283 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,283 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,294 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,294 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,294 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,305 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,305 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,305 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,315 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,315 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,315 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,326 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,326 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,326 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,337 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,337 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,337 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,347 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,347 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,348 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,358 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,358 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,358 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,369 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,369 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,369 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,379 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,379 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,380 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,390 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,390 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,390 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,401 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,401 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,401 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,411 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,411 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,411 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,422 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,422 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,422 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,433 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,433 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,433 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,443 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,444 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,444 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,454 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,454 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,454 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,465 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,465 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,465 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,475 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,476 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,476 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,486 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,486 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,486 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,497 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,497 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,497 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,507 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,508 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,508 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,518 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,518 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,518 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,529 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,529 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,529 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,540 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,540 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,540 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,550 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,551 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,551 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,561 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,561 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,561 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,572 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,572 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-28 11:39:37,572 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:39:37,575 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:37,583 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,583 DEBUG: Adjusting wheg speed: trigger_value=-0.976470947265625, current_rpm=0.0
+2024-09-28 11:39:37,583 DEBUG: Adjusted wheg speed: target_rpm=0.117645263671875, current_rpm=0.117645263671875
+2024-09-28 11:39:37,586 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,594 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,594 DEBUG: Adjusting wheg speed: trigger_value=-0.945098876953125, current_rpm=0.117645263671875
+2024-09-28 11:39:37,594 DEBUG: Adjusted wheg speed: target_rpm=0.274505615234375, current_rpm=0.274505615234375
+2024-09-28 11:39:37,597 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,605 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,605 DEBUG: Adjusting wheg speed: trigger_value=-0.92156982421875, current_rpm=0.274505615234375
+2024-09-28 11:39:37,605 DEBUG: Adjusted wheg speed: target_rpm=0.39215087890625, current_rpm=0.39215087890625
+2024-09-28 11:39:37,608 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,616 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,616 DEBUG: Adjusting wheg speed: trigger_value=-0.92156982421875, current_rpm=0.39215087890625
+2024-09-28 11:39:37,616 DEBUG: Adjusted wheg speed: target_rpm=0.39215087890625, current_rpm=0.39215087890625
+2024-09-28 11:39:37,619 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,627 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,627 DEBUG: Adjusting wheg speed: trigger_value=-0.819610595703125, current_rpm=0.39215087890625
+2024-09-28 11:39:37,627 DEBUG: Adjusted wheg speed: target_rpm=0.901947021484375, current_rpm=0.901947021484375
+2024-09-28 11:39:37,630 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,638 DEBUG: Executing Gait 1
+2024-09-28 11:39:37,638 DEBUG: Adjusting wheg speed: trigger_value=-0.7803955078125, current_rpm=0.901947021484375
+2024-09-28 11:39:37,638 DEBUG: Adjusted wheg speed: target_rpm=1.0980224609375, current_rpm=1.0980224609375
+2024-09-28 11:39:37,638 INFO: Setting profile velocity for group Wheg_Group
+2024-09-28 11:39:37,638 DEBUG: Hard profile velocity limit: 200
+2024-09-28 11:39:37,639 INFO: Profile velocities set for group Wheg_Group: {1: 12, 2: 12, 3: 12, 4: 12, 5: 12, 6: 12}
+2024-09-28 11:39:37,639 INFO: Incrementing motor positions by 180 degrees for group 'Wheg_Group'
+2024-09-28 11:39:37,639 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-28 11:39:37,639 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-28 11:39:37,639 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:37,639 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:37,639 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:37,639 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:37,639 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:37,640 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:37,644 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 11:39:37,645 WARNING: Motor 1 is not in Extended Position Control Mode. Setting mode now.
+2024-09-28 11:39:37,645 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-28 11:39:37,645 INFO: Disabling torque for group Wheg_Group
+2024-09-28 11:39:37,645 DEBUG: Torque disabled for group Wheg_Group
+2024-09-28 11:39:37,645 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-28 11:39:37,646 INFO: Enabling torque for group Wheg_Group
+2024-09-28 11:39:37,646 DEBUG: Torque enabled for group Wheg_Group
+2024-09-28 11:39:37,646 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-28 11:39:37,646 INFO: Setting profile velocity for group Wheg_Group
+2024-09-28 11:39:37,646 DEBUG: Hard profile velocity limit: 200
+2024-09-28 11:39:37,647 INFO: Profile velocities set for group Wheg_Group: {1: 2275, 2: 2275, 3: 2275, 4: 2275, 5: 2275, 6: 2275}
+2024-09-28 11:39:37,647 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-28 11:39:37,647 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-28 11:39:37,647 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:37,647 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:37,647 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:37,647 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:37,647 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:37,647 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:37,652 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 11:39:37,652 DEBUG: Motor 1: Current Position: 179.87°, New Position: 359.87°
+2024-09-28 11:39:37,652 DEBUG: Motor 2: Current Position: 179.96°, New Position: 359.96°
+2024-09-28 11:39:37,653 DEBUG: Motor 3: Current Position: 179.96°, New Position: 359.96°
+2024-09-28 11:39:37,653 DEBUG: Motor 4: Current Position: 179.87°, New Position: 359.87°
+2024-09-28 11:39:37,653 DEBUG: Motor 5: Current Position: 179.78°, New Position: 359.78°
+2024-09-28 11:39:37,653 DEBUG: Motor 6: Current Position: 179.96°, New Position: 359.96°
+2024-09-28 11:39:37,653 INFO: Motor positions for group 'Wheg_Group' incremented.
+2024-09-28 11:39:37,653 INFO: Gait 1 step executed, wait for 27.32 seconds
+2024-09-28 11:39:37,653 INFO: Waiting for 27.32 seconds before next gait step
+2024-09-28 11:39:37,654 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,664 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,675 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,685 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,696 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,706 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,717 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,727 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,738 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,748 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,759 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,770 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,780 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:37,791 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,801 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,812 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,822 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,833 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,844 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,855 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,865 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,876 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,887 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,897 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,908 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,919 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,929 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,940 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,951 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,962 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,972 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:37,983 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:37,993 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,004 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,015 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,025 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,036 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,047 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,058 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,068 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,079 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,090 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,100 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,111 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,122 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,132 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,143 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,154 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,164 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,175 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,185 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:38,196 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,207 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,217 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,228 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,238 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,249 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,260 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,270 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,281 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,291 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,302 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,313 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,323 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,334 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,344 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,355 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,366 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,376 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,387 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:38,397 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,408 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,418 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,429 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,439 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,450 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,461 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,471 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,482 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,492 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,503 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,514 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,524 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,535 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,545 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,556 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,567 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,577 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,588 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:38,598 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,609 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,619 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,630 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,641 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,651 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,662 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,672 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,683 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,694 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,704 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,715 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,725 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,736 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,747 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,757 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,768 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,778 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,789 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:38,800 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,810 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,821 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,831 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,842 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,852 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,863 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,874 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,884 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,895 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,905 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,916 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,926 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,937 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,948 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,958 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,969 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,979 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:38,990 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:39,000 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,011 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,022 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,032 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,043 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,053 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,064 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,074 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,085 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,096 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,106 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,117 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,127 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,138 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,149 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,159 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,170 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,181 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,191 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:39,202 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,212 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,223 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,234 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,245 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,256 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,267 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,278 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,289 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,300 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,311 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,322 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,333 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,344 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,355 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,366 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,377 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,388 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,399 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:39,410 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,421 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,432 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,443 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,454 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,465 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,476 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,487 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,498 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,509 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,520 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,531 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,542 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,553 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,564 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,575 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,586 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,597 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,609 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:39,619 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,630 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,642 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,653 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,664 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,675 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,686 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,697 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,708 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,719 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,730 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,741 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,752 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,763 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,774 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,785 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,796 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,807 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,819 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:39,830 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,841 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,852 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,863 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,874 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,885 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,896 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,907 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,918 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,929 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,940 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,951 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,962 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,973 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,984 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:39,995 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,006 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,017 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,028 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:40,039 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,050 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,061 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 11:39:40,062 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,062 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,062 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,062 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,062 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,063 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,063 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,063 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 11:39:40,071 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:39:40,071 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 11:39:40,071 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,072 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,072 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,072 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,072 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,072 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,073 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,073 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 11:39:40,081 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:39:40,081 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 11:39:40,081 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,081 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,081 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,082 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,082 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,082 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,082 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,082 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 11:39:40,090 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:39:40,090 INFO: Motor Positions: {1: {'present_position': 4095}, 2: {'present_position': 4097}, 3: {'present_position': 4095}, 4: {'present_position': 4092}, 5: {'present_position': 4092}, 6: {'present_position': 4093}, 7: {'present_position': 2052}, 8: {'present_position': 2041}}
+2024-09-28 11:39:40,091 INFO: Motor Velocities: {1: {'present_velocity': 1}, 2: {'present_velocity': 0}, 3: {'present_velocity': 1}, 4: {'present_velocity': 0}, 5: {'present_velocity': 1}, 6: {'present_velocity': 0}, 7: {'present_velocity': 0}, 8: {'present_velocity': 0}}
+2024-09-28 11:39:40,091 INFO: Motor Loads: {1: {'present_load': 65526}, 2: {'present_load': 65527}, 3: {'present_load': 65524}, 4: {'present_load': 65528}, 5: {'present_load': 65524}, 6: {'present_load': 65525}, 7: {'present_load': 65507}, 8: {'present_load': 33}}
+2024-09-28 11:39:40,092 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,103 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,114 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,125 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,136 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,147 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,158 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,168 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,179 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,190 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,201 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,212 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,223 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,234 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:40,244 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,255 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,267 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,278 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,289 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,300 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,311 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,322 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,333 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,344 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,355 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,366 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,377 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,388 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,399 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,410 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,421 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,432 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,443 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:40,454 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,465 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,476 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,487 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,499 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,510 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,521 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,532 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,543 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,554 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,565 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,576 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,587 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,598 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,610 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,621 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,632 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,643 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,654 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:39:40,665 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,676 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,687 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,698 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,709 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,720 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,731 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,743 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,754 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:39:40,761 INFO: Initiating safe shutdown...
+2024-09-28 11:39:40,761 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-28 11:39:40,761 INFO: Disabling torque for group All_Motors
+2024-09-28 11:39:40,762 DEBUG: Torque disabled for group All_Motors
+2024-09-28 11:39:40,763 DEBUG: Operating mode set to 'velocity' for group All_Motors
+2024-09-28 11:39:40,763 INFO: Enabling torque for group All_Motors
+2024-09-28 11:39:40,764 DEBUG: Torque enabled for group All_Motors
+2024-09-28 11:39:40,764 DEBUG: Setting velocity limit for motors in group All_Motors
+2024-09-28 11:39:40,765 INFO: Velocity limit set to 200 for group All_Motors
+2024-09-28 11:39:40,765 INFO: Enabling torque for group All_Motors
+2024-09-28 11:39:40,766 DEBUG: Torque enabled for group All_Motors
+2024-09-28 11:39:40,767 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-09-28 11:39:40,767 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-09-28 11:39:40,767 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['operating_mode']
+2024-09-28 11:39:40,767 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,768 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,768 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,768 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,768 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,768 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,769 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,769 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 11:39:40,776 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:39:40,777 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-28 11:39:40,777 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-09-28 11:39:40,777 INFO: Disabling torque for group All_Motors
+2024-09-28 11:39:40,778 DEBUG: Torque disabled for group All_Motors
+2024-09-28 11:39:40,779 DEBUG: Operating mode set to 'position' for group All_Motors
+2024-09-28 11:39:40,779 INFO: Enabling torque for group All_Motors
+2024-09-28 11:39:40,779 DEBUG: Torque enabled for group All_Motors
+2024-09-28 11:39:40,780 DEBUG: Setting profile velocity for motors in group All_Motors
+2024-09-28 11:39:40,780 INFO: Setting profile velocity for group All_Motors
+2024-09-28 11:39:40,780 DEBUG: Hard profile velocity limit: 200
+2024-09-28 11:39:40,781 INFO: Profile velocities set for group All_Motors: {1: 2275, 2: 2275, 3: 2275, 4: 2275, 5: 2275, 6: 2275, 7: 2275, 8: 2275}
+2024-09-28 11:39:40,781 DEBUG: Setting position 180° for all motors in group 'All_Motors'
+2024-09-28 11:39:40,782 DEBUG: Target positions set for group 'All_Motors': 180
+2024-09-28 11:39:40,782 INFO: Closing PS4Controller and quitting pygame
+2024-09-28 11:39:40,861 ERROR: Failed to close the port: 'PortHandler' object has no attribute 'is_port_open'
+2024-09-28 11:39:40,863 INFO: Shutdown complete.

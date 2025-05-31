@@ -1,0 +1,68 @@
+2024-10-28 23:32:15,406 INFO: Initializing PS4Controller
+2024-10-28 23:32:15,723 INFO: Configuration loaded successfully
+2024-10-28 23:32:15,727 INFO: Port /dev/ttyACM0 opened successfully
+2024-10-28 23:32:15,737 INFO: Baudrate set to 1000000
+2024-10-28 23:32:15,737 INFO: Control table loaded successfully.
+2024-10-28 23:32:15,737 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-10-28 23:32:15,738 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-10-28 23:32:15,738 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-10-28 23:32:15,738 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-10-28 23:32:15,739 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-10-28 23:32:15,739 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-10-28 23:32:15,740 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-10-28 23:32:15,740 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-10-28 23:32:15,741 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-10-28 23:32:15,742 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-10-28 23:32:15,742 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-10-28 23:32:15,743 INFO: Disabling torque for group Right_Whegs
+2024-10-28 23:32:15,744 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-10-28 23:32:15,745 INFO: Enabling torque for group Right_Whegs
+2024-10-28 23:32:15,749 INFO: Motor 4 drive mode correctly set to reverse
+2024-10-28 23:32:15,749 INFO: Motor 5 drive mode correctly set to reverse
+2024-10-28 23:32:15,750 INFO: Motor 6 drive mode correctly set to reverse
+2024-10-28 23:32:15,750 INFO: Disabling torque for group Left_Whegs
+2024-10-28 23:32:15,751 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-10-28 23:32:15,751 INFO: Enabling torque for group Left_Whegs
+2024-10-28 23:32:15,756 INFO: Motor 1 drive mode correctly set to normal
+2024-10-28 23:32:15,756 INFO: Motor 2 drive mode correctly set to normal
+2024-10-28 23:32:15,756 INFO: Motor 3 drive mode correctly set to normal
+2024-10-28 23:32:15,757 INFO: Set the right side whegs to reverse direction
+2024-10-28 23:32:15,757 INFO: Disabling torque for group Pivot_Group
+2024-10-28 23:32:15,758 INFO: Drive mode set for group Pivot_Group with reverse_direction=False
+2024-10-28 23:32:15,758 INFO: Enabling torque for group Pivot_Group
+2024-10-28 23:32:15,762 INFO: Motor 7 drive mode correctly set to normal
+2024-10-28 23:32:15,762 INFO: Motor 8 drive mode correctly set to normal
+2024-10-28 23:32:15,763 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-10-28 23:32:15,764 INFO: Set position limits for the pivot motors
+2024-10-28 23:32:15,768 INFO: Initialising Gait 1
+2024-10-28 23:32:15,768 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-28 23:32:15,774 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-28 23:32:15,777 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-28 23:32:18,780 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-28 23:32:18,780 INFO: Disabling torque for group Wheg_Group
+2024-10-28 23:32:18,781 INFO: Enabling torque for group Wheg_Group
+2024-10-28 23:32:18,782 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-28 23:32:18,782 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-28 23:32:18,783 INFO: New gait 1 is now active.
+2024-10-28 23:34:49,701 INFO: Tasks were cancelled due to shutdown, proceeding to cleanup...
+2024-10-28 23:34:49,701 INFO: Initiating safe shutdown...
+2024-10-28 23:34:49,702 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-28 23:34:49,702 INFO: Disabling torque for group All_Motors
+2024-10-28 23:34:49,704 INFO: Enabling torque for group All_Motors
+2024-10-28 23:34:49,705 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-28 23:34:49,706 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-28 23:34:49,707 INFO: Enabling torque for group All_Motors
+2024-10-28 23:34:49,708 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-28 23:34:49,708 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-10-28 23:34:49,716 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-28 23:34:49,716 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-10-28 23:34:49,717 INFO: Disabling torque for group All_Motors
+2024-10-28 23:34:49,718 INFO: Enabling torque for group All_Motors
+2024-10-28 23:34:49,719 INFO: Setting the profile velocity for group All_Motors from config.yaml: 5
+2024-10-28 23:34:49,720 INFO: Profile velocities set for group All_Motors: {1: 21.85, 2: 21.85, 3: 21.85, 4: 21.85, 5: 21.85, 6: 21.85, 7: 21.85, 8: 21.85}
+2024-10-28 23:34:49,721 INFO: Closing PS4Controller and quitting pygame
+2024-10-28 23:34:49,802 INFO: Port closed successfully.
+2024-10-28 23:34:49,803 INFO: Shutdown complete.
+2024-10-28 23:34:49,806 INFO: Terminating processes.
+2024-10-28 23:34:49,813 INFO: Dashboard process terminated.
+2024-10-28 23:34:49,823 INFO: Robot process terminated.

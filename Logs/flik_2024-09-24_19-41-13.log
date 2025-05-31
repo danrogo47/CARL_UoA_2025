@@ -1,0 +1,1751 @@
+2024-09-24 19:41:13,741 INFO: Initializing PS4Controller
+2024-09-24 19:41:13,959 DEBUG: Pygame initialized
+2024-09-24 19:41:13,960 DEBUG: Joystick initialized
+2024-09-24 19:41:13,961 DEBUG: Number of buttons on the controller: 13
+2024-09-24 19:41:13,991 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-24 19:41:14,004 INFO: Baudrate set to 57600
+2024-09-24 19:41:14,004 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-24 19:41:14,004 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-24 19:41:14,004 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-24 19:41:14,004 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-24 19:41:14,004 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-24 19:41:14,005 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-24 19:41:14,005 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-24 19:41:14,005 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-24 19:41:14,005 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-24 19:41:14,005 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-24 19:41:14,005 INFO: Initialized PS4 controller and Dynamixel
+2024-09-24 19:41:14,030 ERROR: Error disabling torque for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,035 INFO: Torque disabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:14,036 INFO: Operating mode set to 'position' for group Wheg_Group
+2024-09-24 19:41:14,065 ERROR: Error enabling torque for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,070 INFO: Torque enabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:14,070 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-24 19:41:14,071 INFO: Profile velocity of 10 RPM set for all motors in group 'Wheg_Group'
+2024-09-24 19:41:14,071 INFO: Torque on for motor group = Wheg_Group
+2024-09-24 19:41:14,093 INFO: Torque disabled for all motors in group 'Pivot_Group'
+2024-09-24 19:41:14,093 INFO: Operating mode set to 'position' for group Pivot_Group
+2024-09-24 19:41:14,107 INFO: Torque enabled for all motors in group 'Pivot_Group'
+2024-09-24 19:41:14,107 DEBUG: Setting profile velocity for motors in group Pivot_Group
+2024-09-24 19:41:14,107 INFO: Profile velocity of 10 RPM set for all motors in group 'Pivot_Group'
+2024-09-24 19:41:14,123 INFO: Torque enabled for all motors in group 'Pivot_Group'
+2024-09-24 19:41:14,123 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:14,123 DEBUG: Getting motor positions
+2024-09-24 19:41:14,129 DEBUG: Current position for motor 1 is 1 degrees
+2024-09-24 19:41:14,135 DEBUG: Current position for motor 2 is 170 degrees
+2024-09-24 19:41:14,141 DEBUG: Current position for motor 3 is 1 degrees
+2024-09-24 19:41:14,147 DEBUG: Current position for motor 4 is 191 degrees
+2024-09-24 19:41:14,153 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,153 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:14,159 DEBUG: Current position for motor 6 is 186 degrees
+2024-09-24 19:41:14,166 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,172 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:14,172 DEBUG: Motor positions: {'LR_WHEG': 1, 'LM_WHEG': 170, 'LF_WHEG': 1, 'RR_WHEG': 191, 'RM_WHEG': 216, 'RF_WHEG': 186, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:14,172 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:14,173 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:14,173 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-24 19:41:14,173 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:14,173 INFO: Switching to new gait: 0
+2024-09-24 19:41:14,173 INFO: Initializing Gait 1
+2024-09-24 19:41:14,200 ERROR: Error getting operating mode for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,205 INFO: Sync write goal positions set for group Wheg_Group
+2024-09-24 19:41:14,206 DEBUG: Setting pivot position: pivot_id=7, position=180
+2024-09-24 19:41:14,206 INFO: Profile velocity of 5 RPM set for all motors in group 'Pivot_Group'
+2024-09-24 19:41:14,224 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,230 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:14,230 DEBUG: Set pivot position: pivot_id=7, position=180
+2024-09-24 19:41:14,230 DEBUG: Setting pivot position: pivot_id=8, position=180
+2024-09-24 19:41:14,231 INFO: Profile velocity of 5 RPM set for all motors in group 'Pivot_Group'
+2024-09-24 19:41:14,242 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:14,248 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:14,248 DEBUG: Set pivot position: pivot_id=8, position=180
+2024-09-24 19:41:14,248 DEBUG: Executing Gait 1
+2024-09-24 19:41:14,255 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,261 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:14,267 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:14,273 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:14,274 INFO: Front pivot angle set to 180
+2024-09-24 19:41:14,274 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:14,274 INFO: Motor Positions: {'LR_WHEG': 1, 'LM_WHEG': 170, 'LF_WHEG': 1, 'RR_WHEG': 191, 'RM_WHEG': 216, 'RF_WHEG': 186, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:14,274 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-24 19:41:14,274 INFO: Button States: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:14,274 INFO: D-Pad Input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:14,375 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:14,375 DEBUG: Getting motor positions
+2024-09-24 19:41:14,381 DEBUG: Current position for motor 1 is 8 degrees
+2024-09-24 19:41:14,387 DEBUG: Current position for motor 2 is 171 degrees
+2024-09-24 19:41:14,393 DEBUG: Current position for motor 3 is 9 degrees
+2024-09-24 19:41:14,399 DEBUG: Current position for motor 4 is 189 degrees
+2024-09-24 19:41:14,405 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,405 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:14,411 DEBUG: Current position for motor 6 is 184 degrees
+2024-09-24 19:41:14,417 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,424 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,424 DEBUG: Motor positions: {'LR_WHEG': 8, 'LM_WHEG': 171, 'LF_WHEG': 9, 'RR_WHEG': 189, 'RM_WHEG': 216, 'RF_WHEG': 184, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:14,424 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:14,424 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:14,424 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:14,424 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:14,424 DEBUG: Executing Gait 1
+2024-09-24 19:41:14,431 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,437 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:14,443 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,444 INFO: Front pivot angle set to 180
+2024-09-24 19:41:14,444 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:14,544 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:14,544 DEBUG: Getting motor positions
+2024-09-24 19:41:14,550 DEBUG: Current position for motor 1 is 19 degrees
+2024-09-24 19:41:14,556 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:14,562 DEBUG: Current position for motor 3 is 19 degrees
+2024-09-24 19:41:14,568 DEBUG: Current position for motor 4 is 182 degrees
+2024-09-24 19:41:14,574 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,574 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:14,580 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:14,587 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,593 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,593 DEBUG: Motor positions: {'LR_WHEG': 19, 'LM_WHEG': 179, 'LF_WHEG': 19, 'RR_WHEG': 182, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:14,593 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:14,593 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:14,594 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:14,594 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:14,594 DEBUG: Executing Gait 1
+2024-09-24 19:41:14,600 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,606 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:14,613 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,613 INFO: Front pivot angle set to 180
+2024-09-24 19:41:14,613 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:14,713 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:14,714 DEBUG: Getting motor positions
+2024-09-24 19:41:14,719 DEBUG: Current position for motor 1 is 28 degrees
+2024-09-24 19:41:14,725 DEBUG: Current position for motor 2 is 181 degrees
+2024-09-24 19:41:14,731 DEBUG: Current position for motor 3 is 29 degrees
+2024-09-24 19:41:14,737 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:14,743 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,743 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:14,749 DEBUG: Current position for motor 6 is 178 degrees
+2024-09-24 19:41:14,756 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,762 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,762 DEBUG: Motor positions: {'LR_WHEG': 28, 'LM_WHEG': 181, 'LF_WHEG': 29, 'RR_WHEG': 180, 'RM_WHEG': 216, 'RF_WHEG': 178, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:14,763 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:14,763 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:14,763 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:14,763 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:14,763 DEBUG: Executing Gait 1
+2024-09-24 19:41:14,769 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,775 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:14,782 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,782 INFO: Front pivot angle set to 180
+2024-09-24 19:41:14,782 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:14,882 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:14,883 DEBUG: Getting motor positions
+2024-09-24 19:41:14,889 DEBUG: Current position for motor 1 is 38 degrees
+2024-09-24 19:41:14,894 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:14,900 DEBUG: Current position for motor 3 is 39 degrees
+2024-09-24 19:41:14,906 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:14,912 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:14,912 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:14,918 DEBUG: Current position for motor 6 is 180 degrees
+2024-09-24 19:41:14,925 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,931 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,931 DEBUG: Motor positions: {'LR_WHEG': 38, 'LM_WHEG': 179, 'LF_WHEG': 39, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 180, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:14,932 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:14,932 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:14,932 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:14,932 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:14,932 DEBUG: Executing Gait 1
+2024-09-24 19:41:14,938 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:14,944 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:14,951 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:14,951 INFO: Front pivot angle set to 180
+2024-09-24 19:41:14,951 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:15,051 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:15,052 DEBUG: Getting motor positions
+2024-09-24 19:41:15,058 DEBUG: Current position for motor 1 is 48 degrees
+2024-09-24 19:41:15,064 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:15,070 DEBUG: Current position for motor 3 is 49 degrees
+2024-09-24 19:41:15,076 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:15,081 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:15,082 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:15,088 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:15,094 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,100 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,101 DEBUG: Motor positions: {'LR_WHEG': 48, 'LM_WHEG': 179, 'LF_WHEG': 49, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:15,101 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:15,101 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:15,101 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:15,101 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:15,101 DEBUG: Executing Gait 1
+2024-09-24 19:41:15,108 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,114 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:15,120 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,120 INFO: Front pivot angle set to 180
+2024-09-24 19:41:15,120 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:15,221 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:15,221 DEBUG: Getting motor positions
+2024-09-24 19:41:15,227 DEBUG: Current position for motor 1 is 58 degrees
+2024-09-24 19:41:15,233 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:15,239 DEBUG: Current position for motor 3 is 59 degrees
+2024-09-24 19:41:15,245 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:15,251 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:15,251 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:15,257 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:15,263 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,270 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,270 DEBUG: Motor positions: {'LR_WHEG': 58, 'LM_WHEG': 179, 'LF_WHEG': 59, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:15,270 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:15,270 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:15,270 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:15,270 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:15,271 DEBUG: Executing Gait 1
+2024-09-24 19:41:15,277 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,283 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:15,290 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,290 INFO: Front pivot angle set to 180
+2024-09-24 19:41:15,290 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:15,390 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:15,391 DEBUG: Getting motor positions
+2024-09-24 19:41:15,397 DEBUG: Current position for motor 1 is 68 degrees
+2024-09-24 19:41:15,402 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:15,408 DEBUG: Current position for motor 3 is 69 degrees
+2024-09-24 19:41:15,414 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:15,420 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:15,420 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:15,426 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:15,433 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,439 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,440 DEBUG: Motor positions: {'LR_WHEG': 68, 'LM_WHEG': 179, 'LF_WHEG': 69, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:15,440 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:15,440 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:15,440 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:15,440 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:15,440 DEBUG: Executing Gait 1
+2024-09-24 19:41:15,446 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,452 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:15,459 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,459 INFO: Front pivot angle set to 180
+2024-09-24 19:41:15,459 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:15,560 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:15,560 DEBUG: Getting motor positions
+2024-09-24 19:41:15,566 DEBUG: Current position for motor 1 is 78 degrees
+2024-09-24 19:41:15,572 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:15,578 DEBUG: Current position for motor 3 is 79 degrees
+2024-09-24 19:41:15,584 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:15,589 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:15,590 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:15,596 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:15,602 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,608 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,608 DEBUG: Motor positions: {'LR_WHEG': 78, 'LM_WHEG': 179, 'LF_WHEG': 79, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:15,609 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:15,609 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:15,609 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:15,609 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:15,609 DEBUG: Executing Gait 1
+2024-09-24 19:41:15,615 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,621 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:15,628 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,628 INFO: Front pivot angle set to 180
+2024-09-24 19:41:15,628 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:15,729 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:15,729 DEBUG: Getting motor positions
+2024-09-24 19:41:15,735 DEBUG: Current position for motor 1 is 87 degrees
+2024-09-24 19:41:15,741 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:15,747 DEBUG: Current position for motor 3 is 89 degrees
+2024-09-24 19:41:15,753 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:15,759 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:15,759 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:15,765 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:15,771 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,778 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,778 DEBUG: Motor positions: {'LR_WHEG': 87, 'LM_WHEG': 179, 'LF_WHEG': 89, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:15,778 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:15,778 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:15,778 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:15,778 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:15,778 DEBUG: Executing Gait 1
+2024-09-24 19:41:15,785 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,791 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:15,797 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,797 INFO: Front pivot angle set to 180
+2024-09-24 19:41:15,797 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:15,898 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:15,898 DEBUG: Getting motor positions
+2024-09-24 19:41:15,904 DEBUG: Current position for motor 1 is 97 degrees
+2024-09-24 19:41:15,910 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:15,916 DEBUG: Current position for motor 3 is 99 degrees
+2024-09-24 19:41:15,922 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:15,928 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:15,928 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:15,934 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:15,941 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,947 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,947 DEBUG: Motor positions: {'LR_WHEG': 97, 'LM_WHEG': 179, 'LF_WHEG': 99, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:15,947 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:15,947 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:15,947 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:15,947 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:15,947 DEBUG: Executing Gait 1
+2024-09-24 19:41:15,954 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:15,960 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:15,967 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:15,967 INFO: Front pivot angle set to 180
+2024-09-24 19:41:15,967 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:16,067 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:16,067 DEBUG: Getting motor positions
+2024-09-24 19:41:16,073 DEBUG: Current position for motor 1 is 107 degrees
+2024-09-24 19:41:16,079 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:16,085 DEBUG: Current position for motor 3 is 109 degrees
+2024-09-24 19:41:16,091 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:16,097 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:16,097 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:16,103 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:16,110 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,116 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,116 DEBUG: Motor positions: {'LR_WHEG': 107, 'LM_WHEG': 179, 'LF_WHEG': 109, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:16,117 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:16,117 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:16,117 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:16,117 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:16,117 DEBUG: Executing Gait 1
+2024-09-24 19:41:16,123 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,129 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:16,136 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,136 INFO: Front pivot angle set to 180
+2024-09-24 19:41:16,136 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:16,237 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:16,237 DEBUG: Getting motor positions
+2024-09-24 19:41:16,243 DEBUG: Current position for motor 1 is 114 degrees
+2024-09-24 19:41:16,249 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:16,255 DEBUG: Current position for motor 3 is 119 degrees
+2024-09-24 19:41:16,261 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:16,267 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:16,267 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:16,273 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:16,279 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,286 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,286 DEBUG: Motor positions: {'LR_WHEG': 114, 'LM_WHEG': 179, 'LF_WHEG': 119, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:16,286 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:16,286 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:16,286 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:16,286 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:16,286 DEBUG: Executing Gait 1
+2024-09-24 19:41:16,293 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,299 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:16,305 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,306 INFO: Front pivot angle set to 180
+2024-09-24 19:41:16,306 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:16,406 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:16,406 DEBUG: Getting motor positions
+2024-09-24 19:41:16,412 DEBUG: Current position for motor 1 is 120 degrees
+2024-09-24 19:41:16,418 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:16,424 DEBUG: Current position for motor 3 is 129 degrees
+2024-09-24 19:41:16,430 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:16,436 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:16,436 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:16,442 DEBUG: Current position for motor 6 is 178 degrees
+2024-09-24 19:41:16,448 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,455 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,455 DEBUG: Motor positions: {'LR_WHEG': 120, 'LM_WHEG': 179, 'LF_WHEG': 129, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 178, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:16,455 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:16,455 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:16,455 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:16,455 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:16,455 DEBUG: Executing Gait 1
+2024-09-24 19:41:16,462 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,468 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:16,474 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,474 INFO: Front pivot angle set to 180
+2024-09-24 19:41:16,475 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:16,575 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:16,575 DEBUG: Getting motor positions
+2024-09-24 19:41:16,581 DEBUG: Current position for motor 1 is 125 degrees
+2024-09-24 19:41:16,587 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:16,593 DEBUG: Current position for motor 3 is 139 degrees
+2024-09-24 19:41:16,599 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:16,605 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:16,605 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:16,611 DEBUG: Current position for motor 6 is 178 degrees
+2024-09-24 19:41:16,617 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,624 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,624 DEBUG: Motor positions: {'LR_WHEG': 125, 'LM_WHEG': 179, 'LF_WHEG': 139, 'RR_WHEG': 181, 'RM_WHEG': 216, 'RF_WHEG': 178, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:16,624 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:16,624 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:16,624 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:16,624 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:16,624 DEBUG: Executing Gait 1
+2024-09-24 19:41:16,631 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,637 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:16,643 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,644 INFO: Front pivot angle set to 180
+2024-09-24 19:41:16,644 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:16,744 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:16,744 DEBUG: Getting motor positions
+2024-09-24 19:41:16,750 DEBUG: Current position for motor 1 is 130 degrees
+2024-09-24 19:41:16,756 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:16,762 DEBUG: Current position for motor 3 is 149 degrees
+2024-09-24 19:41:16,768 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:16,774 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:16,774 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:16,780 DEBUG: Current position for motor 6 is 177 degrees
+2024-09-24 19:41:16,787 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,793 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,793 DEBUG: Motor positions: {'LR_WHEG': 130, 'LM_WHEG': 179, 'LF_WHEG': 149, 'RR_WHEG': 179, 'RM_WHEG': 216, 'RF_WHEG': 177, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 180}
+2024-09-24 19:41:16,793 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:16,793 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:16,793 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:16,793 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:16,794 DEBUG: Executing Gait 1
+2024-09-24 19:41:16,800 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,806 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:16,813 DEBUG: Current position for motor 8 is 180 degrees
+2024-09-24 19:41:16,813 INFO: Front pivot angle set to 180
+2024-09-24 19:41:16,813 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:16,913 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:16,913 DEBUG: Getting motor positions
+2024-09-24 19:41:16,919 DEBUG: Current position for motor 1 is 142 degrees
+2024-09-24 19:41:16,925 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:16,931 DEBUG: Current position for motor 3 is 159 degrees
+2024-09-24 19:41:16,937 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:16,943 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:16,943 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:16,949 DEBUG: Current position for motor 6 is 176 degrees
+2024-09-24 19:41:16,956 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,962 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:16,962 DEBUG: Motor positions: {'LR_WHEG': 142, 'LM_WHEG': 179, 'LF_WHEG': 159, 'RR_WHEG': 180, 'RM_WHEG': 216, 'RF_WHEG': 176, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:16,963 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:16,963 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:16,963 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:16,963 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:16,963 DEBUG: Executing Gait 1
+2024-09-24 19:41:16,969 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:16,975 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:16,982 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:16,988 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:16,988 INFO: Front pivot angle set to 180
+2024-09-24 19:41:16,988 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:17,089 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:17,089 DEBUG: Getting motor positions
+2024-09-24 19:41:17,095 DEBUG: Current position for motor 1 is 151 degrees
+2024-09-24 19:41:17,101 DEBUG: Current position for motor 2 is 178 degrees
+2024-09-24 19:41:17,107 DEBUG: Current position for motor 3 is 169 degrees
+2024-09-24 19:41:17,113 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:17,119 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:17,119 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:17,125 DEBUG: Current position for motor 6 is 176 degrees
+2024-09-24 19:41:17,131 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,138 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:17,138 DEBUG: Motor positions: {'LR_WHEG': 151, 'LM_WHEG': 178, 'LF_WHEG': 169, 'RR_WHEG': 180, 'RM_WHEG': 216, 'RF_WHEG': 176, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:17,138 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:17,138 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:17,138 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:17,138 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:17,138 DEBUG: Executing Gait 1
+2024-09-24 19:41:17,145 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,151 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:17,157 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:17,163 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:17,164 INFO: Front pivot angle set to 180
+2024-09-24 19:41:17,164 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:17,264 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:17,264 DEBUG: Getting motor positions
+2024-09-24 19:41:17,270 DEBUG: Current position for motor 1 is 162 degrees
+2024-09-24 19:41:17,276 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:17,282 DEBUG: Current position for motor 3 is 178 degrees
+2024-09-24 19:41:17,288 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:17,294 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:17,294 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:17,300 DEBUG: Current position for motor 6 is 174 degrees
+2024-09-24 19:41:17,307 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,313 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:17,313 DEBUG: Motor positions: {'LR_WHEG': 162, 'LM_WHEG': 179, 'LF_WHEG': 178, 'RR_WHEG': 179, 'RM_WHEG': 216, 'RF_WHEG': 174, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:17,313 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:17,313 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:17,313 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:17,314 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:17,314 DEBUG: Executing Gait 1
+2024-09-24 19:41:17,320 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,326 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:17,333 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:17,339 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:17,339 INFO: Front pivot angle set to 180
+2024-09-24 19:41:17,339 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:17,440 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:17,440 DEBUG: Getting motor positions
+2024-09-24 19:41:17,446 DEBUG: Current position for motor 1 is 166 degrees
+2024-09-24 19:41:17,452 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:17,457 DEBUG: Current position for motor 3 is 179 degrees
+2024-09-24 19:41:17,463 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:17,469 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:17,470 DEBUG: Current position for motor 5 is 216 degrees
+2024-09-24 19:41:17,475 DEBUG: Current position for motor 6 is 174 degrees
+2024-09-24 19:41:17,482 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,488 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:17,489 DEBUG: Motor positions: {'LR_WHEG': 166, 'LM_WHEG': 179, 'LF_WHEG': 179, 'RR_WHEG': 180, 'RM_WHEG': 216, 'RF_WHEG': 174, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:17,489 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:17,489 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:17,489 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:17,489 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:17,489 DEBUG: Executing Gait 1
+2024-09-24 19:41:17,495 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,501 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:17,508 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:17,514 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:17,514 INFO: Front pivot angle set to 180
+2024-09-24 19:41:17,514 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:17,615 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:17,615 DEBUG: Getting motor positions
+2024-09-24 19:41:17,621 DEBUG: Current position for motor 1 is 174 degrees
+2024-09-24 19:41:17,627 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:17,633 DEBUG: Current position for motor 3 is 179 degrees
+2024-09-24 19:41:17,639 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:17,645 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:17,645 DEBUG: Current position for motor 5 is 219 degrees
+2024-09-24 19:41:17,651 DEBUG: Current position for motor 6 is 175 degrees
+2024-09-24 19:41:17,657 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,664 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:17,664 DEBUG: Motor positions: {'LR_WHEG': 174, 'LM_WHEG': 179, 'LF_WHEG': 179, 'RR_WHEG': 180, 'RM_WHEG': 219, 'RF_WHEG': 175, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 182}
+2024-09-24 19:41:17,664 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:17,664 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:17,664 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:17,664 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:17,664 DEBUG: Executing Gait 1
+2024-09-24 19:41:17,670 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,677 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:17,683 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:17,689 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:17,690 INFO: Front pivot angle set to 180
+2024-09-24 19:41:17,690 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:17,790 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:17,790 DEBUG: Getting motor positions
+2024-09-24 19:41:17,796 DEBUG: Current position for motor 1 is 182 degrees
+2024-09-24 19:41:17,802 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:17,808 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:17,814 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:17,820 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:17,821 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:17,826 DEBUG: Current position for motor 6 is 179 degrees
+2024-09-24 19:41:17,833 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,839 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:17,840 DEBUG: Motor positions: {'LR_WHEG': 182, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 180, 'RM_WHEG': 221, 'RF_WHEG': 179, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 182}
+2024-09-24 19:41:17,840 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:17,840 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:17,840 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:17,840 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:17,840 DEBUG: Executing Gait 1
+2024-09-24 19:41:17,846 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:17,852 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:17,859 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:17,865 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:17,865 INFO: Front pivot angle set to 180
+2024-09-24 19:41:17,865 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:17,966 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:17,966 DEBUG: Getting motor positions
+2024-09-24 19:41:17,972 DEBUG: Current position for motor 1 is 182 degrees
+2024-09-24 19:41:17,978 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:17,984 DEBUG: Current position for motor 3 is 179 degrees
+2024-09-24 19:41:17,990 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:17,996 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:17,996 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:18,002 DEBUG: Current position for motor 6 is 180 degrees
+2024-09-24 19:41:18,009 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,015 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:18,015 DEBUG: Motor positions: {'LR_WHEG': 182, 'LM_WHEG': 179, 'LF_WHEG': 179, 'RR_WHEG': 180, 'RM_WHEG': 221, 'RF_WHEG': 180, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 182}
+2024-09-24 19:41:18,015 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:18,015 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:18,016 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:18,016 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:18,016 DEBUG: Executing Gait 1
+2024-09-24 19:41:18,022 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,028 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:18,035 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:18,041 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:18,041 INFO: Front pivot angle set to 180
+2024-09-24 19:41:18,041 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:18,141 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:18,142 DEBUG: Getting motor positions
+2024-09-24 19:41:18,148 DEBUG: Current position for motor 1 is 186 degrees
+2024-09-24 19:41:18,154 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:18,159 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:18,165 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:18,171 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:18,172 DEBUG: Current position for motor 5 is 222 degrees
+2024-09-24 19:41:18,178 DEBUG: Current position for motor 6 is 180 degrees
+2024-09-24 19:41:18,184 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,191 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:18,191 DEBUG: Motor positions: {'LR_WHEG': 186, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 180, 'RM_WHEG': 222, 'RF_WHEG': 180, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 182}
+2024-09-24 19:41:18,191 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:18,191 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:18,191 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:18,191 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:18,191 DEBUG: Executing Gait 1
+2024-09-24 19:41:18,198 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,204 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:18,210 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:18,216 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:18,217 INFO: Front pivot angle set to 180
+2024-09-24 19:41:18,217 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:18,317 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:18,317 DEBUG: Getting motor positions
+2024-09-24 19:41:18,323 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:18,329 DEBUG: Current position for motor 2 is 181 degrees
+2024-09-24 19:41:18,335 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:18,341 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:18,347 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:18,347 DEBUG: Current position for motor 5 is 222 degrees
+2024-09-24 19:41:18,353 DEBUG: Current position for motor 6 is 180 degrees
+2024-09-24 19:41:18,360 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,366 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,366 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 181, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 222, 'RF_WHEG': 180, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:18,366 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:18,366 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:18,366 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:18,367 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:18,367 DEBUG: Executing Gait 1
+2024-09-24 19:41:18,373 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,379 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:18,386 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,392 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:18,393 INFO: Front pivot angle set to 180
+2024-09-24 19:41:18,393 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:18,493 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:18,493 DEBUG: Getting motor positions
+2024-09-24 19:41:18,500 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:18,506 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:18,512 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:18,518 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:18,524 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:18,524 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:18,530 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:18,537 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,544 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,544 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 221, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:18,544 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:18,544 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:18,545 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:18,545 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:18,545 DEBUG: Executing Gait 1
+2024-09-24 19:41:18,551 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,558 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:18,564 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,571 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:18,571 INFO: Front pivot angle set to 180
+2024-09-24 19:41:18,571 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:18,672 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:18,672 DEBUG: Getting motor positions
+2024-09-24 19:41:18,678 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:18,684 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:18,690 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:18,696 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:18,702 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:18,702 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:18,708 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:18,714 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,721 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,721 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:18,721 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:18,721 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:18,721 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:18,721 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:18,721 DEBUG: Executing Gait 1
+2024-09-24 19:41:18,728 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,734 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:18,740 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,746 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:18,746 INFO: Front pivot angle set to 180
+2024-09-24 19:41:18,747 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:18,847 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:18,847 DEBUG: Getting motor positions
+2024-09-24 19:41:18,853 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:18,859 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:18,865 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:18,871 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:18,877 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:18,877 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:18,883 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:18,889 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,896 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,896 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:18,896 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:18,896 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:18,896 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:18,896 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:18,896 DEBUG: Executing Gait 1
+2024-09-24 19:41:18,903 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:18,909 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:18,916 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:18,922 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:18,922 INFO: Front pivot angle set to 180
+2024-09-24 19:41:18,922 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:19,022 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:19,022 DEBUG: Getting motor positions
+2024-09-24 19:41:19,028 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:19,034 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:19,040 DEBUG: Current position for motor 3 is 179 degrees
+2024-09-24 19:41:19,046 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:19,052 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:19,052 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:19,058 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:19,065 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,071 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,071 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 180, 'LF_WHEG': 179, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:19,072 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:19,072 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:19,072 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:19,072 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:19,072 DEBUG: Executing Gait 1
+2024-09-24 19:41:19,078 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,084 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:19,091 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,097 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:19,097 INFO: Front pivot angle set to 180
+2024-09-24 19:41:19,097 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:19,198 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:19,198 DEBUG: Getting motor positions
+2024-09-24 19:41:19,204 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:19,210 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:19,215 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:19,221 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:19,227 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:19,228 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:19,234 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:19,240 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,246 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,247 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:19,247 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:19,247 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:19,247 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:19,247 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:19,247 DEBUG: Executing Gait 1
+2024-09-24 19:41:19,253 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,259 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:19,266 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,272 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:19,272 INFO: Front pivot angle set to 180
+2024-09-24 19:41:19,272 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:19,373 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:19,373 DEBUG: Getting motor positions
+2024-09-24 19:41:19,379 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:19,385 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:19,391 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:19,397 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:19,403 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:19,403 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:19,409 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:19,415 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,422 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,422 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:19,422 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:19,422 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:19,422 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:19,422 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:19,422 DEBUG: Executing Gait 1
+2024-09-24 19:41:19,429 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,435 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:19,441 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,447 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:19,448 INFO: Front pivot angle set to 180
+2024-09-24 19:41:19,448 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:19,448 INFO: Motor Positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:19,448 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-24 19:41:19,448 INFO: Button States: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:19,448 INFO: D-Pad Input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:19,549 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:19,549 DEBUG: Getting motor positions
+2024-09-24 19:41:19,555 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:19,561 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:19,567 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:19,573 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:19,578 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:19,579 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:19,585 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:19,591 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,598 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,598 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:19,598 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:19,598 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:19,598 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:19,598 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:19,598 DEBUG: Executing Gait 1
+2024-09-24 19:41:19,605 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,611 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:19,617 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,623 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:19,624 INFO: Front pivot angle set to 180
+2024-09-24 19:41:19,624 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:19,724 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:19,724 DEBUG: Getting motor positions
+2024-09-24 19:41:19,730 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:19,736 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:19,742 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:19,748 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:19,754 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:19,754 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:19,760 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:19,767 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,773 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,774 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:19,774 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:19,774 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:19,774 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:19,774 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:19,774 DEBUG: Executing Gait 1
+2024-09-24 19:41:19,780 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,787 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:19,793 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,799 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:19,799 INFO: Front pivot angle set to 180
+2024-09-24 19:41:19,799 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:19,900 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:19,900 DEBUG: Getting motor positions
+2024-09-24 19:41:19,906 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:19,912 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:19,918 DEBUG: Current position for motor 3 is 179 degrees
+2024-09-24 19:41:19,924 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:19,930 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:19,930 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:19,936 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:19,942 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,949 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,949 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 179, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:19,949 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:19,949 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:19,949 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:19,949 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:19,949 DEBUG: Executing Gait 1
+2024-09-24 19:41:19,956 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:19,962 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:19,968 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:19,974 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:19,975 INFO: Front pivot angle set to 180
+2024-09-24 19:41:19,975 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:20,075 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:20,075 DEBUG: Getting motor positions
+2024-09-24 19:41:20,081 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:20,087 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:20,093 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:20,099 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:20,105 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:20,106 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:20,111 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:20,118 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,124 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,124 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:20,125 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:20,125 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:20,125 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:20,125 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:20,125 DEBUG: Executing Gait 1
+2024-09-24 19:41:20,131 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,137 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:20,144 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,150 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:20,150 INFO: Front pivot angle set to 180
+2024-09-24 19:41:20,150 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:20,250 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:20,251 DEBUG: Getting motor positions
+2024-09-24 19:41:20,257 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:20,263 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:20,269 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:20,274 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:20,280 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:20,281 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:20,287 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:20,293 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,300 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,300 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:20,300 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:20,300 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:20,300 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:20,300 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:20,300 DEBUG: Executing Gait 1
+2024-09-24 19:41:20,307 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,313 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:20,319 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,325 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:20,326 INFO: Front pivot angle set to 180
+2024-09-24 19:41:20,326 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:20,426 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:20,426 DEBUG: Getting motor positions
+2024-09-24 19:41:20,432 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:20,438 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:20,444 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:20,450 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:20,456 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:20,456 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:20,462 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:20,469 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,475 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,475 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:20,475 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:20,476 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:20,476 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:20,476 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:20,476 DEBUG: Executing Gait 1
+2024-09-24 19:41:20,482 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,488 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:20,495 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,501 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:20,501 INFO: Front pivot angle set to 180
+2024-09-24 19:41:20,501 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:20,602 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:20,602 DEBUG: Getting motor positions
+2024-09-24 19:41:20,608 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:20,614 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:20,620 DEBUG: Current position for motor 3 is 179 degrees
+2024-09-24 19:41:20,625 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:20,631 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:20,632 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:20,637 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:20,644 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,650 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,651 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 179, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:20,651 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:20,651 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:20,651 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:20,651 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:20,651 DEBUG: Executing Gait 1
+2024-09-24 19:41:20,657 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,664 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:20,670 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,676 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:20,676 INFO: Front pivot angle set to 180
+2024-09-24 19:41:20,676 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:20,777 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:20,777 DEBUG: Getting motor positions
+2024-09-24 19:41:20,783 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:20,789 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:20,795 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:20,801 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:20,807 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:20,807 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:20,813 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:20,819 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,826 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,826 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:20,826 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:20,826 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:20,826 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:20,826 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:20,826 DEBUG: Executing Gait 1
+2024-09-24 19:41:20,833 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:20,839 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:20,845 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:20,851 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:20,852 INFO: Front pivot angle set to 180
+2024-09-24 19:41:20,852 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:20,952 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:20,952 DEBUG: Getting motor positions
+2024-09-24 19:41:20,958 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:20,964 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:20,970 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:20,976 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:20,982 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:20,982 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:20,988 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:20,995 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,001 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:21,001 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 220, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:21,002 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:21,002 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:21,002 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:21,002 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:21,002 DEBUG: Executing Gait 1
+2024-09-24 19:41:21,008 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,014 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:21,021 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:21,027 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:21,027 INFO: Front pivot angle set to 180
+2024-09-24 19:41:21,027 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:21,128 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:21,128 DEBUG: Getting motor positions
+2024-09-24 19:41:21,134 DEBUG: Current position for motor 1 is 183 degrees
+2024-09-24 19:41:21,140 DEBUG: Current position for motor 2 is 178 degrees
+2024-09-24 19:41:21,146 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:21,152 DEBUG: Current position for motor 4 is 181 degrees
+2024-09-24 19:41:21,158 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:21,158 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:21,164 DEBUG: Current position for motor 6 is 181 degrees
+2024-09-24 19:41:21,170 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,177 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:21,177 DEBUG: Motor positions: {'LR_WHEG': 183, 'LM_WHEG': 178, 'LF_WHEG': 180, 'RR_WHEG': 181, 'RM_WHEG': 221, 'RF_WHEG': 181, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 182}
+2024-09-24 19:41:21,177 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:21,177 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:21,177 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:21,177 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:21,177 DEBUG: Executing Gait 1
+2024-09-24 19:41:21,183 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,190 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:21,196 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:21,202 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:21,202 INFO: Front pivot angle set to 180
+2024-09-24 19:41:21,202 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:21,303 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:21,303 DEBUG: Getting motor positions
+2024-09-24 19:41:21,309 DEBUG: Current position for motor 1 is 184 degrees
+2024-09-24 19:41:21,315 DEBUG: Current position for motor 2 is 178 degrees
+2024-09-24 19:41:21,321 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:21,327 DEBUG: Current position for motor 4 is 180 degrees
+2024-09-24 19:41:21,333 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:21,333 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:21,339 DEBUG: Current position for motor 6 is 180 degrees
+2024-09-24 19:41:21,345 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,352 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:21,352 DEBUG: Motor positions: {'LR_WHEG': 184, 'LM_WHEG': 178, 'LF_WHEG': 180, 'RR_WHEG': 180, 'RM_WHEG': 221, 'RF_WHEG': 180, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 182}
+2024-09-24 19:41:21,352 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:21,352 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:21,352 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:21,352 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:21,353 DEBUG: Executing Gait 1
+2024-09-24 19:41:21,359 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,365 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:21,371 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:21,378 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:21,378 INFO: Front pivot angle set to 180
+2024-09-24 19:41:21,378 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:21,478 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:21,478 DEBUG: Getting motor positions
+2024-09-24 19:41:21,484 DEBUG: Current position for motor 1 is 184 degrees
+2024-09-24 19:41:21,490 DEBUG: Current position for motor 2 is 178 degrees
+2024-09-24 19:41:21,496 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:21,502 DEBUG: Current position for motor 4 is 179 degrees
+2024-09-24 19:41:21,508 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:21,508 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:21,514 DEBUG: Current position for motor 6 is 180 degrees
+2024-09-24 19:41:21,521 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,527 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:21,527 DEBUG: Motor positions: {'LR_WHEG': 184, 'LM_WHEG': 178, 'LF_WHEG': 180, 'RR_WHEG': 179, 'RM_WHEG': 221, 'RF_WHEG': 180, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 182}
+2024-09-24 19:41:21,527 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:21,528 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:21,528 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:21,528 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:21,528 DEBUG: Executing Gait 1
+2024-09-24 19:41:21,534 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,540 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:21,547 DEBUG: Current position for motor 8 is 182 degrees
+2024-09-24 19:41:21,553 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:21,553 INFO: Front pivot angle set to 180
+2024-09-24 19:41:21,553 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:21,654 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:21,654 DEBUG: Getting motor positions
+2024-09-24 19:41:21,660 DEBUG: Current position for motor 1 is 184 degrees
+2024-09-24 19:41:21,666 DEBUG: Current position for motor 2 is 180 degrees
+2024-09-24 19:41:21,672 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:21,678 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:21,684 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:21,684 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:21,690 DEBUG: Current position for motor 6 is 180 degrees
+2024-09-24 19:41:21,696 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,703 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:21,703 DEBUG: Motor positions: {'LR_WHEG': 184, 'LM_WHEG': 180, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 180, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:21,703 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:21,703 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:21,703 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:21,703 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:21,703 DEBUG: Executing Gait 1
+2024-09-24 19:41:21,710 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,716 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:21,722 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:21,728 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:21,729 INFO: Front pivot angle set to 180
+2024-09-24 19:41:21,729 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:21,829 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:21,829 DEBUG: Getting motor positions
+2024-09-24 19:41:21,835 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:21,841 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:21,847 DEBUG: Current position for motor 3 is 179 degrees
+2024-09-24 19:41:21,853 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:21,859 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:21,859 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:21,865 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:21,871 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,878 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:21,878 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 179, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:21,878 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:21,878 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:21,878 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:21,878 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:21,878 DEBUG: Executing Gait 1
+2024-09-24 19:41:21,885 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:21,891 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:21,897 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:21,904 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:21,904 INFO: Front pivot angle set to 180
+2024-09-24 19:41:21,904 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:22,004 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:22,004 DEBUG: Getting motor positions
+2024-09-24 19:41:22,010 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:22,016 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:22,022 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:22,028 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:22,034 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:22,035 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:22,040 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:22,047 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,054 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,054 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:22,054 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:22,054 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:22,054 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:22,054 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:22,054 DEBUG: Executing Gait 1
+2024-09-24 19:41:22,061 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,067 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:22,073 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,079 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:22,080 INFO: Front pivot angle set to 180
+2024-09-24 19:41:22,080 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:22,180 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:22,180 DEBUG: Getting motor positions
+2024-09-24 19:41:22,186 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:22,192 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:22,198 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:22,204 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:22,210 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:22,210 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:22,216 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:22,222 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,229 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,229 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:22,229 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:22,229 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:22,229 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:22,229 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:22,230 DEBUG: Executing Gait 1
+2024-09-24 19:41:22,236 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,242 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:22,249 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,255 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:22,255 INFO: Front pivot angle set to 180
+2024-09-24 19:41:22,255 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:22,355 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:22,356 DEBUG: Getting motor positions
+2024-09-24 19:41:22,362 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:22,367 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:22,373 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:22,379 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:22,385 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:22,385 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:22,391 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:22,398 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,404 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,404 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:22,405 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:22,405 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:22,405 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:22,405 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:22,405 DEBUG: Executing Gait 1
+2024-09-24 19:41:22,411 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,417 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:22,424 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,430 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:22,430 INFO: Front pivot angle set to 180
+2024-09-24 19:41:22,430 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:22,531 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:22,531 DEBUG: Getting motor positions
+2024-09-24 19:41:22,537 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:22,543 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:22,549 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:22,555 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:22,561 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:22,561 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:22,567 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:22,573 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,580 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,580 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:22,580 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:22,580 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:22,580 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:22,580 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:22,580 DEBUG: Executing Gait 1
+2024-09-24 19:41:22,587 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,593 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:22,599 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,606 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:22,606 INFO: Front pivot angle set to 180
+2024-09-24 19:41:22,606 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:22,706 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:22,706 DEBUG: Getting motor positions
+2024-09-24 19:41:22,712 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:22,718 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:22,724 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:22,730 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:22,736 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:22,737 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:22,743 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:22,749 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,756 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,756 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:22,756 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:22,756 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:22,756 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:22,756 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:22,756 DEBUG: Executing Gait 1
+2024-09-24 19:41:22,763 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,769 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:22,775 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,782 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:22,782 INFO: Front pivot angle set to 180
+2024-09-24 19:41:22,782 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:22,882 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:22,882 DEBUG: Getting motor positions
+2024-09-24 19:41:22,888 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:22,894 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:22,900 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:22,906 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:22,912 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:22,912 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:22,918 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:22,925 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,931 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,931 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:22,931 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:22,932 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:22,932 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:22,932 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:22,932 DEBUG: Executing Gait 1
+2024-09-24 19:41:22,938 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:22,944 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:22,951 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:22,957 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:22,957 INFO: Front pivot angle set to 180
+2024-09-24 19:41:22,957 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:23,058 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:23,058 DEBUG: Getting motor positions
+2024-09-24 19:41:23,064 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:23,070 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:23,076 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:23,082 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:23,088 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:23,088 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:23,094 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:23,100 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,107 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,107 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:23,107 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:23,107 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:23,107 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:23,107 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:23,108 DEBUG: Executing Gait 1
+2024-09-24 19:41:23,114 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,120 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:23,127 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,133 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:23,133 INFO: Front pivot angle set to 180
+2024-09-24 19:41:23,133 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:23,233 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:23,234 DEBUG: Getting motor positions
+2024-09-24 19:41:23,239 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:23,245 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:23,251 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:23,257 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:23,263 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:23,264 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:23,269 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:23,276 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,282 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,282 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:23,283 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:23,283 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:23,283 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:23,283 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:23,283 DEBUG: Executing Gait 1
+2024-09-24 19:41:23,289 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,295 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:23,302 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,308 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:23,308 INFO: Front pivot angle set to 180
+2024-09-24 19:41:23,308 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:23,409 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:23,409 DEBUG: Getting motor positions
+2024-09-24 19:41:23,415 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:23,421 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:23,427 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:23,433 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:23,439 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:23,439 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:23,445 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:23,451 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,458 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,458 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:23,458 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:23,458 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:23,458 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:23,458 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:23,458 DEBUG: Executing Gait 1
+2024-09-24 19:41:23,465 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,471 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:23,477 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,484 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:23,484 INFO: Front pivot angle set to 180
+2024-09-24 19:41:23,484 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:23,584 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:23,585 DEBUG: Getting motor positions
+2024-09-24 19:41:23,591 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:23,597 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:23,603 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:23,609 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:23,615 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:23,615 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:23,621 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:23,628 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,635 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,635 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:23,635 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:23,635 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:23,635 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:23,635 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:23,635 DEBUG: Executing Gait 1
+2024-09-24 19:41:23,642 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,648 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:23,655 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,661 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:23,661 INFO: Front pivot angle set to 180
+2024-09-24 19:41:23,662 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:23,762 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:23,762 DEBUG: Getting motor positions
+2024-09-24 19:41:23,768 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:23,774 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:23,780 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:23,786 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:23,792 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:23,792 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:23,798 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:23,805 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,811 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,811 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:23,811 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:23,811 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:23,811 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:23,812 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:23,812 DEBUG: Executing Gait 1
+2024-09-24 19:41:23,818 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,824 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:23,831 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,837 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:23,837 INFO: Front pivot angle set to 180
+2024-09-24 19:41:23,837 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:23,937 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:23,938 DEBUG: Getting motor positions
+2024-09-24 19:41:23,944 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:23,949 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:23,955 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:23,961 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:23,967 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:23,968 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:23,974 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:23,980 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:23,986 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:23,987 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:23,987 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:23,987 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:23,987 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:23,987 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:23,987 DEBUG: Executing Gait 1
+2024-09-24 19:41:23,993 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,000 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:24,006 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,012 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:24,012 INFO: Front pivot angle set to 180
+2024-09-24 19:41:24,012 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:24,113 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:24,113 DEBUG: Getting motor positions
+2024-09-24 19:41:24,119 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:24,125 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:24,131 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:24,137 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:24,143 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:24,143 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:24,149 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:24,155 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,162 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,162 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 220, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:24,162 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:24,162 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:24,162 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:24,162 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:24,162 DEBUG: Executing Gait 1
+2024-09-24 19:41:24,169 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,175 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:24,181 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,188 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:24,188 INFO: Front pivot angle set to 180
+2024-09-24 19:41:24,188 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:24,288 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:24,288 DEBUG: Getting motor positions
+2024-09-24 19:41:24,294 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:24,300 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:24,306 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:24,312 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:24,318 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:24,318 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:24,324 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:24,331 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,337 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,337 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:24,338 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:24,338 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:24,338 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:24,338 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:24,338 DEBUG: Executing Gait 1
+2024-09-24 19:41:24,344 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,350 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:24,357 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,363 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:24,363 INFO: Front pivot angle set to 180
+2024-09-24 19:41:24,363 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:24,464 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:24,464 DEBUG: Getting motor positions
+2024-09-24 19:41:24,470 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:24,476 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:24,482 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:24,488 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:24,494 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:24,494 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:24,500 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:24,506 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,513 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,513 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 220, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:24,513 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:24,514 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:24,514 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:24,514 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:24,514 DEBUG: Executing Gait 1
+2024-09-24 19:41:24,520 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,526 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:24,533 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,539 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:24,539 INFO: Front pivot angle set to 180
+2024-09-24 19:41:24,539 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:24,539 INFO: Motor Positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 220, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:24,539 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-24 19:41:24,540 INFO: Button States: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:24,540 INFO: D-Pad Input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:24,640 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:24,640 DEBUG: Getting motor positions
+2024-09-24 19:41:24,646 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:24,652 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:24,658 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:24,664 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:24,670 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:24,670 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:24,676 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:24,683 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,689 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,689 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:24,689 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:24,689 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:24,690 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:24,690 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:24,690 DEBUG: Executing Gait 1
+2024-09-24 19:41:24,696 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,702 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:24,709 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,715 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:24,715 INFO: Front pivot angle set to 180
+2024-09-24 19:41:24,715 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:24,816 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:24,816 DEBUG: Getting motor positions
+2024-09-24 19:41:24,822 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:24,828 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:24,834 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:24,840 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:24,846 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:24,846 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:24,852 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:24,858 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,865 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,865 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 220, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:24,865 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:24,865 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:24,865 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:24,865 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:24,865 DEBUG: Executing Gait 1
+2024-09-24 19:41:24,872 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:24,878 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:24,884 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:24,891 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:24,891 INFO: Front pivot angle set to 180
+2024-09-24 19:41:24,891 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:24,991 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:24,992 DEBUG: Getting motor positions
+2024-09-24 19:41:24,998 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:25,003 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:25,009 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:25,015 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:25,021 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:25,022 DEBUG: Current position for motor 5 is 220 degrees
+2024-09-24 19:41:25,027 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:25,034 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,040 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,041 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 220, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:25,041 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:25,041 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:25,041 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:25,041 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:25,041 DEBUG: Executing Gait 1
+2024-09-24 19:41:25,047 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,053 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:25,060 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,066 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:25,066 INFO: Front pivot angle set to 180
+2024-09-24 19:41:25,066 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:25,167 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:25,167 DEBUG: Getting motor positions
+2024-09-24 19:41:25,173 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:25,179 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:25,185 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:25,191 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:25,197 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:25,197 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:25,203 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:25,210 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,216 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,216 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:25,216 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:25,216 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:25,216 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:25,217 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:25,217 DEBUG: Executing Gait 1
+2024-09-24 19:41:25,223 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,229 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:25,236 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,242 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:25,242 INFO: Front pivot angle set to 180
+2024-09-24 19:41:25,242 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:25,343 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:25,343 DEBUG: Getting motor positions
+2024-09-24 19:41:25,349 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:25,355 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:25,361 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:25,367 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:25,373 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:25,373 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:25,379 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:25,385 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,391 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,392 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:25,392 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:25,392 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:25,392 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:25,392 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:25,392 DEBUG: Executing Gait 1
+2024-09-24 19:41:25,399 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,405 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:25,411 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,417 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:25,418 INFO: Front pivot angle set to 180
+2024-09-24 19:41:25,418 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:25,518 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:25,518 DEBUG: Getting motor positions
+2024-09-24 19:41:25,524 DEBUG: Current position for motor 1 is 180 degrees
+2024-09-24 19:41:25,530 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:25,536 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:25,542 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:25,548 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:25,548 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:25,554 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:25,561 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,567 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,567 DEBUG: Motor positions: {'LR_WHEG': 180, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:25,567 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:25,568 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:25,568 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:25,568 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:25,568 DEBUG: Executing Gait 1
+2024-09-24 19:41:25,574 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,580 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:25,587 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,593 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:25,593 INFO: Front pivot angle set to 180
+2024-09-24 19:41:25,593 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:25,694 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:25,694 DEBUG: Getting motor positions
+2024-09-24 19:41:25,700 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:25,706 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:25,712 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:25,718 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:25,724 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:25,724 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:25,730 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:25,736 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,743 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,743 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:25,743 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:25,743 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:25,743 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:25,743 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:25,743 DEBUG: Executing Gait 1
+2024-09-24 19:41:25,750 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,756 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:25,762 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,769 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:25,769 INFO: Front pivot angle set to 180
+2024-09-24 19:41:25,769 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:25,869 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:25,869 DEBUG: Getting motor positions
+2024-09-24 19:41:25,875 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:25,881 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:25,887 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:25,893 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:25,899 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:25,899 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:25,905 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:25,912 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,918 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,918 DEBUG: Motor positions: {'LR_WHEG': 179, 'LM_WHEG': 179, 'LF_WHEG': 180, 'RR_WHEG': 178, 'RM_WHEG': 221, 'RF_WHEG': 182, 'FRONT_PIVOT': 178, 'REAR_PIVOT': 181}
+2024-09-24 19:41:25,918 DEBUG: Trigger inputs: L2=-1.0, R2=-1.0
+2024-09-24 19:41:25,918 DEBUG: D-Pad input: {'dpad_up': False, 'dpad_down': False, 'dpad_left': False, 'dpad_right': False}
+2024-09-24 19:41:25,918 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0.0
+2024-09-24 19:41:25,919 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-24 19:41:25,919 DEBUG: Executing Gait 1
+2024-09-24 19:41:25,925 DEBUG: Current position for motor 7 is 178 degrees
+2024-09-24 19:41:25,931 INFO: Goal position 180 set for motor 7
+2024-09-24 19:41:25,938 DEBUG: Current position for motor 8 is 181 degrees
+2024-09-24 19:41:25,944 INFO: Goal position 180 set for motor 8
+2024-09-24 19:41:25,944 INFO: Front pivot angle set to 180
+2024-09-24 19:41:25,944 INFO: Rear pivot angle set to 180
+2024-09-24 19:41:26,045 DEBUG: Button states: {'square': False, 'x': False, 'circle': False, 'triangle': False, 'l1': False, 'r1': False, 'l2': False, 'r2': False, 'share': False, 'options': False, 'l3': False, 'r3': False, 'ps': False}
+2024-09-24 19:41:26,045 DEBUG: Getting motor positions
+2024-09-24 19:41:26,051 DEBUG: Current position for motor 1 is 179 degrees
+2024-09-24 19:41:26,057 DEBUG: Current position for motor 2 is 179 degrees
+2024-09-24 19:41:26,063 DEBUG: Current position for motor 3 is 180 degrees
+2024-09-24 19:41:26,069 DEBUG: Current position for motor 4 is 178 degrees
+2024-09-24 19:41:26,075 ERROR: Error getting position for motor 5: [RxPacketError] Hardware error occurred. Check the error at Control Table (Hardware Error Status)!
+2024-09-24 19:41:26,075 DEBUG: Current position for motor 5 is 221 degrees
+2024-09-24 19:41:26,081 DEBUG: Current position for motor 6 is 182 degrees
+2024-09-24 19:41:26,085 INFO: Terminating program...
+2024-09-24 19:41:26,085 ERROR: Failed to disable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,085 ERROR: Failed to disable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,085 ERROR: Failed to disable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,085 ERROR: Failed to disable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,085 ERROR: Failed to disable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,085 ERROR: Failed to disable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 INFO: Torque disabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,086 ERROR: Failed to sync write operating modes for group Wheg_Group: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 ERROR: Failed to enable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 ERROR: Failed to enable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 ERROR: Failed to enable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 ERROR: Failed to enable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 ERROR: Failed to enable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 ERROR: Failed to enable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,086 INFO: Torque enabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,087 DEBUG: Setting velocity limit for motors in group Wheg_Group
+2024-09-24 19:41:26,087 ERROR: Failed to bulk write velocity limit for group 'Wheg_Group': [TxRxResult] Port is in use!
+2024-09-24 19:41:26,087 DEBUG: Setting wheg velocity: wheg_ids=[1], rpm=0
+2024-09-24 19:41:26,087 ERROR: Failed to set goal velocity for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,087 INFO: Goal velocity set to 0 for motor 1
+2024-09-24 19:41:26,087 DEBUG: Set wheg velocity: wheg_id=1, rpm=0
+2024-09-24 19:41:26,087 INFO: Set velocity to 0 for wheg_id=1
+2024-09-24 19:41:26,087 ERROR: Failed to disable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,087 ERROR: Failed to disable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,087 ERROR: Failed to disable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,088 ERROR: Failed to disable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,088 ERROR: Failed to disable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,088 ERROR: Failed to disable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,088 INFO: Torque disabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,088 ERROR: Failed to sync write operating modes for group Wheg_Group: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,088 ERROR: Failed to enable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,088 ERROR: Failed to enable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,089 ERROR: Failed to enable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,089 ERROR: Failed to enable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,089 ERROR: Failed to enable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,089 ERROR: Failed to enable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,089 INFO: Torque enabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,089 DEBUG: Setting velocity limit for motors in group Wheg_Group
+2024-09-24 19:41:26,090 ERROR: Failed to bulk write velocity limit for group 'Wheg_Group': [TxRxResult] Port is in use!
+2024-09-24 19:41:26,090 DEBUG: Setting wheg velocity: wheg_ids=[2], rpm=0
+2024-09-24 19:41:26,090 ERROR: Failed to set goal velocity for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,090 INFO: Goal velocity set to 0 for motor 2
+2024-09-24 19:41:26,090 DEBUG: Set wheg velocity: wheg_id=2, rpm=0
+2024-09-24 19:41:26,090 INFO: Set velocity to 0 for wheg_id=2
+2024-09-24 19:41:26,090 ERROR: Failed to disable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,090 ERROR: Failed to disable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,090 ERROR: Failed to disable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,090 ERROR: Failed to disable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,091 ERROR: Failed to disable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,091 ERROR: Failed to disable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,091 INFO: Torque disabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,091 ERROR: Failed to sync write operating modes for group Wheg_Group: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,091 ERROR: Failed to enable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,091 ERROR: Failed to enable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,091 ERROR: Failed to enable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,091 ERROR: Failed to enable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,092 ERROR: Failed to enable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,092 ERROR: Failed to enable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,092 INFO: Torque enabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,092 DEBUG: Setting velocity limit for motors in group Wheg_Group
+2024-09-24 19:41:26,092 ERROR: Failed to bulk write velocity limit for group 'Wheg_Group': [TxRxResult] Port is in use!
+2024-09-24 19:41:26,092 DEBUG: Setting wheg velocity: wheg_ids=[3], rpm=0
+2024-09-24 19:41:26,092 ERROR: Failed to set goal velocity for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,092 INFO: Goal velocity set to 0 for motor 3
+2024-09-24 19:41:26,092 DEBUG: Set wheg velocity: wheg_id=3, rpm=0
+2024-09-24 19:41:26,092 INFO: Set velocity to 0 for wheg_id=3
+2024-09-24 19:41:26,092 ERROR: Failed to disable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 ERROR: Failed to disable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 ERROR: Failed to disable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 ERROR: Failed to disable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 ERROR: Failed to disable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 ERROR: Failed to disable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 INFO: Torque disabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,093 ERROR: Failed to sync write operating modes for group Wheg_Group: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 ERROR: Failed to enable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,093 ERROR: Failed to enable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,094 ERROR: Failed to enable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,094 ERROR: Failed to enable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,094 ERROR: Failed to enable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,094 ERROR: Failed to enable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,094 INFO: Torque enabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,094 DEBUG: Setting velocity limit for motors in group Wheg_Group
+2024-09-24 19:41:26,094 ERROR: Failed to bulk write velocity limit for group 'Wheg_Group': [TxRxResult] Port is in use!
+2024-09-24 19:41:26,094 DEBUG: Setting wheg velocity: wheg_ids=[4], rpm=0
+2024-09-24 19:41:26,095 ERROR: Failed to set goal velocity for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,095 INFO: Goal velocity set to 0 for motor 4
+2024-09-24 19:41:26,095 DEBUG: Set wheg velocity: wheg_id=4, rpm=0
+2024-09-24 19:41:26,095 INFO: Set velocity to 0 for wheg_id=4
+2024-09-24 19:41:26,095 ERROR: Failed to disable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,095 ERROR: Failed to disable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,095 ERROR: Failed to disable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,095 ERROR: Failed to disable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,095 ERROR: Failed to disable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,095 ERROR: Failed to disable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 INFO: Torque disabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,096 ERROR: Failed to sync write operating modes for group Wheg_Group: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 ERROR: Failed to enable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 ERROR: Failed to enable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 ERROR: Failed to enable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 ERROR: Failed to enable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 ERROR: Failed to enable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 ERROR: Failed to enable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,096 INFO: Torque enabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,096 DEBUG: Setting velocity limit for motors in group Wheg_Group
+2024-09-24 19:41:26,097 ERROR: Failed to bulk write velocity limit for group 'Wheg_Group': [TxRxResult] Port is in use!
+2024-09-24 19:41:26,097 DEBUG: Setting wheg velocity: wheg_ids=[5], rpm=0
+2024-09-24 19:41:26,097 ERROR: Failed to set goal velocity for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,097 INFO: Goal velocity set to 0 for motor 5
+2024-09-24 19:41:26,097 DEBUG: Set wheg velocity: wheg_id=5, rpm=0
+2024-09-24 19:41:26,097 INFO: Set velocity to 0 for wheg_id=5
+2024-09-24 19:41:26,097 ERROR: Failed to disable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,097 ERROR: Failed to disable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,097 ERROR: Failed to disable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,097 ERROR: Failed to disable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,098 ERROR: Failed to disable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,098 ERROR: Failed to disable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,098 INFO: Torque disabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,098 ERROR: Failed to sync write operating modes for group Wheg_Group: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,098 ERROR: Failed to enable torque for motor 1: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,098 ERROR: Failed to enable torque for motor 2: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,098 ERROR: Failed to enable torque for motor 3: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,098 ERROR: Failed to enable torque for motor 4: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,099 ERROR: Failed to enable torque for motor 5: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,099 ERROR: Failed to enable torque for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,099 INFO: Torque enabled for all motors in group 'Wheg_Group'
+2024-09-24 19:41:26,099 DEBUG: Setting velocity limit for motors in group Wheg_Group
+2024-09-24 19:41:26,099 ERROR: Failed to bulk write velocity limit for group 'Wheg_Group': [TxRxResult] Port is in use!
+2024-09-24 19:41:26,099 DEBUG: Setting wheg velocity: wheg_ids=[6], rpm=0
+2024-09-24 19:41:26,099 ERROR: Failed to set goal velocity for motor 6: [TxRxResult] Port is in use!
+2024-09-24 19:41:26,099 INFO: Goal velocity set to 0 for motor 6
+2024-09-24 19:41:26,099 DEBUG: Set wheg velocity: wheg_id=6, rpm=0
+2024-09-24 19:41:26,100 INFO: Set velocity to 0 for wheg_id=6
+2024-09-24 19:41:26,100 INFO: Closing PS4Controller and quitting pygame
+2024-09-24 19:41:26,193 INFO: Port closed
+2024-09-24 19:41:26,193 INFO: Shutdown complete.

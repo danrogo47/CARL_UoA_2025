@@ -1,0 +1,980 @@
+2024-09-28 11:45:59,666 INFO: Initializing PS4Controller
+2024-09-28 11:45:59,889 DEBUG: Pygame initialized
+2024-09-28 11:45:59,890 DEBUG: Joystick initialized
+2024-09-28 11:45:59,890 DEBUG: Number of buttons on the controller: 13
+2024-09-28 11:45:59,930 INFO: Configuration loaded successfully
+2024-09-28 11:45:59,933 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-28 11:45:59,943 INFO: Baudrate set to 1000000
+2024-09-28 11:45:59,944 INFO: Control table loaded successfully.
+2024-09-28 11:45:59,944 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-28 11:45:59,944 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-28 11:45:59,945 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-28 11:45:59,945 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-28 11:45:59,945 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-28 11:45:59,945 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-28 11:45:59,945 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-28 11:45:59,946 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-28 11:45:59,946 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-28 11:45:59,946 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-28 11:45:59,946 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-09-28 11:45:59,947 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-28 11:45:59,947 INFO: Disabling torque for group Right_Whegs
+2024-09-28 11:45:59,948 DEBUG: Torque disabled for group Right_Whegs
+2024-09-28 11:45:59,948 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-28 11:45:59,948 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-28 11:45:59,948 INFO: Enabling torque for group Right_Whegs
+2024-09-28 11:45:59,949 DEBUG: Torque enabled for group Right_Whegs
+2024-09-28 11:45:59,949 DEBUG: Reading back drive mode for verification...
+2024-09-28 11:45:59,949 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-28 11:45:59,949 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-28 11:45:59,949 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-28 11:45:59,949 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-28 11:45:59,952 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-28 11:45:59,952 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-28 11:45:59,952 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-28 11:45:59,953 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-28 11:45:59,953 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-28 11:45:59,953 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-28 11:45:59,953 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-28 11:45:59,953 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-28 11:45:59,953 INFO: Disabling torque for group Left_Whegs
+2024-09-28 11:45:59,954 DEBUG: Torque disabled for group Left_Whegs
+2024-09-28 11:45:59,954 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-28 11:45:59,954 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-28 11:45:59,954 INFO: Enabling torque for group Left_Whegs
+2024-09-28 11:45:59,955 DEBUG: Torque enabled for group Left_Whegs
+2024-09-28 11:45:59,955 DEBUG: Reading back drive mode for verification...
+2024-09-28 11:45:59,955 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-28 11:45:59,955 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-28 11:45:59,955 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-28 11:45:59,955 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-28 11:45:59,958 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-28 11:45:59,958 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-28 11:45:59,958 INFO: Motor 1 drive mode correctly set to normal
+2024-09-28 11:45:59,958 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-28 11:45:59,958 INFO: Motor 2 drive mode correctly set to normal
+2024-09-28 11:45:59,958 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-28 11:45:59,959 INFO: Motor 3 drive mode correctly set to normal
+2024-09-28 11:45:59,959 INFO: Set the right side whegs to reverse direction
+2024-09-28 11:45:59,959 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-09-28 11:45:59,960 INFO: Set position limits for the pivot motors
+2024-09-28 11:45:59,960 DEBUG: Using selector: EpollSelector
+2024-09-28 11:45:59,961 DEBUG: Executing Gait 1
+2024-09-28 11:45:59,961 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 11:45:59,961 DEBUG: Adjusted wheg speed: target_rpm=0.0, current_rpm=0.0
+2024-09-28 11:45:59,961 INFO: Initialising Gait 1
+2024-09-28 11:45:59,962 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-09-28 11:45:59,962 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-28 11:45:59,962 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,962 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,962 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,962 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,962 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,963 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,967 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 11:45:59,968 DEBUG: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-28 11:45:59,968 DEBUG: Target positions set for group 'Wheg_Group': 180
+2024-09-28 11:45:59,968 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-28 11:45:59,969 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-28 11:45:59,969 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,969 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 11:45:59,972 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-28 11:45:59,972 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-28 11:45:59,972 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-28 11:45:59,972 INFO: Initialised Gait 1, waiting for 1 seconds
+2024-09-28 11:45:59,973 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 11:45:59,973 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,973 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,973 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,973 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,973 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,973 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,973 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,973 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 11:45:59,981 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:45:59,981 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 11:45:59,981 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,981 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,981 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,981 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,982 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,982 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,982 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,982 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 11:45:59,989 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:45:59,989 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 11:45:59,990 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,990 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,990 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,990 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,990 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,990 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,990 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,990 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 11:45:59,997 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:45:59,997 INFO: Motor Positions: {1: {'present_position': 2043}, 2: {'present_position': 2046}, 3: {'present_position': 2047}, 4: {'present_position': 2047}, 5: {'present_position': 2046}, 6: {'present_position': 2046}, 7: {'present_position': 2052}, 8: {'present_position': 2041}}
+2024-09-28 11:45:59,998 INFO: Motor Velocities: {1: {'present_velocity': 1}, 2: {'present_velocity': 4294967295}, 3: {'present_velocity': 4294967295}, 4: {'present_velocity': 2}, 5: {'present_velocity': 4294967295}, 6: {'present_velocity': 4294967295}, 7: {'present_velocity': 0}, 8: {'present_velocity': 0}}
+2024-09-28 11:45:59,998 INFO: Motor Loads: {1: {'present_load': 10}, 2: {'present_load': 10}, 3: {'present_load': 12}, 4: {'present_load': 12}, 5: {'present_load': 2}, 6: {'present_load': 11}, 7: {'present_load': 65507}, 8: {'present_load': 33}}
+2024-09-28 11:46:00,973 INFO: New gait 0 is now active.
+2024-09-28 11:46:00,973 INFO: Waiting for 1.00 seconds before next gait step
+2024-09-28 11:46:01,782 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:01,793 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,803 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,814 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,824 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,835 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,845 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,856 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,867 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,877 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,888 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,898 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,909 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,920 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,930 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,941 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,952 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,962 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,973 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:01,984 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:01,984 DEBUG: Executing Gait 1
+2024-09-28 11:46:01,984 DEBUG: Adjusting wheg speed: trigger_value=-0.631378173828125, current_rpm=0
+2024-09-28 11:46:01,984 DEBUG: Adjusted wheg speed: target_rpm=3.68621826171875, current_rpm=2
+2024-09-28 11:46:01,984 INFO: Setting profile velocity for group Wheg_Group
+2024-09-28 11:46:01,985 DEBUG: Hard profile velocity limit: 200
+2024-09-28 11:46:01,985 INFO: Profile velocities set for group Wheg_Group: {1: 0.458, 2: 0.458, 3: 0.458, 4: 0.458, 5: 0.458, 6: 0.458}
+2024-09-28 11:46:01,985 INFO: Incrementing motor positions by 180 degrees for group 'Wheg_Group'
+2024-09-28 11:46:01,985 INFO: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-28 11:46:01,985 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-28 11:46:01,986 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:01,986 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:01,986 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:01,986 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:01,986 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:01,986 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:01,991 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 11:46:01,991 WARNING: Motor 1 is not in Extended Position Control Mode. Setting mode now.
+2024-09-28 11:46:01,991 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-28 11:46:01,991 INFO: Disabling torque for group Wheg_Group
+2024-09-28 11:46:01,992 DEBUG: Torque disabled for group Wheg_Group
+2024-09-28 11:46:01,992 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-28 11:46:01,992 INFO: Enabling torque for group Wheg_Group
+2024-09-28 11:46:01,993 DEBUG: Torque enabled for group Wheg_Group
+2024-09-28 11:46:01,993 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-28 11:46:01,993 INFO: Setting profile velocity for group Wheg_Group
+2024-09-28 11:46:01,993 DEBUG: Hard profile velocity limit: 200
+2024-09-28 11:46:01,993 INFO: Profile velocities set for group Wheg_Group: {1: 2.29, 2: 2.29, 3: 2.29, 4: 2.29, 5: 2.29, 6: 2.29}
+2024-09-28 11:46:01,993 INFO: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-28 11:46:01,994 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-28 11:46:01,994 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:01,994 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:01,994 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:01,994 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:01,994 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:01,994 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:02,029 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-09-28 11:46:02,030 ERROR: Failed to read motor positions for group 'Wheg_Group'
+2024-09-28 11:46:02,030 INFO: Gait 1 step executed, wait for 15.00 seconds
+2024-09-28 11:46:02,030 INFO: Waiting for 15.00 seconds before next gait step
+2024-09-28 11:46:02,031 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,041 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,052 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,063 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,074 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,084 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,095 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,106 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,116 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,127 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,138 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,148 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,159 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,169 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,180 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,191 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:02,201 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,212 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,222 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,233 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,243 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,254 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,265 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,275 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,286 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,297 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,307 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,318 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,328 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,339 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,349 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,360 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,371 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,381 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,392 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:02,402 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,413 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,424 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,434 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,445 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,455 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,466 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,477 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,487 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,498 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,509 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,519 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,530 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,541 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,551 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,562 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,573 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,583 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,594 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:02,605 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,615 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,626 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,637 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,647 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,658 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,669 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,679 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,690 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,701 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,711 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,722 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,733 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,744 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,754 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,765 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,776 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,787 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,797 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:02,808 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,819 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,829 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,840 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,851 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,861 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,872 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,882 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,893 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,903 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,914 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,925 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,935 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,946 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,957 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,967 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,978 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,988 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:02,999 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:03,010 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,020 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,031 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,041 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,052 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,063 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,073 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,084 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,094 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,105 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,116 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,126 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,137 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,147 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,158 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,169 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,179 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,190 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,200 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:03,211 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,222 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,232 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,243 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,253 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,264 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,275 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,285 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,296 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,306 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,317 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,328 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,338 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,349 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,359 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,370 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,381 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,391 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,402 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:03,413 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,423 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,434 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,445 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,455 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,466 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,476 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,487 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,498 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,508 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,519 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,530 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,541 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,551 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,562 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,572 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,583 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,594 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,604 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:03,615 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,626 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,636 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,647 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,658 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,668 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,679 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,689 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,700 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,711 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,721 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,732 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,743 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,753 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,764 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,775 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,785 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,796 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,807 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:03,817 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,828 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,839 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,849 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,860 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,871 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,881 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,892 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,903 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,913 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,924 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,934 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,945 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,956 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,966 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,977 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,988 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:03,998 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,009 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:04,020 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,030 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,041 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,051 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,062 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,073 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,084 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,094 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,105 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,115 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,126 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,137 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,147 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,158 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,169 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,179 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,190 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,201 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,212 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:04,223 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,234 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,245 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,256 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,267 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,279 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,290 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,302 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,313 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,324 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,335 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,346 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,357 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,368 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,379 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,390 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,401 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,412 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:04,423 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,434 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,446 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,457 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,468 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,479 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,490 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,501 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,512 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,523 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,534 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,546 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,557 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,568 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,579 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,590 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,601 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,612 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,623 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:04,634 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,646 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,657 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,668 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,679 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,690 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,701 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,712 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,724 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,735 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,746 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,757 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,768 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,779 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,790 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,801 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,812 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,823 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,834 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:04,846 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,857 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,868 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,879 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,890 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,901 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,912 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,924 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,935 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,946 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,957 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,968 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,979 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,990 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:04,998 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 11:46:04,999 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:04,999 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:04,999 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:04,999 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:04,999 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:05,000 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:05,000 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:05,000 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:05,008 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:46:05,008 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 11:46:05,008 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,009 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,009 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,009 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,009 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,009 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,009 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,010 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:05,017 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:46:05,018 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 11:46:05,018 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,018 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,018 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,018 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,018 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,018 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,019 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,019 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:05,026 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:46:05,027 INFO: Motor Positions: {1: {'present_position': 2042}, 2: {'present_position': 2047}, 3: {'present_position': 2047}, 4: {'present_position': 2046}, 5: {'present_position': 2045}, 6: {'present_position': 2046}, 7: {'present_position': 2052}, 8: {'present_position': 2041}}
+2024-09-28 11:46:05,027 INFO: Motor Velocities: {1: {'present_velocity': 0}, 2: {'present_velocity': 0}, 3: {'present_velocity': 1}, 4: {'present_velocity': 0}, 5: {'present_velocity': 1}, 6: {'present_velocity': 0}, 7: {'present_velocity': 0}, 8: {'present_velocity': 0}}
+2024-09-28 11:46:05,027 INFO: Motor Loads: {1: {'present_load': 2}, 2: {'present_load': 5}, 3: {'present_load': 6}, 4: {'present_load': 0}, 5: {'present_load': 2}, 6: {'present_load': 0}, 7: {'present_load': 65507}, 8: {'present_load': 33}}
+2024-09-28 11:46:05,028 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,039 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:05,050 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,061 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,072 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,083 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,094 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,106 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,117 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,127 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,138 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,150 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,161 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,171 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,182 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,194 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,205 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,216 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,227 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,238 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,249 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:05,260 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,271 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,283 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,294 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,305 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,316 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,327 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,339 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,350 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,361 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,372 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,383 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,394 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,405 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,417 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,428 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,439 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,450 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:05,461 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,472 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,483 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,495 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,506 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,517 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,528 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,539 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,550 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,562 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,573 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,584 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,596 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,607 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,618 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,629 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,640 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,652 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:05,663 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,674 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,685 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,697 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,708 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,719 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,730 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,741 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,752 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,764 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,775 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,786 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,798 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,809 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,820 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,831 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,842 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,853 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:05,865 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,876 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,887 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,898 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,909 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,920 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,931 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,943 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,954 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,966 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,977 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,988 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:05,999 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,011 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,022 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,033 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,044 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,056 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:06,067 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,078 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,089 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,100 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,111 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,122 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,134 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,145 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,157 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,168 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,179 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,190 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,202 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,213 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,224 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,235 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,247 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,258 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:06,269 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,280 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,291 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,302 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,314 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,325 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,336 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,348 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,359 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,370 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,381 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,392 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,404 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,415 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,426 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,437 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,449 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,460 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:06,471 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,482 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,493 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,505 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,516 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,527 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,539 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,550 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,561 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,573 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,584 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,595 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,607 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,618 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,630 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,641 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,652 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,663 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:06,674 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,685 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,697 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,708 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,720 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,731 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,742 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,754 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,765 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,776 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,787 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,799 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,810 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,821 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,832 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,844 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,855 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,866 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:06,877 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,889 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,900 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,911 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,923 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,934 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,945 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,956 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,968 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,979 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:06,990 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,002 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,013 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,024 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,035 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,047 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,058 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,069 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:07,080 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,091 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,103 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,114 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,125 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,137 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,148 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,159 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,170 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,182 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,193 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,204 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,215 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,227 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,238 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,249 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,261 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,272 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:07,283 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,294 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,305 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,317 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,328 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,339 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,351 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,362 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,373 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,384 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,395 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,407 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,418 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,430 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,441 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,452 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,463 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,474 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:07,485 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,497 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,508 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,519 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,530 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,542 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,553 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,564 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,576 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,587 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,598 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,609 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,620 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,632 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,643 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,654 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,666 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,677 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:07,689 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,700 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,712 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,723 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,734 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,746 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,757 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,769 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,780 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,791 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,802 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,814 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,825 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,836 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,848 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,859 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,870 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,881 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:07,892 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,903 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,915 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,926 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,938 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,949 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,960 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,971 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,983 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:07,994 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,005 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,016 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,028 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,039 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,051 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,062 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,073 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,084 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:08,095 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,107 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,118 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,129 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,141 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,152 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,163 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,175 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,186 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,197 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,209 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,220 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,231 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,243 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,254 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,265 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,276 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,288 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:08,299 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,310 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,322 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,333 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,344 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,355 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,367 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,379 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,390 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,401 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,413 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,424 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,435 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,447 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,458 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,470 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,481 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,492 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:08,503 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,515 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,526 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,537 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,549 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,560 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,571 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,583 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,594 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,606 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,617 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,629 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,640 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,651 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,663 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,674 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,685 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,697 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:08,708 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,719 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,731 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,742 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,753 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,765 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,776 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,788 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,799 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,810 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,822 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,833 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,844 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,856 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,867 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,879 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,890 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,901 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:08,912 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,924 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,936 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,947 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,958 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,969 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,981 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:08,992 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,004 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,015 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,026 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,038 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,049 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,060 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,071 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,083 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,094 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,106 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:09,117 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,128 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,139 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,151 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,162 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,173 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,185 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,196 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,207 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,219 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,230 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,241 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,252 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,264 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,275 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,287 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,298 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,310 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:09,321 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,332 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,344 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,355 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,367 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,378 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,389 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,400 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,412 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,423 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,435 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,446 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,457 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,469 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,480 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,491 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,503 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,515 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:09,526 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,537 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,548 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,560 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,572 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,583 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,594 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,606 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,617 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,628 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,640 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,651 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,663 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,674 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,685 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,696 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,708 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,719 DEBUG: Button r2 (index 7) pressed.
+2024-09-28 11:46:09,731 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,742 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,753 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:09,764 WARNING: Ignoring rapid press of button r2 (index 7)
+2024-09-28 11:46:10,028 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 11:46:10,028 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,029 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,029 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,029 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,030 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,030 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,030 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,030 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 11:46:10,038 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:46:10,038 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 11:46:10,039 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,039 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,039 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,039 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,040 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,040 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,040 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,040 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 11:46:10,048 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:46:10,048 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 11:46:10,048 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,048 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,049 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,049 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,049 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,049 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,049 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,049 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 11:46:10,057 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:46:10,057 INFO: Motor Positions: {1: {'present_position': 2043}, 2: {'present_position': 2046}, 3: {'present_position': 2046}, 4: {'present_position': 2046}, 5: {'present_position': 2045}, 6: {'present_position': 2045}, 7: {'present_position': 2052}, 8: {'present_position': 2041}}
+2024-09-28 11:46:10,057 INFO: Motor Velocities: {1: {'present_velocity': 0}, 2: {'present_velocity': 1}, 3: {'present_velocity': 1}, 4: {'present_velocity': 0}, 5: {'present_velocity': 0}, 6: {'present_velocity': 0}, 7: {'present_velocity': 0}, 8: {'present_velocity': 0}}
+2024-09-28 11:46:10,058 INFO: Motor Loads: {1: {'present_load': 3}, 2: {'present_load': 5}, 3: {'present_load': 1}, 4: {'present_load': 0}, 5: {'present_load': 0}, 6: {'present_load': 0}, 7: {'present_load': 65507}, 8: {'present_load': 33}}
+2024-09-28 11:46:11,627 INFO: Initiating safe shutdown...
+2024-09-28 11:46:11,628 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-28 11:46:11,628 INFO: Disabling torque for group All_Motors
+2024-09-28 11:46:11,629 DEBUG: Torque disabled for group All_Motors
+2024-09-28 11:46:11,630 DEBUG: Operating mode set to 'velocity' for group All_Motors
+2024-09-28 11:46:11,630 INFO: Enabling torque for group All_Motors
+2024-09-28 11:46:11,630 DEBUG: Torque enabled for group All_Motors
+2024-09-28 11:46:11,630 DEBUG: Setting velocity limit for motors in group All_Motors
+2024-09-28 11:46:11,631 INFO: Velocity limit set to 200 for group All_Motors
+2024-09-28 11:46:11,631 INFO: Enabling torque for group All_Motors
+2024-09-28 11:46:11,632 DEBUG: Torque enabled for group All_Motors
+2024-09-28 11:46:11,633 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-09-28 11:46:11,633 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-09-28 11:46:11,634 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['operating_mode']
+2024-09-28 11:46:11,634 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,634 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,634 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,634 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,635 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,635 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,635 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,635 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 11:46:11,643 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 11:46:11,643 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-28 11:46:11,643 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-09-28 11:46:11,644 INFO: Disabling torque for group All_Motors
+2024-09-28 11:46:11,644 DEBUG: Torque disabled for group All_Motors
+2024-09-28 11:46:11,645 DEBUG: Operating mode set to 'position' for group All_Motors
+2024-09-28 11:46:11,645 INFO: Enabling torque for group All_Motors
+2024-09-28 11:46:11,646 DEBUG: Torque enabled for group All_Motors
+2024-09-28 11:46:11,646 DEBUG: Setting profile velocity for motors in group All_Motors
+2024-09-28 11:46:11,646 INFO: Setting profile velocity for group All_Motors
+2024-09-28 11:46:11,646 DEBUG: Hard profile velocity limit: 200
+2024-09-28 11:46:11,647 INFO: Profile velocities set for group All_Motors: {1: 2.29, 2: 2.29, 3: 2.29, 4: 2.29, 5: 2.29, 6: 2.29, 7: 2.29, 8: 2.29}
+2024-09-28 11:46:11,647 DEBUG: Setting position 180° for all motors in group 'All_Motors'
+2024-09-28 11:46:11,648 DEBUG: Target positions set for group 'All_Motors': 180
+2024-09-28 11:46:11,648 INFO: Closing PS4Controller and quitting pygame
+2024-09-28 11:46:11,741 ERROR: Failed to close the port: 'PortHandler' object has no attribute 'is_port_open'
+2024-09-28 11:46:11,742 INFO: Shutdown complete.

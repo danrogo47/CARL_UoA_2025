@@ -1,0 +1,1759 @@
+2024-09-28 13:50:16,594 INFO: Initializing PS4Controller
+2024-09-28 13:50:16,826 DEBUG: Pygame initialized
+2024-09-28 13:50:16,827 DEBUG: Joystick initialized
+2024-09-28 13:50:16,827 DEBUG: Number of buttons on the controller: 13
+2024-09-28 13:50:16,874 INFO: Configuration loaded successfully
+2024-09-28 13:50:16,877 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-28 13:50:16,887 INFO: Baudrate set to 1000000
+2024-09-28 13:50:16,887 INFO: Control table loaded successfully.
+2024-09-28 13:50:16,887 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-28 13:50:16,888 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-28 13:50:16,888 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-28 13:50:16,888 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-28 13:50:16,888 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-28 13:50:16,888 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-28 13:50:16,888 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-28 13:50:16,888 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-28 13:50:16,888 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-28 13:50:16,889 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-28 13:50:16,889 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-09-28 13:50:16,889 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-28 13:50:16,889 INFO: Disabling torque for group Right_Whegs
+2024-09-28 13:50:16,889 DEBUG: Torque disabled for group Right_Whegs
+2024-09-28 13:50:16,890 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-28 13:50:16,890 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-28 13:50:16,890 INFO: Enabling torque for group Right_Whegs
+2024-09-28 13:50:16,890 DEBUG: Torque enabled for group Right_Whegs
+2024-09-28 13:50:16,891 DEBUG: Reading back drive mode for verification...
+2024-09-28 13:50:16,891 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-28 13:50:16,891 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-28 13:50:16,891 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-28 13:50:16,891 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-28 13:50:16,894 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-28 13:50:16,894 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-28 13:50:16,894 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-28 13:50:16,894 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-28 13:50:16,894 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-28 13:50:16,894 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-28 13:50:16,894 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-28 13:50:16,894 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-28 13:50:16,895 INFO: Disabling torque for group Left_Whegs
+2024-09-28 13:50:16,895 DEBUG: Torque disabled for group Left_Whegs
+2024-09-28 13:50:16,895 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-28 13:50:16,896 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-28 13:50:16,896 INFO: Enabling torque for group Left_Whegs
+2024-09-28 13:50:16,896 DEBUG: Torque enabled for group Left_Whegs
+2024-09-28 13:50:16,896 DEBUG: Reading back drive mode for verification...
+2024-09-28 13:50:16,897 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-28 13:50:16,897 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-28 13:50:16,897 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-28 13:50:16,897 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-28 13:50:16,899 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-28 13:50:16,900 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-28 13:50:16,900 INFO: Motor 1 drive mode correctly set to normal
+2024-09-28 13:50:16,900 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-28 13:50:16,900 INFO: Motor 2 drive mode correctly set to normal
+2024-09-28 13:50:16,900 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-28 13:50:16,900 INFO: Motor 3 drive mode correctly set to normal
+2024-09-28 13:50:16,900 INFO: Set the right side whegs to reverse direction
+2024-09-28 13:50:16,901 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-09-28 13:50:16,901 INFO: Set position limits for the pivot motors
+2024-09-28 13:50:16,902 DEBUG: Using selector: EpollSelector
+2024-09-28 13:50:16,903 DEBUG: Executing Gait 1
+2024-09-28 13:50:16,903 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:16,903 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=5
+2024-09-28 13:50:16,903 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:16,903 INFO: Initialising Gait 1
+2024-09-28 13:50:16,903 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-09-28 13:50:16,903 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-28 13:50:16,904 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,904 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,904 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,904 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,904 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,904 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,909 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-28 13:50:16,909 DEBUG: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-28 13:50:16,909 DEBUG: Target positions set for group 'Wheg_Group': 180
+2024-09-28 13:50:16,909 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-28 13:50:16,910 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-28 13:50:16,910 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,910 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:16,913 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-28 13:50:16,913 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-28 13:50:16,913 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-28 13:50:16,913 INFO: Initialised Gait 1, waiting for 1 seconds
+2024-09-28 13:50:16,913 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:16,914 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 13:50:16,914 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,914 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,914 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,914 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,914 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,914 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,914 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,914 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:50:16,922 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 13:50:16,922 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,922 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:16,930 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:50:16,930 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 13:50:16,930 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,930 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,930 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,930 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,930 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,930 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,930 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,931 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:16,938 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:50:16,938 INFO: Motor Positions: {1: {'present_position': 2046}, 2: {'present_position': 2046}, 3: {'present_position': 2047}, 4: {'present_position': 2046}, 5: {'present_position': 2044}, 6: {'present_position': 2046}, 7: {'present_position': 2051}, 8: {'present_position': 2042}}
+2024-09-28 13:50:16,938 INFO: Motor Velocities: {1: {'present_velocity': 1}, 2: {'present_velocity': 1}, 3: {'present_velocity': 4294967295}, 4: {'present_velocity': 0}, 5: {'present_velocity': 4294967295}, 6: {'present_velocity': 1}, 7: {'present_velocity': 0}, 8: {'present_velocity': 0}}
+2024-09-28 13:50:16,938 INFO: Motor Loads: {1: {'present_load': 10}, 2: {'present_load': 12}, 3: {'present_load': 8}, 4: {'present_load': 5}, 5: {'present_load': 12}, 6: {'present_load': 5}, 7: {'present_load': 65513}, 8: {'present_load': 28}}
+2024-09-28 13:50:17,014 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,115 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,216 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,318 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,419 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,520 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,621 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,722 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,823 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,914 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-28 13:50:17,914 INFO: Disabling torque for group Wheg_Group
+2024-09-28 13:50:17,915 DEBUG: Torque disabled for group Wheg_Group
+2024-09-28 13:50:17,915 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-28 13:50:17,915 INFO: Enabling torque for group Wheg_Group
+2024-09-28 13:50:17,915 DEBUG: Torque enabled for group Wheg_Group
+2024-09-28 13:50:17,916 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-28 13:50:17,916 INFO: Setting profile velocity for group Wheg_Group
+2024-09-28 13:50:17,916 DEBUG: Hard profile velocity limit: 100
+2024-09-28 13:50:17,916 INFO: Profile velocities set for group Wheg_Group: {1: 21.85, 2: 21.85, 3: 21.85, 4: 21.85, 5: 21.85, 6: 21.85}
+2024-09-28 13:50:17,916 INFO: New gait 0 is now active.
+2024-09-28 13:50:17,924 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:17,926 DEBUG: Executing Gait 1
+2024-09-28 13:50:17,927 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:17,927 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:17,927 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:17,938 DEBUG: Executing Gait 1
+2024-09-28 13:50:17,938 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:17,938 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:17,938 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:17,949 DEBUG: Executing Gait 1
+2024-09-28 13:50:17,949 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:17,949 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:17,949 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:17,960 DEBUG: Executing Gait 1
+2024-09-28 13:50:17,960 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:17,960 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:17,960 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:17,971 DEBUG: Executing Gait 1
+2024-09-28 13:50:17,971 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:17,971 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:17,971 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:17,982 DEBUG: Executing Gait 1
+2024-09-28 13:50:17,982 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:17,982 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:17,982 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:17,993 DEBUG: Executing Gait 1
+2024-09-28 13:50:17,993 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:17,993 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:17,993 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,004 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,004 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,004 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,004 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,015 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,015 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,015 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,015 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,025 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,026 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,026 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,026 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,026 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,037 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,037 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,037 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,037 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,048 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,048 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,048 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,048 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,059 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,059 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,059 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,059 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,070 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,070 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,070 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,070 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,081 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,081 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,081 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,081 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,092 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,092 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,092 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,093 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,103 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,103 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,103 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,104 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,114 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,114 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,114 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,114 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,125 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,125 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,125 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,125 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,126 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,136 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,136 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,136 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,136 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,147 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,147 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,147 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,147 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,158 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,158 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,158 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,158 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,169 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,169 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,169 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,169 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,180 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,180 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,180 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,180 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,191 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,191 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,191 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,191 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,202 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,202 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,202 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,202 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,213 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,213 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,213 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,213 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,224 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,224 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,224 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,224 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,227 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,235 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,236 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,236 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,236 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,248 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,248 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,248 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,248 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,259 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,259 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,259 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,259 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,269 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,270 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,270 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,270 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,280 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,280 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,281 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,281 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,291 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,291 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,291 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,291 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,302 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,302 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,302 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,302 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,313 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,313 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,313 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,313 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,323 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,324 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,324 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,324 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,327 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,335 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,335 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,335 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,335 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,346 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,346 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,346 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,346 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,356 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,357 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,357 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,357 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,367 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,367 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,368 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,368 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,378 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,378 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,378 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,378 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,389 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,389 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,390 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,390 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,400 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,401 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,401 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,401 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,411 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,411 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,412 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,412 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,422 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,422 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,422 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,422 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,428 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,433 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,434 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,434 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,434 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,444 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,444 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,445 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,445 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,455 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,455 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,455 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,455 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,466 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,466 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,466 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,466 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,477 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,477 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,477 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,477 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,488 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,488 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,488 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,488 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,499 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,499 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,499 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,499 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,509 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,509 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,510 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,510 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,520 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,520 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,520 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,520 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,529 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,531 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,531 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,532 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,532 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,542 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,542 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,542 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,542 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,553 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,553 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,553 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,553 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,564 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,564 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,564 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,564 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,574 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,575 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,575 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,575 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,585 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,586 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,586 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,586 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,596 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,596 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,596 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,597 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,607 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,607 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,607 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,607 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,618 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,618 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,618 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,618 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,629 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,629 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,629 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,629 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,629 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,640 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,640 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,641 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,641 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,651 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,651 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,651 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,651 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,662 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,662 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,662 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,662 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,673 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,673 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,673 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,673 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,684 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,684 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,684 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,684 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,694 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,695 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,695 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,695 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,705 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,705 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,706 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,706 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,716 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,716 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,716 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,716 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,727 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,727 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,727 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,727 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,731 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,739 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,739 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,739 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,739 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,749 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,750 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,750 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,750 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,760 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,760 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,761 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,761 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,771 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,771 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,772 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,772 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,782 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,782 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,782 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,782 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,793 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,793 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,793 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,793 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,804 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,804 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,804 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,804 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,815 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,815 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,815 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,815 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,825 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,826 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,826 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,826 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,832 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,837 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,837 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,837 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,837 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,848 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,848 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,848 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,848 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,859 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,859 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,859 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,859 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,869 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,870 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,870 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,870 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,880 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,880 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,881 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,881 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,891 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,891 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,891 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,891 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,902 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,902 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,902 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,902 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,913 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,913 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,913 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,913 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,923 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,924 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,924 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,924 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,934 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:18,935 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,935 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,935 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,935 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,945 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,945 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,946 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,946 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,956 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,956 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,957 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,957 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,967 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,967 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,967 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,967 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,978 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,978 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,978 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,978 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,989 DEBUG: Executing Gait 1
+2024-09-28 13:50:18,989 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:18,989 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:18,989 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:18,999 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,000 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,000 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,000 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,010 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,011 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,011 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,011 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,021 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,021 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,021 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,022 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,032 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,032 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,032 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,032 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,035 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,043 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,043 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,044 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,044 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,054 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,054 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,054 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,055 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,065 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,065 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,065 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,065 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,076 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,076 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,076 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,076 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,087 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,087 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,087 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,087 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,097 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,098 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,098 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,098 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,108 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,108 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,109 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,109 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,119 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,119 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,119 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,119 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,130 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,130 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,130 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,130 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,136 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,141 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,141 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,141 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,142 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,152 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,152 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,152 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,153 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,163 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,163 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,163 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,163 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,174 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,174 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,174 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,174 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,185 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,185 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,185 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,185 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,195 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,196 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,196 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,196 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,206 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,206 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,206 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,207 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,217 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,217 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,217 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,217 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,228 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,228 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,228 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,228 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,237 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,239 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,239 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,239 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,239 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,250 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,250 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,250 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,251 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,261 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,261 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,261 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,261 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,272 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,272 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,272 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,272 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,283 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,283 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,283 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,283 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,293 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,294 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,294 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,294 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,304 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,305 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,305 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,305 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,315 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,315 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,316 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,316 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,326 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,326 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,326 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,326 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,337 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,337 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,337 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,337 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,337 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,348 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,348 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,348 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,348 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,359 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,359 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,359 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,359 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,370 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,370 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,370 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,370 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,380 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,381 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,381 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,381 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,391 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,391 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,391 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,392 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,402 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,402 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,402 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,402 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,413 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,413 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,413 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,413 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,424 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,424 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,424 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,424 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,434 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,434 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,435 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,435 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,438 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,446 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,446 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,446 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,446 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,456 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,457 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,457 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,457 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,467 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,467 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,468 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,468 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,478 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,478 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,478 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,478 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,489 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,489 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,489 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,489 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,500 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,500 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,500 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,500 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,511 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,511 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,511 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,511 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,522 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,522 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,522 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,522 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,532 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,533 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,533 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,533 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,539 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,544 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,544 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,544 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,544 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,555 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,555 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,555 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,555 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,565 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,566 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,566 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,566 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,576 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,576 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,576 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,576 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,587 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,587 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,587 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,587 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,598 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,598 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,598 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,598 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,609 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,609 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,609 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,609 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,619 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,620 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,620 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,620 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,630 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,630 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,630 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,631 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,641 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,641 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,641 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,641 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,642 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,652 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,652 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,652 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,652 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,663 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,663 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,663 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,663 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,674 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,674 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,674 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,674 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,684 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,685 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,685 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,685 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,695 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,696 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,696 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,696 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,706 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,706 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,706 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,707 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,717 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,717 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,717 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,717 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,728 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,728 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,728 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,728 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,738 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,739 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,739 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,739 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,742 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,750 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,750 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,750 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,750 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,761 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,761 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,761 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,761 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,771 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,772 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,772 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,772 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,782 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,782 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,783 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,783 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,793 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,793 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,794 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,794 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,804 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,804 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,804 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,804 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,815 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,815 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,815 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,815 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,826 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,826 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,826 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,826 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,836 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,837 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,837 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,837 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,843 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,848 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,848 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,848 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,848 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,858 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,859 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,859 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,859 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,869 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,869 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,870 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,870 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,880 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,880 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,880 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,880 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,891 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,891 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,891 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,891 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,902 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,902 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,902 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,902 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,913 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,913 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,913 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,913 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,923 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,924 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,924 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,924 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,934 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,934 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,934 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,935 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,945 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:19,945 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,945 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,946 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,946 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,956 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,956 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,956 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,956 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,967 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,967 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,967 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,967 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,978 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,978 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,978 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,978 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,988 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,989 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:19,989 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:19,989 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:19,999 DEBUG: Executing Gait 1
+2024-09-28 13:50:19,999 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,000 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,000 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,010 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,011 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,011 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,011 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,021 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,022 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,022 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,022 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,032 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,032 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,032 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,033 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,043 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,043 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,043 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,043 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,046 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,054 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,054 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,054 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,054 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,065 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,065 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,065 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,065 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,076 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,076 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,076 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,076 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,086 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,087 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,087 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,087 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,097 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,098 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,098 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,098 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,108 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,108 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,109 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,109 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,119 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,119 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,119 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,119 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,130 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,130 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,130 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,130 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,141 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,141 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,141 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,141 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,147 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,152 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,152 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,152 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,152 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,163 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,163 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,163 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,163 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,174 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,174 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,174 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,174 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,185 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,185 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,185 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,185 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,195 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,196 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,196 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,196 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,206 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,206 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,207 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,207 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,217 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,217 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,217 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,217 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,228 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,228 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,228 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,228 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,239 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,239 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,239 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,239 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,248 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,250 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,250 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,250 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,251 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,261 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,261 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,261 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,261 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,272 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,272 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,272 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,272 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,283 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,283 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,283 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,283 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,294 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,294 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,294 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,294 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,304 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,304 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,305 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,305 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,315 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,315 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,315 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,315 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,326 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,326 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,326 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,326 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,337 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,337 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,337 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,337 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,348 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,348 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,348 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,348 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,348 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,359 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,359 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,359 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,359 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,369 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,370 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,370 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,370 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,380 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,380 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,381 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,381 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,391 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,391 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,391 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,391 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,402 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,402 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,402 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,402 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,413 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,413 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,413 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,413 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,423 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,424 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,424 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,424 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,434 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,435 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,435 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,435 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,445 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,445 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,446 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,446 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,449 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,457 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,457 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,457 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,457 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,467 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,468 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,468 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,468 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,478 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,478 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,479 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,479 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,489 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,489 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,489 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,489 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,500 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,500 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,500 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,500 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,511 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,511 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,511 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,511 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,521 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,522 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,522 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,522 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,532 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,532 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,533 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,533 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,543 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,543 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,543 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,543 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,550 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,554 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,555 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,555 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,555 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,565 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,565 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,566 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,566 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,576 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,576 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,577 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,577 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,587 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,587 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,588 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,588 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,598 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,598 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,598 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,598 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,609 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,609 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,609 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,609 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,620 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,620 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,620 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,620 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,631 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,631 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,631 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,631 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,641 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,642 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,642 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,642 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,652 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,652 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,653 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,653 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,653 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,663 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,663 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,663 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,664 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,674 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,674 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,674 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,675 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,685 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,685 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,685 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,685 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,696 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,696 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,696 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,696 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,707 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,707 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,707 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,707 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,717 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,718 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,718 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,718 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,728 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,729 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,729 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,729 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,739 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,739 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,739 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,740 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,750 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,750 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,750 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,750 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,753 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,761 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,761 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,761 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,762 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,772 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,772 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,772 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,772 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,783 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,783 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,783 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,783 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,794 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,794 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,794 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,794 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,805 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,805 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,805 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,805 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,816 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,816 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,816 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,816 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,827 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,827 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,827 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,827 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,837 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,838 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,838 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,838 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,848 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,848 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,848 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,849 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,854 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,859 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,860 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,860 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,860 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,870 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,870 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,871 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,871 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,881 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,881 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,881 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,881 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,892 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,892 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,892 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,892 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,903 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,903 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,903 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,903 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,913 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,914 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,914 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,914 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,924 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,925 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,925 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,925 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,935 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,935 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,935 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,935 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,946 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,946 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,946 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,946 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,955 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:20,957 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,957 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,957 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,957 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,968 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,968 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,968 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,968 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,979 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,979 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,979 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,979 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:20,989 DEBUG: Executing Gait 1
+2024-09-28 13:50:20,990 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:20,990 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:20,990 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,000 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,000 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,001 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,001 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,011 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,011 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,012 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,012 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,022 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,023 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,023 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,023 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,033 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,034 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,034 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,034 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,044 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,044 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,044 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,045 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,055 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,055 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,055 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,055 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,056 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,066 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,066 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,066 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,067 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,077 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,077 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,077 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,077 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,088 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,088 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,088 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,088 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,099 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,099 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,099 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,099 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,109 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,110 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,110 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,110 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,120 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,121 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,121 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,121 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,132 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,133 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,133 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,133 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,144 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,144 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,145 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,145 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,156 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,156 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,157 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,157 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,157 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,168 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,168 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,169 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,169 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,180 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,180 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,180 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,181 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,191 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,192 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,192 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,193 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,203 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,204 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,204 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,204 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,215 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,216 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,216 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,216 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,227 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,227 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,227 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,228 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,238 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,239 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,239 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,239 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,250 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,250 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,250 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,251 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,259 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,262 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,262 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,262 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,262 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,273 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,273 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,274 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,274 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,284 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,285 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,285 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,285 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,296 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,296 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,297 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,297 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,307 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,308 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,308 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,308 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,319 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,319 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,319 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,320 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,331 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,331 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,331 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,331 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,342 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,342 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,343 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,343 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,354 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,354 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,354 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,354 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,360 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,365 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,365 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,365 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,366 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,376 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,377 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,377 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,377 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,388 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,388 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,388 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,389 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,399 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,400 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,400 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,400 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,411 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,411 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,412 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,412 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,422 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,423 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,423 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,423 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,434 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,434 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,435 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,435 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,446 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,446 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,446 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,447 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,457 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,458 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,458 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,458 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,461 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,470 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,470 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,470 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,470 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,481 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,481 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,482 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,482 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,492 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,493 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,493 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,493 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,504 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,504 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,505 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,505 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,516 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,516 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,516 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,517 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,527 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,528 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,528 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,528 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,539 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,539 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,540 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,540 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,550 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,551 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,551 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,551 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,562 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,562 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,563 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,563 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,563 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,574 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,574 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,575 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,575 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,586 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,586 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,586 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,586 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,597 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,597 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,598 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,598 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,609 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,609 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,609 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,609 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,620 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,620 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,621 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,621 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,632 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,632 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,632 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,633 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,643 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,644 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,644 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,644 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,655 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,655 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,655 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,656 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,663 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,666 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,666 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,667 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,667 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,678 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,678 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,678 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,678 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,689 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,690 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,690 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,690 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,701 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,701 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,701 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,702 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,713 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,713 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,713 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,713 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,724 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,724 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,725 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,725 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,736 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,736 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,736 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,736 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,747 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,747 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,748 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,748 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,759 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,759 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,759 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,759 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,764 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,770 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,770 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,770 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,771 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,782 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,782 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,782 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,783 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,793 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,794 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,794 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,794 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,805 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,805 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,805 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,806 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,816 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,817 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,817 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,817 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,828 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,828 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,828 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,829 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,839 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,840 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,840 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,840 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,851 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,851 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,852 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,852 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,863 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,863 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,863 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,863 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,865 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,876 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,876 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,876 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,877 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,887 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,888 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,888 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,888 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,899 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,899 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,900 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,900 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,911 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,911 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,911 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,911 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,922 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,922 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,923 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,923 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,934 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,934 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,934 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,934 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,939 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-28 13:50:21,940 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,940 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,940 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,940 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,940 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,940 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,941 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,941 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-28 13:50:21,949 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:50:21,949 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-28 13:50:21,949 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,949 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,949 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,950 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,950 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,950 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,950 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,950 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-28 13:50:21,958 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:50:21,958 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-28 13:50:21,958 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,959 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,959 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,959 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,959 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,959 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,959 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,960 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-28 13:50:21,967 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:50:21,968 INFO: Motor Positions: {1: {'present_position': 2046}, 2: {'present_position': 2047}, 3: {'present_position': 2047}, 4: {'present_position': 2047}, 5: {'present_position': 2045}, 6: {'present_position': 2046}, 7: {'present_position': 2051}, 8: {'present_position': 2042}}
+2024-09-28 13:50:21,968 INFO: Motor Velocities: {1: {'present_velocity': 1}, 2: {'present_velocity': 0}, 3: {'present_velocity': 0}, 4: {'present_velocity': 1}, 5: {'present_velocity': 1}, 6: {'present_velocity': 1}, 7: {'present_velocity': 0}, 8: {'present_velocity': 0}}
+2024-09-28 13:50:21,968 INFO: Motor Loads: {1: {'present_load': 10}, 2: {'present_load': 9}, 3: {'present_load': 10}, 4: {'present_load': 1}, 5: {'present_load': 12}, 6: {'present_load': 9}, 7: {'present_load': 65513}, 8: {'present_load': 28}}
+2024-09-28 13:50:21,969 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,969 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,969 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,970 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,970 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:21,981 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,981 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,981 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,982 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:21,992 DEBUG: Executing Gait 1
+2024-09-28 13:50:21,993 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:21,993 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:21,993 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,004 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,004 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,004 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,005 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,016 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,016 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,016 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,016 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,027 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,027 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,028 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,028 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,038 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,038 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,039 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,039 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,050 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,050 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,050 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,050 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,061 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,061 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,061 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,061 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,072 ERROR: Error controlling pivots: 'FLIKRobot' object has no attribute 'dpad_inputs'
+2024-09-28 13:50:22,072 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,072 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,072 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,072 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,083 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,083 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,084 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,084 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,094 DEBUG: Executing Gait 1
+2024-09-28 13:50:22,095 INFO: L2 Trigger: -1.0, R2 Trigger: -1.0
+2024-09-28 13:50:22,095 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=0
+2024-09-28 13:50:22,095 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-28 13:50:22,101 INFO: Tasks were cancelled due to shutdown, proceeding to cleanup...
+2024-09-28 13:50:22,101 INFO: Initiating safe shutdown...
+2024-09-28 13:50:22,101 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-28 13:50:22,102 INFO: Disabling torque for group All_Motors
+2024-09-28 13:50:22,102 DEBUG: Torque disabled for group All_Motors
+2024-09-28 13:50:22,103 DEBUG: Operating mode set to 'velocity' for group All_Motors
+2024-09-28 13:50:22,103 INFO: Enabling torque for group All_Motors
+2024-09-28 13:50:22,103 DEBUG: Torque enabled for group All_Motors
+2024-09-28 13:50:22,104 DEBUG: Setting velocity limit for motors in group All_Motors
+2024-09-28 13:50:22,104 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-09-28 13:50:22,104 INFO: Velocity limit set to 100 for group All_Motors
+2024-09-28 13:50:22,105 INFO: Enabling torque for group All_Motors
+2024-09-28 13:50:22,105 DEBUG: Torque enabled for group All_Motors
+2024-09-28 13:50:22,106 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-09-28 13:50:22,106 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-09-28 13:50:22,106 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['operating_mode']
+2024-09-28 13:50:22,106 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,107 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,107 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,107 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,107 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,107 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,107 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,107 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-28 13:50:22,114 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-28 13:50:22,115 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-28 13:50:22,115 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-09-28 13:50:22,115 INFO: Disabling torque for group All_Motors
+2024-09-28 13:50:22,116 DEBUG: Torque disabled for group All_Motors
+2024-09-28 13:50:22,116 DEBUG: Operating mode set to 'position' for group All_Motors
+2024-09-28 13:50:22,117 INFO: Enabling torque for group All_Motors
+2024-09-28 13:50:22,117 DEBUG: Torque enabled for group All_Motors
+2024-09-28 13:50:22,117 DEBUG: Setting profile velocity for motors in group All_Motors
+2024-09-28 13:50:22,117 INFO: Setting profile velocity for group All_Motors
+2024-09-28 13:50:22,118 DEBUG: Hard profile velocity limit: 100
+2024-09-28 13:50:22,118 INFO: Profile velocities set for group All_Motors: {1: 21.85, 2: 21.85, 3: 21.85, 4: 21.85, 5: 21.85, 6: 21.85, 7: 21.85, 8: 21.85}
+2024-09-28 13:50:22,119 DEBUG: Setting position 180° for all motors in group 'All_Motors'
+2024-09-28 13:50:22,119 DEBUG: Target positions set for group 'All_Motors': 180
+2024-09-28 13:50:22,119 INFO: Closing PS4Controller and quitting pygame
+2024-09-28 13:50:22,190 INFO: Port closed successfully.
+2024-09-28 13:50:22,190 INFO: Shutdown complete.

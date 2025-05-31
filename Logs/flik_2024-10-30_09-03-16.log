@@ -1,0 +1,994 @@
+2024-10-30 09:03:16,318 INFO: Initializing PS4Controller
+2024-10-30 09:03:16,604 INFO: Configuration loaded successfully
+2024-10-30 09:03:16,607 INFO: Port /dev/ttyACM0 opened successfully
+2024-10-30 09:03:16,617 INFO: Baudrate set to 1000000
+2024-10-30 09:03:16,617 INFO: Control table loaded successfully.
+2024-10-30 09:03:16,618 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-10-30 09:03:16,618 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-10-30 09:03:16,619 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-10-30 09:03:16,619 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-10-30 09:03:16,619 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-10-30 09:03:16,620 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-10-30 09:03:16,620 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-10-30 09:03:16,621 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-10-30 09:03:16,621 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-10-30 09:03:16,622 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-10-30 09:03:16,622 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-10-30 09:03:16,778 INFO: Disabling torque for group Right_Whegs
+2024-10-30 09:03:16,780 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-10-30 09:03:16,782 INFO: Enabling torque for group Right_Whegs
+2024-10-30 09:03:16,785 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-30 09:03:16,785 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-30 09:03:16,786 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-30 09:03:16,787 INFO: Disabling torque for group Left_Whegs
+2024-10-30 09:03:16,788 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-10-30 09:03:16,789 INFO: Enabling torque for group Left_Whegs
+2024-10-30 09:03:16,789 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-30 09:03:16,790 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-30 09:03:16,791 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-30 09:03:16,791 INFO: Set the right side whegs to reverse direction
+2024-10-30 09:03:16,791 INFO: Disabling torque for group Pivot_Group
+2024-10-30 09:03:16,792 INFO: Drive mode set for group Pivot_Group with reverse_direction=False
+2024-10-30 09:03:16,793 INFO: Enabling torque for group Pivot_Group
+2024-10-30 09:03:16,793 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-30 09:03:16,794 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-30 09:03:16,795 INFO: Position limits set for group Pivot_Group: min=45° (ticks=511), max=315° (ticks=3583)
+2024-10-30 09:03:16,795 INFO: Set position limits for the pivot motors
+2024-10-30 09:03:16,806 INFO: Initialising Gait 1
+2024-10-30 09:03:16,806 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-30 09:03:16,812 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-30 09:03:16,816 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-30 09:03:16,817 ERROR: Error controlling pivots: 'dpad_down'
+2024-10-30 09:03:16,855 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-30 09:03:19,817 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:03:19,818 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:03:19,819 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:03:19,819 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:19,820 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:19,821 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:19,822 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:19,822 INFO: New gait 2 is now active.
+2024-10-30 09:03:22,371 INFO: Initiating safe shutdown...
+2024-10-30 09:03:22,372 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-30 09:03:22,372 INFO: Disabling torque for group All_Motors
+2024-10-30 09:03:22,373 INFO: Enabling torque for group All_Motors
+2024-10-30 09:03:22,374 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:03:22,375 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:03:22,375 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-30 09:03:22,376 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-30 09:03:22,377 INFO: Enabling torque for group All_Motors
+2024-10-30 09:03:22,377 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:03:22,378 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:03:22,379 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-30 09:03:22,379 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-10-30 09:03:22,387 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:03:22,388 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-10-30 09:03:22,388 INFO: Disabling torque for group All_Motors
+2024-10-30 09:03:22,389 INFO: Enabling torque for group All_Motors
+2024-10-30 09:03:22,390 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:03:22,391 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:03:22,391 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:03:22,392 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:03:22,393 INFO: Closing PS4Controller and quitting pygame
+2024-10-30 09:03:22,490 INFO: Port closed successfully.
+2024-10-30 09:03:22,491 INFO: Shutdown complete.
+2024-10-30 09:03:39,711 INFO: Initializing PS4Controller
+2024-10-30 09:03:39,965 INFO: Configuration loaded successfully
+2024-10-30 09:03:39,968 INFO: Port /dev/ttyACM0 opened successfully
+2024-10-30 09:03:39,978 INFO: Baudrate set to 1000000
+2024-10-30 09:03:39,979 INFO: Control table loaded successfully.
+2024-10-30 09:03:39,979 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-10-30 09:03:39,980 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-10-30 09:03:39,980 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-10-30 09:03:39,981 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-10-30 09:03:39,982 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-10-30 09:03:39,982 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-10-30 09:03:39,983 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-10-30 09:03:39,983 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-10-30 09:03:39,984 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-10-30 09:03:39,984 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-10-30 09:03:39,984 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-10-30 09:03:39,998 INFO: Disabling torque for group Right_Whegs
+2024-10-30 09:03:40,001 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-10-30 09:03:40,004 INFO: Enabling torque for group Right_Whegs
+2024-10-30 09:03:40,006 INFO: Setting the profile velocity for group Right_Whegs from config.yaml: None
+2024-10-30 09:03:40,009 ERROR: Profile velocity for group Right_Whegs not found in config.yaml and no value was provided.
+2024-10-30 09:03:40,010 INFO: Profile velocities set for group Right_Whegs: {4: 21.85, 5: 21.85, 6: 21.85}
+2024-10-30 09:03:40,010 INFO: Disabling torque for group Left_Whegs
+2024-10-30 09:03:40,012 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-10-30 09:03:40,012 INFO: Enabling torque for group Left_Whegs
+2024-10-30 09:03:40,013 INFO: Setting the profile velocity for group Left_Whegs from config.yaml: None
+2024-10-30 09:03:40,014 ERROR: Profile velocity for group Left_Whegs not found in config.yaml and no value was provided.
+2024-10-30 09:03:40,015 INFO: Profile velocities set for group Left_Whegs: {1: 21.85, 2: 21.85, 3: 21.85}
+2024-10-30 09:03:40,015 INFO: Set the right side whegs to reverse direction
+2024-10-30 09:03:40,016 INFO: Disabling torque for group Pivot_Group
+2024-10-30 09:03:40,017 INFO: Drive mode set for group Pivot_Group with reverse_direction=False
+2024-10-30 09:03:40,017 INFO: Enabling torque for group Pivot_Group
+2024-10-30 09:03:40,018 INFO: Setting the profile velocity for group Pivot_Group from config.yaml: 4
+2024-10-30 09:03:40,019 INFO: Profile velocities set for group Pivot_Group: {7: 17.48, 8: 17.48}
+2024-10-30 09:03:40,020 INFO: Position limits set for group Pivot_Group: min=45° (ticks=511), max=315° (ticks=3583)
+2024-10-30 09:03:40,021 INFO: Set position limits for the pivot motors
+2024-10-30 09:03:40,030 INFO: Initialising Gait 1
+2024-10-30 09:03:40,031 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-10-30 09:03:40,036 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-30 09:03:40,040 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-10-30 09:03:40,041 ERROR: Error controlling pivots: 'dpad_down'
+2024-10-30 09:03:43,041 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:03:43,042 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:03:43,043 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:03:43,045 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:43,045 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:43,046 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:43,047 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:43,047 INFO: New gait 1 is now active.
+2024-10-30 09:03:44,350 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-10-30 09:03:44,362 INFO: Initialising Gait 2
+2024-10-30 09:03:44,362 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:03:44,367 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:03:44,368 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:03:44,370 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:03:44,371 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:03:44,372 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:44,373 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:44,373 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:44,374 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:44,375 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-30 09:03:44,378 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-10-30 09:03:47,381 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:03:47,383 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:03:47,385 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:03:47,386 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:47,387 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:47,388 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:03:47,389 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:03:47,389 INFO: New gait 2 is now active.
+2024-10-30 09:03:47,412 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 69.92, 3: 8.74, 4: 69.92, 5: 8.74, 6: 69.92}
+2024-10-30 09:03:47,413 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:03:47,424 INFO: Gait 2 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-30 09:03:50,850 INFO: Profile velocities set for group Wheg_Group: {1: 102.2746435546875, 2: 12.784330444335938, 3: 102.2746435546875, 4: 12.784330444335938, 5: 102.2746435546875, 6: 12.784330444335938}
+2024-10-30 09:03:50,850 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:03:50,862 INFO: Gait 2 step executed at 2.93RPM, wait for 2.30 seconds
+2024-10-30 09:03:54,534 INFO: Profile velocities set for group Wheg_Group: {1: 8.74, 2: 69.92, 3: 8.74, 4: 69.92, 5: 8.74, 6: 69.92}
+2024-10-30 09:03:54,535 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:03:54,546 INFO: Gait 2 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-30 09:03:58,667 INFO: Profile velocities set for group Wheg_Group: {1: 69.92, 2: 8.74, 3: 69.92, 4: 8.74, 5: 69.92, 6: 8.74}
+2024-10-30 09:03:58,668 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:03:58,679 INFO: Gait 2 step executed at 2.00RPM, wait for 3.36 seconds
+2024-10-30 09:04:02,063 INFO: Profile velocities set for group Wheg_Group: {1: 9.39120574951172, 2: 75.12964599609376, 3: 9.39120574951172, 4: 75.12964599609376, 5: 9.39120574951172, 6: 75.12964599609376}
+2024-10-30 09:04:02,063 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:02,075 INFO: Gait 2 step executed at 2.15RPM, wait for 3.13 seconds
+2024-10-30 09:04:05,227 INFO: Profile velocities set for group Wheg_Group: {1: 78.41994873046875, 2: 9.802493591308593, 3: 78.41994873046875, 4: 9.802493591308593, 5: 78.41994873046875, 6: 9.802493591308593}
+2024-10-30 09:04:05,227 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:04:05,238 INFO: Gait 2 step executed at 2.24RPM, wait for 3.00 seconds
+2024-10-30 09:04:09,743 INFO: R3 pressed. Turning mode requested
+2024-10-30 09:04:09,754 INFO: Initialising Turn Mode
+2024-10-30 09:04:09,755 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 160, 5: 200, 6: 160}
+2024-10-30 09:04:09,761 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:04:09,761 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:04:09,762 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:09,763 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:09,764 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:09,765 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:09,765 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:09,766 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:09,767 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-10-30 09:04:09,771 INFO: Initialised turn mode, waiting for 3 seconds
+2024-10-30 09:04:12,772 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:04:12,773 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:12,774 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:12,775 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:12,776 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:12,776 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:12,777 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:12,777 INFO: Turn mode activated.
+2024-10-30 09:04:12,803 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:04:12,808 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:04:12,809 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:04:12,810 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:12,810 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:12,812 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:12,812 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:12,813 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:12,814 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:12,820 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 160.048828125, 2: 202.060546875, 3: 160.048828125, 4: 160.751953125, 5: 199.3359375, 6: 159.9609375}
+2024-10-30 09:04:12,820 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:12,960 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:13,474 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 195.46875, 2: 169.453125, 3: 195.99609375, 4: 197.05078125, 5: 164.35546875, 6: 196.171875}
+2024-10-30 09:04:13,475 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:13,619 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:14,133 INFO: Profile velocities set for group Wheg_Group: {1: 9.40827606201172, 2: 75.26620849609375, 3: 9.40827606201172, 4: 75.26620849609375, 5: 9.40827606201172, 6: 75.26620849609375}
+2024-10-30 09:04:14,134 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:14,140 WARNING: Motor 1 is not in Extended Position Control Mode. Setting mode now.
+2024-10-30 09:04:14,140 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:04:14,141 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:14,142 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:14,142 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:14,143 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:14,144 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:14,145 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:14,150 INFO: Gait 4 step executed at 2.15RPM, wait for -3.07 seconds
+2024-10-30 09:04:14,164 INFO: Profile velocities set for group Wheg_Group: {1: 75.26620849609375, 2: 9.40827606201172, 3: 75.26620849609375, 4: 9.40827606201172, 5: 75.26620849609375, 6: 9.40827606201172}
+2024-10-30 09:04:14,164 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:04:14,175 INFO: Gait 4 step executed at 2.15RPM, wait for -3.07 seconds
+2024-10-30 09:04:14,188 INFO: Profile velocities set for group Wheg_Group: {1: 9.40827606201172, 2: 75.26620849609375, 3: 9.40827606201172, 4: 75.26620849609375, 5: 9.40827606201172, 6: 75.26620849609375}
+2024-10-30 09:04:14,189 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:14,200 INFO: Gait 4 step executed at 2.15RPM, wait for -3.07 seconds
+2024-10-30 09:04:14,255 INFO: Profile velocities set for group Wheg_Group: {1: 74.71782470703126, 2: 9.339728088378907, 3: 74.71782470703126, 4: 9.339728088378907, 5: 74.71782470703126, 6: 9.339728088378907}
+2024-10-30 09:04:14,256 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:04:14,268 INFO: Gait 4 step executed at 2.14RPM, wait for -3.09 seconds
+2024-10-30 09:04:14,281 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 198.45703125, 2: 160.224609375, 3: 198.544921875, 4: 207.333984375, 5: 160.751953125, 6: 205.6640625}
+2024-10-30 09:04:14,281 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:14,388 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:14,903 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 134.6484375, 2: 143.26171875, 3: 136.7578125, 4: 220.517578125, 5: 227.021484375, 6: 216.650390625}
+2024-10-30 09:04:14,903 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:15,010 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:15,543 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 70.751953125, 2: 135.263671875, 3: 70.224609375, 4: 230.2734375, 5: 289.51171875, 6: 225.791015625}
+2024-10-30 09:04:15,544 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:15,650 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:16,188 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 5.712890625, 2: 127.177734375, 3: 4.921875, 4: 238.7109375, 5: 355.341796875, 6: 234.4921875}
+2024-10-30 09:04:16,189 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:16,296 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:16,832 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 235.35546875, 2: 117.94921875, 3: 234.828125, 4: 246.796875, 5: 62.083984375, 6: 241.875}
+2024-10-30 09:04:16,832 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:16,938 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:17,474 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 177.962890625, 2: 115.3125, 3: 174.88671875, 4: 249.9609375, 5: 109.720703125, 6: 244.248046875}
+2024-10-30 09:04:17,475 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:17,581 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-30 09:04:17,582 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:04:17,587 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:04:17,588 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:04:17,588 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:17,589 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:17,590 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:17,591 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:17,592 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:17,593 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:20,594 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:04:20,595 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:20,597 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:20,598 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:20,599 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:20,599 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:20,600 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:20,601 INFO: Profile velocities set for group Wheg_Group: {1: 6.700631103515625, 2: 53.605048828125, 3: 6.700631103515625, 4: 53.605048828125, 5: 6.700631103515625, 6: 53.605048828125}
+2024-10-30 09:04:20,601 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:20,612 INFO: Gait 4 step executed at 1.53RPM, wait for -4.32 seconds
+2024-10-30 09:04:20,626 INFO: Profile velocities set for group Wheg_Group: {1: 52.78247314453125, 2: 6.5978091430664065, 3: 52.78247314453125, 4: 6.5978091430664065, 5: 52.78247314453125, 6: 6.5978091430664065}
+2024-10-30 09:04:20,626 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:04:20,637 INFO: Gait 4 step executed at 1.51RPM, wait for -4.39 seconds
+2024-10-30 09:04:20,650 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 204.345703125, 2: 149.58984375, 3: 202.236328125, 4: 206.455078125, 5: 153.017578125, 6: 205.048828125}
+2024-10-30 09:04:20,651 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:20,793 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:21,306 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 159.345703125, 2: 144.404296875, 3: 159.2578125, 4: 211.376953125, 5: 195.8203125, 6: 210.673828125}
+2024-10-30 09:04:21,307 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:21,449 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:21,963 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 112.1484375, 2: 137.28515625, 3: 109.86328125, 4: 220.4296875, 5: 246.09375, 6: 217.79296875}
+2024-10-30 09:04:21,963 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:22,107 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:22,621 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 65.7421875, 2: 131.484375, 3: 63.369140625, 4: 225.966796875, 5: 292.939453125, 6: 223.2421875}
+2024-10-30 09:04:22,621 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:22,763 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:23,276 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 19.3359375, 2: 125.244140625, 3: 16.69921875, 4: 232.119140625, 5: 339.873046875, 6: 229.21875}
+2024-10-30 09:04:23,277 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:23,420 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:23,934 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 267.5234375, 2: 118.740234375, 3: 265.150390625, 4: 238.359375, 5: 28.24609375, 6: 235.458984375}
+2024-10-30 09:04:23,935 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:24,077 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:24,591 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 220.23828125, 2: 112.8515625, 3: 218.216796875, 4: 244.86328125, 5: 74.30078125, 6: 240.1171875}
+2024-10-30 09:04:24,591 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:24,733 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:25,248 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 180.423828125, 2: 106.171875, 3: 178.138671875, 4: 247.763671875, 5: 103.48046875, 6: 243.017578125}
+2024-10-30 09:04:25,249 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:25,355 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:25,896 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 180.86328125, 2: 104.677734375, 3: 178.2265625, 4: 248.642578125, 5: 103.392578125, 6: 244.423828125}
+2024-10-30 09:04:25,897 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:26,003 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-30 09:04:26,004 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:04:26,009 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:04:26,010 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:04:26,010 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:26,011 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:26,012 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:26,013 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:26,014 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:26,015 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:29,017 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:04:29,018 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:29,019 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:29,020 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:29,021 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:29,021 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:29,022 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:29,023 INFO: Profile velocities set for group Wheg_Group: {1: 6.56353515625, 2: 52.50828125, 3: 6.56353515625, 4: 52.50828125, 5: 6.56353515625, 6: 52.50828125}
+2024-10-30 09:04:29,024 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:29,034 INFO: Gait 4 step executed at 1.50RPM, wait for -4.41 seconds
+2024-10-30 09:04:29,047 INFO: Profile velocities set for group Wheg_Group: {1: 57.71792724609375, 2: 7.214740905761719, 3: 57.71792724609375, 4: 7.214740905761719, 5: 57.71792724609375, 6: 7.214740905761719}
+2024-10-30 09:04:29,048 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:04:29,059 INFO: Gait 4 step executed at 1.65RPM, wait for -4.01 seconds
+2024-10-30 09:04:29,072 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 205.048828125, 2: 149.326171875, 3: 202.939453125, 4: 206.3671875, 5: 153.193359375, 6: 205.048828125}
+2024-10-30 09:04:29,073 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:29,217 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:29,731 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 157.412109375, 2: 151.787109375, 3: 154.51171875, 4: 212.87109375, 5: 202.32421875, 6: 211.552734375}
+2024-10-30 09:04:29,732 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:29,879 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:30,393 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 103.359375, 2: 145.72265625, 3: 101.162109375, 4: 221.923828125, 5: 255.41015625, 6: 219.462890625}
+2024-10-30 09:04:30,394 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:30,500 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:31,028 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 54.31640625, 2: 138.251953125, 3: 51.85546875, 4: 228.8671875, 5: 305.068359375, 6: 226.0546875}
+2024-10-30 09:04:31,029 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:31,135 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:31,693 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 2.28515625, 2: 130.341796875, 3: 295.82421875, 4: 236.6015625, 5: 357.099609375, 6: 233.349609375}
+2024-10-30 09:04:31,696 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:31,802 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:32,357 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 245.638671875, 2: 123.662109375, 3: 243.44140625, 4: 243.193359375, 5: 50.39453125, 6: 239.765625}
+2024-10-30 09:04:32,358 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:32,464 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:33,021 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 192.904296875, 2: 115.48828125, 3: 191.322265625, 4: 248.02734375, 5: 91.087890625, 6: 243.017578125}
+2024-10-30 09:04:33,022 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:33,129 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:33,684 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 180.775390625, 2: 108.80859375, 3: 178.9296875, 4: 248.90625, 5: 103.48046875, 6: 244.423828125}
+2024-10-30 09:04:33,684 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:33,791 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-30 09:04:33,792 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:04:33,797 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:04:33,798 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:04:33,799 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:33,800 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:33,801 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:33,802 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:33,802 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:33,803 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:36,841 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:04:36,843 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:36,845 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:36,848 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:36,849 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:36,850 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:36,851 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:36,852 INFO: Profile velocities set for group Wheg_Group: {1: 6.872001037597657, 2: 54.97600830078125, 3: 6.872001037597657, 4: 54.97600830078125, 5: 6.872001037597657, 6: 54.97600830078125}
+2024-10-30 09:04:36,852 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:36,863 INFO: Gait 4 step executed at 1.57RPM, wait for -4.21 seconds
+2024-10-30 09:04:36,876 INFO: Profile velocities set for group Wheg_Group: {1: 49.766362304687505, 2: 6.220795288085938, 3: 49.766362304687505, 4: 6.220795288085938, 5: 49.766362304687505, 6: 6.220795288085938}
+2024-10-30 09:04:36,877 INFO: Incrementing motor positions by {1: -320, 2: -40, 3: -320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:04:36,888 INFO: Gait 4 step executed at 1.42RPM, wait for -4.66 seconds
+2024-10-30 09:04:36,901 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 204.9609375, 2: 148.974609375, 3: 202.32421875, 4: 207.0703125, 5: 152.05078125, 6: 204.78515625}
+2024-10-30 09:04:36,902 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:37,049 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:37,562 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 164.443359375, 2: 143.701171875, 3: 161.19140625, 4: 211.9921875, 5: 192.216796875, 6: 210.5859375}
+2024-10-30 09:04:37,563 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:37,670 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:38,212 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 118.212890625, 2: 136.0546875, 3: 115.3125, 4: 221.396484375, 5: 239.853515625, 6: 217.880859375}
+2024-10-30 09:04:38,213 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:38,319 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:38,834 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 76.728515625, 2: 129.990234375, 3: 73.828125, 4: 226.93359375, 5: 281.513671875, 6: 222.978515625}
+2024-10-30 09:04:38,835 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:38,983 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:39,497 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 32.6953125, 2: 123.92578125, 3: 29.443359375, 4: 232.294921875, 5: 326.337890625, 6: 228.515625}
+2024-10-30 09:04:39,497 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:39,603 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:40,144 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 284.22265625, 2: 118.388671875, 3: 281.41015625, 4: 238.798828125, 5: 11.458984375, 6: 233.7890625}
+2024-10-30 09:04:40,145 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:40,253 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:40,767 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 242.298828125, 2: 113.291015625, 3: 239.22265625, 4: 243.984375, 5: 53.3828125, 6: 239.853515625}
+2024-10-30 09:04:40,767 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:40,918 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:41,432 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 196.771484375, 2: 105.8203125, 3: 194.486328125, 4: 248.90625, 5: 87.748046875, 6: 242.314453125}
+2024-10-30 09:04:41,432 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:41,539 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:42,091 WARNING: Motors are not in the correct positions for Gait 4. Positions: {1: 182.533203125, 2: 103.271484375, 3: 178.314453125, 4: 249.697265625, 5: 102.25, 6: 244.248046875}
+2024-10-30 09:04:42,091 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:42,198 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-30 09:04:42,198 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:04:42,204 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:04:42,204 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:04:42,205 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:42,206 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:42,207 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:42,208 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:42,209 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:42,209 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:42,262 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 09:04:42,285 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:04:44,511 INFO: share pressed. Turning mode deactivating
+2024-10-30 09:04:45,211 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:04:45,212 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:45,213 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:45,214 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:45,215 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:45,215 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:45,216 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:45,217 INFO: Profile velocities set for group Wheg_Group: {1: 6.0151513671875, 2: 48.1212109375, 3: 6.0151513671875, 4: 48.1212109375, 5: 6.0151513671875, 6: 48.1212109375}
+2024-10-30 09:04:45,217 INFO: Incrementing motor positions by {1: -40, 2: -320, 3: -40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:45,228 INFO: Gait 4 step executed at 1.38RPM, wait for -4.82 seconds
+2024-10-30 09:04:45,229 WARNING: No motors found for group 'All_Whegs'
+2024-10-30 09:04:45,230 WARNING: Set direction of whegs to forward
+2024-10-30 09:04:45,230 INFO: Turn mode deactivating
+2024-10-30 09:04:50,842 INFO: Profile velocities set for group Wheg_Group: {1: 57.992119140625, 2: 7.249014892578125, 3: 57.992119140625, 4: 7.249014892578125, 5: 57.992119140625, 6: 7.249014892578125}
+2024-10-30 09:04:50,843 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:04:50,854 INFO: Gait 2 step executed at 1.66RPM, wait for 4.04 seconds
+2024-10-30 09:04:54,924 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 111.654296875, 2: 165.21875, 3: 111.390625, 4: 202.708984375, 5: 145.31640625, 6: 203.939453125}
+2024-10-30 09:04:54,925 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:55,032 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:55,557 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 118.94921875, 2: 167.943359375, 3: 119.125, 4: 202.708984375, 5: 150.677734375, 6: 204.02734375}
+2024-10-30 09:04:55,558 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:55,710 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:04:56,235 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 118.94921875, 2: 173.3046875, 3: 119.125, 4: 202.62109375, 5: 150.677734375, 6: 204.02734375}
+2024-10-30 09:04:56,236 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:04:56,342 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-30 09:04:56,343 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:04:56,349 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:04:56,349 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:04:56,350 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:56,351 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:56,352 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:56,353 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:56,353 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:56,354 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:56,886 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:04:56,887 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:04:56,890 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:04:56,891 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:56,892 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:56,892 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:04:56,893 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:04:56,894 INFO: Profile velocities set for group Wheg_Group: {1: 8.105864562988282, 2: 64.84691650390626, 3: 8.105864562988282, 4: 64.84691650390626, 5: 8.105864562988282, 6: 64.84691650390626}
+2024-10-30 09:04:56,894 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:04:56,905 INFO: Gait 2 step executed at 1.85RPM, wait for 3.62 seconds
+2024-10-30 09:05:00,586 INFO: Profile velocities set for group Wheg_Group: {1: 54.97600830078125, 2: 6.872001037597657, 3: 54.97600830078125, 4: 6.872001037597657, 5: 54.97600830078125, 6: 6.872001037597657}
+2024-10-30 09:05:00,587 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:05:00,598 INFO: Gait 2 step executed at 1.57RPM, wait for 4.26 seconds
+2024-10-30 09:05:04,886 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 133.802734375, 2: 207.982421875, 3: 135.736328125, 4: 199.6328125, 5: 150.765625, 6: 197.69921875}
+2024-10-30 09:05:04,887 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:05:04,994 INFO: Motors are moving. Continuing with the gait.
+2024-10-30 09:05:05,553 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 138.548828125, 2: 207.982421875, 3: 140.39453125, 4: 199.544921875, 5: 158.32421875, 6: 200.248046875}
+2024-10-30 09:05:05,554 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:05:05,661 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-30 09:05:05,662 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:05:05,667 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:05:05,668 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:05:05,669 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:05:05,670 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:05:05,671 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:05,671 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:05,672 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:05,673 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:06,217 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:05:06,219 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:05:06,221 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:05:06,222 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:06,223 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:06,224 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:06,225 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:06,226 INFO: Profile velocities set for group Wheg_Group: {1: 11.550466918945313, 2: 92.4037353515625, 3: 11.550466918945313, 4: 92.4037353515625, 5: 11.550466918945313, 6: 92.4037353515625}
+2024-10-30 09:05:06,226 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:05:06,239 INFO: Gait 2 step executed at 2.64RPM, wait for 2.55 seconds
+2024-10-30 09:05:08,815 INFO: Profile velocities set for group Wheg_Group: {1: 57.71792724609375, 2: 7.214740905761719, 3: 57.71792724609375, 4: 7.214740905761719, 5: 57.71792724609375, 6: 7.214740905761719}
+2024-10-30 09:05:08,816 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:05:08,827 INFO: Gait 2 step executed at 1.65RPM, wait for 4.06 seconds
+2024-10-30 09:05:29,148 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 162.71875, 2: 181.791015625, 3: 165.70703125, 4: 201.21484375, 5: 154.544921875, 6: 199.720703125}
+2024-10-30 09:05:29,149 WARNING: Waiting for 1 second before checking for movement
+2024-10-30 09:05:29,255 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-10-30 09:05:29,256 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 200, 2: 160, 3: 200, 4: 200, 5: 160, 6: 200}
+2024-10-30 09:05:29,261 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-10-30 09:05:29,262 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-10-30 09:05:29,262 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:05:29,263 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:05:29,264 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:29,265 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:29,265 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:29,266 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:29,810 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-10-30 09:05:29,811 INFO: Disabling torque for group Wheg_Group
+2024-10-30 09:05:29,814 INFO: Enabling torque for group Wheg_Group
+2024-10-30 09:05:29,816 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:29,818 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:29,818 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-10-30 09:05:29,819 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-10-30 09:05:29,820 INFO: Profile velocities set for group Wheg_Group: {1: 4.747013854980469, 2: 37.97611083984375, 3: 4.747013854980469, 4: 37.97611083984375, 5: 4.747013854980469, 6: 37.97611083984375}
+2024-10-30 09:05:29,821 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-10-30 09:05:29,831 INFO: Gait 2 step executed at 1.09RPM, wait for 6.16 seconds
+2024-10-30 09:05:36,025 INFO: Profile velocities set for group Wheg_Group: {1: 72.93611083984375, 2: 9.117013854980469, 3: 72.93611083984375, 4: 9.117013854980469, 5: 72.93611083984375, 6: 9.117013854980469}
+2024-10-30 09:05:36,026 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-10-30 09:05:36,037 INFO: Gait 2 step executed at 2.09RPM, wait for 3.22 seconds
+2024-10-30 09:05:40,109 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-30 09:05:40,110 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-30 09:05:40,111 INFO: Disabling torque for group All_Motors
+2024-10-30 09:05:40,114 INFO: Enabling torque for group All_Motors
+2024-10-30 09:05:40,116 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:05:40,117 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:05:40,118 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-30 09:05:40,119 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-30 09:05:40,119 INFO: Enabling torque for group All_Motors
+2024-10-30 09:05:40,120 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:05:40,120 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:05:40,122 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-30 09:05:40,232 WARNING: Emergency stop activated! Stopping all motors asynchronously.
+2024-10-30 09:05:40,233 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-30 09:05:40,234 INFO: Disabling torque for group All_Motors
+2024-10-30 09:05:40,236 INFO: Enabling torque for group All_Motors
+2024-10-30 09:05:40,239 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:05:40,240 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:05:40,240 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-30 09:05:40,241 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-30 09:05:40,241 INFO: Enabling torque for group All_Motors
+2024-10-30 09:05:40,242 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:05:40,243 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:05:40,244 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-30 09:05:46,863 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 09:05:46,900 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 09:05:46,937 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 09:05:46,973 ERROR: Bulk read failed with error: [TxRxResult] There is no status packet!
+2024-10-30 09:05:46,974 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,042 ERROR: Error retrieving motor data: (5, 'Input/output error')
+2024-10-30 09:05:47,117 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,118 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,119 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,119 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,120 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,185 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,186 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,187 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,187 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,188 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,254 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,255 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,256 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,256 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,257 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,323 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,324 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,324 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,325 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,326 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,392 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,393 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,394 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,395 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,395 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,462 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,463 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,463 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,464 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,464 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,531 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,532 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,533 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,533 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,534 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,600 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,601 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,602 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,602 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,603 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,669 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,670 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,670 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,671 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,672 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,738 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,739 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,740 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,740 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,741 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,807 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,808 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,809 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,809 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,810 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,876 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,877 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,878 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,878 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,879 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:47,945 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,946 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,947 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,947 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:47,948 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,014 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,015 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,015 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,016 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,017 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,083 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,083 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,084 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,085 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,085 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,152 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,153 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,153 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,154 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,154 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,220 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,221 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,222 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,222 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,223 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,289 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,290 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,290 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,291 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,291 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,357 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,358 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,358 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,359 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,359 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,425 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,426 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,426 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,427 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,427 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,494 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,494 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,495 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,496 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,496 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,562 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,563 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,563 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,564 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,565 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,631 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,631 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,632 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,632 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,633 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,700 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,700 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,701 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,702 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,702 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,768 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,769 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,770 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,770 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,771 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,837 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,838 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,838 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,839 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,839 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,905 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,906 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,907 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,907 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,908 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:48,974 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,975 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,976 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,976 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:48,977 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,043 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,044 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,045 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,046 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,046 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,112 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,113 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,114 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,114 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,115 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,181 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,182 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,183 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,183 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,184 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,250 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,251 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,251 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,252 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,253 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,319 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,320 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,320 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,321 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,321 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,388 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,389 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,389 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,390 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,391 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,462 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,463 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,464 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,466 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,467 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,541 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,542 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,543 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,543 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,545 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,618 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,618 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,620 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,621 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,622 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,693 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,694 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,696 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,696 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,697 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,769 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,771 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,771 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,772 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,774 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,848 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,849 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,851 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,852 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,853 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:49,926 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,927 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,928 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,929 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:49,930 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,003 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,005 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,005 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,006 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,007 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,077 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,078 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,079 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,080 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,081 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,156 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,157 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,158 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,158 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,159 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,235 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,236 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,237 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,238 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,238 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,313 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,314 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,315 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,316 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,317 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,387 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,388 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,389 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,390 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,391 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,465 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,467 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,468 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,469 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,470 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,545 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,546 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,547 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,548 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,549 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,622 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,623 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,624 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,625 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,625 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,698 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,700 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,701 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,702 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,703 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,778 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,779 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,780 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,781 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,781 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,857 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,859 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,860 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,861 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,862 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:50,936 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,937 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,938 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,939 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:50,940 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,015 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,016 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,017 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,018 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,018 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,091 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,092 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,093 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,094 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,095 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,168 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,170 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,171 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,172 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,173 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,248 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,250 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,251 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,252 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,253 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,325 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,326 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,327 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,328 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,329 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,403 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,404 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,405 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,406 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,406 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,478 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,479 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,481 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,481 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,482 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,556 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,557 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,558 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,559 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,560 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,633 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,634 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,635 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,637 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,637 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,709 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,711 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,711 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,712 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,713 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,786 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,788 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,789 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,790 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,791 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,865 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,866 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,867 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,868 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,869 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:51,943 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,945 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,946 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,946 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:51,946 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,020 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,022 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,022 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,023 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,023 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,093 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,094 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,095 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,096 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,097 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,171 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,172 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,173 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,174 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,175 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,250 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,251 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,252 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,253 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,254 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,326 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,327 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,329 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,329 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,330 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,401 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,402 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,403 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,404 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,405 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,477 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,478 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,479 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,480 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,482 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,557 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,558 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,559 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,559 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,560 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,632 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,634 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,635 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,636 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,637 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,711 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,712 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,713 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,714 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,714 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,785 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,786 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,787 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,788 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,789 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,862 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,864 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,865 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,865 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,866 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:52,939 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,940 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,941 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,942 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:52,943 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,015 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,016 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,017 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,018 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,019 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,091 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,092 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,094 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,095 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,096 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,170 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,171 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,171 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,172 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,173 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,248 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,249 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,250 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,251 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,252 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,329 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,330 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,332 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,332 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,334 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,410 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,411 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,412 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,413 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,414 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,489 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,490 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,491 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,493 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,494 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,569 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,569 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,570 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,570 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,570 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,643 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,645 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,647 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,648 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,649 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,723 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,724 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,725 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,726 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,727 ERROR: Error retrieving motor data: 'NoneType' object has no attribute 'keys'
+2024-10-30 09:05:53,728 INFO: Initiating safe shutdown...
+2024-10-30 09:05:53,729 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-10-30 09:05:53,729 INFO: Disabling torque for group All_Motors
+2024-10-30 09:05:53,730 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,730 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,731 INFO: Enabling torque for group All_Motors
+2024-10-30 09:05:53,731 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,732 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:05:53,732 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,733 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:05:53,733 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-10-30 09:05:53,734 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,734 INFO: Velocity limit set to 100 for group All_Motors
+2024-10-30 09:05:53,735 INFO: Enabling torque for group All_Motors
+2024-10-30 09:05:53,735 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,736 INFO: Setting the profile velocity for group All_Motors from config.yaml: 8
+2024-10-30 09:05:53,736 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,737 INFO: Profile velocities set for group All_Motors: {1: 34.96, 2: 34.96, 3: 34.96, 4: 34.96, 5: 34.96, 6: 34.96, 7: 34.96, 8: 34.96}
+2024-10-30 09:05:53,737 ERROR: Sync write failed with error: [TxRxResult] Port is in use!
+2024-10-30 09:05:53,738 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-10-30 09:05:53,738 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-10-30 09:05:53,739 ERROR: Bulk read failed with error: [TxRxResult] Port is in use!

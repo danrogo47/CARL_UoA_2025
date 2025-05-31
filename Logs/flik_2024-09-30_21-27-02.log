@@ -1,0 +1,2354 @@
+2024-09-30 21:27:02,696 INFO: Initializing PS4Controller
+2024-09-30 21:27:02,928 DEBUG: Pygame initialized
+2024-09-30 21:27:02,928 DEBUG: Joystick initialized
+2024-09-30 21:27:02,929 DEBUG: Number of buttons on the controller: 13
+2024-09-30 21:27:02,970 INFO: Configuration loaded successfully
+2024-09-30 21:27:02,973 INFO: Port /dev/ttyACM0 opened successfully
+2024-09-30 21:27:02,983 INFO: Baudrate set to 1000000
+2024-09-30 21:27:02,984 INFO: Control table loaded successfully.
+2024-09-30 21:27:02,984 INFO: Motor group 'Pivot_Group' created with motors: [7, 8]
+2024-09-30 21:27:02,984 INFO: Motor group 'Wheg_Group' created with motors: [1, 2, 3, 4, 5, 6]
+2024-09-30 21:27:02,984 INFO: Motor group 'All_Motors' created with motors: [1, 2, 3, 4, 5, 6, 7, 8]
+2024-09-30 21:27:02,984 INFO: Motor group 'Left_Whegs' created with motors: [1, 2, 3]
+2024-09-30 21:27:02,984 INFO: Motor group 'Right_Whegs' created with motors: [4, 5, 6]
+2024-09-30 21:27:02,985 INFO: Motor group 'Front_Whegs' created with motors: [3, 6]
+2024-09-30 21:27:02,985 INFO: Motor group 'Rear_Whegs' created with motors: [1, 4]
+2024-09-30 21:27:02,985 INFO: Motor group 'Middle_Whegs' created with motors: [2, 5]
+2024-09-30 21:27:02,985 INFO: Motor group 'Two_Right_One_Left' created with motors: [2, 4, 6]
+2024-09-30 21:27:02,985 INFO: Motor group 'Two_Left_One_Right' created with motors: [5, 1, 3]
+2024-09-30 21:27:02,985 INFO: Initialised PS4 controller, Dynamixel, and Robot State
+2024-09-30 21:27:02,985 DEBUG: Setting drive mode for group 'Right_Whegs', reverse_direction=True, drive_mode_value=1
+2024-09-30 21:27:02,985 INFO: Disabling torque for group Right_Whegs
+2024-09-30 21:27:02,986 DEBUG: Torque disabled for group Right_Whegs
+2024-09-30 21:27:02,986 DEBUG: Sync writing drive mode values: {4: 1, 5: 1, 6: 1}
+2024-09-30 21:27:02,986 INFO: Drive mode set for group Right_Whegs with reverse_direction=True
+2024-09-30 21:27:02,987 INFO: Enabling torque for group Right_Whegs
+2024-09-30 21:27:02,987 DEBUG: Torque enabled for group Right_Whegs
+2024-09-30 21:27:02,987 DEBUG: Reading back drive mode for verification...
+2024-09-30 21:27:02,987 DEBUG: Preparing bulk read for motors: [4, 5, 6], Parameters: ['drive_mode']
+2024-09-30 21:27:02,987 DEBUG: Adding motor 4, Address: 10, Length: 1 to bulk read
+2024-09-30 21:27:02,987 DEBUG: Adding motor 5, Address: 10, Length: 1 to bulk read
+2024-09-30 21:27:02,987 DEBUG: Adding motor 6, Address: 10, Length: 1 to bulk read
+2024-09-30 21:27:02,990 DEBUG: Bulk read successful for group 'Right_Whegs'
+2024-09-30 21:27:02,991 DEBUG: Motor 4 current drive mode read from bulk read: 1
+2024-09-30 21:27:02,991 INFO: Motor 4 drive mode correctly set to reverse
+2024-09-30 21:27:02,991 DEBUG: Motor 5 current drive mode read from bulk read: 1
+2024-09-30 21:27:02,991 INFO: Motor 5 drive mode correctly set to reverse
+2024-09-30 21:27:02,991 DEBUG: Motor 6 current drive mode read from bulk read: 1
+2024-09-30 21:27:02,991 INFO: Motor 6 drive mode correctly set to reverse
+2024-09-30 21:27:02,991 DEBUG: Setting drive mode for group 'Left_Whegs', reverse_direction=False, drive_mode_value=0
+2024-09-30 21:27:02,991 INFO: Disabling torque for group Left_Whegs
+2024-09-30 21:27:02,992 DEBUG: Torque disabled for group Left_Whegs
+2024-09-30 21:27:02,992 DEBUG: Sync writing drive mode values: {1: 0, 2: 0, 3: 0}
+2024-09-30 21:27:02,992 INFO: Drive mode set for group Left_Whegs with reverse_direction=False
+2024-09-30 21:27:02,992 INFO: Enabling torque for group Left_Whegs
+2024-09-30 21:27:02,992 DEBUG: Torque enabled for group Left_Whegs
+2024-09-30 21:27:02,992 DEBUG: Reading back drive mode for verification...
+2024-09-30 21:27:02,993 DEBUG: Preparing bulk read for motors: [1, 2, 3], Parameters: ['drive_mode']
+2024-09-30 21:27:02,993 DEBUG: Adding motor 1, Address: 10, Length: 1 to bulk read
+2024-09-30 21:27:02,993 DEBUG: Adding motor 2, Address: 10, Length: 1 to bulk read
+2024-09-30 21:27:02,993 DEBUG: Adding motor 3, Address: 10, Length: 1 to bulk read
+2024-09-30 21:27:02,995 DEBUG: Bulk read successful for group 'Left_Whegs'
+2024-09-30 21:27:02,996 DEBUG: Motor 1 current drive mode read from bulk read: 0
+2024-09-30 21:27:02,996 INFO: Motor 1 drive mode correctly set to normal
+2024-09-30 21:27:02,996 DEBUG: Motor 2 current drive mode read from bulk read: 0
+2024-09-30 21:27:02,996 INFO: Motor 2 drive mode correctly set to normal
+2024-09-30 21:27:02,996 DEBUG: Motor 3 current drive mode read from bulk read: 0
+2024-09-30 21:27:02,996 INFO: Motor 3 drive mode correctly set to normal
+2024-09-30 21:27:02,996 INFO: Set the right side whegs to reverse direction
+2024-09-30 21:27:02,997 INFO: Position limits set for group Pivot_Group: min=90° (ticks=1023), max=270° (ticks=3071)
+2024-09-30 21:27:02,997 INFO: Set position limits for the pivot motors
+2024-09-30 21:27:02,998 DEBUG: Using selector: EpollSelector
+2024-09-30 21:27:02,999 DEBUG: Executing Gait 1
+2024-09-30 21:27:02,999 DEBUG: Adjusting wheg speed: trigger_value=-1.0, current_rpm=5
+2024-09-30 21:27:02,999 DEBUG: Adjusted wheg speed: target_rpm=5.0, current_rpm=0
+2024-09-30 21:27:02,999 INFO: Initialising Gait 1
+2024-09-30 21:27:02,999 INFO: Running set_position_group for group 'Wheg_Group' with positions: 180
+2024-09-30 21:27:02,999 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-30 21:27:02,999 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:02,999 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:02,999 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:02,999 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:03,000 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:03,000 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:03,005 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:03,005 DEBUG: Setting position 180° for all motors in group 'Wheg_Group'
+2024-09-30 21:27:03,005 DEBUG: Target positions set for group 'Wheg_Group': 180
+2024-09-30 21:27:03,005 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-30 21:27:03,005 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-30 21:27:03,005 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:03,006 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:03,008 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-30 21:27:03,009 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-30 21:27:03,009 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-30 21:27:03,009 INFO: Initialised Gait 1, waiting for 3 seconds
+2024-09-30 21:27:03,009 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-30 21:27:03,009 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,009 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,010 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,010 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,010 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,010 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,010 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,010 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:03,017 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:03,017 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-30 21:27:03,018 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,018 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,018 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,018 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,018 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,018 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,018 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,018 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:03,025 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:03,026 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-30 21:27:03,026 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,026 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,026 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,026 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,026 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,026 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,026 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,026 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:03,034 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-30 21:27:03,034 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,034 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:03,041 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:03,042 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-30 21:27:03,042 INFO: 1         2046                1                        6         
+2024-09-30 21:27:03,042 INFO: 2         2044                1                        12        
+2024-09-30 21:27:03,042 INFO: 3         2047                0                        12        
+2024-09-30 21:27:03,042 INFO: 4         2046                1                        3         
+2024-09-30 21:27:03,042 INFO: 5         2044                4294967295               11        
+2024-09-30 21:27:03,042 INFO: 6         2046                1                        12        
+2024-09-30 21:27:03,042 INFO: 7         2053                0                        65502     
+2024-09-30 21:27:03,043 INFO: 8         2043                0                        22        
+2024-09-30 21:27:03,953 DEBUG: Button triangle (index 2) pressed.
+2024-09-30 21:27:03,953 INFO: Triangle pressed. Preparing to change to next gait: 2
+2024-09-30 21:27:03,964 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:03,974 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:03,984 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:03,995 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:04,005 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:04,016 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:04,026 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:04,037 DEBUG: Ignoring rapid press of button triangle (index 2)
+2024-09-30 21:27:04,435 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:04,446 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,456 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,466 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,477 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,487 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,498 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,508 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,519 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,529 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,539 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,550 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,560 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,570 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,581 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,591 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,602 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,612 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,623 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,633 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,643 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,654 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,664 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,674 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,685 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,695 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:04,706 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,716 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,726 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,737 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,747 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,758 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,768 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,779 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,789 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,799 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,810 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,820 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,831 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,841 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,852 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,862 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,872 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,883 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,893 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,904 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,914 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,924 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,935 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,945 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,955 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:04,966 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,976 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,987 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:04,997 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,008 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,018 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,028 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,039 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,049 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,060 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,070 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,080 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,091 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,101 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,112 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,122 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,132 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,143 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,153 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,163 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,174 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,184 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,195 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,205 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,215 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:05,226 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,236 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,246 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,257 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,268 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,278 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,288 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,299 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,309 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,319 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,330 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,340 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,351 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,361 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,371 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,382 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,392 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,403 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,413 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,423 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,434 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,444 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,455 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,465 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,475 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:05,486 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,496 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,507 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,517 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,528 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,538 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,548 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,559 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,569 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,579 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,590 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,600 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,611 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,621 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,631 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,642 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,652 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,663 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,673 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,683 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,694 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,704 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,715 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,725 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,735 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:05,746 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,756 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,767 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,777 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,787 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,798 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,808 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,819 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,829 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,839 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,850 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,860 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,871 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,881 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,891 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,902 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,912 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,923 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,933 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,943 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,954 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,964 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,974 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,985 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:05,995 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:06,006 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,010 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-30 21:27:06,010 INFO: Disabling torque for group Wheg_Group
+2024-09-30 21:27:06,011 DEBUG: Torque disabled for group Wheg_Group
+2024-09-30 21:27:06,011 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-30 21:27:06,011 INFO: Enabling torque for group Wheg_Group
+2024-09-30 21:27:06,012 DEBUG: Torque enabled for group Wheg_Group
+2024-09-30 21:27:06,012 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-30 21:27:06,012 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:06,012 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:06,012 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-09-30 21:27:06,013 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-09-30 21:27:06,013 INFO: New gait 2 is now active.
+2024-09-30 21:27:06,017 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,024 DEBUG: Executing Gait 2
+2024-09-30 21:27:06,024 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=0
+2024-09-30 21:27:06,024 DEBUG: Adjusted wheg speed: target_rpm=49.99931335449219, current_rpm=5
+2024-09-30 21:27:06,024 INFO: Initialising Gait 2
+2024-09-30 21:27:06,024 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-30 21:27:06,024 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-30 21:27:06,024 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,024 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,024 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,024 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,025 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,025 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,029 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:06,030 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-30 21:27:06,030 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-09-30 21:27:06,030 INFO: Disabling torque for group Wheg_Group
+2024-09-30 21:27:06,030 DEBUG: Torque disabled for group Wheg_Group
+2024-09-30 21:27:06,031 DEBUG: Operating mode set to 'position' for group Wheg_Group
+2024-09-30 21:27:06,031 INFO: Enabling torque for group Wheg_Group
+2024-09-30 21:27:06,031 DEBUG: Torque enabled for group Wheg_Group
+2024-09-30 21:27:06,031 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-30 21:27:06,031 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:06,031 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:06,031 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-09-30 21:27:06,032 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-09-30 21:27:06,032 DEBUG: Setting motor 1 to 160° (1820 ticks)
+2024-09-30 21:27:06,032 DEBUG: Setting motor 2 to 200° (2275 ticks)
+2024-09-30 21:27:06,032 DEBUG: Setting motor 3 to 160° (1820 ticks)
+2024-09-30 21:27:06,032 DEBUG: Setting motor 4 to 200° (2275 ticks)
+2024-09-30 21:27:06,032 DEBUG: Setting motor 5 to 160° (1820 ticks)
+2024-09-30 21:27:06,032 DEBUG: Setting motor 6 to 200° (2275 ticks)
+2024-09-30 21:27:06,032 DEBUG: Setting individual positions for motors in group 'Wheg_Group': {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-30 21:27:06,033 DEBUG: Target positions set for group 'Wheg_Group': {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-30 21:27:06,033 INFO: Running set_position_group for group 'Pivot_Group' with positions: 180
+2024-09-30 21:27:06,033 DEBUG: Preparing bulk read for motors: [7, 8], Parameters: ['operating_mode']
+2024-09-30 21:27:06,033 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,033 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:06,036 DEBUG: Bulk read successful for group 'Pivot_Group'
+2024-09-30 21:27:06,036 DEBUG: Setting position 180° for all motors in group 'Pivot_Group'
+2024-09-30 21:27:06,036 DEBUG: Target positions set for group 'Pivot_Group': 180
+2024-09-30 21:27:06,036 INFO: Initialised Gait 2, waiting for 3 seconds
+2024-09-30 21:27:06,037 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,047 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,058 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,068 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,078 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,089 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,099 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,110 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,120 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,131 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,141 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,151 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,162 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,172 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,183 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,193 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,203 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,214 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,224 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,234 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,245 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,255 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:06,266 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,276 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,287 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,297 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,307 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,318 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,328 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,339 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,349 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,360 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,370 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,380 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,391 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,401 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,412 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,422 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,433 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,443 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,453 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,464 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,474 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,484 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,495 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,505 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:06,516 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,526 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,537 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,547 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,557 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,568 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,578 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,589 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,599 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,609 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,620 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,630 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,641 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,651 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,662 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,672 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,682 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,693 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,703 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,714 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,724 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,734 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,745 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,755 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:06,766 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,776 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,787 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,797 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,808 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,818 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,828 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,839 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,849 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,860 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,870 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,881 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,891 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,902 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,912 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,922 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,933 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,943 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,954 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,964 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,975 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,985 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:06,995 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,006 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:07,016 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,027 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,037 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,047 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,058 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,068 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,079 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,089 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,099 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,110 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,120 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,131 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,141 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,151 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,162 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,172 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,183 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,193 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,203 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,214 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,224 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,235 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,245 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,256 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:07,267 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,277 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,288 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,299 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,310 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,320 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,331 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,342 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,352 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,363 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,374 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,385 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,396 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,407 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,418 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,428 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,439 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,450 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,461 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,471 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,482 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,493 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,504 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,515 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:07,526 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,536 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,547 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,558 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,569 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,580 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,590 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,601 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,612 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,623 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,633 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,644 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,655 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,666 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,677 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,688 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,699 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,709 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,720 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,731 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,742 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,752 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,763 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,774 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:07,785 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,796 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,807 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,817 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,828 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,839 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,850 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,861 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,872 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,883 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,893 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,904 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,915 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,926 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,937 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,948 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,959 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,969 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,980 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:07,991 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,002 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,013 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,023 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,035 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:08,043 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-30 21:27:08,043 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,044 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,044 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,044 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,044 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,044 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,044 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,045 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:08,052 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:08,053 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-30 21:27:08,053 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,053 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,053 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,054 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,054 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,054 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,054 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,054 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:08,062 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:08,062 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-30 21:27:08,063 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,063 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,063 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,063 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,063 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,063 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,064 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,064 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:08,071 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:08,072 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-30 21:27:08,072 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,072 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,072 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,072 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,072 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,073 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,073 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,073 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:08,081 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:08,081 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-30 21:27:08,081 INFO: 1         1820                1                        0         
+2024-09-30 21:27:08,082 INFO: 2         2267                0                        12        
+2024-09-30 21:27:08,082 INFO: 3         1820                1                        0         
+2024-09-30 21:27:08,082 INFO: 4         2269                1                        11        
+2024-09-30 21:27:08,082 INFO: 5         1820                1                        65525     
+2024-09-30 21:27:08,083 INFO: 6         2267                1                        12        
+2024-09-30 21:27:08,083 INFO: 7         2053                0                        65502     
+2024-09-30 21:27:08,083 INFO: 8         2042                0                        22        
+2024-09-30 21:27:08,084 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,095 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,106 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,117 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,128 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,139 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,149 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,160 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,171 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,181 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,192 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,203 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,213 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,224 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,234 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,245 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,256 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,267 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,278 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,289 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:08,299 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,310 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,321 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,332 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,343 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,354 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,364 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,375 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,386 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,397 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,408 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,419 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,430 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,440 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,451 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,462 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,473 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,484 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,495 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,506 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,516 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,527 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,538 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,549 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:08,560 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,571 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,582 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,592 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,603 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,614 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,625 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,636 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,647 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,657 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,668 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,679 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,690 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,701 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,712 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,723 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,733 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,744 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,755 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,766 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,777 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,788 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,799 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,809 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:08,820 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,831 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,842 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,853 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,864 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,875 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,886 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,896 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,907 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,918 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,929 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,940 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,951 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,962 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,972 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,983 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:08,994 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,005 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,016 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,027 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,038 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-30 21:27:09,038 INFO: Disabling torque for group Wheg_Group
+2024-09-30 21:27:09,039 DEBUG: Torque disabled for group Wheg_Group
+2024-09-30 21:27:09,040 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-30 21:27:09,040 INFO: Enabling torque for group Wheg_Group
+2024-09-30 21:27:09,041 DEBUG: Torque enabled for group Wheg_Group
+2024-09-30 21:27:09,041 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-30 21:27:09,041 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:09,041 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:09,041 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-09-30 21:27:09,042 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-09-30 21:27:09,043 INFO: New gait 2 is now active.
+2024-09-30 21:27:09,043 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,054 DEBUG: Executing Gait 2
+2024-09-30 21:27:09,054 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=0
+2024-09-30 21:27:09,055 DEBUG: Adjusted wheg speed: target_rpm=3.9999542236328125, current_rpm=1
+2024-09-30 21:27:09,055 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,066 DEBUG: Executing Gait 2
+2024-09-30 21:27:09,066 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=1
+2024-09-30 21:27:09,066 DEBUG: Adjusted wheg speed: target_rpm=3.9999542236328125, current_rpm=1.5
+2024-09-30 21:27:09,066 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:09,067 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,067 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,067 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,067 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,067 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,067 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,073 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:09,073 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:09,073 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:09,074 INFO: Profile velocities set for group Wheg_Group: {1: 6.555, 2: 52.44, 3: 6.555, 4: 52.44, 5: 6.555, 6: 52.44}
+2024-09-30 21:27:09,074 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-30 21:27:09,075 DEBUG: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-30 21:27:09,075 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-30 21:27:09,075 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:09,075 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:09,076 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:09,076 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:09,076 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:09,076 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:09,081 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:09,082 DEBUG: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-30 21:27:09,082 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:09,082 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,082 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,082 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,082 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,083 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,083 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:09,088 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:09,088 DEBUG: Motor 1: Current Position: 160.00°, New Position: 200.00°
+2024-09-30 21:27:09,089 DEBUG: Motor 2: Current Position: 199.21°, New Position: 519.21°
+2024-09-30 21:27:09,089 DEBUG: Motor 3: Current Position: 160.00°, New Position: 200.00°
+2024-09-30 21:27:09,089 DEBUG: Motor 4: Current Position: 199.38°, New Position: 519.38°
+2024-09-30 21:27:09,089 DEBUG: Motor 5: Current Position: 159.82°, New Position: 199.82°
+2024-09-30 21:27:09,089 DEBUG: Motor 6: Current Position: 199.21°, New Position: 519.21°
+2024-09-30 21:27:09,090 DEBUG: Motor positions for group 'Wheg_Group' incremented.
+2024-09-30 21:27:09,090 INFO: Gait 2 step executed at 1.50RPM, wait for 4.64 seconds
+2024-09-30 21:27:09,091 DEBUG: Waiting for 4.64 seconds before next gait step
+2024-09-30 21:27:09,091 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:09,102 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,113 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,124 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,135 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,146 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,157 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,168 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,178 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,189 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,200 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,210 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,221 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,232 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,242 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,253 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,264 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,275 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,286 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,297 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,308 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,318 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,329 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,340 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,351 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:09,362 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,373 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,384 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,395 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,405 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,416 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,427 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,438 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,449 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,460 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,471 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,481 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,492 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,503 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,514 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,525 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,536 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,547 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,558 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,569 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,580 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,590 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,601 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:09,612 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,623 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,634 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,645 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,656 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,667 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,678 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,688 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,699 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,710 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,721 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,732 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,743 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,754 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,764 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,775 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,786 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,797 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,808 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,819 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,830 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,841 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,852 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:09,863 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,874 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,885 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,896 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,907 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,918 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,929 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,940 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,950 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,961 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,972 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,983 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:09,994 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,005 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,016 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,027 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,038 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,049 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,060 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,071 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,082 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,093 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,103 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:10,114 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,125 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,136 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,147 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,158 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,169 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,180 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,190 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,201 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,212 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,223 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,234 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,245 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,256 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,267 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,278 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,289 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,300 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,311 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,322 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,333 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,344 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,354 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:10,365 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,376 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,387 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,398 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,409 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,420 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,431 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,442 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,453 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,464 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,475 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,486 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,497 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,507 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,518 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,529 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,541 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,552 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,563 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,574 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,585 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,596 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,607 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:10,618 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,629 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,640 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,651 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,662 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,673 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,684 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,695 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,705 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,716 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,727 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,738 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,749 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,760 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,771 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,782 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,793 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,804 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,815 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,826 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,837 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,848 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,859 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:10,870 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,881 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,892 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,903 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,914 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,925 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,936 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,947 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,958 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,969 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,980 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:10,991 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,002 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,013 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,024 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,035 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,046 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,057 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,068 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,079 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,090 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,101 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,112 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:11,123 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,134 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,145 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,156 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,167 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,177 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,188 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,199 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,210 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,221 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,232 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,243 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,254 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,265 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,276 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,287 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,298 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,309 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,320 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,331 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,342 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,353 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,364 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:11,375 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,386 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,397 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,408 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,419 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,430 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,441 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,452 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,463 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,474 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,485 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,496 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,507 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,518 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,529 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,540 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,551 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,562 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,572 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,583 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,594 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,605 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,617 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:11,628 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,639 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,650 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,661 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,672 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,683 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,694 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,704 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,715 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,726 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,737 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,748 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,759 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,770 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,781 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,792 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,803 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,814 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,825 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,836 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,848 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,859 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,870 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:11,881 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,892 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,903 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,914 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,925 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,936 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,947 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,958 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,969 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,980 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:11,991 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,002 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,013 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,024 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,035 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,046 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,057 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,068 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,079 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,090 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,101 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,112 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,123 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:12,133 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,144 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,155 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,166 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,177 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,189 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,200 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,211 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,222 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,233 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,244 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,255 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,266 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,277 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,288 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,299 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,310 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,321 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,332 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,343 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,354 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,365 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,376 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:12,387 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,398 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,409 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,420 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,431 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,442 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,453 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,464 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,475 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,486 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,497 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,508 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,519 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,530 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,541 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,552 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,563 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,574 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,585 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,596 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,607 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,618 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,629 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:12,641 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,652 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,663 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,674 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,685 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,696 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,707 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,718 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,729 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,740 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,751 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,762 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,773 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,784 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,796 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,807 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,818 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,829 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,840 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,851 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,862 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,873 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,885 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:12,896 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,907 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,918 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,929 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,940 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,951 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,962 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,973 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,984 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:12,995 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,006 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,017 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,028 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,040 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,051 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,062 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,073 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,084 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,085 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-30 21:27:13,085 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,085 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,085 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,085 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,086 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,086 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,086 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,086 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,094 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:13,094 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-30 21:27:13,094 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,095 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,095 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,095 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,095 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,095 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,095 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,095 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:13,103 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:13,103 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-30 21:27:13,104 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,104 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,104 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,104 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,104 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,104 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,104 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,105 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:13,112 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:13,113 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-30 21:27:13,113 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,113 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,113 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,113 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,113 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,113 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,114 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,114 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:13,121 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:13,121 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-30 21:27:13,122 INFO: 1         2185                6                        13        
+2024-09-30 21:27:13,122 INFO: 2         5486                52                       21        
+2024-09-30 21:27:13,122 INFO: 3         2184                6                        14        
+2024-09-30 21:27:13,122 INFO: 4         5487                52                       21        
+2024-09-30 21:27:13,123 INFO: 5         2185                6                        12        
+2024-09-30 21:27:13,123 INFO: 6         5486                52                       20        
+2024-09-30 21:27:13,123 INFO: 7         2053                0                        65502     
+2024-09-30 21:27:13,124 INFO: 8         2043                0                        22        
+2024-09-30 21:27:13,124 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,135 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:13,146 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,158 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,169 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,180 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,190 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,201 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,212 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,224 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,235 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,245 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,256 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,267 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,278 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,289 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,301 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,312 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,323 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,335 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,346 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,357 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,368 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,379 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,390 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:13,402 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,413 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,424 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,435 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,446 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,457 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,468 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,480 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,491 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,502 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,513 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,524 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,536 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,547 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,558 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,569 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,581 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,592 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,603 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,614 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,625 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,637 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,648 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:13,659 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,670 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,681 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,692 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,703 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,714 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,725 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,737 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,747 DEBUG: Executing Gait 2
+2024-09-30 21:27:13,748 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=1.5
+2024-09-30 21:27:13,748 DEBUG: Adjusted wheg speed: target_rpm=3.9999542236328125, current_rpm=2.0
+2024-09-30 21:27:13,748 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:13,748 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,748 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,749 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,749 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,749 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,749 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,754 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:13,755 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:13,755 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:13,756 INFO: Profile velocities set for group Wheg_Group: {1: 69.92, 2: 8.74, 3: 69.92, 4: 8.74, 5: 69.92, 6: 8.74}
+2024-09-30 21:27:13,756 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-30 21:27:13,756 DEBUG: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-30 21:27:13,756 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-30 21:27:13,756 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:13,757 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:13,757 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:13,757 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:13,757 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:13,758 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:13,763 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:13,763 DEBUG: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-30 21:27:13,763 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:13,763 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,763 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,764 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,764 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,764 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,764 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:13,769 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:13,770 DEBUG: Motor 1: Current Position: 197.63°, New Position: 517.63°
+2024-09-30 21:27:13,770 DEBUG: Motor 2: Current Position: 519.21°, New Position: 559.21°
+2024-09-30 21:27:13,770 DEBUG: Motor 3: Current Position: 197.54°, New Position: 517.54°
+2024-09-30 21:27:13,770 DEBUG: Motor 4: Current Position: 519.38°, New Position: 559.38°
+2024-09-30 21:27:13,770 DEBUG: Motor 5: Current Position: 197.63°, New Position: 517.63°
+2024-09-30 21:27:13,771 DEBUG: Motor 6: Current Position: 519.12°, New Position: 559.12°
+2024-09-30 21:27:13,771 DEBUG: Motor positions for group 'Wheg_Group' incremented.
+2024-09-30 21:27:13,771 INFO: Gait 2 step executed at 2.00RPM, wait for 3.53 seconds
+2024-09-30 21:27:13,772 DEBUG: Waiting for 3.53 seconds before next gait step
+2024-09-30 21:27:13,772 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,784 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,795 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,806 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,817 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,828 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,839 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,849 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,860 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,871 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,882 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,894 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,905 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:13,916 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,928 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,939 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,950 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,961 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,972 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,984 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:13,995 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,006 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,017 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,028 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,039 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,051 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,062 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,073 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,084 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,095 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,107 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,118 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,129 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,140 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,151 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,162 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:14,174 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,185 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,196 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,207 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,218 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,229 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,241 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,252 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,263 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,274 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,285 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,297 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,308 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,319 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,331 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,342 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,353 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,364 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,375 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,387 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,398 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,409 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,420 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:14,431 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,442 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,453 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,465 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,476 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,487 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,498 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,509 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,521 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,532 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,543 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,554 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,566 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,577 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,588 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,599 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,611 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,622 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,633 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,644 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,655 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,666 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,677 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:14,688 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,699 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,711 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,722 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,733 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,745 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,756 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,767 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,778 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,789 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,801 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,812 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,823 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,834 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,845 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,857 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,868 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,879 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,890 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,902 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,913 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,924 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,936 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:14,947 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,958 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,969 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,981 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:14,992 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,003 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,014 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,025 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,036 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,048 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,059 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,070 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,081 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,092 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,104 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,115 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,126 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,137 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,149 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,160 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,171 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,183 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,194 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:15,205 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,216 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,227 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,239 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,250 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,261 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,272 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,283 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,294 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,307 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,318 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,329 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,340 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,351 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,363 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,374 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,385 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,397 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,408 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,419 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,430 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,441 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,452 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:15,464 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,475 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,486 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,497 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,509 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,520 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,531 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,542 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,553 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,564 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,575 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,587 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,598 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,609 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,620 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,632 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,643 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,654 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,665 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,676 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,688 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,699 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,710 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:15,721 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,732 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,743 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,755 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,766 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,777 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,788 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,799 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,811 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,822 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,833 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,845 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,856 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,867 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,878 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,890 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,901 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,912 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,923 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,935 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,946 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,957 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,968 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:15,980 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:15,991 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,002 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,013 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,025 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,036 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,047 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,058 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,070 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,081 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,092 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,103 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,115 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,126 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,137 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,148 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,160 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,171 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,182 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,193 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,205 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,216 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,227 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:16,238 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,250 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,261 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,272 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,283 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,295 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,306 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,317 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,328 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,340 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,351 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,363 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,374 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,385 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,396 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,408 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,419 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,430 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,442 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,453 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,464 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,475 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,487 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:16,498 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,509 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,521 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,532 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,543 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,555 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,566 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,577 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,588 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,600 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,611 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,622 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,634 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,645 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,656 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,667 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,678 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,690 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,701 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,712 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,724 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,735 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,746 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:16,757 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,769 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,780 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,791 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,803 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,814 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,825 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,837 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,848 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,859 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,870 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,882 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,893 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,905 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,916 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,927 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,938 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,950 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,961 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,972 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,984 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:16,995 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,006 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:17,017 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,028 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,040 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,052 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,063 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,074 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,086 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,097 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,108 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,120 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,131 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,143 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,154 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,165 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,177 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,188 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,200 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,211 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,222 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,233 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,245 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,256 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,267 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:17,278 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,290 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,301 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,313 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,317 DEBUG: Executing Gait 2
+2024-09-30 21:27:17,317 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=2.0
+2024-09-30 21:27:17,318 DEBUG: Adjusted wheg speed: target_rpm=3.9999542236328125, current_rpm=2.5
+2024-09-30 21:27:17,318 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:17,318 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,318 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,318 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,318 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,318 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,319 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,324 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:17,324 WARNING: Motors are not in the correct positions for Gait 2. Positions: {1: 158.412109375, 2: 197.875, 3: 158.412109375, 4: 198.05078125, 5: 158.32421875, 6: 197.787109375}
+2024-09-30 21:27:17,325 WARNING: Waiting for 1 second before checking for movement
+2024-09-30 21:27:17,326 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,337 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:17,337 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,337 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,337 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,338 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,338 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,338 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:17,343 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:17,344 CRITICAL: Motors are not moving, reseting positions, and waiting for 3 seconds.
+2024-09-30 21:27:17,344 INFO: Running set_position_group for group 'Wheg_Group' with positions: {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-30 21:27:17,344 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-30 21:27:17,345 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:17,345 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:17,345 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:17,345 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:17,345 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:17,345 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:17,351 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:17,351 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-30 21:27:17,351 INFO: Setting operating mode 'position' for group 'Wheg_Group'
+2024-09-30 21:27:17,351 INFO: Disabling torque for group Wheg_Group
+2024-09-30 21:27:17,352 DEBUG: Torque disabled for group Wheg_Group
+2024-09-30 21:27:17,353 DEBUG: Operating mode set to 'position' for group Wheg_Group
+2024-09-30 21:27:17,353 INFO: Enabling torque for group Wheg_Group
+2024-09-30 21:27:17,354 DEBUG: Torque enabled for group Wheg_Group
+2024-09-30 21:27:17,354 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-30 21:27:17,354 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:17,354 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:17,354 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-09-30 21:27:17,355 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-09-30 21:27:17,355 DEBUG: Setting motor 1 to 160° (1820 ticks)
+2024-09-30 21:27:17,356 DEBUG: Setting motor 2 to 200° (2275 ticks)
+2024-09-30 21:27:17,356 DEBUG: Setting motor 3 to 160° (1820 ticks)
+2024-09-30 21:27:17,356 DEBUG: Setting motor 4 to 200° (2275 ticks)
+2024-09-30 21:27:17,356 DEBUG: Setting motor 5 to 160° (1820 ticks)
+2024-09-30 21:27:17,356 DEBUG: Setting motor 6 to 200° (2275 ticks)
+2024-09-30 21:27:17,356 DEBUG: Setting individual positions for motors in group 'Wheg_Group': {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-30 21:27:17,357 DEBUG: Target positions set for group 'Wheg_Group': {1: 160, 2: 200, 3: 160, 4: 200, 5: 160, 6: 200}
+2024-09-30 21:27:17,357 DEBUG: Waiting for 3.00 seconds before next gait step
+2024-09-30 21:27:17,358 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,369 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,380 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,392 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,403 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,415 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,426 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,437 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,448 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,459 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,470 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,481 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,492 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,503 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,514 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,525 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:17,537 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,548 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,560 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,571 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,582 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,593 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,605 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,616 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,628 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,639 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,650 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,661 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,673 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,684 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,696 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,707 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,718 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,730 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,741 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,752 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,763 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,775 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,786 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:17,798 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,809 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,820 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,832 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,843 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,854 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,866 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,877 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,888 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,900 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,911 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,923 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,934 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,945 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,957 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,968 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,979 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:17,991 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,002 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,013 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,025 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,036 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,047 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:18,059 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,070 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,082 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,093 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,104 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,116 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,125 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-30 21:27:18,125 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,125 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,125 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,126 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,126 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,126 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,126 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,126 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:18,134 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:18,135 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-30 21:27:18,135 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,135 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,135 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,135 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,135 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,135 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,136 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,136 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:18,143 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:18,144 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-30 21:27:18,144 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,144 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,144 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,144 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,145 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,145 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,145 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,145 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:18,153 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:18,153 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-30 21:27:18,153 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,153 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,153 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,154 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,154 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,154 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,154 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,154 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:18,162 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:18,162 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-30 21:27:18,162 INFO: 1         1820                1                        4         
+2024-09-30 21:27:18,162 INFO: 2         2266                0                        12        
+2024-09-30 21:27:18,163 INFO: 3         1820                0                        0         
+2024-09-30 21:27:18,163 INFO: 4         2267                1                        11        
+2024-09-30 21:27:18,163 INFO: 5         1819                1                        65525     
+2024-09-30 21:27:18,163 INFO: 6         2266                0                        12        
+2024-09-30 21:27:18,164 INFO: 7         2053                0                        65502     
+2024-09-30 21:27:18,164 INFO: 8         2043                0                        22        
+2024-09-30 21:27:18,165 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,176 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,188 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,199 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,210 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,222 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,233 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,244 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,255 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,266 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,277 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,288 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,299 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:18,310 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,322 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,333 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,344 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,356 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,367 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,379 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,390 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,401 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,413 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,424 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,435 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,447 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,458 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,469 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,481 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,492 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,504 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,515 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,526 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,538 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,549 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,560 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:18,572 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,583 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,594 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,606 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,617 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,629 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,640 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,651 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,663 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,674 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,685 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,697 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,708 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,719 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,731 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,742 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,753 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,765 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,776 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,787 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,799 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,810 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,822 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:18,833 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,845 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,856 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,867 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,879 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,890 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,902 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,913 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,924 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,936 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,947 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,958 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,970 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,981 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:18,993 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,004 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,016 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,027 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,038 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,050 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,061 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,073 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:19,084 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,095 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,107 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,118 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,129 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,141 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,152 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,164 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,175 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,186 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,198 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,209 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,221 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,232 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,243 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,255 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,266 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,278 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,289 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,300 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,312 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,323 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:19,335 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,346 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,357 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,369 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,380 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,391 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,403 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,414 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,426 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,437 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,448 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,460 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,471 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,483 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,494 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,505 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,517 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,528 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,540 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,551 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,563 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,574 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:19,585 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,597 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,608 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,620 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,631 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,642 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,654 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,665 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,677 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,688 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,700 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,711 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,722 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,734 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,745 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,756 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,768 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,779 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,791 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,802 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,814 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,825 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:19,837 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,848 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,860 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,871 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,882 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,894 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,905 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,916 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,928 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,940 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,951 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,962 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,974 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,985 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:19,997 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,008 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,020 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,031 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,042 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,054 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,065 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,077 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:20,088 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,100 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,111 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,122 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,134 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,145 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,157 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,168 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,179 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,191 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,203 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,214 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,225 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,237 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,248 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,260 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,271 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,283 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,294 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,306 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,318 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,329 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:20,340 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,352 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,363 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,369 DEBUG: Executing Gait 2
+2024-09-30 21:27:20,369 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=2.5
+2024-09-30 21:27:20,369 DEBUG: Adjusted wheg speed: target_rpm=3.9999542236328125, current_rpm=3.0
+2024-09-30 21:27:20,369 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:20,369 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,370 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,370 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,370 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,370 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,370 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,375 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:20,376 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:20,376 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:20,377 INFO: Profile velocities set for group Wheg_Group: {1: 13.11, 2: 104.88, 3: 13.11, 4: 104.88, 5: 13.11, 6: 104.88}
+2024-09-30 21:27:20,377 INFO: Incrementing motor positions by {1: 40, 2: 320, 3: 40, 4: 320, 5: 40, 6: 320} degrees for group 'Wheg_Group'
+2024-09-30 21:27:20,378 DEBUG: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-30 21:27:20,378 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-30 21:27:20,378 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:20,378 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:20,378 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:20,379 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:20,379 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:20,379 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:20,384 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:20,384 WARNING: Motor 1 is not in Extended Position Control Mode. Setting mode now.
+2024-09-30 21:27:20,384 INFO: Setting operating mode 'multi_turn' for group 'Wheg_Group'
+2024-09-30 21:27:20,385 INFO: Disabling torque for group Wheg_Group
+2024-09-30 21:27:20,386 DEBUG: Torque disabled for group Wheg_Group
+2024-09-30 21:27:20,386 DEBUG: Operating mode set to 'multi_turn' for group Wheg_Group
+2024-09-30 21:27:20,386 INFO: Enabling torque for group Wheg_Group
+2024-09-30 21:27:20,387 DEBUG: Torque enabled for group Wheg_Group
+2024-09-30 21:27:20,387 DEBUG: Setting profile velocity for motors in group Wheg_Group
+2024-09-30 21:27:20,388 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:20,388 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:20,388 INFO: Setting the profile velocity for group Wheg_Group from config.yaml: 10
+2024-09-30 21:27:20,389 INFO: Profile velocities set for group Wheg_Group: {1: 43.7, 2: 43.7, 3: 43.7, 4: 43.7, 5: 43.7, 6: 43.7}
+2024-09-30 21:27:20,389 DEBUG: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-30 21:27:20,389 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:20,389 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,389 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,390 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,390 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,390 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,390 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:20,395 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:20,395 DEBUG: Motor 1: Current Position: 160.00°, New Position: 200.00°
+2024-09-30 21:27:20,396 DEBUG: Motor 2: Current Position: 199.30°, New Position: 519.30°
+2024-09-30 21:27:20,396 DEBUG: Motor 3: Current Position: 160.00°, New Position: 200.00°
+2024-09-30 21:27:20,396 DEBUG: Motor 4: Current Position: 199.30°, New Position: 519.30°
+2024-09-30 21:27:20,396 DEBUG: Motor 5: Current Position: 159.82°, New Position: 199.82°
+2024-09-30 21:27:20,396 DEBUG: Motor 6: Current Position: 199.21°, New Position: 519.21°
+2024-09-30 21:27:20,397 DEBUG: Motor positions for group 'Wheg_Group' incremented.
+2024-09-30 21:27:20,397 INFO: Gait 2 step executed at 3.00RPM, wait for 2.42 seconds
+2024-09-30 21:27:20,397 DEBUG: Waiting for 2.42 seconds before next gait step
+2024-09-30 21:27:20,398 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,409 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,421 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,432 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,443 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,454 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,466 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,477 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,488 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,499 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,511 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,522 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,533 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,545 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,556 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,568 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,579 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,591 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:20,602 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,613 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,625 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,636 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,648 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,660 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,671 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,683 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,694 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,706 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,717 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,729 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,740 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,752 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,763 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,775 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,786 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,798 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,809 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,822 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,833 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,845 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:20,857 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,868 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,880 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,891 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,903 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,914 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,926 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,937 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,949 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,960 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,971 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,983 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:20,994 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,006 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,017 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,029 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,040 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,052 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,064 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,075 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,086 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,098 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:21,110 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,121 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,133 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,144 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,155 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,167 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,179 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,190 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,201 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,213 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,225 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,236 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,248 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,259 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,270 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,282 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,294 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,305 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,317 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,329 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,340 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,352 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:21,363 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,375 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,386 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,398 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,409 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,421 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,432 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,444 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,455 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,467 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,478 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,490 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,501 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,512 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,524 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,536 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,547 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,559 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,570 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,582 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,593 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,605 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:21,616 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,628 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,639 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,651 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,662 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,674 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,685 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,697 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,708 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,720 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,731 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,743 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,754 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,765 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,777 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,788 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,800 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,812 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,823 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,835 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,847 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,858 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:21,870 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,881 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,893 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,905 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,916 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,928 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,939 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,951 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,962 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,974 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,985 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:21,997 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,009 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,020 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,031 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,043 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,054 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,066 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,078 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,089 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,101 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,112 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:22,124 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,135 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,147 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,158 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,170 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,181 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,193 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,204 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,216 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,227 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,239 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,250 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,262 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,273 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,285 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,297 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,308 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,320 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,332 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,343 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,355 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,366 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:22,378 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,389 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,401 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,412 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,424 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,436 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,447 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,459 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,470 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,482 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,493 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,505 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,516 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,528 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,539 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,551 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,562 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,574 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,586 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,597 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,609 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,621 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:22,632 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,644 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,656 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,668 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,679 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,691 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,702 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,714 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,725 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,737 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,749 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,760 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,772 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,783 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,795 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,806 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,818 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,830 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,832 DEBUG: Executing Gait 2
+2024-09-30 21:27:22,832 DEBUG: Adjusting wheg speed: trigger_value=0.999969482421875, current_rpm=3.0
+2024-09-30 21:27:22,832 DEBUG: Adjusted wheg speed: target_rpm=3.9999542236328125, current_rpm=3.5
+2024-09-30 21:27:22,832 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:22,832 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,832 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,833 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,833 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,833 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,833 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,839 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:22,839 DEBUG: Setting profile velocity for group Wheg_Group
+2024-09-30 21:27:22,839 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:22,840 INFO: Profile velocities set for group Wheg_Group: {1: 122.36, 2: 15.295, 3: 122.36, 4: 15.295, 5: 122.36, 6: 15.295}
+2024-09-30 21:27:22,840 INFO: Incrementing motor positions by {1: 320, 2: 40, 3: 320, 4: 40, 5: 320, 6: 40} degrees for group 'Wheg_Group'
+2024-09-30 21:27:22,840 DEBUG: Checking operating mode for motors in group 'Wheg_Group'...
+2024-09-30 21:27:22,840 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['operating_mode']
+2024-09-30 21:27:22,841 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:22,841 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:22,841 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:22,841 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:22,841 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:22,841 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:22,846 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:22,847 DEBUG: Reading current positions for motors in group 'Wheg_Group'...
+2024-09-30 21:27:22,847 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6], Parameters: ['present_position']
+2024-09-30 21:27:22,847 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,847 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,847 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,847 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,847 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,848 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:22,853 DEBUG: Bulk read successful for group 'Wheg_Group'
+2024-09-30 21:27:22,853 DEBUG: Motor 1: Current Position: 199.30°, New Position: 519.30°
+2024-09-30 21:27:22,853 DEBUG: Motor 2: Current Position: 342.15°, New Position: 382.15°
+2024-09-30 21:27:22,853 DEBUG: Motor 3: Current Position: 199.30°, New Position: 519.30°
+2024-09-30 21:27:22,853 DEBUG: Motor 4: Current Position: 342.07°, New Position: 382.07°
+2024-09-30 21:27:22,854 DEBUG: Motor 5: Current Position: 199.21°, New Position: 519.21°
+2024-09-30 21:27:22,854 DEBUG: Motor 6: Current Position: 340.48°, New Position: 380.48°
+2024-09-30 21:27:22,854 DEBUG: Motor positions for group 'Wheg_Group' incremented.
+2024-09-30 21:27:22,855 INFO: Gait 2 step executed at 3.50RPM, wait for 2.10 seconds
+2024-09-30 21:27:22,855 DEBUG: Waiting for 2.10 seconds before next gait step
+2024-09-30 21:27:22,856 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,867 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,878 DEBUG: Button r2 (index 7) pressed.
+2024-09-30 21:27:22,890 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,902 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,913 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,924 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,936 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,947 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,958 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,970 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,981 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:22,993 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,004 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,015 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,027 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,038 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,050 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,061 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,073 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,084 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,096 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,108 DEBUG: Ignoring rapid press of button r2 (index 7)
+2024-09-30 21:27:23,164 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_position']
+2024-09-30 21:27:23,165 DEBUG: Adding motor 1, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,165 DEBUG: Adding motor 2, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,165 DEBUG: Adding motor 3, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,165 DEBUG: Adding motor 4, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,165 DEBUG: Adding motor 5, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,166 DEBUG: Adding motor 6, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,166 DEBUG: Adding motor 7, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,166 DEBUG: Adding motor 8, Address: 132, Length: 4 to bulk read
+2024-09-30 21:27:23,174 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:23,174 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_velocity']
+2024-09-30 21:27:23,174 DEBUG: Adding motor 1, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,174 DEBUG: Adding motor 2, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,175 DEBUG: Adding motor 3, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,175 DEBUG: Adding motor 4, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,175 DEBUG: Adding motor 5, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,175 DEBUG: Adding motor 6, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,175 DEBUG: Adding motor 7, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,175 DEBUG: Adding motor 8, Address: 128, Length: 4 to bulk read
+2024-09-30 21:27:23,183 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:23,183 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['present_load']
+2024-09-30 21:27:23,184 DEBUG: Adding motor 1, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,184 DEBUG: Adding motor 2, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,184 DEBUG: Adding motor 3, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,184 DEBUG: Adding motor 4, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,184 DEBUG: Adding motor 5, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,184 DEBUG: Adding motor 6, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,184 DEBUG: Adding motor 7, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,185 DEBUG: Adding motor 8, Address: 126, Length: 2 to bulk read
+2024-09-30 21:27:23,192 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:23,192 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['hardware_error_status']
+2024-09-30 21:27:23,193 DEBUG: Adding motor 1, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,193 DEBUG: Adding motor 2, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,193 DEBUG: Adding motor 3, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,193 DEBUG: Adding motor 4, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,193 DEBUG: Adding motor 5, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,193 DEBUG: Adding motor 6, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,194 DEBUG: Adding motor 7, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,194 DEBUG: Adding motor 8, Address: 70, Length: 1 to bulk read
+2024-09-30 21:27:23,201 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:23,201 INFO: 
+Motor     Position (ticks)    Velocity (ticks/sec)     Load (%)  
+2024-09-30 21:27:23,202 INFO: 1         2796                123                      58        
+2024-09-30 21:27:23,202 INFO: 2         3986                15                       11        
+2024-09-30 21:27:23,202 INFO: 3         2785                123                      59        
+2024-09-30 21:27:23,203 INFO: 4         3985                16                       11        
+2024-09-30 21:27:23,203 INFO: 5         2790                122                      53        
+2024-09-30 21:27:23,203 INFO: 6         3966                15                       11        
+2024-09-30 21:27:23,203 INFO: 7         2053                0                        65502     
+2024-09-30 21:27:23,203 INFO: 8         2043                0                        22        
+2024-09-30 21:27:24,405 INFO: Tasks were cancelled due to shutdown, proceeding to cleanup...
+2024-09-30 21:27:24,405 INFO: Initiating safe shutdown...
+2024-09-30 21:27:24,405 INFO: Setting operating mode 'velocity' for group 'All_Motors'
+2024-09-30 21:27:24,406 INFO: Disabling torque for group All_Motors
+2024-09-30 21:27:24,407 DEBUG: Torque disabled for group All_Motors
+2024-09-30 21:27:24,407 DEBUG: Operating mode set to 'velocity' for group All_Motors
+2024-09-30 21:27:24,408 INFO: Enabling torque for group All_Motors
+2024-09-30 21:27:24,408 DEBUG: Torque enabled for group All_Motors
+2024-09-30 21:27:24,409 DEBUG: Setting velocity limit for motors in group All_Motors
+2024-09-30 21:27:24,409 WARNING: Velocity limit 200 exceeds hard limit 100. Limiting to 100.
+2024-09-30 21:27:24,410 INFO: Velocity limit set to 100 for group All_Motors
+2024-09-30 21:27:24,410 INFO: Enabling torque for group All_Motors
+2024-09-30 21:27:24,411 DEBUG: Torque enabled for group All_Motors
+2024-09-30 21:27:24,411 INFO: Target velocities set for group All_Motors: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+2024-09-30 21:27:24,412 INFO: Running set_position_group for group 'All_Motors' with positions: 180
+2024-09-30 21:27:24,412 DEBUG: Preparing bulk read for motors: [1, 2, 3, 4, 5, 6, 7, 8], Parameters: ['operating_mode']
+2024-09-30 21:27:24,413 DEBUG: Adding motor 1, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,413 DEBUG: Adding motor 2, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,413 DEBUG: Adding motor 3, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,413 DEBUG: Adding motor 4, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,413 DEBUG: Adding motor 5, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,413 DEBUG: Adding motor 6, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,414 DEBUG: Adding motor 7, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,414 DEBUG: Adding motor 8, Address: 11, Length: 1 to bulk read
+2024-09-30 21:27:24,421 DEBUG: Bulk read successful for group 'All_Motors'
+2024-09-30 21:27:24,421 WARNING: Motor 1 is not in Position Control Mode. Setting mode now.
+2024-09-30 21:27:24,422 INFO: Setting operating mode 'position' for group 'All_Motors'
+2024-09-30 21:27:24,422 INFO: Disabling torque for group All_Motors
+2024-09-30 21:27:24,423 DEBUG: Torque disabled for group All_Motors
+2024-09-30 21:27:24,424 DEBUG: Operating mode set to 'position' for group All_Motors
+2024-09-30 21:27:24,424 INFO: Enabling torque for group All_Motors
+2024-09-30 21:27:24,425 DEBUG: Torque enabled for group All_Motors
+2024-09-30 21:27:24,425 DEBUG: Setting profile velocity for motors in group All_Motors
+2024-09-30 21:27:24,425 DEBUG: Setting profile velocity for group All_Motors
+2024-09-30 21:27:24,425 DEBUG: Hard profile velocity limit: 100
+2024-09-30 21:27:24,426 INFO: Setting the profile velocity for group All_Motors from config.yaml: 5
+2024-09-30 21:27:24,427 INFO: Profile velocities set for group All_Motors: {1: 21.85, 2: 21.85, 3: 21.85, 4: 21.85, 5: 21.85, 6: 21.85, 7: 21.85, 8: 21.85}
+2024-09-30 21:27:24,427 DEBUG: Setting position 180° for all motors in group 'All_Motors'
+2024-09-30 21:27:24,428 DEBUG: Target positions set for group 'All_Motors': 180
+2024-09-30 21:27:24,428 INFO: Closing PS4Controller and quitting pygame
+2024-09-30 21:27:24,509 INFO: Port closed successfully.
+2024-09-30 21:27:24,509 INFO: Shutdown complete.
