@@ -1,0 +1,6 @@
+float32 front_left
+float32 middle_left
+float32 back_left
+float32 front_right
+float32 middle_right
+float32 back_right

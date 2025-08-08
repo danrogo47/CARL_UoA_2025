@@ -11,9 +11,9 @@ from std_msgs.msg import String, Int16, Float32
 import time
 from geometry_msgs.msg import Twist # Not necessary for CARL
 import json
-import re_rassor_controller.lib.controller_input_defs as inputs
+import carl_controller.lib.controller_input_defs as inputs
 
-from custom_msgs.msg import Joint # Import where necessary!!
+from custom_msgs.msg import Joint
 
 class ControllerCommandPublisher(Node):
     """Receives controller commands, converts them to topics and publishes them."""
@@ -26,8 +26,8 @@ class ControllerCommandPublisher(Node):
 
         self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
-        self.drive_mode_publisher_ = self.create_publisher(String, 'drive_mode', 10)
-        self.wheel_selection_publisher_ = self.create_publisher(String, 'wheg_selection', 10)
+        self.joint_cmb_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
+        self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
 
         # set default speed multiplier to 25%
         self.prev_speed_multiplier = 0.25
@@ -37,24 +37,24 @@ class ControllerCommandPublisher(Node):
         self.circle_last_pressed_time = 0 
         self.square_last_pressed_time = 0
         self.cross_last_pressed_time = 0
-        self.triange_last_pressed_time = 0
+        self.triangle_last_pressed_time = 0
         self.ps_last_pressed_time = 0
 
         # speed mode message
         self.speed_mode_msg = Float32()
         self.speed_mode_msg.data = 0.10
 
-        # drive mode message
-        self.drive_mode_msg = String()
-        self.drive_mode_msg.data = 'STANDARD'
-
         # Joint message
         self.joint_msg = Joint()
         self.joint_msg.t_joint.data = 'FRONT'
 
         # Wheg selection message
-        self.wheel_msg = String()
-        self.wheel_msg.data = 'FRONT'
+        self.wheg_msg = String()
+        self.wheg_msg.data = 'FRONT'
+
+        # Gait selection message
+        self.gait_selection_msg = Int16()
+        self.gait_selection_msg.data = 0  # Default gait selection
 
         # set flags for buttons pressed
         self.circle_button_pressed = False
@@ -100,8 +100,9 @@ class ControllerCommandPublisher(Node):
 
                                     # convert raw json strings to meaningful commands
                                     self.get_driving_commands(data_array)
-                                    self.get_t_joint_commands(data_array)
-                                    self.get_tool_commands(data_array)
+                                    self.get_gait_commands(data_array)
+                                    self.get_joint_commands(data_array)
+
 
                 except socket.error as e:
                     self.get_logger().error(f'Socket error: {e}')
@@ -121,95 +122,78 @@ class ControllerCommandPublisher(Node):
     def get_driving_commands(self, data):
         """Process and publish commands for driving."""
 
-        # set the speed multiplier for driving the wheels
-        if data['buttons'][inputs.SHARE] == 1:
-            self.speed_mode_msg.data = 0.10
-        elif data['buttons'][inputs.TOUCH_PAD] == 1:
-            self.speed_mode_msg.data = 0.20
-        elif data['buttons'][inputs.OPTIONS] == 1:
-            self.speed_mode_msg.data = 0.30
-
         # set time counter
         current_time = time.time()
         debounce_time = 0.5 # seconds
 
-        # Toggle the drive mode between standard and independent
-        if (data['buttons'][inputs.PS] == 1) and (current_time - self.ps_last_pressed_time > debounce_time):
-
-            self.ps_last_pressed_time = current_time
-
-            # toggle the interchange
-            if self.drive_mode_msg.data == 'STANDARD':
-                self.drive_mode_msg.data = 'INDEPENDENT'
-            elif self.drive_mode_msg.data == 'INDEPENDENT':
-                self.drive_mode_msg.data = 'STANDARD'
-
-        # Get the wheel selection (front or back) (relevant for independent mode only)
-        if data['buttons'][inputs.UP] == 1:
-            self.wheg_msg.data = 'FRONT'
-        elif data['buttons'][inputs.DOWN] == 1:
-            self.wheg_msg.data = 'BACK'
+        # Set the speed multiplier for driving the wheels
+        if data['buttons'][inputs.SHARE] == 1:
+            self.speed_mode_msg.data = 0.25
+        elif data['buttons'][inputs.OPTIONS] == 1:
+            self.speed_mode_msg.data = 0.50
+        elif data['buttons'][inputs.TOUCH_PAD] == 1:
+            self.speed_mode_msg.data = 1
 
         # velocity message
         velocity_msg = Twist()
 
         # must be pressing L2 and R2 to deliver power
-        if data['axes'][inputs.RIGHT_TRIGGER] > 0.95 and data['axes'][inputs.LEFT_TRIGGER] > 0.95:
-
-            if (abs(data['axes'][inputs.LEFT_JOY_VERTICAL]) > 0.25):
-                velocity_msg.linear.x = data['axes'][inputs.LEFT_JOY_VERTICAL]
-
-            if (abs(data['axes'][inputs.LEFT_JOY_HORIZONTAL]) > 0.25):
-                velocity_msg.angular.z = data['axes'][inputs.LEFT_JOY_HORIZONTAL]
-
-            # use linear.y for right joystick (it is still linear.x velocity)
-            if (abs(data['axes'][inputs.RIGHT_JOY_VERTICAL]) > 0.25):
-                velocity_msg.linear.y = data['axes'][inputs.RIGHT_JOY_VERTICAL]
+        if data['axes'][inputs.RIGHT_TRIGGER] > 0 and data['axes'][inputs.LEFT_TRIGGER] > 0:
+            # Stop conditions
+            velocity_msg.linear.x = 0
+        elif data['axes'][inputs.RIGHT_TRIGGER] > 0:
+            # Forward movement
+            velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
+        elif data['axes'][inputs.LEFT_TRIGGER] > 0:
+            # Reverse Movement
+            velocity_msg.linear.x = (data['axes'][inputs.LEFT_TRIGGER])*-1
+        else:
+            # No trigger input, stop the robot
+            velocity_msg.linear.x = 0
 
         self.velocity_publisher_.publish(velocity_msg)
         self.speed_mode_publisher_.publish(self.speed_mode_msg)
-        self.drive_mode_publisher_.publish(self.drive_mode_msg)
-        self.wheg_selection_publisher_.publish(self.wheg_msg)
+
+    def get_gait_commands(self, data):
+        """Process and publish commands for the gait."""
+        current_time = time.time()
+        debounce_time = 0.5 # seconds
+
+        # Decrement the gait selection when pressing square
+        if (data['buttons'][inputs.SQUARE] == 1) and (current_time - self.square_last_pressed_time > debounce_time):
+            self.square_last_pressed_time = current_time
+
+            # toggle the gait mode
+            if self.gait_selection_msg.data == 1:
+                self.gait_selection_msg.data = 4
+            else :
+                self.gait_selection_msg.data - 1
+
+        # Increment the gait selection
+        if (data['buttons'][inputs.TRIANGLE] == 1) and (current_time - self.square_last_pressed_time > debounce_time):
+            self.triangle_last_pressed_time = current_time
+
+            # toggle the gait mode
+            if self.gait_selection_msg.data == 4:
+                self.gait_selection_msg.data = 1
+            else :
+                self.gait_selection_msg.data + 1
+
+        self.gait_selection_publisher_.publish(self.gait_selection_msg)
 
     def get_joint_commands(self, data):
         """Process and publish commands for the joints."""
         current_time = time.time()
         debounce_time = 0.5 # seconds
 
-        # toggle between t-joints
-        if data['buttons'][inputs.CIRCLE] == 1:
-
-            # Only toggle if the button wasn't previously pressed
-            if not self.circle_button_pressed and (current_time - self.circle_last_pressed_time > debounce_time):
-                self.circle_last_pressed_time = current_time
-
-                # Toggle the state
-                if self.joint_msg.joint.data == 'FRONT':
-                    self.joint_msg.joint.data = 'BACK'
-                elif self.joint_msg.joint.data == 'BACK':
-                    self.joint_msg.joint.data = 'FRONT'
-
-                # Set the flag to indicate the button is now pressed
-                self.circle_button_pressed = True
-
-        # Check if the button is released
-        elif data['buttons'][inputs.CIRCLE] == 0:
-            # Reset the flag when the button is released
-            self.circle_button_pressed = False
-
-        # must be pressing L2 and R2 to deliver power
-        if data['axes'][inputs.RIGHT_TRIGGER] > 0.95 and data['axes'][inputs.LEFT_TRIGGER] > 0.95:
-            
-            # only publish up or down at one time
-            if self.joint_msg.down != 1:
-                self.joint_msg.up = data['buttons'][inputs.R1] # up
-
-            if self.joint_msg.up != 1:
-                self.joint_msg.down = data['buttons'][inputs.L1] # down
-
-        else:
-            self.joint_msg.up = 0
-            self.joint_msg.down = 0
+        if data['buttons'][inputs.UP] == 1:
+            self.joint_msg.front_up = 1
+        elif data['buttons'][inputs.DOWN] == 1:
+            self.joint_msg.front_down = 1
+        elif data['buttons'][inputs.RIGHT] == 1:
+            self.joint_msg.back_up = 1
+        elif data['buttons'][inputs.LEFT] == 1:
+            self.joint_msg.back_down = 1
         
         self.joint_publisher_.publish(self.joint_msg)
         
