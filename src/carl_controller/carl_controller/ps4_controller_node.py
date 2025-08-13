@@ -7,7 +7,7 @@ and publishes ROS topics based on those inputs.
 import socket
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String, Int16, Float32
+from std_msgs.msg import String, Int16, Float32, Bool
 import time
 from geometry_msgs.msg import Twist # Not necessary for CARL
 import json
@@ -28,9 +28,14 @@ class ControllerCommandPublisher(Node):
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
         self.joint_cmb_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
         self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
+        self.shutdown_publisher_ = self.create_publisher(Bool, 'shutdown_cmd', 10)
+        self.resume_publisher_ = self.create_publisher(Bool, 'resume_cmd', 10)
 
         # set default speed multiplier to 25%
         self.prev_speed_multiplier = 0.25
+        
+        self.resume_msg = False
+        self.shutdown_msg = False
 
         # set debounce time for button presses
         self.debounce_time = 0.5 # seconds
@@ -150,6 +155,17 @@ class ControllerCommandPublisher(Node):
         else:
             # No trigger input, stop the robot
             velocity_msg.linear.x = 0
+            
+        if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > debounce_time):
+            self.circle_last_pressed_time = current_time
+            self.shutdown_msg = True
+            self.shutdown_publisher_.publish(self.shutdown_msg)
+            self.get_logger().info("Shutdown command sent.")
+        elif data['buttons'][inputs.CROSS] == 1 and (current_time - self.cross_last_pressed_time > debounce_time):
+            self.cross_last_pressed_time = current_time
+            self.resume_msg = True
+            self.resume_publisher_.publish(self.resume_msg)
+            self.get_logger().info("Resume command sent.")
 
         self.velocity_publisher_.publish(velocity_msg)
         self.speed_mode_publisher_.publish(self.speed_mode_msg)
