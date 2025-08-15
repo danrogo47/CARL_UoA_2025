@@ -6,6 +6,7 @@ from CARL_UoA_2025.src.carl_controller.carl_controller.wheg_plugin.gait_controll
 from dynamixel_control import DynamixelController
 import rclpy
 import logging
+import asyncio
 import yaml
 import time
 from math import pi
@@ -28,6 +29,7 @@ class WhegMotorDrive(Node):
         self.gait = GaitController(self.config)
             
         self.gait.setup_variables()
+        self.initialise_direction()
         self.execute_gait_change()
 
         self.motor_shutdown()
@@ -67,8 +69,6 @@ class WhegMotorDrive(Node):
         self.gait.set_shutdown(False)
         
         self.dynamixel.torque_on_group('Wheg_Group')
-        # TODO: Check if this is necessary (may cause CARL to go limp)
-        self.dynamixel.torque_on_group('Pivot_Group')
 
     def gait_mode_callback(self, msg):
         # TODO : Add a check to ensure the gait index is actually changed
@@ -151,6 +151,7 @@ class WhegMotorDrive(Node):
     
     def drive_motors(self):
             # Set profile velocities and increments
+            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
             increments = self.gait.get_increments()
             self.dynamixel.set_group_profile_velocity('Wheg_Group', self.velocities)
             self.dynamixel.increment_group_position('Wheg_Group', increments)
@@ -163,10 +164,10 @@ class WhegMotorDrive(Node):
         """
         try:
             # Perform a bulk read for motor positions, velocities, loads, and hardware errors
-            motor_positions = self.dynamixel.bulk_read_group('All_Motors', ['present_position'])
-            motor_velocities = self.dynamixel.bulk_read_group('All_Motors', ['present_velocity'])
-            motor_loads = self.dynamixel.bulk_read_group('All_Motors', ['present_load'])
-            hardware_errors = self.dynamixel.bulk_read_group('All_Motors', ['hardware_error_status'])
+            motor_positions = self.dynamixel.bulk_read_group('Wheg_Group', ['present_position'])
+            motor_velocities = self.dynamixel.bulk_read_group('Wheg_Group', ['present_velocity'])
+            motor_loads = self.dynamixel.bulk_read_group('Wheg_Group', ['present_load'])
+            hardware_errors = self.dynamixel.bulk_read_group('Wheg_Group', ['hardware_error_status'])
 
             motor_data = {}
 
@@ -199,8 +200,6 @@ class WhegMotorDrive(Node):
     def motor_shutdown(self):
         
         self.dynamixel.torque_off_group('Wheg_Group')
-        # TODO: Check if this is necessary (may cause CARL to go limp)
-        self.dynamixel.torque_off_group('Pivot_Group')
         
     def execute_gait_change(self):
         """
@@ -208,9 +207,28 @@ class WhegMotorDrive(Node):
         This method is called when the gait change is requested.
         """
         self.gait.execute_gait_change()
+        
+        self.gait.get_positions()
+        
+        self.dynamixel.set_position_group('Wheg_Group', self.gait.get_positions())
+        self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+        
         self.gait_change_requested = False
         self.get_logger().info("Gait change executed successfully.")
         
+    def initialise_direction(self):
+        """
+        Initialises the direction of the wheg motors based on the configuration.
+        This method sets the initial direction for the wheg motors.
+        """
+        
+        try:
+            direction = {1 : 0, 2 : 0, 3 : 0, 4 : 1, 5 : 1, 6 : 1}
+            self.dynamixel.set_drive_mode_group('Wheg_Group', direction)
+        except Exception as e:
+            logging.error(f"Failed to set direction: {e}")
+            self.dynamixel.set_position_group('Wheg_Group', self.gait.get_shutoff_positions())
+
 
 def main(args=None):
 
