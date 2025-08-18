@@ -3,13 +3,10 @@ from std_msgs.msg import Bool, Float32, String, Int16
 from geometry_msgs.msg import Twist
 from custom_msgs.msg import WhegFeedback
 from CARL_UoA_2025.src.carl_controller.carl_controller.wheg_plugin.gait_controller import GaitController
-from dynamixel_control import DynamixelController
 import rclpy
 import logging
-import asyncio
 import yaml
 import time
-from math import pi
 import atexit
 
 class WhegMotorDrive(Node):
@@ -19,11 +16,6 @@ class WhegMotorDrive(Node):
         
         with open('config.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
-            
-        try:
-            self.dynamixel = DynamixelController()
-        except Exception as e:
-            logging.error(f"Error initialising dynamixel: {e}")
 
         # initialise the wheg controller functions
         self.gait = GaitController(self.config)
@@ -31,8 +23,6 @@ class WhegMotorDrive(Node):
         self.gait.setup_variables()
         self.initialise_direction()
         self.execute_gait_change()
-
-        self.motor_shutdown()
 
         # shutdown flag
         self.SHUT_DOWN = False
@@ -67,8 +57,6 @@ class WhegMotorDrive(Node):
     def resume_callback(self):
         
         self.gait.set_shutdown(False)
-        
-        self.dynamixel.torque_on_group('Wheg_Group')
 
     def gait_mode_callback(self, msg):
         # TODO : Add a check to ensure the gait index is actually changed
@@ -86,7 +74,6 @@ class WhegMotorDrive(Node):
     def listener_callback(self, msg):
 
         if self.SHUT_DOWN:
-            self.motor_shutdown()
             return
         
         if self.gait_change_requested:
@@ -101,9 +88,6 @@ class WhegMotorDrive(Node):
             self.last_called_time = current_time
             
             self.drive_motors()
-            
-        # get motor feedback for streamlit
-        self.get_torque_feedback()
 
     def calculate_gait_velocities(self, msg):
         
@@ -151,56 +135,8 @@ class WhegMotorDrive(Node):
     
     def drive_motors(self):
             # Set profile velocities and increments
-            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
             increments = self.gait.get_increments()
-            self.dynamixel.set_group_profile_velocity('Wheg_Group', self.velocities)
-            self.dynamixel.increment_group_position('Wheg_Group', increments)
 
-    async def get_torque_feedback(self):
-        """
-        Retrieves motor data including positions, velocities, loads, and error statuses.
-        Returns a dictionary with each motor's ID and its associated data.
-        Loading can be associated with a motor's torque.
-        """
-        try:
-            # Perform a bulk read for motor positions, velocities, loads, and hardware errors
-            motor_positions = self.dynamixel.bulk_read_group('Wheg_Group', ['present_position'])
-            motor_velocities = self.dynamixel.bulk_read_group('Wheg_Group', ['present_velocity'])
-            motor_loads = self.dynamixel.bulk_read_group('Wheg_Group', ['present_load'])
-            hardware_errors = self.dynamixel.bulk_read_group('Wheg_Group', ['hardware_error_status'])
-
-            motor_data = {}
-
-            for motor_id in motor_positions.keys():
-                # Retrieve position, velocity, load, and error status
-                position_ticks = motor_positions[motor_id].get('present_position', 'N/A')
-                velocity = motor_velocities[motor_id].get('present_velocity', 'N/A')
-                load = motor_loads[motor_id].get('present_load', 'N/A')
-                error_status = hardware_errors[motor_id].get('hardware_error_status', 0)
-
-                # Convert position to degrees, velocity to RPM, and load to percentage
-                position_degrees = ((position_ticks * 360) / 4096) % 359 if isinstance(position_ticks, (int, float)) else 'N/A'
-                velocity_rpm = (velocity * 0.229) if isinstance(velocity, (int, float)) else 'N/A'
-                load_percentage = (load - 65536) / 10.0 if load > 32767 else (load / 10.0 if isinstance(load, (int, float)) else 'N/A')
-
-                # Store processed data in motor_data dictionary
-                motor_data[motor_id] = {
-                    "position_degrees": position_degrees,
-                    "velocity_rpm": velocity_rpm,
-                    "load_percentage": load_percentage,
-                    "error_status": error_status
-                }
-
-            return motor_data
-
-        except Exception as e:
-            logging.error(f"Error retrieving motor data: {e}")
-            return {}
-
-    def motor_shutdown(self):
-        
-        self.dynamixel.torque_off_group('Wheg_Group')
-        
     def execute_gait_change(self):
         """
         Executes the gait change by calling the gait controller's method.
@@ -209,9 +145,6 @@ class WhegMotorDrive(Node):
         self.gait.execute_gait_change()
         
         self.gait.get_positions()
-        
-        self.dynamixel.set_position_group('Wheg_Group', self.gait.get_positions())
-        self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
         
         self.gait_change_requested = False
         
@@ -223,10 +156,8 @@ class WhegMotorDrive(Node):
         
         try:
             direction = {1 : 0, 2 : 0, 3 : 0, 4 : 1, 5 : 1, 6 : 1}
-            self.dynamixel.set_drive_mode_group('Wheg_Group', direction)
         except Exception as e:
             logging.error(f"Failed to set direction: {e}")
-            self.dynamixel.set_position_group('Wheg_Group', self.gait.get_shutoff_positions())
 
 
 def main(args=None):
