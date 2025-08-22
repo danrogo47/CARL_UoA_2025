@@ -106,6 +106,8 @@ class JointNode(Node):
                 await asyncio.sleep(1)
 
     def listener_callback(self, msg):
+        if self.SHUT_DOWN:
+            return
         # shutdown flag true: immediately stop motor movement
         # if self.SHUT_DOWN:
         #     self.kit.pivot1.release()
