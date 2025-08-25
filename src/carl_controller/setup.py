@@ -15,7 +15,7 @@ setup(
         (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))
 
     ],
-    install_requires=['setuptools', 'pyyaml'],
+    install_requires=['setuptools', 'pyyaml', 'dynamixel-sdk'],
     zip_safe=True,
     maintainer='danielrogers',
     maintainer_email='a1821615@adelaide.edu.au',
