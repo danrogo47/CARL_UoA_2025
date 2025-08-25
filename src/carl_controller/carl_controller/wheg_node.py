@@ -3,7 +3,7 @@ from std_msgs.msg import Bool, Float32, String, Int16
 from geometry_msgs.msg import Twist
 from custom_msgs.msg import WhegFeedback
 from carl_controller.wheg_plugin.gait_controller import GaitController
-from dynamixel_control import DynamixelController
+from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
 import rclpy
 import logging
 import asyncio
