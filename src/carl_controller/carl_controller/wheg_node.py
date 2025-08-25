@@ -2,7 +2,7 @@ from rclpy.node import Node
 from std_msgs.msg import Bool, Float32, String, Int16
 from geometry_msgs.msg import Twist
 from custom_msgs.msg import WhegFeedback
-from wheg_plugin.gait_controller import GaitController
+from carl_controller.wheg_plugin.gait_controller import GaitController
 from dynamixel_control import DynamixelController
 import rclpy
 import logging
