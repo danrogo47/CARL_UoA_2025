@@ -17,15 +17,19 @@ class WhegMotorDrive(Node):
 
         super().__init__('wheg_drive')
         
-        with open('config.yaml', 'r') as file:
-            self.config = yaml.safe_load(file)
-            
-        self.dynamixel = DynamixelController()
-
         # initialise the wheg controller functions
         self.gait = GaitController(self.config)
             
         self.gait.setup_variables()
+        
+        with open('config.yaml', 'r') as file:
+            self.config = yaml.safe_load(file)
+        
+        try:
+            self.dynamixel = DynamixelController()
+        except Exception as e:
+            logging.error(f"Failed to initialize DynamixelController: {e}")
+            
         self.initialise_direction()
         self.execute_gait_change()
 
