@@ -15,7 +15,7 @@ setup(
         (os.path.join('share', package_name, 'launch'), glob(os.path.join('launch', '*launch.[pxy][yma]*')))
 
     ],
-    install_requires=['setuptools', 'pyyaml', 'dynamixel-sdk'],
+    install_requires=['setuptools', 'pyyaml'],
     zip_safe=True,
     maintainer='danielrogers',
     maintainer_email='a1821615@adelaide.edu.au',
@@ -27,7 +27,7 @@ setup(
                             "controller_state_monitor = carl_controller.controller_state_monitor_node:main",
                             "wheg_node = carl_controller.wheg_node:main",
                             "joint_node = carl_controller.joint_node:main",
-                            "test = carl_controller.test_control_node:main"
+                            "test_wheg_node = carl_controller.test.test_wheg_node:main"
         ],
     },
 )

@@ -1,16 +1,19 @@
 import rclpy
 from rclpy.node import Node
 from time import sleep
-import board
+import logging
 from std_msgs.msg import Bool
 from std_msgs.msg import String
 from custom_msgs.msg import Joint
+from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
 
 class JointNode(Node):
         
     def __init__(self):
     
         super().__init__('joint') # Remove if not necessary
+        
+        self.dynamixel = DynamixelController()
     
         # Set position limits for the pivot motors
         self.dynamixel.set_drive_mode_group('Pivot_Group', False)
