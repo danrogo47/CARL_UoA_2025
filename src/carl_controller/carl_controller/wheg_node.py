@@ -17,6 +17,8 @@ class WhegMotorDrive(Node):
 
         super().__init__('wheg_drive')
         
+        self.setup_logging()
+        
         with open('config.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
         
@@ -67,6 +69,37 @@ class WhegMotorDrive(Node):
         self.dynamixel.set_drive_mode_group('Right_Whegs', True)
         self.dynamixel.set_drive_mode_group('Left_Whegs', False)
         logging.info("Set the right side whegs to reverse direction")
+        
+    def setup_logging(self):
+        # Create Logs directory if it doesn't exist
+        log_directory = self.config['logging']['log_directory']
+        if not os.path.exists(log_directory):
+            os.makedirs(log_directory)
+
+        # Generate log file based on date and time
+        log_filename = f"{log_directory}/flik_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+
+        # Set up logging to log motor positions and controller inputs
+        logging.basicConfig(
+            filename=log_filename,
+            level=getattr(logging, self.config['logging']['log_level_file']),  
+            format='%(asctime)s %(levelname)s: %(message)s'
+        )
+
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(getattr(logging, self.config['logging']['log_level_console']))  # Set console output
+        console_formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+        console_handler.setFormatter(console_formatter)
+
+        # Add the handler to the logger
+        logging.getLogger().addHandler(console_handler)
+
+        # Create the CSV file without headers (headers will be added later in write_to_csv)
+        self.csv_filename = f"{log_directory}/flik_test_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
+        
+        # Just create an empty CSV file
+        with open(self.csv_filename, mode='w', newline='') as csvfile:
+            pass  # CSV file will be populated with headers in write_to_csv
 
     def shutdown_callback(self, msg):
 
