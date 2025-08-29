@@ -34,6 +34,8 @@ class GaitController():
         self.gait2_params = self.config['gaits'].get('gait_2', {})
         self.gait3_params = self.config['gaits'].get('gait_3', {})
         self.gait4_params = self.config['gaits'].get('gait_4', {})
+        # Change these positions to a gait1 parameter set
+        self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['low_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['low_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['low_pos'] }
         self.gait_init_methods = {
             0: self.gait_init_1,
             1: self.gait_init_2,

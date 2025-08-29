@@ -27,8 +27,10 @@ class WhegMotorDrive(Node):
         
         try:
             self.dynamixel = DynamixelController()
+            logging.info("Initialised PS4 controller, Dynamixel, and Robot State")
         except Exception as e:
             logging.error(f"Failed to initialize DynamixelController: {e}")
+            return
             
         self.initialise_direction()
         self.execute_gait_change()
@@ -227,7 +229,6 @@ class WhegMotorDrive(Node):
             self.dynamixel.set_drive_mode_group('Wheg_Group', direction)
         except Exception as e:
             logging.error(f"Failed to set direction: {e}")
-            self.dynamixel.set_position_group('Wheg_Group', self.gait.get_shutoff_positions())
 
 
 def main(args=None):
