@@ -31,6 +31,8 @@ class WhegMotorDrive(Node):
         except Exception as e:
             logging.error(f"Failed to initialize DynamixelController: {e}")
             return
+        
+        self.setup_wheg_motors()
             
         self.initialise_direction()
         self.execute_gait_change()
@@ -59,6 +61,12 @@ class WhegMotorDrive(Node):
         self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10)
         # publish motor torques
         self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 100)
+        
+    def setup_wheg_motors(self):
+        # Set the right side whegs to reverse
+        self.dynamixel.set_drive_mode_group('Right_Whegs', True)
+        self.dynamixel.set_drive_mode_group('Left_Whegs', False)
+        logging.info("Set the right side whegs to reverse direction")
 
     def shutdown_callback(self, msg):
 
