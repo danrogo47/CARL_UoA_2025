@@ -211,10 +211,8 @@ class WhegMotorDrive(Node):
         """
         self.gait.execute_gait_change()
         
-        self.gait.get_positions()
-        
-        self.dynamixel.set_position_group('Wheg_Group', self.gait.get_positions())
         self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+        self.dynamixel.set_position_group('Wheg_Group', self.gait.get_positions())
         
         self.gait_change_requested = False
         
