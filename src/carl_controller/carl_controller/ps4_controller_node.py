@@ -76,7 +76,7 @@ class ControllerCommandPublisher(Node):
 
     def receive_data(self):
         # Set the IP address and port for the server
-        server_ip = '127.0.0.1'  # Listen on all available network interfaces
+        server_ip = '0.0.0.0'  # Listen on all available network interfaces
         server_port = 8000  # Choose a port number that is not in use
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:

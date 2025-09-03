@@ -25,9 +25,9 @@ setup(
     entry_points={
         'console_scripts': ["controller = carl_controller.ps4_controller_node:main",
                             "controller_state_monitor = carl_controller.controller_state_monitor_node:main",
-                            "wheg_node = carl_controller.wheg_node:main",
-                            "joint_node = carl_controller.joint_node:main",
-                            "test_wheg_node = carl_controller.test.test_wheg_node:main"
+                            "wheg = carl_controller.wheg_node:main",
+                            "joint = carl_controller.joint_node:main",
+                            "test_wheg = carl_controller.test.test_wheg_node:main"
         ],
     },
 )
