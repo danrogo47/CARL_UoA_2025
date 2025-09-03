@@ -9,7 +9,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int16, Float32, Bool
 import time
-from geometry_msgs.msg import Twist # Not necessary for CARL
+# from geometry_msgs.msg import Twist # Not necessary for CARL
 import json
 import carl_controller.lib.controller_input_defs as inputs
 
@@ -24,7 +24,7 @@ class ControllerCommandPublisher(Node):
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
 
-        self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
+        # self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
         self.joint_cmb_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
         self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
@@ -51,7 +51,7 @@ class ControllerCommandPublisher(Node):
 
         # Joint message
         self.joint_msg = Joint()
-        self.joint_msg.t_joint.data = 'FRONT'
+        self.joint_msg.joint.data = 'FRONT'
 
         # Wheg selection message
         self.wheg_msg = String()
