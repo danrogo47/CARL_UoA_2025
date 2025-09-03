@@ -111,34 +111,35 @@ class JointNode(Node):
     def listener_callback(self, msg):
         if self.SHUT_DOWN:
             return
-        # shutdown flag true: immediately stop motor movement
-        # if self.SHUT_DOWN:
-        #     self.kit.pivot1.release()
-        #     self.kit.pivot2.release()
-        #     return
         
-        # # set movement direction based on controller input
-        # if msg.up == 1:
-        #     self.direction = pivot.UP
-        # elif msg.down == 1:
-        #     self.direction = pivot.DOWN
+        # shutdown flag true: immediately stop motor movement
+        if self.SHUT_DOWN:
+            self.kit.pivot1.release()
+            self.kit.pivot2.release()
+            return
+        
+        # set movement direction based on controller input
+        if msg.up == 1:
+            self.direction = pivot.UP
+        elif msg.down == 1:
+            self.direction = pivot.DOWN
 
-        # # move
-        # if msg.up == 1 or msg.down == 1:
-        #     if msg.joint.data == 'FRONT':
-        #         for _ in range(self.steps):
-        #             self.kit.pivot1.onestep(direction=self.direction)
-        #             sleep(0.01)  # 10 milliseconds delay
+        # move
+        if msg.up == 1 or msg.down == 1:
+            if msg.joint.data == 'FRONT':
+                for _ in range(self.steps):
+                    self.kit.pivot1.onestep(direction=self.direction)
+                    sleep(0.01)  # 10 milliseconds delay
 
-        #     elif msg.joint.data == 'BACK':
-        #         for _ in range(self.steps):
-        #             self.kit.pivot2.onestep(direction=self.direction)
-        #             sleep(0.01)  # 10 milliseconds delay
+            elif msg.joint.data == 'BACK':
+                for _ in range(self.steps):
+                    self.kit.pivot2.onestep(direction=self.direction)
+                    sleep(0.01)  # 10 milliseconds delay
                     
-        # # if no longer moving, release
-        # else:
-        #     self.kit.pivot1.release()
-        #     self.kit.pivot2.release()
+        # if no longer moving, release
+        else:
+            self.kit.pivot1.release()
+            self.kit.pivot2.release()
 
 def main(args=None):
     rclpy.init(args=args)
