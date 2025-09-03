@@ -61,7 +61,7 @@ class WhegMotorDrive(Node):
         # subscribe to speed mode
         self.subscription_4 = self.create_subscription(Float32, 'speed_mode', self.speed_mode_callback, 10)
         # subscribe to resume mode
-        self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10)
+        # self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10)
         # publish motor torques
         self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 100)
         
