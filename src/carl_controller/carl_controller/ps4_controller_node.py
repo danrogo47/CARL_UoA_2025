@@ -11,6 +11,7 @@ from std_msgs.msg import String, Int16, Float32, Bool
 import time
 # from geometry_msgs.msg import Twist # Not necessary for CARL
 import json
+import yaml
 import carl_controller.lib.controller_input_defs as inputs
 
 from custom_msgs.msg import Joint
@@ -21,6 +22,10 @@ class ControllerCommandPublisher(Node):
     def __init__(self):
 
         super().__init__('controller_command_publisher')
+
+        with open('config.yaml', 'r') as file:
+            self.config = yaml.safe_load(file)
+
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
 
@@ -71,7 +76,7 @@ class ControllerCommandPublisher(Node):
 
     def receive_data(self):
         # Set the IP address and port for the server
-        server_ip = '0.0.0.0'  # Listen on all available network interfaces
+        server_ip = '127.0.0.1'  # Listen on all available network interfaces
         server_port = 8000  # Choose a port number that is not in use
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
