@@ -9,7 +9,6 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int16, Float32, Bool
 import time
-import os
 # from geometry_msgs.msg import Twist # Not necessary for CARL
 import json
 import yaml

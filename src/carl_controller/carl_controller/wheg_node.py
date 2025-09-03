@@ -6,9 +6,10 @@ from carl_controller.wheg_plugin.gait_controller import GaitController
 from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
 import rclpy
 import logging
-import asyncio
+import datetime
 import yaml
 import time
+import os
 from math import pi
 import atexit
 
