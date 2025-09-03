@@ -5,8 +5,8 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='carl_controller',
-            executable='drive',
-            name='drive'),
+            executable='wheg',
+            name='wheg'),
         Node(
             package='carl_controller',
             executable='joint',
