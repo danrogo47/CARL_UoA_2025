@@ -17,10 +17,10 @@ class WhegMotorDrive(Node):
 
         super().__init__('wheg_drive')
         
-        self.setup_logging()
-        
         with open('config.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
+
+        self.setup_logging()
         
         # initialise the wheg controller functions
         self.gait = GaitController(self.config)
