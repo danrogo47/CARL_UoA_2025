@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from time import sleep
 import logging
+import yaml
 from std_msgs.msg import Bool
 from std_msgs.msg import String
 from custom_msgs.msg import Joint
