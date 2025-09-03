@@ -21,10 +21,10 @@ class ControllerCommandPublisher(Node):
 
     def __init__(self):
 
-        super().__init__('controller_command_publisher')
-
         with open('config.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
+
+        super().__init__('controller_command_publisher')
 
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
@@ -145,7 +145,7 @@ class ControllerCommandPublisher(Node):
             self.speed_mode_msg.data = 1
 
         # velocity message
-        velocity_msg = Twist()
+        # velocity_msg = Twist()
 
         # must be pressing L2 and R2 to deliver power
         if data['axes'][inputs.RIGHT_TRIGGER] > 0 and data['axes'][inputs.LEFT_TRIGGER] > 0:
