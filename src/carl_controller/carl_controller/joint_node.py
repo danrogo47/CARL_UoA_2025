@@ -112,6 +112,11 @@ class JointNode(Node):
                 logging.error(f"Error while reporting robot states: {e}")
                 await asyncio.sleep(1)
 
+    def shutdown_callback(self, msg):
+        # sets the shutdown flag to true if the current sensing chip detects a current spike
+        if msg.data:
+            self.SHUT_DOWN = True
+    
     def listener_callback(self, msg):
         if self.SHUT_DOWN:
             return
