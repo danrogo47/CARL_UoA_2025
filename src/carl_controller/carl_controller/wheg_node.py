@@ -18,7 +18,7 @@ class WhegMotorDrive(Node):
 
         super().__init__('wheg_drive')
         
-        with open('config.yaml', 'r') as file:
+        with open('config_wheg.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
 
         self.setup_logging()
@@ -30,7 +30,7 @@ class WhegMotorDrive(Node):
         
         try:
             self.dynamixel = DynamixelController()
-            logging.info("Initialised PS4 controller, Dynamixel, and Robot State")
+            logging.info("Initialised Dynamixel")
         except Exception as e:
             logging.error(f"Failed to initialize DynamixelController: {e}")
             return

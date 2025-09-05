@@ -6,7 +6,7 @@ logging:
   log_level_file: "INFO"  # Logging level for log files (e.g., INFO, DEBUG)
   log_level_console: "INFO"  # Logging level for console output
 
-# Motor IDs for whegs (legs) and pivots
+# Motor IDs for whegs (legs)
 motor_ids:
   whegs:  # Motor IDs for the six whegs
     LR_WHEG: 1  # Left rear wheg
@@ -15,9 +15,6 @@ motor_ids:
     RR_WHEG: 4  # Right rear wheg
     RM_WHEG: 5  # Right middle wheg
     RF_WHEG: 6  # Right front wheg
-  pivots:  # Motor IDs for the two pivot motors
-    FRONT_PIVOT: 7  # Front pivot motor
-    REAR_PIVOT: 8  # Rear pivot motor
 
 # Parameters for controlling the wheg motors
 wheg_parameters:
@@ -25,12 +22,6 @@ wheg_parameters:
   min_rpm: 20  # Minimum RPM for wheg motors
   smoothness: 5  # Speed increase smoothness factor
   initial_rpm: 0  # Initial speed of the wheg motors (when starting)
-
-# Parameters for controlling the pivot motors
-pivot_parameters:
-  pivot_step: 5  # Step size for pivot control via D-pad (degrees per step)
-  initial_front_angle: 180  # Initial angle for the front pivot motor (degrees)
-  initial_rear_angle: 180  # Initial angle for the rear pivot motor (degrees)
 
 # Controller configuration (e.g., for communication with motors)
 controller:
@@ -91,25 +82,16 @@ reporting:
 # Velocity limits for different motor groups
 velocity_limits:
   Wheg_Group: 200  # Maximum velocity for the wheg motors
-  Pivot_Group: 4  # Maximum velocity for the pivot motors
   All_Motors: 200  # Global maximum velocity limit for all motors
 
 # Profile velocity settings (predefined velocity configurations)
 profile_velocities:
   Wheg_Group: 10  # Profile velocity for the wheg group
-  Pivot_Group: 4  # Profile velocity for the pivot group
   All_Motors: 8  # Global profile velocity for all motors
 
 # Hard limits for velocity (safety parameters)
 hard_velocity_limit: 100  # Maximum allowable velocity for any motor
 hard_profile_velocity_limit: 100  # Maximum allowable profile velocity for any motor
-
-# Position limits for different parts of the robot
-position_limits:
-  Hinges:
-    min_degrees: 45  # Minimum allowable hinge angle (degrees)
-    max_degrees: 315  # Maximum allowable hinge angle (degrees)
-  Whegs:  # Wheg-specific limits (if applicable)
 
 # Control table addresses and lengths for different motor parameters
 control_table:
@@ -197,9 +179,6 @@ control_table:
 
 # Motor groupings for synchronized and bulk write commands
 motor_groups:
-  Pivot_Group:  # Motors involved in pivoting
-    - FRONT_PIVOT
-    - REAR_PIVOT
   Wheg_Group:  # Motors involved in wheg movement
     - LR_WHEG
     - LM_WHEG
@@ -214,8 +193,6 @@ motor_groups:
     - RR_WHEG
     - RM_WHEG
     - RF_WHEG
-    - FRONT_PIVOT
-    - REAR_PIVOT
   Left_Whegs:  # Motors controlling the left whegs
     - LR_WHEG
     - LM_WHEG

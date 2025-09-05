@@ -16,7 +16,7 @@ class JointNode(Node):
         
         self.dynamixel = DynamixelController()
 
-        with open('config.yaml', 'r') as file:
+        with open('config_joint.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
     
         # Set position limits for the pivot motors
