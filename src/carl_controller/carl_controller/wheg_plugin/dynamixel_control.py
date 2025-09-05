@@ -3,7 +3,7 @@ from dynamixel_sdk import *  # Uses Dynamixel SDK library
 import logging
 import yaml
 class DynamixelController:
-    def __init__(self, config_path='config.yaml', device_name=None, baudrate=None, protocol_version=2.0):
+    def __init__(self, config_path, device_name=None, baudrate=None, protocol_version=2.0):
         """Initialize the controller with YAML config and setup motor groups."""
         # Load configuration
         self.load_config(config_path)
@@ -310,7 +310,7 @@ class DynamixelController:
 
     def set_group_velocity_limit(self, group_name):
         """
-        Set velocity limit for a group of motors based on config.yaml or the hard velocity limit.
+        Set velocity limit for a group of motors based on config_wheg/joint.yaml or the hard velocity limit.
         
         :param group_name: The name of the motor group to set the velocity limit for.
         """
@@ -318,16 +318,16 @@ class DynamixelController:
             logging.error(f"Motor group {group_name} not found")
             return
 
-        # Get hard velocity limit from config.yaml
+        # Get hard velocity limit from config_wheg/joint.yaml
         hard_velocity_limit = self.config.get('hard_velocity_limit', None)
         if hard_velocity_limit is None:
-            logging.error(f"Hard velocity limit not found in config.yaml")
+            logging.error(f"Hard velocity limit not found in config_wheg/joint.yaml")
             return
 
-        # Get velocity limit from config.yaml
+        # Get velocity limit from config_wheg/joint.yaml
         velocity_limit = self.config.get('velocity_limits', {}).get(group_name, None)
         if velocity_limit is None:
-            logging.error(f"Velocity limit for group {group_name} not found in config.yaml")
+            logging.error(f"Velocity limit for group {group_name} not found in config_wheg/joint.yaml")
             return
 
         # Check if the velocity limit exceeds the hard limit
@@ -343,7 +343,7 @@ class DynamixelController:
 
     def set_group_profile_velocity(self, group_name, profile_velocity=None):
         """
-        Set profile velocity for a group of motors based on config.yaml or a provided value.
+        Set profile velocity for a group of motors based on config_wheg/joint.yaml or a provided value.
         
         :param group_name: The name of the motor group to set the profile velocity for.
         :param profile_velocity: Optional, can be an integer for all motors or a dictionary with motor IDs as keys and velocities as values.
@@ -353,19 +353,19 @@ class DynamixelController:
             logging.error(f"Motor group {group_name} not found")
             return
 
-        # Get hard profile velocity limit from config.yaml
+        # Get hard profile velocity limit from config_wheg/joint.yaml
         hard_profile_velocity_limit = self.config.get('hard_profile_velocity_limit', None)
         if hard_profile_velocity_limit is None:
-            logging.error(f"Hard profile velocity limit not found in config.yaml")
+            logging.error(f"Hard profile velocity limit not found in config_wheg/joint.yaml")
             return
         logging.debug(f"Hard profile velocity limit: {hard_profile_velocity_limit}")
 
-        # If no profile_velocity provided, get it from config.yaml
+        # If no profile_velocity provided, get it from config_wheg/joint.yaml
         if profile_velocity is None:
             profile_velocity = self.config.get('profile_velocities', {}).get(group_name, None)
-            logging.info(f"Setting the profile velocity for group {group_name} from config.yaml: {profile_velocity}")
+            logging.info(f"Setting the profile velocity for group {group_name} from config_wheg/joint.yaml: {profile_velocity}")
             if profile_velocity is None:
-                logging.error(f"Profile velocity for group {group_name} not found in config.yaml and no value was provided.")
+                logging.error(f"Profile velocity for group {group_name} not found in config_wheg/joint.yaml and no value was provided.")
                 profile_velocity = 5
                 return
 
@@ -489,7 +489,7 @@ class DynamixelController:
         # Check if any velocity exceeds the hard velocity limit
         hard_velocity_limit = self.config.get('hard_velocity_limit', None)
         if hard_velocity_limit is None:
-            logging.error(f"Hard velocity limit not found in config.yaml")
+            logging.error(f"Hard velocity limit not found in config_wheg/joint.yaml")
             return
 
         # If velocities is an integer, set the same velocity for all motors in the group
