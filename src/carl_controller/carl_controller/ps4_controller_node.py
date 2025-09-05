@@ -23,9 +23,6 @@ class ControllerCommandPublisher(Node):
 
         super().__init__('controller_command_publisher')
 
-        with open('config.yaml', 'r') as file:
-            self.config = yaml.safe_load(file)
-
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
 
