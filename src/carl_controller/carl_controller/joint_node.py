@@ -13,11 +13,11 @@ class JointNode(Node):
     def __init__(self):
     
         super().__init__('joint') # Remove if not necessary
-        
-        self.dynamixel = DynamixelController()
 
         with open('config_joint.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
+            
+        self.dynamixel = DynamixelController(self.config)
             
         self.PIVOTS = self.config['motor_ids']['pivots']
         self.front_pivot_angle = self.config['pivot_parameters']['initial_front_angle']

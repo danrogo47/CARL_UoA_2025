@@ -489,7 +489,7 @@ class DynamixelController:
         # Check if any velocity exceeds the hard velocity limit
         hard_velocity_limit = self.config.get('hard_velocity_limit', None)
         if hard_velocity_limit is None:
-            logging.error(f"Hard velocity limit not found in config_wheg/joint.yaml")
+            logging.error(f"Hard velocity limit not found in config.yaml")
             return
 
         # If velocities is an integer, set the same velocity for all motors in the group

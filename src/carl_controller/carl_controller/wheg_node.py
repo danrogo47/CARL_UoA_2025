@@ -29,7 +29,7 @@ class WhegMotorDrive(Node):
         self.gait.setup_variables()
         
         try:
-            self.dynamixel = DynamixelController()
+            self.dynamixel = DynamixelController(self.config)
             logging.info("Initialised Dynamixel")
         except Exception as e:
             logging.error(f"Failed to initialize DynamixelController: {e}")
