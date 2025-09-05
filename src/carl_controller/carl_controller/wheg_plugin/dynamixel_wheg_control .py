@@ -2,8 +2,8 @@
 from dynamixel_sdk import *  # Uses Dynamixel SDK library
 import logging
 import yaml
-class DynamixelController:
-    def __init__(self, config_path, device_name=None, baudrate=None, protocol_version=2.0):
+class DynamixelWhegController:
+    def __init__(self, config_path="config_wheg.yaml", device_name=None, baudrate=None, protocol_version=2.0):
         """Initialize the controller with YAML config and setup motor groups."""
         # Load configuration
         self.load_config(config_path)
@@ -67,9 +67,7 @@ class DynamixelController:
 
         for group_name, motor_names in motor_groups.items():
             # Get motor IDs by looking up motor names in motor_ids (whegs and pivots)
-            motor_ids_list = [
-                motor_ids['whegs'].get(name, motor_ids['pivots'].get(name)) for name in motor_names
-            ]
+            motor_ids_list = [motor_ids['whegs'].get(name) for name in motor_names]
             self.create_motor_group(group_name, motor_ids_list)
 
     def load_control_table(self):

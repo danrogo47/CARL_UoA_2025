@@ -3,10 +3,9 @@ from rclpy.node import Node
 from time import sleep
 import logging
 import yaml
-from std_msgs.msg import Bool
-from std_msgs.msg import String
+from std_msgs.msg import Bool, String
 from custom_msgs.msg import Joint
-from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
+from CARL_UoA_2025.src.carl_controller.carl_controller.wheg_plugin.dynamixel_joint_control import DynamixelJointController
 
 class JointNode(Node):
         
@@ -17,7 +16,7 @@ class JointNode(Node):
         with open('config_joint.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
             
-        self.dynamixel = DynamixelController('config_joint.yaml')
+        self.dynamixel = DynamixelJointController()
             
         self.PIVOTS = self.config['motor_ids']['pivots']
         self.front_pivot_angle = self.config['pivot_parameters']['initial_front_angle']

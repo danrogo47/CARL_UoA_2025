@@ -3,7 +3,7 @@ from std_msgs.msg import Bool, Float32, String, Int16
 from geometry_msgs.msg import Twist
 from custom_msgs.msg import WhegFeedback
 from carl_controller.wheg_plugin.gait_controller import GaitController
-from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
+from CARL_UoA_2025.src.carl_controller.carl_controller.wheg_plugin.dynamixel_wheg_control import DynamixelWhegController
 import rclpy
 import logging
 from datetime import datetime
@@ -29,7 +29,7 @@ class WhegMotorDrive(Node):
         self.gait.setup_variables()
         
         try:
-            self.dynamixel = DynamixelController('config_wheg.yaml')
+            self.dynamixel = DynamixelWhegController()
             logging.info("Initialised Dynamixel")
         except Exception as e:
             logging.error(f"Failed to initialize DynamixelController: {e}")
