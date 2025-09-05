@@ -19,6 +19,7 @@ class JointNode(Node):
         with open('config_joint.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
             
+        self.PIVOTS = self.config['motor_ids']['pivots']
         self.front_pivot_angle = self.config['pivot_parameters']['initial_front_angle']
         self.rear_pivot_angle = self.config['pivot_parameters']['initial_rear_angle']
         self.pivot_max_angle = self.config['position_limits']['Hinges']['max_degrees']
