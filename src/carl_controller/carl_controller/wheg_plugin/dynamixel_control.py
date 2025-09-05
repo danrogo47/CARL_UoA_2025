@@ -4,7 +4,7 @@ import logging
 import yaml
 class DynamixelController:
     # def __init__(self, config_path, device_name=None, baudrate=None, protocol_version=2.0):
-    def __init__(self, config_path, device_name, baudrate=None, protocol_version=2.0):    
+    def __init__(self, config_path, device_name=None, baudrate=None, protocol_version=2.0):    
         """Initialize the controller with YAML config and setup motor groups."""
         # Load configuration
         self.load_config(config_path)
