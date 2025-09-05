@@ -18,6 +18,13 @@ class JointNode(Node):
 
         with open('config_joint.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
+            
+        self.front_pivot_angle = self.config['pivot_parameters']['initial_front_angle']
+        self.rear_pivot_angle = self.config['pivot_parameters']['initial_rear_angle']
+        self.pivot_max_angle = self.config['position_limits']['Hinges']['max_degrees']
+        self.pivot_min_angle = self.config['position_limits']['Hinges']['min_degrees']
+        self.pivot_step = self.config['pivot_parameters']['pivot_step']
+        self.allow_pivot_control = True
     
         # Set position limits for the pivot motors
         self.dynamixel.set_drive_mode_group('Pivot_Group', False)

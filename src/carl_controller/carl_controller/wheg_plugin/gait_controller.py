@@ -14,11 +14,6 @@ class GaitController():
         self.MAX_RPM = self.config['wheg_parameters']['max_rpm']
         self.MIN_RPM = self.config['wheg_parameters']['min_rpm']
         self.SMOOTHNESS = self.config['wheg_parameters']['smoothness']
-        self.front_pivot_angle = self.config['pivot_parameters']['initial_front_angle']
-        self.rear_pivot_angle = self.config['pivot_parameters']['initial_rear_angle']
-        self.pivot_max_angle = self.config['position_limits']['Hinges']['max_degrees']
-        self.pivot_min_angle = self.config['position_limits']['Hinges']['min_degrees']
-        self.pivot_step = self.config['pivot_parameters']['pivot_step']
         self.wheg_rpm = self.config['wheg_parameters']['min_rpm']
         self.current_gait_index = 0
         self.next_gait_index = 0
@@ -27,7 +22,6 @@ class GaitController():
         self.reboot_requested = False
         self.report_timer = time.time()
         self.gait_change_requested = True
-        self.allow_pivot_control = True
         # Gait parameters
         self.odd_even = 0
         self.gait_parameters = {}
