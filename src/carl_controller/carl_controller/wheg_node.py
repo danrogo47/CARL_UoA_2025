@@ -24,7 +24,7 @@ class WhegMotorDrive(Node):
         self.setup_logging()
         
         # initialise the wheg controller functions
-        self.gait = GaitController(self.config)
+        self.gait = GaitController('config_wheg.yaml')
             
         self.gait.setup_variables()
         
