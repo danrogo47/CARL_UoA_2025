@@ -9,7 +9,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int16, Float32, Bool
 import time
-# from geometry_msgs.msg import Twist # Not necessary for CARL
+from geometry_msgs.msg import Twist # Not necessary for CARL
 import json
 import yaml
 import carl_controller.lib.controller_input_defs as inputs
@@ -26,9 +26,11 @@ class ControllerCommandPublisher(Node):
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
 
-        # self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
+        # Drive functionality?
+        self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
+
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
-        self.joint_cmb_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
+        self.joint_cmd_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
         self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
         self.shutdown_publisher_ = self.create_publisher(Bool, 'shutdown_cmd', 10)
         self.resume_publisher_ = self.create_publisher(Bool, 'resume_cmd', 10)
@@ -141,8 +143,8 @@ class ControllerCommandPublisher(Node):
         elif data['buttons'][inputs.TOUCH_PAD] == 1:
             self.speed_mode_msg.data = 1
 
-        # velocity message
-        # velocity_msg = Twist()
+        # velocity message (NOT RELEVANT?)
+        velocity_msg = Twist()
 
         # must be pressing L2 and R2 to deliver power
         if data['axes'][inputs.RIGHT_TRIGGER] > 0 and data['axes'][inputs.LEFT_TRIGGER] > 0:
