@@ -5,7 +5,7 @@ import logging
 import yaml
 from std_msgs.msg import Bool, String
 from custom_msgs.msg import Joint
-from CARL_UoA_2025.src.carl_controller.carl_controller.wheg_plugin.dynamixel_joint_control import DynamixelJointController
+from carl_controller.wheg_plugin.dynamixel_joint_control import DynamixelJointController
 
 class JointNode(Node):
         
