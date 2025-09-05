@@ -61,7 +61,7 @@ class WhegMotorDrive(Node):
         # subscribe to speed mode
         self.subscription_4 = self.create_subscription(Float32, 'speed_mode', self.speed_mode_callback, 10)
         # subscribe to resume mode
-        # self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10)
+        self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10) # Does this need removing?
         # publish motor torques
         self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 100)
         
@@ -109,11 +109,11 @@ class WhegMotorDrive(Node):
             self.SHUT_DOWN = True
             self.gait.set_shutdown(True)
             
-    def resume_callback(self):
-        
-        self.gait.set_shutdown(False)
-        
-        self.dynamixel.torque_on_group('Wheg_Group')
+    def resume_callback(self, msg: Bool):
+
+        if msg.data:
+            self.gait.set_shutdown(False)
+            self.dynamixel.torque_on_group('Wheg_Group')
 
     def gait_mode_callback(self, msg):
         # TODO : Add a check to ensure the gait index is actually changed

@@ -13,6 +13,7 @@ from geometry_msgs.msg import Twist # Not necessary for CARL
 import json
 import yaml
 import carl_controller.lib.controller_input_defs as inputs
+import threading # Testing
 
 from custom_msgs.msg import Joint
 
@@ -28,9 +29,9 @@ class ControllerCommandPublisher(Node):
 
         # Drive functionality?
         self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
-
+        
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
-        self.joint_cmd_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
+        self.joint_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
         self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
         self.shutdown_publisher_ = self.create_publisher(Bool, 'shutdown_cmd', 10)
         self.resume_publisher_ = self.create_publisher(Bool, 'resume_cmd', 10)
@@ -71,7 +72,8 @@ class ControllerCommandPublisher(Node):
         self.square_button_pressed = False
         self.triangle_button_pressed = False
 
-        self.receive_data()
+        threading.Thread(target=self.receive_data, daemon=True).start() # Testing this over self.receive_data()
+        # self.receive_data()
 
     def receive_data(self):
         # Set the IP address and port for the server
@@ -187,7 +189,7 @@ class ControllerCommandPublisher(Node):
             if self.gait_selection_msg.data == 1:
                 self.gait_selection_msg.data = 4
             else :
-                self.gait_selection_msg.data - 1
+                self.gait_selection_msg.data -= 1
 
         # Increment the gait selection
         if (data['buttons'][inputs.TRIANGLE] == 1) and (current_time - self.square_last_pressed_time > debounce_time):
@@ -197,7 +199,7 @@ class ControllerCommandPublisher(Node):
             if self.gait_selection_msg.data == 4:
                 self.gait_selection_msg.data = 1
             else :
-                self.gait_selection_msg.data + 1
+                self.gait_selection_msg.data += 1
 
         self.gait_selection_publisher_.publish(self.gait_selection_msg)
 
