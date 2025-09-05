@@ -10,7 +10,6 @@ class GaitController():
     def setup_variables(self):
         # Motor and pivot configurations from the YAML file
         self.WHEGS = self.config['motor_ids']['whegs']
-        self.PIVOTS = self.config['motor_ids']['pivots']
         self.MAX_RPM = self.config['wheg_parameters']['max_rpm']
         self.MIN_RPM = self.config['wheg_parameters']['min_rpm']
         self.SMOOTHNESS = self.config['wheg_parameters']['smoothness']
