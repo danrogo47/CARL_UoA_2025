@@ -159,7 +159,7 @@ class GaitController():
 
             # Get the current gait function and execute it
             self.velocity = throttle
-            logging.info(f"Throttle recieved for gait: {self.velocity}")
+            logging.info(f"Throttle  {self.velocity} recieved for gait:  {self.current_gait_index}")
             gait_function = self.gait_methods[self.current_gait_index]
             
             # Handle turn mode
