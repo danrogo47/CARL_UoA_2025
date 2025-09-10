@@ -212,12 +212,15 @@ class DynamixelWhegController:
 
         bulk_read = GroupBulkRead(self.port_handler, self.packet_handler)
 
-        logging.debug(f"Preparing bulk read for motors: {motor_ids}, Parameters: {parameters}")
+        logging.info(f"Preparing bulk read for motors: {motor_ids}, Parameters: {parameters}")
 
         # Add parameters for each motor in the group
         for motor_id in motor_ids:
             for parameter_name in parameters:
+                
+                logging.debug(f"Preparing bulk read for motors: Parameter Named: {parameter_name}")
                 control_item = self.control_table.get(parameter_name)
+                
                 if not control_item:
                     logging.error(f"Control table entry '{parameter_name}' not found.")
                     raise Exception(f"Control table entry '{parameter_name}' not found.")
@@ -231,12 +234,16 @@ class DynamixelWhegController:
                 if not bulk_read.addParam(motor_id, address, length):
                     logging.error(f"Failed to add motor {motor_id} for parameter '{parameter_name}'.")
                     raise Exception(f"Failed to add motor {motor_id} for parameter '{parameter_name}'.")
+                
+        # for motor_id in motor_ids:
+        #     if not bulk_read.isAvailable(motor_id, control_item['address'], control_item['length']):
+        #         logging.error(f"Motor {motor_id} data not available after bulk read.")
 
         # Execute the bulk read command
-        result = bulk_read.txRxPacket()
-        if result != COMM_SUCCESS:
-            logging.error(f"Bulk read failed with error: {self.packet_handler.getTxRxResult(result)}")
-            return None
+        # result = bulk_read.txRxPacket()
+        # if result != COMM_SUCCESS:
+        #     logging.error(f"Bulk read failed with error: {self.packet_handler.getTxRxResult(result)}")
+        #     return None
 
         # Retrieve the motor data
         motor_data = {}
@@ -254,6 +261,8 @@ class DynamixelWhegController:
                     motor_data[motor_id][parameter_name] = None
                 else:
                     motor_data[motor_id][parameter_name] = data  # Keep raw data as-is
+                    logging.debug(f"Motor {motor_id} Data '{data}'.")
+
 
         bulk_read.clearParam()
 
@@ -267,7 +276,8 @@ class DynamixelWhegController:
         :param group_name: The name of the motor group to set the operating mode for.
         :param mode: The operating mode to set ('position', 'velocity', 'multi_turn').
         """
-        logging.info(f"Setting operating mode '{mode}' for group '{group_name}'")
+        # NOTE: Logging comment
+        # logging.info(f"Setting operating mode '{mode}' for group '{group_name}'")
         OPERATING_MODES = {
             'position': 3,   # Position control mode
             'velocity': 1,   # Velocity control mode
@@ -361,7 +371,8 @@ class DynamixelWhegController:
         # If no profile_velocity provided, get it from config_wheg/joint.yaml
         if profile_velocity is None:
             profile_velocity = self.config.get('profile_velocities', {}).get(group_name, None)
-            logging.info(f"Setting the profile velocity for group {group_name} from config_wheg/joint.yaml: {profile_velocity}")
+            # NOTE: Logging comment
+            # logging.info(f"Setting the profile velocity for group {group_name} from config_wheg/joint.yaml: {profile_velocity}")
             if profile_velocity is None:
                 logging.error(f"Profile velocity for group {group_name} not found in config_wheg/joint.yaml and no value was provided.")
                 profile_velocity = 5
@@ -390,7 +401,8 @@ class DynamixelWhegController:
         # Apply profile velocities using sync write
         self.sync_write_group(group_name, 'profile_velocity', profile_velocities)
 
-        logging.info(f"Profile velocities set for group {group_name}: {profile_velocities}")
+        # NOTE: Logging Comment
+        # logging.info(f"Profile velocities set for group {group_name}: {profile_velocities}")
 
     def torque_off_group(self, group_name):
         """Disable torque for all motors in the group."""

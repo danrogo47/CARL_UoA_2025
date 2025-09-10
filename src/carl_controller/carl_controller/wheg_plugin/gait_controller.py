@@ -1,7 +1,6 @@
 import logging
 import time
 from math import pi
-import asyncio
 
 class GaitController():
     def __init__(self, config):
@@ -54,7 +53,7 @@ class GaitController():
         self.turn_mode_deactivate = False
         self.current_side = "Right"
      
-    async def init_turn_mode(self):
+    def init_turn_mode(self):
         logging.info("Initialising Turn Mode")
         self.gait_change_requested = False  # Reset the request flag
         # Update the min and max RPM for this gait:
@@ -67,7 +66,6 @@ class GaitController():
         self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['low_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['low_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['low_pos'] }
         wait_time = 3
         logging.info(f"Initialised turn mode, waiting for {wait_time} seconds")
-        await asyncio.sleep(wait_time)
         self.turn_mode_active = True
         self.turn_mode_requested = False
         return
@@ -76,16 +74,14 @@ class GaitController():
         """Inform gaits of change in shutdown status."""
         self.SHUT_DOWN  = shutdown
         
-    async def execute_gait_change(self):
+    def execute_gait_change(self):
         """Execute the current gait change."""
         if not self.SHUT_DOWN:
             
             # Check if a gait change has been requested
             if self.gait_change_requested:
                 # Initialize the new gait
-                init_gait_function = self.gait_init_methods[self.next_gait_index]
-                await init_gait_function()
-                
+                init_gait_function = self.gait_init_methods[self.next_gait_index]                
                 # Update current gait index
                 self.current_gait_index = self.next_gait_index
                 self.gait_change_requested = False
@@ -95,14 +91,14 @@ class GaitController():
             logging.debug("Emergency stop activated, gait change paused.")
         
     # Define the initialization for each gait (for whegs only, pivots are disabled)
-    async def gait_init_1(self):
+    def gait_init_1(self):
         logging.info("Initialising Gait 1")
         self.gait_change_requested = False  # Reset the request flag
     
         self.positions = { 1: self.gait4_params['high_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['high_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['high_pos'], 6: self.gait4_params['high_pos'] }
         return
 
-    async def gait_init_2(self):
+    def gait_init_2(self):
         logging.info("Initialising Gait 2")
         self.gait_change_requested = False  # Reset the request flag
         # Update the min and max RPM for this gait:
@@ -117,10 +113,9 @@ class GaitController():
         self.positions = { 1: self.LOW_POS, 2: self.HIGH_POS, 3: self.LOW_POS, 4: self.HIGH_POS, 5: self.LOW_POS, 6: self.HIGH_POS }
         wait_time = 0.5
         logging.info(f"Initialised Gait 2, waiting for {wait_time} seconds")
-        await asyncio.sleep(wait_time)
         return
 
-    async def gait_init_3(self):      
+    def gait_init_3(self):      
         logging.info("Initialsing Gait 3")
         self.gait_change_requested = False  # Reset the request flag
         # Update the min, max and smoothness for this gait
@@ -133,10 +128,9 @@ class GaitController():
         self.positions = { 1: self.gait3_params['high_pos'], 2: self.gait3_params['low_pos'], 3: self.gait3_params['low_pos'], 4: self.gait3_params['high_pos'], 5: self.gait3_params['low_pos'], 6: self.gait3_params['low_pos']}
         wait_time = 0.5
         logging.info(f"Initialised Gait 3, waiting for {wait_time} seconds")
-        await asyncio.sleep(wait_time)
         return
 
-    async def gait_init_4(self):
+    def gait_init_4(self):
         logging.info("Initialising Gait 4")
         self.gait_change_requested = False  # Reset the request flag
         # Update the min and max RPM for this gait:
@@ -149,45 +143,37 @@ class GaitController():
         self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['high_pos'] }
         wait_time = 0.5
         logging.info(f"Initialised Gait 4, waiting for {wait_time} seconds")
-        await asyncio.sleep(wait_time)
         return
     
     
-    async def execute_gait(self, throttle):
+    def execute_gait(self, throttle):
         """Execute the current gait calculations."""
         if not self.SHUT_DOWN:
-            # Check for hardware errors before executing the gait
-            await self.check_hardware_errors()
             
             if self.turn_mode_active:
                 logging.debug("Turn mode activated executing turn gait")
                 turn_function = self.turn_mode()
-                wait = await turn_function
-                await asyncio.sleep(wait)
                 if self.turn_mode_deactivate:
-                    await self.turn_mode_off()
+                    self.turn_mode_off()
                     logging.info("Turn mode deactivating")
 
             # Get the current gait function and execute it
             self.velocity = throttle
-            
+            logging.info(f"Throttle recieved for gait: {self.velocity}")
             gait_function = self.gait_methods[self.current_gait_index]
-            wait_time = await gait_function()
             
             # Handle turn mode
             if self.turn_mode_requested:
-                await self.init_turn_mode()
+                self.init_turn_mode()
                 logging.info("Turn mode activated.")
 
-            if wait_time > 0:
-                logging.debug(f"Waiting for {wait_time:.2f} seconds before next gait step")
-                return wait_time  # Non-blocking wait for the calculated time
         else:
             logging.debug("Emergency stop activated, gait execution paused.")
     
-    async def gait_1(self):
+    def gait_1(self):
         """Execute Gait 1 and return how long to wait before the next step."""
         logging.debug("Executing Gait 1")
+        logging.info(f"Current velocity input for Gait 1: {self.velocity}")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
         if self.wheg_rpm > 1 and self.gait_change_requested == False:
         
@@ -202,7 +188,7 @@ class GaitController():
             return wait_time
         return 0  # No movement, no wait time
 
-    async def gait_2(self):
+    def gait_2(self):
         """Execute Gait 2 and return how long to wait before the next step."""
         logging.debug("Executing Gait 2")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
@@ -230,7 +216,7 @@ class GaitController():
             return wait_time
         return 0  # No movement, no wait time
 
-    async def gait_3(self):
+    def gait_3(self):
         """Execute Gait 3 and return how long to wait before the next step."""
         logging.debug("Executing Gait 3")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
@@ -272,7 +258,7 @@ class GaitController():
 
         return 0  # No movement, no wait time
 
-    async def gait_4(self):
+    def gait_4(self):
         """Execute Gait 4 and return how long to wait before the next step."""
         logging.debug("Executing Gait 4")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
