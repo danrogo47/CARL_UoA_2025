@@ -27,10 +27,12 @@ class ControllerCommandPublisher(Node):
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
 
+        self.motor_ids = [1, 2, 3, 4, 5, 6]
+
         # Drive functionality?
-        self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
-        
-        self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
+        # self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
+        # self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
+
         self.joint_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
         self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
         self.shutdown_publisher_ = self.create_publisher(Int16, 'shutdown_cmd', 10)
@@ -50,7 +52,7 @@ class ControllerCommandPublisher(Node):
         self.triangle_last_pressed_time = 0
         self.ps_last_pressed_time = 0
 
-        self.get_logger().info(f'I AM HERE')
+        # self.get_logger().info(f'I AM HERE')
 
         # speed mode message
         self.speed_mode_msg = Float32()
@@ -75,6 +77,11 @@ class ControllerCommandPublisher(Node):
         self.triangle_button_pressed = False
 
         threading.Thread(target=self.receive_data, daemon=True).start() # Testing this over self.receive_data()
+        # try:
+        #     data_array = json.loads(msg_data)
+        # except json.JSONDecodeError:
+        #     self.get_logger().warning(f"Malformed JSON: {msg_data}")
+        #     continue
         # self.receive_data()
 
     def receive_data(self):
@@ -85,7 +92,7 @@ class ControllerCommandPublisher(Node):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
             server_socket.bind((server_ip, server_port))
             server_socket.listen(1)  # Listen for incoming connections
-            self.get_logger().info('Server listening on port 8000...')
+            self.get_logger().info(f'Server listening on port {server_port}...')
 
             while True:  # Keep the server running to accept multiple connections
                 try:
@@ -141,29 +148,48 @@ class ControllerCommandPublisher(Node):
 
         # Set the speed multiplier for driving the wheels
         if data['buttons'][inputs.SHARE] == 1:
-            self.speed_mode_msg.data = 0.25
+            # self.speed_mode_msg.data = 0.25
+            speed_multiplier = 0.25
         elif data['buttons'][inputs.OPTIONS] == 1:
-            self.speed_mode_msg.data = 0.50
+            # self.speed_mode_msg.data = 0.50
+            speed_multiplier = 0.50
         elif data['buttons'][inputs.TOUCH_PAD] == 1:
-            self.speed_mode_msg.data = 1.0
+            # self.speed_mode_msg.data = 1.0
+            speed_multiplier = 1.0
+        else:
+            speed_multiplier = 0.50 # as default
 
         # velocity message (NOT RELEVANT?)
-        velocity_msg = Twist()
+        # velocity_msg = Twist()
 
-        # must be pressing L2 and R2 to deliver power
-        if data['axes'][inputs.RIGHT_TRIGGER] > 0 and data['axes'][inputs.LEFT_TRIGGER] > 0:
-            # Stop conditions
-            velocity_msg.linear.x = 0.0
-        elif data['axes'][inputs.RIGHT_TRIGGER] > 0:
-            # Forward movement
-            velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
-        elif data['axes'][inputs.LEFT_TRIGGER] > 0:
-            # Reverse Movement
-            velocity_msg.linear.x = (data['axes'][inputs.LEFT_TRIGGER])*-1
+        # Determine movement direction and magnitude
+        right_trigger = data['axes'][inputs.RIGHT_TRIGGER]
+        left_trigger = data['axes'][inputs.LEFT_TRIGGER]
+
+        # Initialise motor command dictionary
+        motor_commands = {}
+        self.motor_publishers = {motor_id: self.create_publisher(Float32, f'motor_{motor_id}_cmd', 10) for motor_id in self.motor_ids}
+
+        if right_trigger > -1 and left_trigger > -1:
+            command_value = 0.0
+        elif right_trigger > -1:
+            command_value = right_trigger * speed_multiplier # Forwards movement
+        elif left_trigger > -1:
+            command_value = -left_trigger * speed_multiplier # Reverse movement
         else:
-            # No trigger input, stop the robot
-            velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
-            
+            command_value = 0.0 # No input, stop
+
+        # Map command_value to individual motors
+        for motor_id in self.motor_ids:
+            motor_commands[motor_id] = command_value
+
+        # Publish motor commands
+        for motor_id, value in motor_commands.items():
+            msg = Float32()
+            msg.data = value
+            self.motor_publishers[motor_id].publish(msg)
+
+        # Shutdown/Resume
         if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > debounce_time):
             self.circle_last_pressed_time = current_time
             self.shutdown_msg = 1
@@ -175,8 +201,33 @@ class ControllerCommandPublisher(Node):
             self.resume_publisher_.publish(self.resume_msg)
             self.get_logger().info("Resume command sent.")
 
-        self.velocity_publisher_.publish(velocity_msg)
-        self.speed_mode_publisher_.publish(self.speed_mode_msg)
+        # # must be pressing L2 and R2 to deliver power
+        # if data['axes'][inputs.RIGHT_TRIGGER] > 0 and data['axes'][inputs.LEFT_TRIGGER] > 0:
+        #     # Stop conditions
+        #     velocity_msg.linear.x = 0.0
+        # elif data['axes'][inputs.RIGHT_TRIGGER] > 0:
+        #     # Forward movement
+        #     velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
+        # elif data['axes'][inputs.LEFT_TRIGGER] > 0:
+        #     # Reverse Movement
+        #     velocity_msg.linear.x = (data['axes'][inputs.LEFT_TRIGGER])*-1
+        # else:
+        #     # No trigger input, stop the robot
+        #     velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
+            
+        # if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > debounce_time):
+        #     self.circle_last_pressed_time = current_time
+        #     self.shutdown_msg = 1
+        #     self.shutdown_publisher_.publish(self.shutdown_msg)
+        #     self.get_logger().info("Shutdown command sent.")
+        # elif data['buttons'][inputs.CROSS] == 1 and (current_time - self.cross_last_pressed_time > debounce_time):
+        #     self.cross_last_pressed_time = current_time
+        #     self.resume_msg = 1
+        #     self.resume_publisher_.publish(self.resume_msg)
+        #     self.get_logger().info("Resume command sent.")
+
+        # self.velocity_publisher_.publish(velocity_msg)
+        # self.speed_mode_publisher_.publish(self.speed_mode_msg)
 
     def get_gait_commands(self, data):
         """Process and publish commands for the gait."""

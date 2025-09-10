@@ -2,6 +2,7 @@
 from dynamixel_sdk import *  # Uses Dynamixel SDK library
 import logging
 import yaml
+
 class DynamixelWhegController:
     def __init__(self, config_path="config_wheg.yaml", device_name=None, baudrate=None, protocol_version=2.0):
         """Initialize the controller with YAML config and setup motor groups."""
