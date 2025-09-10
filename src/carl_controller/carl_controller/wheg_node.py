@@ -46,7 +46,7 @@ class WhegMotorDrive(Node):
         self.SHUT_DOWN = False
 
         # update time
-        self.dt = 0.1  # seconds
+        self.dt = 1  # changed from 0.1 to 1 second
 
         self.last_called_time = time.time()
         
