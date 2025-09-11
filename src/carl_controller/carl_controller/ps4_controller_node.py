@@ -26,8 +26,6 @@ class ControllerCommandPublisher(Node):
 
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
-
-        # Drive functionality?
         self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
         
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
@@ -49,8 +47,6 @@ class ControllerCommandPublisher(Node):
         self.cross_last_pressed_time = 0
         self.triangle_last_pressed_time = 0
         self.ps_last_pressed_time = 0
-
-        self.get_logger().info(f'I AM HERE')
 
         # speed mode message
         self.speed_mode_msg = Float32()
@@ -80,7 +76,7 @@ class ControllerCommandPublisher(Node):
     def receive_data(self):
         # Set the IP address and port for the server
         server_ip = '0.0.0.0'  # Listen on all available network interfaces
-        server_port = 8001  # Choose a port number that is not in use
+        server_port = 8000  # Choose a port number that is not in use
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
             server_socket.bind((server_ip, server_port))
