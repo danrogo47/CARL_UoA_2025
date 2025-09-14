@@ -42,8 +42,8 @@ class GaitController():
             3: self.gait_4,
         }
         # Buttons
-        self.velocities = {}
-        self.increments = {}
+        self.velocities = {i: 0 for i in range(6)}
+        self.increments = {i: 0 for i in range(6)}
         self.button_states = {}
         self.dpad_inputs = {}
         self.velocity = 0
@@ -162,13 +162,18 @@ class GaitController():
             logging.info(f"Throttle  {self.velocity} recieved for gait:  {self.current_gait_index}")
             gait_function = self.gait_methods[self.current_gait_index]
             
+            wait_time = gait_function()
+            
             # Handle turn mode
             if self.turn_mode_requested:
                 self.init_turn_mode()
                 logging.info("Turn mode activated.")
+            
+            return wait_time
 
         else:
             logging.debug("Emergency stop activated, gait execution paused.")
+            return 0  # No movement, no wait time
     
     def gait_1(self):
         """Execute Gait 1 and return how long to wait before the next step."""
@@ -180,6 +185,7 @@ class GaitController():
             self.increment = 360  # Example movement angle
             
             self.velocities = {1: self.wheg_rpm, 2: self.wheg_rpm, 3: self.wheg_rpm, 4: self.wheg_rpm, 5: self.wheg_rpm, 6: self.wheg_rpm}
+            logging
             self.increments = {1: self.increment, 2: self.increment, 3: self.increment, 4: self.increment, 5: self.increment, 6: self.increment}
 
             # Calculate wait time based on RPM (example formula: degrees moved / (6 * RPM))self
@@ -288,17 +294,21 @@ class GaitController():
     
     def adjust_wheg_rpm(self, trigger_value):
         """ Function to adjust the speed of the whegs based on how far the right trigger is pressed. Smooth transition to target RPM. """
-        logging.debug(f"Adjusting wheg speed: trigger_value={trigger_value}, current_rpm={self.wheg_rpm}")
+        logging.info(f"Adjusting wheg speed: trigger_value={trigger_value}, current_rpm={self.wheg_rpm}")
         target_rpm = ((trigger_value + 1) / 2) * (self.MAX_RPM - self.MIN_RPM) + self.MIN_RPM # Trigger value ranges from -1 to 1, map this to RPM range
+        # target_rpm = ((trigger_value) / 2) * ((self.MAX_RPM - self.MIN_RPM) + self.MIN_RPM) # Trigger value ranges from -1 to 1, map this to RPM range
         # Implement smooth transition to target RPM
-        if target_rpm > self.wheg_rpm:
-            self.wheg_rpm = min(self.wheg_rpm + self.SMOOTHNESS, target_rpm)
-            self.wheg_rpm = max(self.wheg_rpm, self.MIN_RPM)
-            self.wehg_rpm = min(self.wheg_rpm, self.MAX_RPM)
-        else:
-            self.wheg_rpm = max(self.wheg_rpm - self.SMOOTHNESS, target_rpm)
+        # if target_rpm > self.wheg_rpm:
+        #     self.wheg_rpm = min(self.wheg_rpm + self.SMOOTHNESS, target_rpm)
+        #     self.wheg_rpm = max(self.wheg_rpm, self.MIN_RPM)
+        #     self.wheg_rpm = min(self.wheg_rpm, self.MAX_RPM)
+        # else:
+            # self.wheg_rpm = max(self.wheg_rpm - self.SMOOTHNESS, target_rpm)
+        self.wheg_rpm = target_rpm
         if trigger_value == -1.0: # Low trigger value, ensure velocity is 0
             self.wheg_rpm = 0
+        # elif trigger_value == 0.0: # Low trigger value, ensure velocity is 0
+        #     self.wheg_rpm = 0
         logging.debug(f"Adjusted wheg speed: target_rpm={target_rpm}, current_rpm={self.wheg_rpm}")
         return self.wheg_rpm
     

@@ -22,6 +22,9 @@ class WhegMotorDrive(Node):
             self.config = yaml.safe_load(file)
 
         self.setup_logging()
+
+        self.debug = 1
+        self.log = 0
         
         # initialise the wheg controller functions
         self.gait = GaitController(self.config)
@@ -46,12 +49,13 @@ class WhegMotorDrive(Node):
         self.SHUT_DOWN = False
 
         # update time
-        self.dt = 0.1  # seconds
+        self.dt = 0.05  # seconds
 
         self.last_called_time = time.time()
         
         self.velocities = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0} # iniitialise velocities for each wheg
-        self.speed_multiplier = 25 # default speed multiplier
+        self.increment = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0} # iniitialise increment for each wheg
+        self.speed_multiplier = 10 # default speed multiplier
 
         # subscribe to current sensing command
         self.subscription_1 = self.create_subscription(Bool, 'shutdown_cmd', self.shutdown_callback, 10)
@@ -70,7 +74,9 @@ class WhegMotorDrive(Node):
         # Set the right side whegs to reverse
         self.dynamixel.set_drive_mode_group('Right_Whegs', True)
         self.dynamixel.set_drive_mode_group('Left_Whegs', False)
-        logging.info("Set the right side whegs to reverse direction")
+        self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+        if self.log:
+            logging.info("Set the right side whegs to reverse direction")
         
     def setup_logging(self):
         # Create Logs directory if it doesn't exist
@@ -130,7 +136,8 @@ class WhegMotorDrive(Node):
             return
         # sets the speed multipler for driving
         self.speed_multiplier = msg.data
-        logging.info(f"Speed mode changed to: {self.speed_multiplier}")
+        if self.log:
+            logging.info(f"Speed mode changed to: {self.speed_multiplier}")
         
     def listener_callback(self, msg):
 
@@ -146,13 +153,18 @@ class WhegMotorDrive(Node):
         # only send commands every set time interval dt
         if (current_time - self.last_called_time) > self.dt:
 
-            velocities = self.calculate_gait_velocities(msg, self.velocities)
+            velocities, wait_time = self.calculate_gait_velocities(msg, self.velocities)
+            
+            if wait_time == 0:
+                self.stop_whegs()
+                return
+            
             self.last_called_time = current_time
             
-            self.drive_motors(velocities)
+            self.drive_motors(velocities, wait_time)
             
         # get motor feedback for streamlit
-        # self.get_torque_feedback()
+        self.get_torque_feedback()
 
     def calculate_gait_velocities(self, msg, prev_speed):
         
@@ -162,47 +174,81 @@ class WhegMotorDrive(Node):
         # Speed throttle speed      
         x_cmd = msg.linear.x
         
-        logging.info(f"Received x_cmd: {x_cmd}")   
+        if x_cmd < 0:
+            return {key: 0 for key in self.velocities.keys()}, 0
         
-        self.gait.execute_gait(x_cmd)
+          
+        
+        wait_time = self.gait.execute_gait(x_cmd)
         
         raw_velocities = self.gait.get_velocities()
-        logging.info(f"Received raw_velocities: {raw_velocities}")   
+
+        if self.log:
+            logging.info(f"Received x_cmd: {x_cmd}") 
+            logging.info(f"Received raw_velocities: {raw_velocities}")
+
         new_velocities = {
-            key: val * self.speed_multiplier
+            key: val * self.speed_multiplier # scale so that the keys are 0-5 instead of 1-6 
             for key, val in raw_velocities.items()
         }
-        # ease the speeds
+        
+        # TODO: Fix ease the speeds
         velocities = self.ease_speed(new_velocities, prev_speed)
         
-        return velocities
+        return new_velocities, wait_time
         
     def ease_speed(self, new_velocities, prev_speed):
-        velocities = prev_speed
-        for i in new_velocities.keys():
-            max_delta = 10 * self.dt
-            target_speed = new_velocities[i]
-            prev_speed = prev_speed[i]
+        if self.log:
+            logging.info(f"New velocities: {new_velocities}")
+            logging.info(f"Previous speed: {prev_speed}")
 
-            if abs(target_speed - prev_speed) >= max_delta:
-                if target_speed > prev_speed:
-                    corrected_speed = prev_speed + max_delta
-                else:
-                    corrected_speed = prev_speed - max_delta
-            else:
-                corrected_speed = target_speed
+        velocities = {}
+        max_delta = 10 * self.dt
 
-            velocities[i] = corrected_speed
+        # for i in new_velocities.keys():
+        #     target_speed = new_velocities[i]
+        #     previous_speed = prev_speed  # just the one number
+
+        #     if abs(target_speed - previous_speed) >= max_delta:
+        #         if target_speed > previous_speed:
+        #             corrected_speed = previous_speed + max_delta
+        #         else:
+        #             corrected_speed = previous_speed - max_delta
+        #     else:
+        #         corrected_speed = target_speed
+
+        #     velocities[i] = corrected_speed
+
+        # return velocities
+
+        for motor_id, target_speed in new_velocities.items():
+            previous_speed = prev_speed.get(motor_id, 0.0)  # default to 0 if missing
+            delta = target_speed - previous_speed
+
+        if abs(delta) > max_delta:
+            corrected_speed = previous_speed + max_delta * (1 if delta > 0 else -1)
+        else:
+            corrected_speed = target_speed
+
+        velocities[motor_id] = corrected_speed
 
         return velocities
     
-    def drive_motors(self, velocities):
-            # Set profile velocities and increments
-            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
-            increments = self.gait.get_increments()
+    def drive_motors(self, velocities, wait_time):
+        # calculate the factor of rotation based on the wait time and dt
+        wait_factor = self.dt / wait_time if wait_time > 0 else 1
+        # Set profile velocities and increments
+        # self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+        increments = self.gait.get_increments()
+        # increments = {
+        #     key: val * wait_factor
+        #     for key, val in self.gait.get_increments().items()
+        # }
+        if self.log:
             logging.info(f"Driving with velocities: {velocities} and increments: {increments}")
-            self.dynamixel.set_group_profile_velocity('Wheg_Group', velocities)
-            self.dynamixel.increment_group_position('Wheg_Group', increments)
+        
+        self.dynamixel.set_group_profile_velocity('Wheg_Group', velocities)
+        self.dynamixel.increment_group_position('Wheg_Group', increments)
 
     async def get_torque_feedback(self):
         """
@@ -271,6 +317,15 @@ class WhegMotorDrive(Node):
             self.dynamixel.set_drive_mode_group('Wheg_Group', direction)
         except Exception as e:
             logging.error(f"Failed to set direction: {e}")
+            
+    def stop_whegs(self):
+        """Stop all whegs by setting their velocities and increments to zero."""
+        self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+        self.dynamixel.set_group_profile_velocity('Wheg_Group', {key: 0 for key in self.velocities.keys()})
+        self.dynamixel.increment_group_position('Wheg_Group', {key: 0 for key in self.increment.keys()})
+
+        if self.log:
+            logging.info("All whegs stopped.")
 
 
 def main(args=None):
