@@ -2,8 +2,8 @@
 from dynamixel_sdk import *  # Uses Dynamixel SDK library
 import logging
 import yaml
-class DynamixelJointController:
-    def __init__(self, config_path="config_joint.yaml", device_name=None, baudrate=None, protocol_version=2.0):
+class DynamixelController:
+    def __init__(self, config_path="config.yaml", device_name=None, baudrate=None, protocol_version=2.0):
         """Initialize the controller with YAML config and setup motor groups."""
         # Load configuration
         self.load_config(config_path)
@@ -38,7 +38,7 @@ class DynamixelJointController:
         try:
             with open(config_path, 'r') as file:
                 self.config = yaml.safe_load(file)
-            logging.info("Configuration loaded successfully")
+            # logging.info("Configuration loaded successfully")
         except Exception as e:
             logging.error(f"Failed to load config: {e}")
             raise
@@ -48,17 +48,17 @@ class DynamixelJointController:
         if not self.port_handler.openPort():
             logging.error("Failed to open the port")
             raise Exception("Failed to open the port")
-        logging.info(f"Port {self.device_name} opened successfully")
+        # logging.info(f"Port {self.device_name} opened successfully")
         
         if not self.port_handler.setBaudRate(self.baudrate):
             logging.error("Failed to set baudrate")
             raise Exception("Failed to set baudrate")
-        logging.info(f"Baudrate set to {self.baudrate}")
+        # logging.info(f"Baudrate set to {self.baudrate}")
         
     def create_motor_group(self, group_name, motor_ids):
         """Create a group of motors for easier control."""
         self.motor_groups[group_name] = motor_ids
-        logging.info(f"Motor group '{group_name}' created with motors: {motor_ids}")
+        # logging.info(f"Motor group '{group_name}' created with motors: {motor_ids}")
 
     def setup_motor_groups(self):
         """Setup all motor groups from the YAML config."""
@@ -67,7 +67,7 @@ class DynamixelJointController:
 
         for group_name, motor_names in motor_groups.items():
             # Get motor IDs by looking up motor names in motor_ids (whegs and pivots)
-            motor_ids_list = [motor_ids['pivots'].get(name) for name in motor_names]
+            motor_ids_list = [motor_ids['whegs'].get(name) for name in motor_names]
             self.create_motor_group(group_name, motor_ids_list)
 
     def load_control_table(self):
@@ -83,7 +83,7 @@ class DynamixelJointController:
                 logging.error(f"Control table entry '{entry}' is missing 'address' or 'length'.")
                 raise Exception(f"Control table entry '{entry}' is incomplete.")
         
-        logging.info("Control table loaded successfully.")
+        # logging.info("Control table loaded successfully.")
 
     def get_control_table_address(self, key):
         """Get the address for a control table key."""
@@ -117,7 +117,7 @@ class DynamixelJointController:
         status_levels = {motor_id: level for motor_id in self.motor_groups[group_name]}
         self.sync_write_group(group_name, 'status_return_level', status_levels)
 
-        logging.info(f"Status return level set to {level} for group {group_name}")
+        # logging.info(f"Status return level set to {level} for group {group_name}")
 
     def sync_write_group(self, group_name, parameter_name, param_dict):
         """
@@ -194,7 +194,7 @@ class DynamixelJointController:
 
         status_return_params = {motor_id: level for motor_id in self.motor_groups[group_name]}
         self.sync_write_group(group_name, 'status_return_level', status_return_params)
-        logging.info(f"Status return level set to {level} for group {group_name}")
+        # logging.info(f"Status return level set to {level} for group {group_name}")
 
     def bulk_read_group(self, group_name, parameters):
         """
@@ -212,13 +212,15 @@ class DynamixelJointController:
 
         bulk_read = GroupBulkRead(self.port_handler, self.packet_handler)
 
-        logging.debug(f"Preparing bulk read for motors: {motor_ids}, Parameters: {parameters}")
+        # logging.info(f"Preparing bulk read for motors: {motor_ids}, Parameters: {parameters}")
 
         # Add parameters for each motor in the group
         for motor_id in motor_ids:
             for parameter_name in parameters:
                 
+                logging.debug(f"Preparing bulk read for motors: Parameter Named: {parameter_name}")
                 control_item = self.control_table.get(parameter_name)
+                
                 if not control_item:
                     logging.error(f"Control table entry '{parameter_name}' not found.")
                     raise Exception(f"Control table entry '{parameter_name}' not found.")
@@ -232,6 +234,12 @@ class DynamixelJointController:
                 if not bulk_read.addParam(motor_id, address, length):
                     logging.error(f"Failed to add motor {motor_id} for parameter '{parameter_name}'.")
                     raise Exception(f"Failed to add motor {motor_id} for parameter '{parameter_name}'.")
+        
+        # TODO: This needs to be fixed before the motors can spin properly
+              
+        # for motor_id in motor_ids:
+        #     if not bulk_read.isAvailable(motor_id, control_item['address'], control_item['length']):
+        #         logging.error(f"Motor {motor_id} data not available after bulk read. Control_item:{control_item['address']}, {control_item['length']}")
 
         # Execute the bulk read command
         result = bulk_read.txRxPacket()
@@ -255,6 +263,8 @@ class DynamixelJointController:
                     motor_data[motor_id][parameter_name] = None
                 else:
                     motor_data[motor_id][parameter_name] = data  # Keep raw data as-is
+                    logging.debug(f"Motor {motor_id} Data '{data}'.")
+
 
         bulk_read.clearParam()
 
@@ -268,7 +278,8 @@ class DynamixelJointController:
         :param group_name: The name of the motor group to set the operating mode for.
         :param mode: The operating mode to set ('position', 'velocity', 'multi_turn').
         """
-        logging.info(f"Setting operating mode '{mode}' for group '{group_name}'")
+        # NOTE: Logging comment
+        # # logging.info(f"Setting operating mode '{mode}' for group '{group_name}'")
         OPERATING_MODES = {
             'position': 3,   # Position control mode
             'velocity': 1,   # Velocity control mode
@@ -288,6 +299,7 @@ class DynamixelJointController:
         mode_value = OPERATING_MODES[mode]
 
         # Disable torque for the entire group before changing the mode
+        
         self.torque_off_group(group_name)
 
         # Use sync_write_group to set the operating mode for each motor in the group
@@ -338,7 +350,7 @@ class DynamixelJointController:
         velocity_limits = {motor_id: velocity_limit for motor_id in self.motor_groups[group_name]}
         self.sync_write_group(group_name, 'velocity_limit', velocity_limits)
 
-        logging.info(f"Velocity limit set to {velocity_limit} for group {group_name}")
+        # logging.info(f"Velocity limit set to {velocity_limit} for group {group_name}")
 
     def set_group_profile_velocity(self, group_name, profile_velocity=None):
         """
@@ -362,7 +374,8 @@ class DynamixelJointController:
         # If no profile_velocity provided, get it from config_wheg/joint.yaml
         if profile_velocity is None:
             profile_velocity = self.config.get('profile_velocities', {}).get(group_name, None)
-            logging.info(f"Setting the profile velocity for group {group_name} from config_wheg/joint.yaml: {profile_velocity}")
+            # NOTE: Logging comment
+            # # logging.info(f"Setting the profile velocity for group {group_name} from config_wheg/joint.yaml: {profile_velocity}")
             if profile_velocity is None:
                 logging.error(f"Profile velocity for group {group_name} not found in config_wheg/joint.yaml and no value was provided.")
                 profile_velocity = 5
@@ -391,11 +404,12 @@ class DynamixelJointController:
         # Apply profile velocities using sync write
         self.sync_write_group(group_name, 'profile_velocity', profile_velocities)
 
-        logging.info(f"Profile velocities set for group {group_name}: {profile_velocities}")
+        # NOTE: Logging Comment
+        # # logging.info(f"Profile velocities set for group {group_name}: {profile_velocities}")
 
     def torque_off_group(self, group_name):
         """Disable torque for all motors in the group."""
-        logging.info(f"Disabling torque for group {group_name}")
+        # logging.info(f"Disabling torque for group {group_name}")
         if group_name not in self.motor_groups:
             logging.error(f"Motor group {group_name} not found")
             return
@@ -407,7 +421,7 @@ class DynamixelJointController:
 
     def torque_on_group(self, group_name):
         """Enable torque for all motors in the group."""
-        logging.info(f"Enabling torque for group {group_name}")
+        # logging.info(f"Enabling torque for group {group_name}")
         if group_name not in self.motor_groups:
             logging.error(f"Motor group {group_name} not found")
             return
@@ -428,7 +442,7 @@ class DynamixelJointController:
         :param positions: Either a dictionary with motor_id as key and target position in degrees as value,
                         or a single integer to apply the same position to all motors in the group.
         """
-        logging.info(f"Running set_position_group for group '{group_name}' with positions: {positions}")
+        # logging.info(f"Running set_position_group for group '{group_name}' with positions: {positions}")
         if group_name not in self.motor_groups:
             logging.error(f"Motor group {group_name} not found")
             return
@@ -509,7 +523,7 @@ class DynamixelJointController:
         try:
             # Write the velocity values to the motors
             self.sync_write_group(group_name, 'goal_velocity', velocities_dict)
-            logging.info(f"Target velocities set for group {group_name}: {velocities_dict}")
+            # logging.info(f"Target velocities set for group {group_name}: {velocities_dict}")
         except Exception as e:
             logging.error(f"Failed to set velocities for group {group_name}: {e}")
 
@@ -551,7 +565,7 @@ class DynamixelJointController:
         try:
             logging.debug(f"Sync writing drive mode values: {param_dict}")
             self.sync_write_group(group_name, 'drive_mode', param_dict)
-            logging.info(f"Drive mode set for group {group_name} with reverse_direction={reverse_direction}")
+            # logging.info(f"Drive mode set for group {group_name} with reverse_direction={reverse_direction}")
         except Exception as e:
             logging.error(f"Failed to set drive mode for group {group_name}: {e}")
 
@@ -570,7 +584,7 @@ class DynamixelJointController:
             logging.warning(f"No motors found for group '{group_name}'")
             return
         
-        logging.info(f"Incrementing motor positions by {increment_degrees} degrees for group '{group_name}'")
+        # logging.info(f"Incrementing motor positions by {increment_degrees} degrees for group '{group_name}'")
 
         # Ensure the motors are in the correct operating mode
         logging.debug(f"Checking operating mode for motors in group '{group_name}'...")
@@ -671,7 +685,7 @@ class DynamixelJointController:
             
             # Load default limits from YAML if not provided
             if min_degrees is None or max_degrees is None:
-                logging.info(f"Loading position limits from config for group {group_name}")
+                # logging.info(f"Loading position limits from config for group {group_name}")
                 min_degrees = self.config['position_limits'][group_name]['min_degrees']
                 max_degrees = self.config['position_limits'][group_name]['max_degrees']
 
@@ -687,7 +701,7 @@ class DynamixelJointController:
             self.sync_write_group(group_name, 'min_position_limit', min_position_dict)
             self.sync_write_group(group_name, 'max_position_limit', max_position_dict)
 
-            logging.info(f"Position limits set for group {group_name}: min={min_degrees}° (ticks={min_position}), max={max_degrees}° (ticks={max_position})")
+            # logging.info(f"Position limits set for group {group_name}: min={min_degrees}° (ticks={min_position}), max={max_degrees}° (ticks={max_position})")
         
         except Exception as e:
             logging.error(f"Failed to set position limits for group {group_name}: {e}")
@@ -707,7 +721,7 @@ class DynamixelJointController:
         baud_rate_params = {motor_id: baud_rate_value for motor_id in motor_ids}
         self.sync_write_group(group_name, 'baud_rate', baud_rate_params)
 
-        logging.info(f"Baud rate set to {baud_rate_value} for group {group_name}")
+        # logging.info(f"Baud rate set to {baud_rate_value} for group {group_name}")
 
     def close(self):
         """
@@ -715,7 +729,7 @@ class DynamixelJointController:
         """
         try:
             self.port_handler.closePort()
-            logging.info("Port closed successfully.")
+            # logging.info("Port closed successfully.")
         except Exception as e:
             logging.error(f"Failed to close the port: {e}")
 
@@ -734,7 +748,7 @@ class DynamixelJointController:
                 logging.error(f"Failed to reboot motor {motor_id}: {self.packet_handler.getRxPacketError(error)}")
                 return False
 
-            logging.info(f"Motor {motor_id} successfully rebooted.")
+            # logging.info(f"Motor {motor_id} successfully rebooted.")
 
             return True
 

@@ -3,7 +3,7 @@ from std_msgs.msg import Bool, Float32, String, Int16
 from geometry_msgs.msg import Twist
 from custom_msgs.msg import WhegFeedback
 from carl_controller.wheg_plugin.gait_controller import GaitController
-from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
+from carl_controller.wheg_plugin.dynamixel_wheg_control import DynamixelWhegController
 import rclpy
 import logging
 from datetime import datetime
@@ -13,12 +13,12 @@ import os
 from math import pi
 import atexit
 
-class MotorDrive(Node):
+class WhegMotorDrive(Node):
     def __init__(self):
 
         super().__init__('wheg_drive')
         
-        with open('config.yaml', 'r') as file:
+        with open('config_wheg.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
 
         self.setup_logging()
@@ -32,15 +32,14 @@ class MotorDrive(Node):
         self.gait.setup_variables()
         
         try:
-            self.dynamixel = DynamixelController()
+            self.dynamixel = DynamixelWhegController()
             logging.info("Initialised Dynamixel")
         except Exception as e:
             logging.error(f"Failed to initialize DynamixelController: {e}")
             return
         
         self.setup_wheg_motors()
-        self.setup_pivots()
-
+            
         self.initialise_direction()
         self.execute_gait_change()
 
@@ -68,11 +67,8 @@ class MotorDrive(Node):
         self.subscription_4 = self.create_subscription(Float32, 'speed_mode', self.speed_mode_callback, 10)
         # subscribe to resume mode
         self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10) # Does this need removing?
-        self.subscription_6 = self.create_subscription(Bool, 'shutdown_cmd', self.shutdown_callback, 10)
-        self.subscription_7 = self.create_subscription(Joint, 'joint_cmd', self.joint_callback, 10)
         # publish motor torques
         self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 100)
-        
         
     def setup_wheg_motors(self):
         # Set the right side whegs to reverse
@@ -125,74 +121,6 @@ class MotorDrive(Node):
         if msg.data:
             self.gait.set_shutdown(False)
             self.dynamixel.torque_on_group('Wheg_Group')
-
-    def setup_pivots(self):
-        # Initialize pivot motors and set their parameters
-        self.PIVOTS = self.config['motor_ids']['pivots']
-        self.front_pivot_angle = self.config['pivot_parameters']['initial_front_angle']
-        self.rear_pivot_angle = self.config['pivot_parameters']['initial_rear_angle']
-        self.pivot_max_angle = self.config['position_limits']['Hinges']['max_degrees']
-        self.pivot_min_angle = self.config['position_limits']['Hinges']['min_degrees']
-        self.pivot_step = self.config['pivot_parameters']['pivot_step']
-        self.allow_pivot_control = True
-    
-        # Set position limits for the pivot motors
-        self.dynamixel.set_drive_mode_group('Pivot_Group', False)
-        self.dynamixel.set_position_limits_group('Pivot_Group', self.config['position_limits']['Hinges']['min_degrees'], self.config['position_limits']['Hinges']['max_degrees'])
-        self.dynamixel.set_operating_mode_group('Pivot_Group', 'position')
-        logging.info("Set position limits for the pivot motors")
-
-    def joint_callback(self, msg):
-        pivot_change = False
-        
-        # shutdown flag true: immediately stop motor movement
-        if self.SHUT_DOWN:
-            self.dynamixel.torque_off_group("Pivot_Group")
-            return
-        
-        # set movement direction based on controller input
-        if msg.front_down == 1:
-            self.adjust_front_pivot('down')
-            pivot_change = True
-        elif msg.front_up == 1:
-            self.adjust_front_pivot('up')
-            pivot_change = True
-        elif msg.back_up == 1:
-            self.adjust_rear_pivot('up')
-            pivot_change = True
-        elif msg.back_down == 1:
-            self.adjust_rear_pivot('down')
-            pivot_change = True
-            
-        if pivot_change:
-            # Prepare positions for sync write
-            pivot_positions = {
-                self.config['motor_ids']['pivots']['FRONT_PIVOT']: self.front_pivot_angle,
-                self.config['motor_ids']['pivots']['REAR_PIVOT']: self.rear_pivot_angle
-            }
-            
-            # Sync write the goal positions for the pivots
-            self.dynamixel.set_position_group('Pivot_Group', pivot_positions)
-            sleep(0.01)
-
-            # Logging
-            logging.info(f"Front pivot angle set to {self.front_pivot_angle} degrees (ticks: {self.front_pivot_angle})")
-            logging.info(f"Rear pivot angle set to {self.rear_pivot_angle} degrees (ticks: {self.rear_pivot_angle})")
-
-    def adjust_front_pivot(self, direction):
-        """Adjust the front pivot angle based on D-pad input."""
-        if direction == 'up':
-            self.front_pivot_angle = max(self.front_pivot_angle - self.pivot_step, self.pivot_min_angle)
-        elif direction == 'down':
-            self.front_pivot_angle = min(self.front_pivot_angle + self.pivot_step, self.pivot_max_angle)
-            
-    
-    def adjust_rear_pivot(self, direction):
-        """Adjust the rear pivot angle based on D-pad input."""
-        if direction == 'up':
-            self.rear_pivot_angle = max(self.rear_pivot_angle - self.pivot_step, self.pivot_min_angle)
-        elif direction == 'down':
-            self.rear_pivot_angle = min(self.rear_pivot_angle + self.pivot_step, self.pivot_max_angle)
 
     def gait_mode_callback(self, msg):
         # Check to ensure the gait index is actually changed
@@ -404,7 +332,7 @@ def main(args=None):
 
     rclpy.init(args=args)
     
-    node = MotorDrive()
+    node = WhegMotorDrive()
 
     atexit.register(node.motor_shutdown)
     

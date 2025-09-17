@@ -27,7 +27,6 @@ class ControllerCommandPublisher(Node):
         # ROS topics to publish from the controller inputs        
         self.controller_state_publisher_ = self.create_publisher(String, 'controller_state', 100)
         self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
-        
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
         self.joint_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
         self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
@@ -42,19 +41,20 @@ class ControllerCommandPublisher(Node):
 
         # set debounce time for button presses
         self.debounce_time = 0.5 # seconds
+        self.dpad_debounce_time = 0.1 # seconds
         self.circle_last_pressed_time = 0 
         self.square_last_pressed_time = 0
         self.cross_last_pressed_time = 0
         self.triangle_last_pressed_time = 0
         self.ps_last_pressed_time = 0
+        self.updown_last_pressed_time = 0
+        self.leftright_last_pressed_time = 0
 
         # speed mode message
         self.speed_mode_msg = Float32()
         self.speed_mode_msg.data = 1.0
-
-        # Joint message
+        
         self.joint_msg = Joint()
-        self.joint_msg.joint.data = 'FRONT'
 
         # Wheg selection message
         self.wheg_msg = String()
@@ -133,7 +133,6 @@ class ControllerCommandPublisher(Node):
 
         # set time counter
         current_time = time.time()
-        debounce_time = 0.5 # seconds
 
         # Set the speed multiplier for driving the wheels
         if data['buttons'][inputs.SHARE] == 1:
@@ -160,12 +159,12 @@ class ControllerCommandPublisher(Node):
             # No trigger input, stop the robot
             velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
             
-        if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > debounce_time):
+        if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > self.debounce_time):
             self.circle_last_pressed_time = current_time
             self.shutdown_msg = 1
             self.shutdown_publisher_.publish(self.shutdown_msg)
             self.get_logger().info("Shutdown command sent.")
-        elif data['buttons'][inputs.CROSS] == 1 and (current_time - self.cross_last_pressed_time > debounce_time):
+        elif data['buttons'][inputs.CROSS] == 1 and (current_time - self.cross_last_pressed_time > self.debounce_time):
             self.cross_last_pressed_time = current_time
             self.resume_msg = 1
             self.resume_publisher_.publish(self.resume_msg)
@@ -177,10 +176,9 @@ class ControllerCommandPublisher(Node):
     def get_gait_commands(self, data):
         """Process and publish commands for the gait."""
         current_time = time.time()
-        debounce_time = 0.5 # seconds
 
         # Decrement the gait selection when pressing square
-        if (data['buttons'][inputs.SQUARE] == 1) and (current_time - self.square_last_pressed_time > debounce_time):
+        if (data['buttons'][inputs.SQUARE] == 1) and (current_time - self.square_last_pressed_time > self.debounce_time):
             self.square_last_pressed_time = current_time
 
             # toggle the gait mode
@@ -190,7 +188,7 @@ class ControllerCommandPublisher(Node):
                 self.gait_selection_msg.data -= 1
 
         # Increment the gait selection
-        if (data['buttons'][inputs.TRIANGLE] == 1) and (current_time - self.square_last_pressed_time > debounce_time):
+        if (data['buttons'][inputs.TRIANGLE] == 1) and (current_time - self.square_last_pressed_time > self.debounce_time):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
@@ -204,16 +202,23 @@ class ControllerCommandPublisher(Node):
     def get_joint_commands(self, data):
         """Process and publish commands for the joints."""
         current_time = time.time()
-        debounce_time = 0.5 # seconds
-
-        if data['buttons'][inputs.UP] == 1:
-            self.joint_msg.front_up = 1.0
-        elif data['buttons'][inputs.DOWN] == 1:
-            self.joint_msg.front_down = 1.0
-        elif data['buttons'][inputs.RIGHT] == 1:
-            self.joint_msg.back_up = 1.0
-        elif data['buttons'][inputs.LEFT] == 1:
-            self.joint_msg.back_down = 1.0
+        
+        if data['buttons'][inputs.UP] == 1 and data['buttons'][inputs.DOWN] == 1:
+            self.joint_msg.front_up = 0
+            self.joint_msg.front_down = 0
+        elif data['buttons'][inputs.LEFT] == 1 and data['buttons'][inputs.RIGHT] == 1:
+            self.joint_msg.back_up = 0
+            self.joint_msg.back_down = 0
+        else:
+            # Ensure the pivot angle adjustments can keep up with the motor speed
+            if current_time - self.updown_last_pressed_time > self.dpad_debounce_time:
+                self.updown_last_pressed_time = current_time
+                self.joint_msg.front_up = data['buttons'][inputs.UP]
+                self.joint_msg.front_down = data['buttons'][inputs.DOWN]
+            if current_time - self.leftright_last_pressed_time > self.dpad_debounce_time:
+                self.leftright_last_pressed_time = current_time
+                self.joint_msg.back_up = data['buttons'][inputs.RIGHT]
+                self.joint_msg.back_down = data['buttons'][inputs.LEFT]
         
         self.joint_publisher_.publish(self.joint_msg)
         

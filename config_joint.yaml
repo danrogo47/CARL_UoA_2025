@@ -14,7 +14,7 @@ motor_ids:
 
 # Parameters for controlling the pivot motors
 pivot_parameters:
-  pivot_step: 5  # Step size for pivot control via D-pad (degrees per step)
+  pivot_step: 1  # Step size for pivot control via D-pad (degrees per step)
   initial_front_angle: 180  # Initial angle for the front pivot motor (degrees)
   initial_rear_angle: 180  # Initial angle for the rear pivot motor (degrees)
 
@@ -29,12 +29,12 @@ reporting:
 
 # Velocity limits for different motor groups
 velocity_limits:
-  Pivot_Group: 4  # Maximum velocity for the pivot motors
+  Pivot_Group: 10  # Maximum velocity for the pivot motors
   All_Motors: 200  # Global maximum velocity limit for all motors
 
 # Profile velocity settings (predefined velocity configurations)
 profile_velocities:
-  Pivot_Group: 4  # Profile velocity for the pivot group
+  Pivot_Group: 10  # Profile velocity for the pivot group
   All_Motors: 8  # Global profile velocity for all motors
 
 # Hard limits for velocity (safety parameters)

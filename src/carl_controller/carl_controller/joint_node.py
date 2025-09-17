@@ -3,6 +3,10 @@ from rclpy.node import Node
 from time import sleep
 import logging
 import yaml
+import time
+from datetime import datetime
+import os
+import atexit
 from std_msgs.msg import Bool, String
 from custom_msgs.msg import Joint
 from carl_controller.wheg_plugin.dynamixel_joint_control import DynamixelJointController
@@ -16,8 +20,52 @@ class JointNode(Node):
         with open('config_joint.yaml', 'r') as file:
             self.config = yaml.safe_load(file)
             
+        self.setup_logging()
+            
+        self.SHUT_DOWN = False
+
         self.dynamixel = DynamixelJointController()
             
+        # Initialize pivot angles and limits
+        self.setup_pivots()
+        
+        # Subscribe to controller input topics
+        self.subscription_1 = self.create_subscription(Bool, 'shutdown_cmd', self.shutdown_callback, 10)
+        self.subscription_2 = self.create_subscription(Joint, 'joint_cmd', self.joint_callback, 10)
+
+    def setup_logging(self):
+        # Create Logs directory if it doesn't exist
+        log_directory = self.config['logging']['log_directory']
+        if not os.path.exists(log_directory):
+            os.makedirs(log_directory)
+
+        # Generate log file based on date and time
+        log_filename = f"{log_directory}/flik_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+
+        # Set up logging to log motor positions and controller inputs
+        logging.basicConfig(
+            filename=log_filename,
+            level=getattr(logging, self.config['logging']['log_level_file']),  
+            format='%(asctime)s %(levelname)s: %(message)s'
+        )
+
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(getattr(logging, self.config['logging']['log_level_console']))  # Set console output
+        console_formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s')
+        console_handler.setFormatter(console_formatter)
+
+        # Add the handler to the logger
+        logging.getLogger().addHandler(console_handler)
+
+        # Create the CSV file without headers (headers will be added later in write_to_csv)
+        self.csv_filename = f"{log_directory}/flik_test_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
+        
+        # Just create an empty CSV file
+        with open(self.csv_filename, mode='w', newline='') as csvfile:
+            pass  # CSV file will be populated with headers in write_to_csv
+
+    def setup_pivots(self):
+        # Initialize pivot motors and set their parameters
         self.PIVOTS = self.config['motor_ids']['pivots']
         self.front_pivot_angle = self.config['pivot_parameters']['initial_front_angle']
         self.rear_pivot_angle = self.config['pivot_parameters']['initial_rear_angle']
@@ -29,13 +77,56 @@ class JointNode(Node):
         # Set position limits for the pivot motors
         self.dynamixel.set_drive_mode_group('Pivot_Group', False)
         self.dynamixel.set_position_limits_group('Pivot_Group', self.config['position_limits']['Hinges']['min_degrees'], self.config['position_limits']['Hinges']['max_degrees'])
+        self.dynamixel.set_operating_mode_group('Pivot_Group', 'position')
         logging.info("Set position limits for the pivot motors")
+
+    def shutdown_callback(self, msg):
+        # sets the shutdown flag to true if the current sensing chip detects a current spike
+        if msg.data:
+            self.shutdown_motors()
+            
+    def motor_shutdown(self):
+        """Shutdown motors gracefully."""    
+        self.SHUT_DOWN = True    
+        self.dynamixel.torque_off_group('Pivot_Group')
+    
+    def joint_callback(self, msg):
+        pivot_change = False
         
-        # From RE-RASSOR - Remove if not necessary
-        self.subscription_1 = self.create_subscription(Bool, 'shutdown_cmd', self.shutdown_callback, 10)
-        self.subscription_2 = self.create_subscription(Joint, 'joint_cmd', self.listener_callback, 10)
+        # shutdown flag true: immediately stop motor movement
+        if self.SHUT_DOWN:
+            self.dynamixel.torque_off_group("Pivot_Group")
+            return
         
-        
+        # set movement direction based on controller input
+        if msg.front_down == 1:
+            self.adjust_front_pivot('down')
+            pivot_change = True
+        elif msg.front_up == 1:
+            self.adjust_front_pivot('up')
+            pivot_change = True
+        elif msg.back_up == 1:
+            self.adjust_rear_pivot('up')
+            pivot_change = True
+        elif msg.back_down == 1:
+            self.adjust_rear_pivot('down')
+            pivot_change = True
+            
+        if pivot_change:
+            # Prepare positions for sync write
+            pivot_positions = {
+                self.config['motor_ids']['pivots']['FRONT_PIVOT']: self.front_pivot_angle,
+                self.config['motor_ids']['pivots']['REAR_PIVOT']: self.rear_pivot_angle
+            }
+            
+            # Sync write the goal positions for the pivots
+            self.dynamixel.set_position_group('Pivot_Group', pivot_positions)
+            sleep(0.01)
+
+            # Logging
+            logging.info(f"Front pivot angle set to {self.front_pivot_angle} degrees (ticks: {self.front_pivot_angle})")
+            logging.info(f"Rear pivot angle set to {self.rear_pivot_angle} degrees (ticks: {self.rear_pivot_angle})")
+
     def adjust_front_pivot(self, direction):
         """Adjust the front pivot angle based on D-pad input."""
         if direction == 'up':
@@ -52,121 +143,20 @@ class JointNode(Node):
             self.rear_pivot_angle = min(self.rear_pivot_angle + self.pivot_step, self.pivot_max_angle)
 
 
-    async def control_pivots_with_dpad(self): # May need to add 'dpad_inputs' as a variable to be listening for similar to how RE-RASSOR has done it for the T-joint movements in 'def listener_callback(self, msg):'
-        """
-        Control the front and rear pivots using the D-pad inputs from the controller.
-        
-        :param dpad_inputs: A dictionary with the state of each button, including the D-pad.streamlit
-        :param config: The YAML configuration containing pivot parameters (pivot_step, min/max angles).
-        """
-        while self.allow_pivot_control:
-            try:
-                change = False
-                # Adjust front and rear pivots based on D-pad input
-                if self.dpad_inputs['dpad_down']:
-                    self.adjust_front_pivot('down')
-                    change = True
-                elif self.dpad_inputs['dpad_up']:
-                    self.adjust_front_pivot('up')
-                    change = True
-                elif self.dpad_inputs['dpad_right']:
-                    self.adjust_rear_pivot('up')
-                    change = True
-                elif self.dpad_inputs['dpad_left']:
-                    self.adjust_rear_pivot('down')
-                    change = True
-
-                if change:
-                    # Prepare positions for sync write
-                    pivot_positions = {
-                        self.config['motor_ids']['pivots']['FRONT_PIVOT']: self.front_pivot_angle,
-                        self.config['motor_ids']['pivots']['REAR_PIVOT']: self.rear_pivot_angle
-                    }
-                    
-                    # Sync write the goal positions for the pivots
-                    self.dynamixel.set_position_group('Pivot_Group', pivot_positions)
-
-                    # Logging
-                    logging.info(f"Front pivot angle set to {self.front_pivot_angle} degrees (ticks: {self.front_pivot_angle})")
-                    logging.info(f"Rear pivot angle set to {self.rear_pivot_angle} degrees (ticks: {self.rear_pivot_angle})")
-                    
-            except Exception as e:
-                logging.error(f"Error controlling pivots: {e}")
-            
-            await asyncio.sleep(0.25) #Control responsiveness
-            
-            
-    async def report_states(self, log_interval=5):
-        """ Asynchronously logs motor states including positions, velocities, loads, and errors. """
-        while True:
-            try:
-                # Retrieve motor data
-                motor_data = await self.get_motor_data()
-                
-                logging.info(f"{'Motor':<10}{'Position (degrees)':<25}{'Velocity (RPM)':<20}{'Load (%)':<10}")
-                for motor_id, data in motor_data.items():
-                    logging.info(f"{motor_id:<10}{data['position_degrees']:<25.2f}{data['velocity_rpm']:<20.2f}{data['load_percentage']:<10}")
-
-                    # Log any detected hardware errors
-                    error_status = data["error_status"]
-                    if error_status != 0:
-                        logging.error(f"Hardware error on motor {motor_id}: Error code {error_status}")
-                        # Additional error handling logic can go here if needed
-
-                await asyncio.sleep(log_interval)
-
-            except Exception as e:
-                logging.error(f"Error while reporting robot states: {e}")
-                await asyncio.sleep(1)
-
-    def shutdown_callback(self, msg):
-        # sets the shutdown flag to true if the current sensing chip detects a current spike
-        if msg.data:
-            self.SHUT_DOWN = True
-    
-    def listener_callback(self, msg):
-        if self.SHUT_DOWN:
-            return
-        
-        # shutdown flag true: immediately stop motor movement
-        if self.SHUT_DOWN:
-            self.kit.pivot1.release()
-            self.kit.pivot2.release()
-            return
-        
-        # set movement direction based on controller input
-        if msg.up == 1:
-            self.direction = pivot.UP
-        elif msg.down == 1:
-            self.direction = pivot.DOWN
-
-        # move
-        if msg.up == 1 or msg.down == 1:
-            if msg.joint.data == 'FRONT':
-                for _ in range(self.steps):
-                    self.kit.pivot1.onestep(direction=self.direction)
-                    sleep(0.01)  # 10 milliseconds delay
-
-            elif msg.joint.data == 'BACK':
-                for _ in range(self.steps):
-                    self.kit.pivot2.onestep(direction=self.direction)
-                    sleep(0.01)  # 10 milliseconds delay
-                    
-        # if no longer moving, release
-        else:
-            self.kit.pivot1.release()
-            self.kit.pivot2.release()
-
 def main(args=None):
-    rclpy.init(args=args)
 
+    rclpy.init(args=args)
+    
     node = JointNode()
+
+    atexit.register(node.motor_shutdown)
     
     try:
         rclpy.spin(node)
+
     except KeyboardInterrupt:
         pass
-    
+
     node.destroy_node()
     rclpy.shutdown()
 
