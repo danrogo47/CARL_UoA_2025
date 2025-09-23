@@ -16,7 +16,8 @@ joystick.init()
 
 # Set up the socket connection
 # HOST = '10.13.72.108' # Daniel
-HOST = '172.20.10.2' # Jacob
+# HOST = '172.20.10.2' # Jacob
+HOST = '10.13.121.179' # UofA
 PORT = 8000
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("Attempting to connect to Raspberry Pi...")

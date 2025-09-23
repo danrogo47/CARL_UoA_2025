@@ -52,7 +52,7 @@ class JointNode(Node):
             self.rear_pivot_angle = min(self.rear_pivot_angle + self.pivot_step, self.pivot_max_angle)
 
 
-    async def control_pivots_with_dpad(self): # May need to add 'dpad_inputs' as a variable to be listening for similar to how RE-RASSOR has done it for the T-joint movements in 'def listener_callback(self, msg):'
+    def control_pivots_with_dpad(self): # May need to add 'dpad_inputs' as a variable to be listening for similar to how RE-RASSOR has done it for the T-joint movements in 'def listener_callback(self, msg):'
         """
         Control the front and rear pivots using the D-pad inputs from the controller.
         
