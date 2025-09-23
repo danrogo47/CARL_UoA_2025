@@ -1,7 +1,9 @@
 from rclpy.node import Node
 from std_msgs.msg import Bool, Float32, String, Int16
 from geometry_msgs.msg import Twist
-from custom_msgs.msg import WhegFeedback
+from time import sleep
+from datetime import datetime
+from custom_msgs.msg import WhegFeedback, Joint
 from carl_controller.wheg_plugin.gait_controller import GaitController
 from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
 import rclpy
@@ -25,6 +27,8 @@ class MotorDrive(Node):
 
         self.debug = 1
         self.log = 0
+        
+        self.SHUT_DOWN = False
         
         # initialise the wheg controller functions
         self.gait = GaitController(self.config)
@@ -68,8 +72,7 @@ class MotorDrive(Node):
         self.subscription_4 = self.create_subscription(Float32, 'speed_mode', self.speed_mode_callback, 10)
         # subscribe to resume mode
         self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10) # Does this need removing?
-        self.subscription_6 = self.create_subscription(Bool, 'shutdown_cmd', self.shutdown_callback, 10)
-        self.subscription_7 = self.create_subscription(Joint, 'joint_cmd', self.joint_callback, 10)
+        self.subscription_6 = self.create_subscription(Joint, 'joint_cmd', self.joint_callback, 10)
         # publish motor torques
         self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 100)
         
@@ -236,7 +239,7 @@ class MotorDrive(Node):
             self.drive_motors(velocities, wait_time)
             
         # get motor feedback for streamlit
-        self.get_torque_feedback()
+        # self.get_torque_feedback()
 
     def calculate_gait_velocities(self, msg, prev_speed):
         

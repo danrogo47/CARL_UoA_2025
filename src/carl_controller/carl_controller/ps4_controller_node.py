@@ -81,7 +81,7 @@ class ControllerCommandPublisher(Node):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
             server_socket.bind((server_ip, server_port))
             server_socket.listen(1)  # Listen for incoming connections
-            self.get_logger().info('Server listening on port {server_port}...')
+            self.get_logger().info(f'Server listening on port {server_port}...')
 
             while True:  # Keep the server running to accept multiple connections
                 try:
