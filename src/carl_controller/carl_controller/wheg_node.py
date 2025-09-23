@@ -204,7 +204,19 @@ class MotorDrive(Node):
         # sets the speed multiplier for driving
         self.gait.next_gait_index = msg.data
         self.gait_change_requested = True
+        self.execute_gait_change()
+        
+    def execute_gait_change(self):
+        """
+        Executes the gait change by calling the gait controller's method.
+        This method is called when the gait change is requested.
+        """
         self.gait.execute_gait_change()
+        
+        self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+        self.dynamixel.set_position_group('Wheg_Group', self.gait.get_positions())
+        self.gait_change_requested = False
+    
         
     def speed_mode_callback(self, msg):
         if self.speed_multiplier == msg.data:
@@ -221,7 +233,7 @@ class MotorDrive(Node):
             return
         
         if self.gait_change_requested:
-            self.execute_gait_change()
+            return
         
         current_time = time.time()
 
@@ -244,15 +256,13 @@ class MotorDrive(Node):
     def calculate_gait_velocities(self, msg, prev_speed):
         
         if(self.gait_change_requested):
-            self.execute_gait_change()
+            return
         
         # Speed throttle speed      
         x_cmd = msg.linear.x
         
         if x_cmd < 0:
             return {key: 0 for key in self.velocities.keys()}, 0
-        
-          
         
         wait_time = self.gait.execute_gait(x_cmd)
         
@@ -310,6 +320,9 @@ class MotorDrive(Node):
         return velocities
     
     def drive_motors(self, velocities, wait_time):
+        
+        if self.gait_change_requested:
+            return
         # calculate the factor of rotation based on the wait time and dt
         wait_factor = self.dt / wait_time if wait_time > 0 else 1
         # Set profile velocities and increments
@@ -367,19 +380,7 @@ class MotorDrive(Node):
             return {}
 
     def motor_shutdown(self):
-        
         self.dynamixel.torque_off_group('Wheg_Group')
-        
-    def execute_gait_change(self):
-        """
-        Executes the gait change by calling the gait controller's method.
-        This method is called when the gait change is requested.
-        """
-        self.gait.execute_gait_change()
-        
-        self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
-        self.dynamixel.set_position_group('Wheg_Group', self.gait.get_positions())
-        self.gait_change_requested = False
         
     def initialise_direction(self):
         """

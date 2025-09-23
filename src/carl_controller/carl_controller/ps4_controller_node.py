@@ -182,22 +182,26 @@ class ControllerCommandPublisher(Node):
             self.square_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.data == 1:
-                self.gait_selection_msg.data = 4
+            if self.gait_selection_msg.data == 0:
+                self.gait_selection_msg.data = 3
             else :
                 self.gait_selection_msg.data -= 1
+                
+            self.gait_selection_publisher_.publish(self.gait_selection_msg)
 
         # Increment the gait selection
         if (data['buttons'][inputs.TRIANGLE] == 1) and (current_time - self.square_last_pressed_time > self.debounce_time):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.data == 4:
-                self.gait_selection_msg.data = 1
+            if self.gait_selection_msg.data == 3:
+                self.gait_selection_msg.data = 0
             else :
                 self.gait_selection_msg.data += 1
+                
+            self.gait_selection_publisher_.publish(self.gait_selection_msg)
 
-        self.gait_selection_publisher_.publish(self.gait_selection_msg)
+        
 
     def get_joint_commands(self, data):
         """Process and publish commands for the joints."""

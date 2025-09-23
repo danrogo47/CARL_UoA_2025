@@ -19,7 +19,6 @@ class GaitController():
         self.total_gaits = len(self.config['gaits'])
         self.reboot_requested = False
         self.report_timer = time.time()
-        self.gait_change_requested = True
         # Gait parameters
         self.odd_even = 0
         self.gait_parameters = {}
@@ -55,7 +54,6 @@ class GaitController():
      
     def init_turn_mode(self):
         logging.info("Initialising Turn Mode")
-        self.gait_change_requested = False  # Reset the request flag
         # Update the min and max RPM for this gait:
         self.MIN_RPM = self.gait4_params['min_rpm']
         self.MAX_RPM = self.gait4_params['max_rpm']
@@ -75,17 +73,14 @@ class GaitController():
         self.SHUT_DOWN  = shutdown
         
     def execute_gait_change(self):
-        """Execute the current gait change."""
+        """Execute the current gait change."""        
         if not self.SHUT_DOWN:
-            
-            # Check if a gait change has been requested
-            if self.gait_change_requested:
-                # Initialize the new gait
-                init_gait_function = self.gait_init_methods[self.next_gait_index]                
-                # Update current gait index
-                self.current_gait_index = self.next_gait_index
-                self.gait_change_requested = False
-                logging.info(f"New gait {self.current_gait_index + 1} is now active.")
+            # Initialize the new gait
+            init_gait_function = self.gait_init_methods[self.next_gait_index]
+            wait_time = init_gait_function()           
+            # Update current gait index
+            self.current_gait_index = self.next_gait_index
+            logging.info(f"New gait {self.current_gait_index + 1} is now active.")
                 
         else:
             logging.debug("Emergency stop activated, gait change paused.")
@@ -93,14 +88,12 @@ class GaitController():
     # Define the initialization for each gait (for whegs only, pivots are disabled)
     def gait_init_1(self):
         logging.info("Initialising Gait 1")
-        self.gait_change_requested = False  # Reset the request flag
     
         self.positions = { 1: self.gait4_params['high_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['high_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['high_pos'], 6: self.gait4_params['high_pos'] }
-        return
+        return 0
 
     def gait_init_2(self):
         logging.info("Initialising Gait 2")
-        self.gait_change_requested = False  # Reset the request flag
         # Update the min and max RPM for this gait:
         self.MIN_RPM = self.gait2_params['min_rpm']
         self.MAX_RPM = self.gait2_params['max_rpm']
@@ -113,11 +106,10 @@ class GaitController():
         self.positions = { 1: self.LOW_POS, 2: self.HIGH_POS, 3: self.LOW_POS, 4: self.HIGH_POS, 5: self.LOW_POS, 6: self.HIGH_POS }
         wait_time = 0.5
         logging.info(f"Initialised Gait 2, waiting for {wait_time} seconds")
-        return
+        return 0
 
     def gait_init_3(self):      
         logging.info("Initialsing Gait 3")
-        self.gait_change_requested = False  # Reset the request flag
         # Update the min, max and smoothness for this gait
         self.MIN_RPM = self.gait3_params['min_rpm']
         self.MAX_RPM = self.gait3_params['max_rpm']
@@ -128,11 +120,10 @@ class GaitController():
         self.positions = { 1: self.gait3_params['high_pos'], 2: self.gait3_params['low_pos'], 3: self.gait3_params['low_pos'], 4: self.gait3_params['high_pos'], 5: self.gait3_params['low_pos'], 6: self.gait3_params['low_pos']}
         wait_time = 0.5
         logging.info(f"Initialised Gait 3, waiting for {wait_time} seconds")
-        return
+        return 0
 
     def gait_init_4(self):
         logging.info("Initialising Gait 4")
-        self.gait_change_requested = False  # Reset the request flag
         # Update the min and max RPM for this gait:
         self.MIN_RPM = self.gait4_params['min_rpm']
         self.MAX_RPM = self.gait4_params['max_rpm']
@@ -143,7 +134,7 @@ class GaitController():
         self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['high_pos'] }
         wait_time = 0.5
         logging.info(f"Initialised Gait 4, waiting for {wait_time} seconds")
-        return
+        return 0
     
     
     def execute_gait(self, throttle):
@@ -180,7 +171,7 @@ class GaitController():
         logging.debug("Executing Gait 1")
         logging.info(f"Current velocity input for Gait 1: {self.velocity}")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
-        if self.wheg_rpm > 1 and self.gait_change_requested == False:
+        if self.wheg_rpm > 1:
         
             self.increment = 360  # Example movement angle
             
@@ -198,7 +189,7 @@ class GaitController():
         """Execute Gait 2 and return how long to wait before the next step."""
         logging.debug("Executing Gait 2")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
-        if self.wheg_rpm > 1 and self.gait_change_requested == False:
+        if self.wheg_rpm > 1:
             # Example RPM-based alternating gait logic
             if self.odd_even % 2 == 0:
                 rpm_1 = self.wheg_rpm
@@ -227,7 +218,7 @@ class GaitController():
         logging.debug("Executing Gait 3")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
         
-        if self.wheg_rpm > 1 and self.gait_change_requested == False:
+        if self.wheg_rpm > 1:
 
             # Example alternating gait logic for three sets of whegs
             if self.odd_even % 3 == 0:
@@ -268,7 +259,7 @@ class GaitController():
         """Execute Gait 4 and return how long to wait before the next step."""
         logging.debug("Executing Gait 4")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
-        if self.wheg_rpm > 1 and self.gait_change_requested == False:
+        if self.wheg_rpm > 1:
             # Example RPM-based alternating gait logic
             if self.odd_even % 2 == 0:
                 rpm_1 = self.wheg_rpm
