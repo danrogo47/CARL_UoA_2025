@@ -15,7 +15,7 @@ import yaml
 import carl_controller.lib.controller_input_defs as inputs
 import threading # Testing
 
-from custom_msgs.msg import Joint
+from custom_msgs.msg import Joint, GaitCommand
 
 class ControllerCommandPublisher(Node):
     """Receives controller commands, converts them to topics and publishes them."""
@@ -29,7 +29,7 @@ class ControllerCommandPublisher(Node):
         self.velocity_publisher_ = self.create_publisher(Twist, 'cmd_vel', 100)
         self.speed_mode_publisher_ = self.create_publisher(Float32, 'speed_mode', 10)
         self.joint_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
-        self.gait_selection_publisher_ = self.create_publisher(Int16, 'gait_selection', 10)
+        self.gait_selection_publisher_ = self.create_publisher(GaitCommand, 'gait_selection', 10)
         self.shutdown_publisher_ = self.create_publisher(Int16, 'shutdown_cmd', 10)
         self.resume_publisher_ = self.create_publisher(Int16, 'resume_cmd', 10)
 
@@ -49,6 +49,8 @@ class ControllerCommandPublisher(Node):
         self.ps_last_pressed_time = 0
         self.updown_last_pressed_time = 0
         self.leftright_last_pressed_time = 0
+        self.R1_last_pressed_time = 0
+        self.L1_last_pressed_time = 0
 
         # speed mode message
         self.speed_mode_msg = Float32()
@@ -61,8 +63,8 @@ class ControllerCommandPublisher(Node):
         self.wheg_msg.data = 'FRONT'
 
         # Gait selection message
-        self.gait_selection_msg = Int16()
-        self.gait_selection_msg.data = 0  # Default gait selection
+        self.gait_selection_msg = GaitCommand()
+        self.gait_selection_msg.gaitNumber = 0  # Default gait selection
 
         # set flags for buttons pressed
         self.circle_button_pressed = False
@@ -176,16 +178,33 @@ class ControllerCommandPublisher(Node):
     def get_gait_commands(self, data):
         """Process and publish commands for the gait."""
         current_time = time.time()
+        
+        # Move up to the next body compartment when pressing R1
+        if(data['buttons'][inputs.R1] == 1) and (current_time - self.R1_last_pressed_time > self.debounce_time):
+            self.R1_last_pressed_time = current_time
+            
+            if self.gait_selection_msg.bodyNumber == 3:
+                self.gait_selection_msg.bodyNumber = 1
+            else :
+                self.gait_selection_msg.bodyNumber += 1
+        elif(data['buttons'][inputs.L1] == 1) and (current_time - self.L1_last_pressed_time > self.debounce_time):
+            self.L1_last_pressed_time = current_time
+            
+            if self.gait_selection_msg.bodyNumber == 1:
+                self.gait_selection_msg.bodyNumber = 3
+            else :
+                self.gait_selection_msg.bodyNumber -= 1
+
 
         # Decrement the gait selection when pressing square
         if (data['buttons'][inputs.SQUARE] == 1) and (current_time - self.square_last_pressed_time > self.debounce_time):
             self.square_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.data == 0:
-                self.gait_selection_msg.data = 3
+            if self.gait_selection_msg.gaitNumber == 0:
+                self.gait_selection_msg.gaitNumber = 3
             else :
-                self.gait_selection_msg.data -= 1
+                self.gait_selection_msg.gaitNumber -= 1
                 
             self.gait_selection_publisher_.publish(self.gait_selection_msg)
 
@@ -194,10 +213,10 @@ class ControllerCommandPublisher(Node):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.data == 3:
-                self.gait_selection_msg.data = 0
+            if self.gait_selection_msg.gaitNumber == 3:
+                self.gait_selection_msg.gaitNumber = 0
             else :
-                self.gait_selection_msg.data += 1
+                self.gait_selection_msg.gaitNumber += 1
                 
             self.gait_selection_publisher_.publish(self.gait_selection_msg)
 

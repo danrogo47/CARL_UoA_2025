@@ -1,0 +1,3 @@
+std_msgs/String GaitCommand
+int16 gaitNumber
+int16 bodyNumber

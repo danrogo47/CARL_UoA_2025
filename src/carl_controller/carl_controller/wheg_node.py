@@ -3,7 +3,7 @@ from std_msgs.msg import Bool, Float32, String, Int16
 from geometry_msgs.msg import Twist
 from time import sleep
 from datetime import datetime
-from custom_msgs.msg import WhegFeedback, Joint
+from custom_msgs.msg import WhegFeedback, Joint, GaitCommand
 from carl_controller.wheg_plugin.gait_controller import GaitController
 from carl_controller.wheg_plugin.dynamixel_control import DynamixelController
 import rclpy
@@ -67,7 +67,7 @@ class MotorDrive(Node):
         # subscribe to velocity cmds
         self.subscription_2 = self.create_subscription(Twist, 'cmd_vel', self.listener_callback, 10)
         # subscribe to gait selection
-        self.subscription_3 = self.create_subscription(Int16, 'gait_selection', self.gait_mode_callback, 10)
+        self.subscription_3 = self.create_subscription(GaitCommand, 'gait_selection', self.gait_mode_callback, 10)
         # subscribe to speed mode
         self.subscription_4 = self.create_subscription(Float32, 'speed_mode', self.speed_mode_callback, 10)
         # subscribe to resume mode
@@ -198,11 +198,16 @@ class MotorDrive(Node):
             self.rear_pivot_angle = min(self.rear_pivot_angle + self.pivot_step, self.pivot_max_angle)
 
     def gait_mode_callback(self, msg):
+        
+        # If gait 3, let it change body compartments
+        if msg.gaitNumber == 2:
+            self.get_body_compartment()
+        
         # Check to ensure the gait index is actually changed
-        if msg.data == self.gait.current_gait_index:
+        if msg.gaitNumber == self.gait.current_gait_index:
             return
         # sets the speed multiplier for driving
-        self.gait.next_gait_index = msg.data
+        self.gait.next_gait_index = msg.gaitNumber
         self.gait_change_requested = True
         self.execute_gait_change()
         
