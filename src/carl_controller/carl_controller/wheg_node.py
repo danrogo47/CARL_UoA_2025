@@ -26,7 +26,7 @@ class MotorDrive(Node):
         self.setup_logging()
 
         self.debug = 1
-        self.log = 0
+        self.log = 1
         
         self.SHUT_DOWN = False
         
@@ -198,16 +198,18 @@ class MotorDrive(Node):
             self.rear_pivot_angle = min(self.rear_pivot_angle + self.pivot_step, self.pivot_max_angle)
 
     def gait_mode_callback(self, msg):
-        
         # If gait 3, let it change body compartments
-        if msg.gaitNumber == 2:
-            self.get_body_compartment()
+        if msg.gait_number == 2:
+            if msg.body_number != self.gait.body_number:
+                self.gait.body_number = msg.body_number
+                logging.info(f"Body compartment changed to: {self.gait.body_number}")
         
         # Check to ensure the gait index is actually changed
-        if msg.gaitNumber == self.gait.current_gait_index:
+        if msg.gait_number == self.gait.current_gait_index:
             return
+
         # sets the speed multiplier for driving
-        self.gait.next_gait_index = msg.gaitNumber
+        self.gait.next_gait_index = msg.gait_number
         self.gait_change_requested = True
         self.execute_gait_change()
         
@@ -328,15 +330,12 @@ class MotorDrive(Node):
         
         if self.gait_change_requested:
             return
+        
         # calculate the factor of rotation based on the wait time and dt
         wait_factor = self.dt / wait_time if wait_time > 0 else 1
         # Set profile velocities and increments
-        # self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
         increments = self.gait.get_increments()
-        # increments = {
-        #     key: val * wait_factor
-        #     for key, val in self.gait.get_increments().items()
-        # }
+
         if self.log:
             logging.info(f"Driving with velocities: {velocities} and increments: {increments}")
         
@@ -404,9 +403,6 @@ class MotorDrive(Node):
         self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
         self.dynamixel.set_group_profile_velocity('Wheg_Group', {key: 0 for key in self.velocities.keys()})
         self.dynamixel.increment_group_position('Wheg_Group', {key: 0 for key in self.increment.keys()})
-
-        if self.log:
-            logging.info("All whegs stopped.")
 
 
 def main(args=None):

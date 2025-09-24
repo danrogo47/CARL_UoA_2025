@@ -25,6 +25,8 @@ class GaitController():
         self.gait2_params = self.config['gaits'].get('gait_2', {})
         self.gait3_params = self.config['gaits'].get('gait_3', {})
         self.gait4_params = self.config['gaits'].get('gait_4', {})
+        # Used for gait 3 (automatically on front body compartment)
+        self.body_number = 1
         # Change these positions to a gait1 parameter set
         self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['low_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['low_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['low_pos'] }
         self.gait_init_methods = {
@@ -117,6 +119,7 @@ class GaitController():
         self.TOLERANCE = self.gait3_params['tolerance']
         self.wheg_rpm = 0
         self.odd_even = 0
+        self.body_number = 1  # Automatically on front body compartment
         self.positions = { 1: self.gait3_params['high_pos'], 2: self.gait3_params['low_pos'], 3: self.gait3_params['low_pos'], 4: self.gait3_params['high_pos'], 5: self.gait3_params['low_pos'], 6: self.gait3_params['low_pos']}
         wait_time = 0.5
         logging.info(f"Initialised Gait 3, waiting for {wait_time} seconds")
@@ -181,7 +184,7 @@ class GaitController():
 
             # Calculate wait time based on RPM (example formula: degrees moved / (6 * RPM))self
             wait_time = self.increment / (6 * self.wheg_rpm)
-            logging.info(f"Gait 1 step executed at {self.wheg_rpm:.2f}RPM, wait for {wait_time:.2f} seconds")
+            # logging.info(f"Gait 1 step executed at {self.wheg_rpm:.2f}RPM, wait for {wait_time:.2f} seconds")
             return wait_time
         return 0  # No movement, no wait time
 
@@ -209,7 +212,7 @@ class GaitController():
             # Calculate wait time
             wait_time = (inc_1 / (6 * rpm_1))+self.gait2_params['delay']
             self.odd_even += 1
-            logging.info(f"Gait 2 step executed at {self.wheg_rpm:.2f}RPM, wait for {wait_time:.2f} seconds")
+            # logging.info(f"Gait 2 step executed at {self.wheg_rpm:.2f}RPM, wait for {wait_time:.2f} seconds")
             return wait_time
         return 0  # No movement, no wait time
 
@@ -221,36 +224,39 @@ class GaitController():
         if self.wheg_rpm > 1:
 
             # Example alternating gait logic for three sets of whegs
-            if self.odd_even % 3 == 0:
-                rpm_1 = self.wheg_rpm
-                rpm_2 = self.wheg_rpm
-                rpm_3 = self.wheg_rpm
-                inc_1 = self.gait3_params['fast_ang']
-                inc_2 = self.gait3_params['slow_ang']
-                inc_3 = 0
-            elif self.odd_even % 3 == 1:
-                rpm_1 = self.wheg_rpm
-                rpm_2 = self.wheg_rpm
-                rpm_3 = self.wheg_rpm
-                inc_1 = 0
-                inc_2 = self.gait3_params['fast_ang']
-                inc_3 = self.gait3_params['slow_ang']
+            phase = self.body_number % 3
+            if phase == 0:
+                rpm = [self.wheg_rpm] * 3
+                inc = [self.gait3_params['fast_ang']] * 3
+            elif phase == 1:
+                rpm = [self.wheg_rpm] * 3
+                inc = [self.gait3_params['fast_ang']] * 3
             else:
-                rpm_1 = self.wheg_rpm
-                rpm_2 = self.wheg_rpm
-                rpm_3 = self.wheg_rpm
-                inc_1 = self.gait3_params['slow_ang']
-                inc_2 = 0
-                inc_3 = self.gait3_params['fast_ang']
+                rpm = [self.wheg_rpm] * 3
+                inc = [self.gait3_params['fast_ang']] * 3
 
-            # Set profile velocities for all whegs
-            self.velocities = {1: rpm_1, 2: rpm_2, 3: rpm_3, 4: rpm_1, 5: rpm_2, 6: rpm_3}
-            self.increments = {1: inc_1, 2: inc_2, 3: inc_3, 4: inc_1, 5: inc_2, 6: inc_3}
+            # Mapping of body compartments to wheg indices
+            compartment_map = {
+                1: ([1, 4], rpm[0], inc[0]),
+                2: ([2, 5], rpm[1], inc[1]),
+                3: ([3, 6], rpm[2], inc[2]),
+            }
+
+            # Initialize everything to zero
+            self.velocities = {i: 0 for i in range(1, 7)}
+            self.increments = {i: 0 for i in range(1, 7)}
+
+            group_info = compartment_map.get(self.body_number)
+            if group_info:
+                indices, rpm_val, inc_val = group_info
+                for i in indices:
+                    self.velocities[i] = rpm_val
+                    self.increments[i] = inc_val
+
 
             # Calculate wait time based on the largest movement (300 degrees)
             wait_time = (self.gait3_params['fast_ang'] / (6 * self.wheg_rpm)) + self.gait3_params['delay']
-            self.odd_even += 1
-            logging.info(f"Gait 3 step executed at {self.wheg_rpm:.2f} RPM, wait for {wait_time:.2f} seconds")
+            # logging.info(f"Gait 3 step executed at {self.wheg_rpm:.2f} RPM, wait for {wait_time:.2f} seconds")
             return wait_time
 
         return 0  # No movement, no wait time
@@ -279,7 +285,7 @@ class GaitController():
             # Calculate wait time
             wait_time = (inc_1 / (6 * rpm_1))+self.gait2_params['delay']
             self.odd_even += 1
-            logging.info(f"Gait 4 step executed at {self.wheg_rpm:.2f}RPM, wait for {wait_time:.2f} seconds")
+            # logging.info(f"Gait 4 step executed at {self.wheg_rpm:.2f}RPM, wait for {wait_time:.2f} seconds")
             return wait_time
         return 0  # No movement, no wait time
     

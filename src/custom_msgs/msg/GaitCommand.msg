@@ -1,3 +1,2 @@
-std_msgs/String GaitCommand
-int16 gaitNumber
-int16 bodyNumber
+int16 gait_number
+int16 body_number

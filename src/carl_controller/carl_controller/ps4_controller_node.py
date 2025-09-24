@@ -64,7 +64,7 @@ class ControllerCommandPublisher(Node):
 
         # Gait selection message
         self.gait_selection_msg = GaitCommand()
-        self.gait_selection_msg.gaitNumber = 0  # Default gait selection
+        self.gait_selection_msg.gait_number = 0  # Default gait selection
 
         # set flags for buttons pressed
         self.circle_button_pressed = False
@@ -183,17 +183,17 @@ class ControllerCommandPublisher(Node):
         if(data['buttons'][inputs.R1] == 1) and (current_time - self.R1_last_pressed_time > self.debounce_time):
             self.R1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.bodyNumber == 3:
-                self.gait_selection_msg.bodyNumber = 1
+            if self.gait_selection_msg.body_number == 3:
+                self.gait_selection_msg.body_number = 1
             else :
-                self.gait_selection_msg.bodyNumber += 1
+                self.gait_selection_msg.body_number += 1
         elif(data['buttons'][inputs.L1] == 1) and (current_time - self.L1_last_pressed_time > self.debounce_time):
             self.L1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.bodyNumber == 1:
-                self.gait_selection_msg.bodyNumber = 3
+            if self.gait_selection_msg.body_number == 1:
+                self.gait_selection_msg.body_number = 3
             else :
-                self.gait_selection_msg.bodyNumber -= 1
+                self.gait_selection_msg.body_number -= 1
 
 
         # Decrement the gait selection when pressing square
@@ -201,24 +201,22 @@ class ControllerCommandPublisher(Node):
             self.square_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gaitNumber == 0:
-                self.gait_selection_msg.gaitNumber = 3
+            if self.gait_selection_msg.gait_number == 0:
+                self.gait_selection_msg.gait_number = 3
             else :
-                self.gait_selection_msg.gaitNumber -= 1
-                
-            self.gait_selection_publisher_.publish(self.gait_selection_msg)
+                self.gait_selection_msg.gait_number -= 1
 
         # Increment the gait selection
-        if (data['buttons'][inputs.TRIANGLE] == 1) and (current_time - self.square_last_pressed_time > self.debounce_time):
+        if (data['buttons'][inputs.TRIANGLE] == 1) and (current_time - self.triangle_last_pressed_time > self.debounce_time):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gaitNumber == 3:
-                self.gait_selection_msg.gaitNumber = 0
+            if self.gait_selection_msg.gait_number == 3:
+                self.gait_selection_msg.gait_number = 0
             else :
-                self.gait_selection_msg.gaitNumber += 1
+                self.gait_selection_msg.gait_number += 1
                 
-            self.gait_selection_publisher_.publish(self.gait_selection_msg)
+        self.gait_selection_publisher_.publish(self.gait_selection_msg)
 
         
 
