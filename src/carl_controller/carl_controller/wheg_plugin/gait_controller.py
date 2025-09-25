@@ -53,6 +53,14 @@ class GaitController():
         self.turn_mode_active = False
         self.turn_mode_deactivate = False
         self.current_side = "Right"
+    
+    def stand(self):
+        """Set the whegs to a standing position."""
+        logging.info("Setting whegs to standing position.")
+        self.positions = { 1: self.gait4_params['high_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['high_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['high_pos'], 6: self.gait4_params['high_pos'] }
+        self.velocities = {i: 0 for i in range(1, 7)}
+        self.increments = {i: 0 for i in range(1, 7)}
+        time.sleep(1)  # Allow time for the motors to reach the position
      
     def init_turn_mode(self):
         logging.info("Initialising Turn Mode")
@@ -69,10 +77,6 @@ class GaitController():
         self.turn_mode_active = True
         self.turn_mode_requested = False
         return
-    
-    def set_shutdown(self, shutdown):
-        """Inform gaits of change in shutdown status."""
-        self.SHUT_DOWN  = shutdown
         
     def execute_gait_change(self):
         """Execute the current gait change."""        
@@ -293,19 +297,10 @@ class GaitController():
         """ Function to adjust the speed of the whegs based on how far the right trigger is pressed. Smooth transition to target RPM. """
         logging.info(f"Adjusting wheg speed: trigger_value={trigger_value}, current_rpm={self.wheg_rpm}")
         target_rpm = ((trigger_value + 1) / 2) * (self.MAX_RPM - self.MIN_RPM) + self.MIN_RPM # Trigger value ranges from -1 to 1, map this to RPM range
-        # target_rpm = ((trigger_value) / 2) * ((self.MAX_RPM - self.MIN_RPM) + self.MIN_RPM) # Trigger value ranges from -1 to 1, map this to RPM range
-        # Implement smooth transition to target RPM
-        # if target_rpm > self.wheg_rpm:
-        #     self.wheg_rpm = min(self.wheg_rpm + self.SMOOTHNESS, target_rpm)
-        #     self.wheg_rpm = max(self.wheg_rpm, self.MIN_RPM)
-        #     self.wheg_rpm = min(self.wheg_rpm, self.MAX_RPM)
-        # else:
-            # self.wheg_rpm = max(self.wheg_rpm - self.SMOOTHNESS, target_rpm)
+
         self.wheg_rpm = target_rpm
-        if trigger_value == -1.0: # Low trigger value, ensure velocity is 0
+        if trigger_value == 0.0: # Low trigger value, ensure velocity is 0
             self.wheg_rpm = 0
-        # elif trigger_value == 0.0: # Low trigger value, ensure velocity is 0
-        #     self.wheg_rpm = 0
         logging.debug(f"Adjusted wheg speed: target_rpm={target_rpm}, current_rpm={self.wheg_rpm}")
         return self.wheg_rpm
     

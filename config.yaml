@@ -22,7 +22,7 @@ motor_ids:
 # Parameters for controlling the wheg motors
 wheg_parameters:
   max_rpm: 40  # Maximum revolutions per minute for wheg motors
-  min_rpm: 20  # Minimum RPM for wheg motors
+  min_rpm: 0  # Minimum RPM for wheg motors
   smoothness: 5  # Speed increase smoothness factor
   initial_rpm: 0  # Initial speed of the wheg motors (when starting)
 
@@ -138,6 +138,9 @@ control_table:
   profile_velocity:
     address: 112
     length: 4
+  velocity_i_gain:
+    address: 76
+    length: 2
   profile_acceleration:
     address: 108
     length: 4

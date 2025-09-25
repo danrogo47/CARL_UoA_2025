@@ -36,8 +36,10 @@ class ControllerCommandPublisher(Node):
         # set default speed multiplier to 25%
         self.prev_speed_multiplier = 0.25
         
-        self.resume_msg = 0
-        self.shutdown_msg = 0
+        self.resume_msg = Int16()
+        self.resume_msg.data = 0
+        self.shutdown_msg = Int16()
+        self.shutdown_msg.data = 0
 
         # set debounce time for button presses
         self.debounce_time = 0.5 # seconds
@@ -54,7 +56,7 @@ class ControllerCommandPublisher(Node):
 
         # speed mode message
         self.speed_mode_msg = Float32()
-        self.speed_mode_msg.data = 1.0
+        self.speed_mode_msg.data = 10.0
         
         self.joint_msg = Joint()
 
@@ -138,11 +140,11 @@ class ControllerCommandPublisher(Node):
 
         # Set the speed multiplier for driving the wheels
         if data['buttons'][inputs.SHARE] == 1:
-            self.speed_mode_msg.data = 0.25
+            self.speed_mode_msg.data = 2.5
         elif data['buttons'][inputs.OPTIONS] == 1:
-            self.speed_mode_msg.data = 0.50
+            self.speed_mode_msg.data = 5.0
         elif data['buttons'][inputs.TOUCH_PAD] == 1:
-            self.speed_mode_msg.data = 1.0
+            self.speed_mode_msg.data = 10.0
 
         # velocity message (NOT RELEVANT?)
         velocity_msg = Twist()
@@ -159,16 +161,16 @@ class ControllerCommandPublisher(Node):
             velocity_msg.linear.x = (data['axes'][inputs.LEFT_TRIGGER])*-1
         else:
             # No trigger input, stop the robot
-            velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
+            velocity_msg.linear.x = 0.0
             
         if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > self.debounce_time):
             self.circle_last_pressed_time = current_time
-            self.shutdown_msg = 1
+            self.shutdown_msg.data = 1
             self.shutdown_publisher_.publish(self.shutdown_msg)
             self.get_logger().info("Shutdown command sent.")
         elif data['buttons'][inputs.CROSS] == 1 and (current_time - self.cross_last_pressed_time > self.debounce_time):
             self.cross_last_pressed_time = current_time
-            self.resume_msg = 1
+            self.resume_msg.data = 1
             self.resume_publisher_.publish(self.resume_msg)
             self.get_logger().info("Resume command sent.")
 

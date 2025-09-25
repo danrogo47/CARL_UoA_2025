@@ -1,5 +1,5 @@
 from rclpy.node import Node
-from std_msgs.msg import Bool, Float32, String, Int16
+from std_msgs.msg import Float32, String, Int16
 from geometry_msgs.msg import Twist
 from time import sleep
 from datetime import datetime
@@ -26,7 +26,7 @@ class MotorDrive(Node):
         self.setup_logging()
 
         self.debug = 1
-        self.log = 1
+        self.log = 0
         
         self.SHUT_DOWN = False
         
@@ -47,6 +47,7 @@ class MotorDrive(Node):
 
         self.initialise_direction()
         self.execute_gait_change()
+        self.stand()
 
         self.motor_shutdown()
 
@@ -63,7 +64,7 @@ class MotorDrive(Node):
         self.speed_multiplier = 10 # default speed multiplier
 
         # subscribe to current sensing command
-        self.subscription_1 = self.create_subscription(Bool, 'shutdown_cmd', self.shutdown_callback, 10)
+        self.subscription_1 = self.create_subscription(Int16, 'shutdown_cmd', self.shutdown_callback, 10)
         # subscribe to velocity cmds
         self.subscription_2 = self.create_subscription(Twist, 'cmd_vel', self.listener_callback, 10)
         # subscribe to gait selection
@@ -71,14 +72,15 @@ class MotorDrive(Node):
         # subscribe to speed mode
         self.subscription_4 = self.create_subscription(Float32, 'speed_mode', self.speed_mode_callback, 10)
         # subscribe to resume mode
-        self.subscription_5 = self.create_subscription(Bool, 'resume_cmd', self.resume_callback, 10) # Does this need removing?
+        self.subscription_5 = self.create_subscription(Int16, 'resume_cmd', self.resume_callback, 10) # Does this need removing?
         self.subscription_6 = self.create_subscription(Joint, 'joint_cmd', self.joint_callback, 10)
         # publish motor torques
         self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 100)
         
         
     def setup_wheg_motors(self):
-        # Set the right side whegs to reverse
+        # Set the motors to drive forward
+        self.driving_forward = True
         self.dynamixel.set_drive_mode_group('Right_Whegs', True)
         self.dynamixel.set_drive_mode_group('Left_Whegs', False)
         self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
@@ -119,15 +121,16 @@ class MotorDrive(Node):
     def shutdown_callback(self, msg):
 
         # sets the shutdown flag to true if the current sensing chip detects a current spike
-        if msg.data:
+        if msg.data == 1 and not self.SHUT_DOWN:
             self.SHUT_DOWN = True
-            self.gait.set_shutdown(True)
+            logging.warning("Shutdown command received! Stopping all motors.")
             
-    def resume_callback(self, msg: Bool):
+    def resume_callback(self, msg):
 
-        if msg.data:
-            self.gait.set_shutdown(False)
+        if msg.data == 1 and self.SHUT_DOWN:
+            self.SHUT_DOWN = False
             self.dynamixel.torque_on_group('Wheg_Group')
+            logging.info("Resume command received! Resuming motor operation.")
 
     def setup_pivots(self):
         # Initialize pivot motors and set their parameters
@@ -231,12 +234,14 @@ class MotorDrive(Node):
         # sets the speed multipler for driving
         self.speed_multiplier = msg.data
         if self.log:
-            logging.info(f"Speed mode changed to: {self.speed_multiplier}")
+            logging.info(f"Speed mode changed to: {self.speed_multiplier/10}")
         
     def listener_callback(self, msg):
 
         if self.SHUT_DOWN:
             self.motor_shutdown()
+            if self.log:
+                logging.info("Shutdown active, motors are off.")
             return
         
         if self.gait_change_requested:
@@ -247,7 +252,7 @@ class MotorDrive(Node):
         # only send commands every set time interval dt
         if (current_time - self.last_called_time) > self.dt:
 
-            velocities, wait_time = self.calculate_gait_velocities(msg, self.velocities)
+            velocities, wait_time = self.calculate_gait_velocities(msg)
             
             if wait_time == 0:
                 self.stop_whegs()
@@ -260,15 +265,29 @@ class MotorDrive(Node):
         # get motor feedback for streamlit
         # self.get_torque_feedback()
 
-    def calculate_gait_velocities(self, msg, prev_speed):
+    def calculate_gait_velocities(self, msg):
         
         if(self.gait_change_requested):
             return
         
-        # Speed throttle speed      
+        # Speed throttle speed 
         x_cmd = msg.linear.x
+        if x_cmd > 0 and not self.driving_forward:
+            #Change to Forward movement
+            self.dynamixel.set_drive_mode_group('Right_Whegs', True)
+            self.dynamixel.set_drive_mode_group('Left_Whegs', False)
+            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+            self.driving_forward = True
+        elif x_cmd < 0 and self.driving_forward:
+            # Change to Reverse movement
+            self.dynamixel.set_drive_mode_group('Right_Whegs', False)
+            self.dynamixel.set_drive_mode_group('Left_Whegs', True)
+            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+            self.driving_forward = False
         
-        if x_cmd < 0:
+        x_cmd = abs(x_cmd)
+        
+        if x_cmd <= 0:
             return {key: 0 for key in self.velocities.keys()}, 0
         
         wait_time = self.gait.execute_gait(x_cmd)
@@ -279,52 +298,37 @@ class MotorDrive(Node):
             logging.info(f"Received x_cmd: {x_cmd}") 
             logging.info(f"Received raw_velocities: {raw_velocities}")
 
-        new_velocities = {
-            key: val * self.speed_multiplier # scale so that the keys are 0-5 instead of 1-6 
+        # Apply speed multiplier to the raw velocities
+        adjusted_velocities = {
+            key: val * self.speed_multiplier
             for key, val in raw_velocities.items()
         }
         
-        # TODO: Fix ease the speeds
-        velocities = self.ease_speed(new_velocities, prev_speed)
+        # Ease speed makes the maximum and averagage speed slower...
+        # new_velocities = self.ease_speed(adjusted_velocities, prev_speed)
         
-        return new_velocities, wait_time
+        return adjusted_velocities, wait_time
         
-    def ease_speed(self, new_velocities, prev_speed):
-        if self.log:
-            logging.info(f"New velocities: {new_velocities}")
-            logging.info(f"Previous speed: {prev_speed}")
+    # def ease_speed(self, adjusted_velocities, prev_speed):
+    #     if self.log:
+    #         logging.info(f"New velocities: {adjusted_velocities}")
+    #         logging.info(f"Previous speed: {prev_speed}")
 
-        velocities = {}
-        max_delta = 10 * self.dt
+    #     velocities = {}
+    #     max_delta = 10 * self.dt
 
-        # for i in new_velocities.keys():
-        #     target_speed = new_velocities[i]
-        #     previous_speed = prev_speed  # just the one number
+    #     for motor_id, target_speed in adjusted_velocities.items():
+    #         previous_speed = prev_speed.get(motor_id, 0.0)
+    #         delta = target_speed - previous_speed
 
-        #     if abs(target_speed - previous_speed) >= max_delta:
-        #         if target_speed > previous_speed:
-        #             corrected_speed = previous_speed + max_delta
-        #         else:
-        #             corrected_speed = previous_speed - max_delta
-        #     else:
-        #         corrected_speed = target_speed
+    #     if abs(delta) > max_delta:
+    #         corrected_speed = previous_speed + max_delta * (1 if delta > 0 else -1)
+    #     else:
+    #         corrected_speed = target_speed
 
-        #     velocities[i] = corrected_speed
+    #     velocities[motor_id] = corrected_speed
 
-        # return velocities
-
-        for motor_id, target_speed in new_velocities.items():
-            previous_speed = prev_speed.get(motor_id, 0.0)  # default to 0 if missing
-            delta = target_speed - previous_speed
-
-        if abs(delta) > max_delta:
-            corrected_speed = previous_speed + max_delta * (1 if delta > 0 else -1)
-        else:
-            corrected_speed = target_speed
-
-        velocities[motor_id] = corrected_speed
-
-        return velocities
+    #     return velocities
     
     def drive_motors(self, velocities, wait_time):
         
@@ -403,6 +407,13 @@ class MotorDrive(Node):
         self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
         self.dynamixel.set_group_profile_velocity('Wheg_Group', {key: 0 for key in self.velocities.keys()})
         self.dynamixel.increment_group_position('Wheg_Group', {key: 0 for key in self.increment.keys()})
+        
+    def stand(self):
+        """Set all whegs to a standing position."""
+        self.positions = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }
+        self.dynamixel.set_position_group('Wheg_Group', self.positions)
+        self.dynamixel.set_position_group('Pivot_Group', 180)
+        sleep(1)  # Allow time for the motors to reach the standing position
 
 
 def main(args=None):

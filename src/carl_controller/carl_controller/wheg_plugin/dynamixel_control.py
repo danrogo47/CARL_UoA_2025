@@ -32,6 +32,9 @@ class DynamixelController:
         self.motor_groups = {}  # Initialize as an empty dictionary
         self.load_control_table()
         self.setup_motor_groups()
+        
+        self.set_group_profile_acceleration("Wheg_Group", 15)
+        self.set_group_velocity_i_gain("Wheg_Group", 500)
 
     def load_config(self, config_path):
         """Load configuration from a YAML file."""
@@ -724,6 +727,14 @@ class DynamixelController:
         self.sync_write_group(group_name, 'baud_rate', baud_rate_params)
 
         # logging.info(f"Baud rate set to {baud_rate_value} for group {group_name}")
+        
+    def set_group_profile_acceleration(self, group_name, accel_value):
+        accel_values = {motor_id: accel_value for motor_id in self.motor_groups[group_name]}
+        self.sync_write_group(group_name, 'profile_acceleration', accel_values)
+
+    def set_group_velocity_i_gain(self, group_name, gain_value):
+        gain_values = {motor_id: gain_value for motor_id in self.motor_groups[group_name]}
+        self.sync_write_group(group_name, 'velocity_i_gain', gain_values)  
 
     def close(self):
         """

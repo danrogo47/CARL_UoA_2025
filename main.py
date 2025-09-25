@@ -378,7 +378,7 @@ class FLIKRobot:
             self.wehg_rpm = min(self.wheg_rpm, self.MAX_RPM)
         else:
             self.wheg_rpm = max(self.wheg_rpm - self.SMOOTHNESS, target_rpm)
-        if trigger_value == -1.0: # Low trigger value, ensure velocity is 0
+        if trigger_value == 0.0: # Low trigger value, ensure velocity is 0
             self.wheg_rpm = 0
         logging.debug(f"Adjusted wheg speed: target_rpm={target_rpm}, current_rpm={self.wheg_rpm}")
         return self.wheg_rpm
