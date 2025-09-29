@@ -7,6 +7,7 @@ via USB or Bluetooth.
 import pygame
 import socket
 import json
+import time
 
 # Initialise pygame
 pygame.init()
@@ -43,6 +44,8 @@ try:
         }
         # Send the controller state to the Raspberry Pi
         send_command(controller_state)
+        
+        time.sleep(0.05)  # Adjust the sleep time as needed
 
 except KeyboardInterrupt:
     print("Exiting...")

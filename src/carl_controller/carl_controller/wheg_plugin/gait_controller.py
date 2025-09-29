@@ -13,8 +13,8 @@ class GaitController():
         self.MIN_RPM = self.config['wheg_parameters']['min_rpm']
         self.SMOOTHNESS = self.config['wheg_parameters']['smoothness']
         self.wheg_rpm = self.config['wheg_parameters']['min_rpm']
-        self.current_gait_index = 0
-        self.next_gait_index = 0
+        self.current_gait_index = 1
+        self.next_gait_index = 1
         self.SHUT_DOWN = False
         self.total_gaits = len(self.config['gaits'])
         self.reboot_requested = False
@@ -30,17 +30,17 @@ class GaitController():
         # Change these positions to a gait1 parameter set
         self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['low_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['low_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['low_pos'] }
         self.gait_init_methods = {
-            0: self.gait_init_1,
-            1: self.gait_init_2,
-            2: self.gait_init_3,
-            3: self.gait_init_4,
+            1: self.gait_init_1,
+            2: self.gait_init_2,
+            3: self.gait_init_3,
+            4: self.gait_init_4,
         }
 
         self.gait_methods = {
-            0: self.gait_1,
-            1: self.gait_2,
-            2: self.gait_3,
-            3: self.gait_4,
+            1: self.gait_1,
+            2: self.gait_2,
+            3: self.gait_3,
+            4: self.gait_4,
         }
         # Buttons
         self.velocities = {i: 0 for i in range(6)}
@@ -86,7 +86,7 @@ class GaitController():
             wait_time = init_gait_function()           
             # Update current gait index
             self.current_gait_index = self.next_gait_index
-            logging.info(f"New gait {self.current_gait_index + 1} is now active.")
+            logging.info(f"New gait {self.current_gait_index} is now active.")
                 
         else:
             logging.debug("Emergency stop activated, gait change paused.")

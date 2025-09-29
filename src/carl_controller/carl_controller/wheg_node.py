@@ -123,6 +123,7 @@ class MotorDrive(Node):
         # sets the shutdown flag to true if the current sensing chip detects a current spike
         if msg.data == 1 and not self.SHUT_DOWN:
             self.SHUT_DOWN = True
+            self.stand()
             logging.warning("Shutdown command received! Stopping all motors.")
             
     def resume_callback(self, msg):
@@ -149,12 +150,14 @@ class MotorDrive(Node):
         logging.info("Set position limits for the pivot motors")
 
     def joint_callback(self, msg):
-        pivot_change = False
         
         # shutdown flag true: immediately stop motor movement
         if self.SHUT_DOWN:
             self.dynamixel.torque_off_group("Pivot_Group")
             return
+        
+        pivot_positions = self.read_present_positions_ticks('Pivot_Group')
+        pivot_change = False
         
         # set movement direction based on controller input
         if msg.front_down == 1:
@@ -169,7 +172,7 @@ class MotorDrive(Node):
         elif msg.back_down == 1:
             self.adjust_rear_pivot('down')
             pivot_change = True
-            
+                   
         if pivot_change:
             # Prepare positions for sync write
             pivot_positions = {
@@ -177,11 +180,12 @@ class MotorDrive(Node):
                 self.config['motor_ids']['pivots']['REAR_PIVOT']: self.rear_pivot_angle
             }
             
-            # Sync write the goal positions for the pivots
-            self.dynamixel.set_position_group('Pivot_Group', pivot_positions)
-            sleep(0.01)
+        # Sync write the goal positions for the pivots
+        self.dynamixel.set_position_group('Pivot_Group', pivot_positions)
+        sleep(0.01)
 
-            # Logging
+        # Logging
+        if self.log:
             logging.info(f"Front pivot angle set to {self.front_pivot_angle} degrees (ticks: {self.front_pivot_angle})")
             logging.info(f"Rear pivot angle set to {self.rear_pivot_angle} degrees (ticks: {self.rear_pivot_angle})")
 
@@ -234,7 +238,7 @@ class MotorDrive(Node):
         # sets the speed multipler for driving
         self.speed_multiplier = msg.data
         if self.log:
-            logging.info(f"Speed mode changed to: {self.speed_multiplier/10}")
+            logging.info(f"Speed mode changed to: {self.speed_multiplier}")
         
     def listener_callback(self, msg):
 
@@ -245,6 +249,7 @@ class MotorDrive(Node):
             return
         
         if self.gait_change_requested:
+            self.stop_whegs()
             return
         
         current_time = time.time()
@@ -267,23 +272,18 @@ class MotorDrive(Node):
 
     def calculate_gait_velocities(self, msg):
         
-        if(self.gait_change_requested):
-            return
-        
         # Speed throttle speed 
         x_cmd = msg.linear.x
+        # If a change of direction for the whegs is being called, set the first velocity iuncermeent to 0 to allow for gait change to occur before motor spinning
         if x_cmd > 0 and not self.driving_forward:
-            #Change to Forward movement
-            self.dynamixel.set_drive_mode_group('Right_Whegs', True)
-            self.dynamixel.set_drive_mode_group('Left_Whegs', False)
-            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+            # Change to Forward movement
+            self.safe_change_drive_direction(right_reverse=True, left_reverse=False)
             self.driving_forward = True
         elif x_cmd < 0 and self.driving_forward:
             # Change to Reverse movement
-            self.dynamixel.set_drive_mode_group('Right_Whegs', False)
-            self.dynamixel.set_drive_mode_group('Left_Whegs', True)
-            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+            self.safe_change_drive_direction(right_reverse=False, left_reverse=True)
             self.driving_forward = False
+
         
         x_cmd = abs(x_cmd)
         
@@ -308,6 +308,19 @@ class MotorDrive(Node):
         # new_velocities = self.ease_speed(adjusted_velocities, prev_speed)
         
         return adjusted_velocities, wait_time
+    
+    def drive_motors(self, velocities, wait_time):
+        
+        if self.gait_change_requested:
+            return
+        
+        increments = self.gait.get_increments()
+
+        if self.log:
+            logging.info(f"Driving with velocities: {velocities} and increments: {increments}")
+        
+        self.dynamixel.set_group_profile_velocity('Wheg_Group', velocities)
+        self.dynamixel.increment_group_position('Wheg_Group', increments)
         
     # def ease_speed(self, adjusted_velocities, prev_speed):
     #     if self.log:
@@ -330,28 +343,37 @@ class MotorDrive(Node):
 
     #     return velocities
     
-    def drive_motors(self, velocities, wait_time):
-        
-        if self.gait_change_requested:
-            return
-        
-        # calculate the factor of rotation based on the wait time and dt
-        wait_factor = self.dt / wait_time if wait_time > 0 else 1
-        # Set profile velocities and increments
-        increments = self.gait.get_increments()
+    def safe_change_drive_direction(self, right_reverse: bool, left_reverse: bool):
+        try:
+            # 1) Read current absolute ticks
+            present_ticks = self.read_present_positions_ticks('Wheg_Group')
 
-        if self.log:
-            logging.info(f"Driving with velocities: {velocities} and increments: {increments}")
-        
-        self.dynamixel.set_group_profile_velocity('Wheg_Group', velocities)
-        self.dynamixel.increment_group_position('Wheg_Group', increments)
+            # 2) Torque off all wheg motors
+            self.dynamixel.torque_off_group('Wheg_Group')
+            time.sleep(0.02)
 
-    async def get_torque_feedback(self):
-        """
-        Retrieves motor data including positions, velocities, loads, and error statuses.
-        Returns a dictionary with each motor's ID and its associated data.
-        Loading can be associated with a motor's torque.
-        """
+            # 3) Update drive mode groups
+            self.dynamixel.set_drive_mode_group('Right_Whegs', right_reverse)
+            self.dynamixel.set_drive_mode_group('Left_Whegs', left_reverse)
+
+            # 4) Keep motors in multi_turn (or set to multi_turn if you need velocity control to resume)
+            self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
+            time.sleep(0.02)
+
+            # 5) Re-set the raw positions as goal (important so the controller thinks "I'm already here")
+            self.dynamixel.set_position_group('Wheg_Group', present_ticks)
+
+            # 6) Re-enable torque
+            self.dynamixel.torque_on_group('Wheg_Group')
+            time.sleep(0.02)
+
+            if self.log:
+                logging.info(f"Drive direction changed safely. Present ticks re-synced: {present_ticks}")
+
+        except Exception as e:
+            logging.error(f"safe_change_drive_direction failed: {e}")
+
+    def get_torque_feedback(self):
         try:
             # Perform a bulk read for motor positions, velocities, loads, and hardware errors
             motor_positions = self.dynamixel.bulk_read_group('Wheg_Group', ['present_position'])
@@ -390,12 +412,7 @@ class MotorDrive(Node):
     def motor_shutdown(self):
         self.dynamixel.torque_off_group('Wheg_Group')
         
-    def initialise_direction(self):
-        """
-        Initialises the direction of the wheg motors based on the configuration.
-        This method sets the initial direction for the wheg motors.
-        """
-        
+    def initialise_direction(self):        
         try:
             direction = {1 : 0, 2 : 0, 3 : 0, 4 : 1, 5 : 1, 6 : 1}
             self.dynamixel.set_drive_mode_group('Wheg_Group', direction)
@@ -403,17 +420,28 @@ class MotorDrive(Node):
             logging.error(f"Failed to set direction: {e}")
             
     def stop_whegs(self):
-        """Stop all whegs by setting their velocities and increments to zero."""
-        self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
-        self.dynamixel.set_group_profile_velocity('Wheg_Group', {key: 0 for key in self.velocities.keys()})
-        self.dynamixel.increment_group_position('Wheg_Group', {key: 0 for key in self.increment.keys()})
-        
+        """Stop all wheg motors immediately."""
+        self.dynamixel.set_group_profile_velocity('Wheg_Group', {i: 0 for i in range(1, 7)})
+        self.dynamixel.set_position_group('Wheg_Group', self.read_present_positions_ticks('Wheg_Group'))
+        if self.log:
+            logging.info("All wheg motors stopped.")
+
     def stand(self):
         """Set all whegs to a standing position."""
-        self.positions = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }
-        self.dynamixel.set_position_group('Wheg_Group', self.positions)
+        self.current_positions = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }
+        self.dynamixel.set_position_group('Wheg_Group', self.current_positions)
         self.dynamixel.set_position_group('Pivot_Group', 180)
         sleep(1)  # Allow time for the motors to reach the standing position
+        
+    def read_present_positions_ticks(self, group_name: str):
+        pos_dict = self.dynamixel.bulk_read_group(group_name, ['present_position'])
+
+        if pos_dict is None:
+            if self.log:
+                logging.error(f"Failed to read positions from {group_name}")
+            return {}
+
+        return {mid: pos_data['present_position'] for mid, pos_data in pos_dict.items()}
 
 
 def main(args=None):

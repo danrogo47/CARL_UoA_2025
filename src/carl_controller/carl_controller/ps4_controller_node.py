@@ -53,7 +53,7 @@ class ControllerCommandPublisher(Node):
 
         # speed mode message
         self.speed_mode_msg = Float32()
-        self.speed_mode_msg.data = 10.0
+        self.speed_mode_msg.data = 2.0
         
         self.joint_msg = Joint()
 
@@ -63,7 +63,7 @@ class ControllerCommandPublisher(Node):
 
         # Gait selection message
         self.gait_selection_msg = GaitCommand()
-        self.gait_selection_msg.gait_number = 0  # Default gait selection
+        self.gait_selection_msg.gait_number = 1  # Default gait selection
 
         # set flags for buttons pressed
         self.circle_button_pressed = False
@@ -137,11 +137,11 @@ class ControllerCommandPublisher(Node):
 
         # Set the speed multiplier for driving the wheels
         if data['buttons'][inputs.SHARE] == 1:
-            self.speed_mode_msg.data = 2.5
+            self.speed_mode_msg.data = 0.5
         elif data['buttons'][inputs.OPTIONS] == 1:
-            self.speed_mode_msg.data = 5.0
+            self.speed_mode_msg.data = 1.0
         elif data['buttons'][inputs.TOUCH_PAD] == 1:
-            self.speed_mode_msg.data = 10.0
+            self.speed_mode_msg.data = 2.0
 
         # velocity message (NOT RELEVANT?)
         velocity_msg = Twist()
@@ -200,8 +200,8 @@ class ControllerCommandPublisher(Node):
             self.square_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gait_number == 0:
-                self.gait_selection_msg.gait_number = 3
+            if self.gait_selection_msg.gait_number == 1:
+                self.gait_selection_msg.gait_number = 4
             else :
                 self.gait_selection_msg.gait_number -= 1
 
@@ -210,8 +210,8 @@ class ControllerCommandPublisher(Node):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gait_number == 3:
-                self.gait_selection_msg.gait_number = 0
+            if self.gait_selection_msg.gait_number == 4:
+                self.gait_selection_msg.gait_number = 1
             else :
                 self.gait_selection_msg.gait_number += 1
                 
