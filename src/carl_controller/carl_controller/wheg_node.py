@@ -206,7 +206,7 @@ class MotorDrive(Node):
 
     def gait_mode_callback(self, msg):
         # If gait 3, let it change body compartments
-        if msg.gait_number == 2:
+        if msg.gait_number == 3:
             if msg.body_number != self.gait.body_number:
                 self.gait.body_number = msg.body_number
                 logging.info(f"Body compartment changed to: {self.gait.body_number}")
@@ -214,6 +214,14 @@ class MotorDrive(Node):
         # Check to ensure the gait index is actually changed
         if msg.gait_number == self.gait.current_gait_index:
             return
+        
+        if msg.gait_number == 4:
+            self.driving_forward = False
+            self.safe_change_drive_direction(right_reverse=True, left_reverse=True)
+            logging.info("Set to Spin")
+        else:
+            self.driving_forward = True
+            self.safe_change_drive_direction(right_reverse=True, left_reverse=False)
 
         # sets the speed multiplier for driving
         self.gait.next_gait_index = msg.gait_number
@@ -275,14 +283,15 @@ class MotorDrive(Node):
         # Speed throttle speed 
         x_cmd = msg.linear.x
         # If a change of direction for the whegs is being called, set the first velocity iuncermeent to 0 to allow for gait change to occur before motor spinning
-        if x_cmd > 0 and not self.driving_forward:
-            # Change to Forward movement
-            self.safe_change_drive_direction(right_reverse=True, left_reverse=False)
-            self.driving_forward = True
-        elif x_cmd < 0 and self.driving_forward:
-            # Change to Reverse movement
-            self.safe_change_drive_direction(right_reverse=False, left_reverse=True)
-            self.driving_forward = False
+        if not self.gait.current_gait_index == 4:
+            if x_cmd > 0 and not self.driving_forward:
+                # Change to Forward movement
+                self.safe_change_drive_direction(right_reverse=True, left_reverse=False)
+                self.driving_forward = True
+            elif x_cmd < 0 and self.driving_forward:
+                # Change to Reverse movement
+                self.safe_change_drive_direction(right_reverse=False, left_reverse=True)
+                self.driving_forward = False
 
         
         x_cmd = abs(x_cmd)

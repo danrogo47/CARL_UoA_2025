@@ -136,7 +136,7 @@ class GaitController():
         self.MAX_RPM = self.gait4_params['max_rpm']
         self.SMOOTHNESS = self.gait4_params['smoothness']
         self.odd_even = 0
-        self.wheg_rpm = 0        
+        self.wheg_rpm = 0 
 
         self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['high_pos'] }
         wait_time = 0.5
