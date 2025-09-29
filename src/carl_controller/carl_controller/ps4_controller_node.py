@@ -145,17 +145,19 @@ class ControllerCommandPublisher(Node):
 
         # velocity message (NOT RELEVANT?)
         velocity_msg = Twist()
-
+        R2 = (data['axes'][inputs.RIGHT_TRIGGER] + 1) / 2 # Scale from -1 to 1, to 0 to 1
+        L2 = (data['axes'][inputs.LEFT_TRIGGER] + 1) / 2  # Scale from -1 to 1, to 0 to 1
+        
         # must be pressing L2 and R2 to deliver power
-        if data['axes'][inputs.RIGHT_TRIGGER] > 0 and data['axes'][inputs.LEFT_TRIGGER] > 0:
+        if R2 > 0 and L2 > 0:
             # Stop conditions
             velocity_msg.linear.x = 0.0
-        elif data['axes'][inputs.RIGHT_TRIGGER] > 0:
+        elif R2 > 0:
             # Forward movement
-            velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
-        elif data['axes'][inputs.LEFT_TRIGGER] > 0:
+            velocity_msg.linear.x = R2
+        elif L2 > 0:
             # Reverse Movement
-            velocity_msg.linear.x = (data['axes'][inputs.LEFT_TRIGGER])*-1
+            velocity_msg.linear.x = (L2)*-1
         else:
             # No trigger input, stop the robot
             velocity_msg.linear.x = 0.0
