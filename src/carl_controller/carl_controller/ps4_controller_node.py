@@ -32,9 +32,6 @@ class ControllerCommandPublisher(Node):
         self.gait_selection_publisher_ = self.create_publisher(GaitCommand, 'gait_selection', 10)
         self.shutdown_publisher_ = self.create_publisher(Int16, 'shutdown_cmd', 10)
         self.resume_publisher_ = self.create_publisher(Int16, 'resume_cmd', 10)
-
-        # set default speed multiplier to 25%
-        self.prev_speed_multiplier = 0.25
         
         self.resume_msg = Int16()
         self.resume_msg.data = 0

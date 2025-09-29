@@ -296,7 +296,7 @@ class GaitController():
     def adjust_wheg_rpm(self, trigger_value):
         """ Function to adjust the speed of the whegs based on how far the right trigger is pressed. Smooth transition to target RPM. """
         logging.info(f"Adjusting wheg speed: trigger_value={trigger_value}, current_rpm={self.wheg_rpm}")
-        target_rpm = ((trigger_value + 1) / 2) * (self.MAX_RPM - self.MIN_RPM) + self.MIN_RPM # Trigger value ranges from -1 to 1, map this to RPM range
+        target_rpm = (trigger_value) * (self.MAX_RPM - self.MIN_RPM) + self.MIN_RPM # Trigger value ranges from -1 to 1, map this to RPM range
 
         self.wheg_rpm = target_rpm
         if trigger_value == 0.0: # Low trigger value, ensure velocity is 0
