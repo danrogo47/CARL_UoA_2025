@@ -2,6 +2,7 @@
 from dynamixel_sdk import *  # Uses Dynamixel SDK library
 import logging
 import yaml
+import threading
 class DynamixelController:
     def __init__(self, config_path='config.yaml', device_name=None, baudrate=None, protocol_version=2.0):
         """Initialize the controller with YAML config and setup motor groups."""
@@ -768,3 +769,56 @@ class DynamixelController:
         except Exception as e:
             logging.error(f"Error rebooting motor {motor_id}: {e}")
             return False
+
+    def monitor_and_reboot_group(self, motor_ids, check_interval=0.05):
+        
+        ADDR_HARDWARE_ERROR_STATUS = 70
+        ADDR_TORQUE_ENABLE = 64
+        port = self.port_handler
+        packet = self.packet_handler
+
+        for motor_id in motor_ids:
+            # Read hardware error status
+            status, result, error = packet.read1ByteTxRx(port, motor_id, ADDR_HARDWARE_ERROR_STATUS)
+
+            if result != COMM_SUCCESS:
+                print(f"[Motor {motor_id}] Communication error: {packet.getTxRxResult(result)}")
+                continue
+            elif error != 0:
+                print(f"[Motor {motor_id}] Packet error: {packet.getRxPacketError(error)}")
+                comm_result, dxl_error = packet.reboot(port, motor_id)
+                if comm_result != COMM_SUCCESS:
+                    print(f"[Motor {motor_id}] Communication error: {packet.getTxRxResult(comm_result)}")
+                elif dxl_error != 0:
+                    print(f"[Motor {motor_id}] Motor error: {packet.getRxPacketError(dxl_error)}")
+                else:
+                    print(f"[Motor {motor_id}] Motor rebooted successfully")
+                    packet.write1ByteTxRx(port, motor_id, TORQUE_ENABLE_ADDR, 1)
+                continue
+            if status != 0:  # bit 3 = over-torque
+                print(f"[!] Motor {motor_id} over-torque! Rebooting...")
+                comm_result, dxl_error = packet.reboot(port, motor_id)
+                if comm_result != COMM_SUCCESS:
+                    print(f"[Motor {motor_id}] Reboot comm error: {packet.getTxRxResult(comm_result)}")
+                elif dxl_error != 0:
+                    print(f"[Motor {motor_id}] Reboot packet error: {packet.getRxPacketError(dxl_error)}")
+                else:
+                    print(f"[Motor {motor_id}] Rebooted. Re-enabling torque...")
+                    packet.write1ByteTxRx(port, motor_id, ADDR_TORQUE_ENABLE, 1)
+                
+            print(f"Check for Motor {motor_id} complete")
+
+        self.torque_on_group('All_Motors')
+        time.sleep(0.02)
+
+    def reboot_all_motors(self):
+        # Combine all groups
+        print("Starting Check for Motor Reboot")
+
+        all_motor_ids = self.motor_groups['All_Motors']
+
+        print("All motors confirmed")
+
+        self.monitor_and_reboot_group(all_motor_ids)
+
+        print("Check Complete")

@@ -152,15 +152,25 @@ class ControllerCommandPublisher(Node):
         if R2 > 0 and L2 > 0:
             # Stop conditions
             velocity_msg.linear.x = 0.0
+            velocity_msg.angular.z = 0.0
         elif R2 > 0:
             # Forward movement
             velocity_msg.linear.x = R2
+            if (abs(data['axes'][inputs.LEFT_JOY_HORIZONTAL]) > 0.25):
+                velocity_msg.angular.z = data['axes'][inputs.LEFT_JOY_HORIZONTAL]
+            else:
+                velocity_msg.angular.z = 0.0
         elif L2 > 0:
             # Reverse Movement
             velocity_msg.linear.x = (L2)*-1
+            if (abs(data['axes'][inputs.LEFT_JOY_HORIZONTAL]) > 0.25):
+                velocity_msg.angular.z = data['axes'][inputs.LEFT_JOY_HORIZONTAL]
+            else:
+                velocity_msg.angular.z = 0.0
         else:
             # No trigger input, stop the robot
             velocity_msg.linear.x = 0.0
+            velocity_msg.angular.z = 0.0
             
         if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > self.debounce_time):
             self.circle_last_pressed_time = current_time
@@ -184,18 +194,36 @@ class ControllerCommandPublisher(Node):
         if(data['buttons'][inputs.R1] == 1) and (current_time - self.R1_last_pressed_time > self.debounce_time):
             self.R1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.body_number == 3:
-                self.gait_selection_msg.body_number = 1
-            else :
-                self.gait_selection_msg.body_number += 1
+            if self.gait_selection_msg.gait_number == 3:
+                
+                if self.gait_selection_msg.body_number == 3:
+                    self.gait_selection_msg.body_number = 1
+                else :
+                    self.gait_selection_msg.body_number += 1
+                    
+            if self.gait_selection_msg.gait_number == 4:
+                
+                if self.gait_selection_msg.wheg_number == 6:
+                    self.gait_selection_msg.wheg_number = 1
+                else :
+                    self.gait_selection_msg.wheg_number += 1
+                    
         elif(data['buttons'][inputs.L1] == 1) and (current_time - self.L1_last_pressed_time > self.debounce_time):
             self.L1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.body_number == 1:
-                self.gait_selection_msg.body_number = 3
-            else :
-                self.gait_selection_msg.body_number -= 1
+            if self.gait_selection_msg.gait_number == 3:
 
+                if self.gait_selection_msg.body_number == 1:
+                    self.gait_selection_msg.body_number = 3
+                else :
+                    self.gait_selection_msg.body_number -= 1
+        
+            if self.gait_selection_msg.gait_number == 4:
+                
+                if self.gait_selection_msg.wheg_number == 1:
+                    self.gait_selection_msg.wheg_number = 6
+                else :
+                    self.gait_selection_msg.wheg_number -= 1
 
         # Decrement the gait selection when pressing square
         if (data['buttons'][inputs.SQUARE] == 1) and (current_time - self.square_last_pressed_time > self.debounce_time):
@@ -203,7 +231,7 @@ class ControllerCommandPublisher(Node):
 
             # toggle the gait mode
             if self.gait_selection_msg.gait_number == 1:
-                self.gait_selection_msg.gait_number = 4
+                self.gait_selection_msg.gait_number = 5
             else :
                 self.gait_selection_msg.gait_number -= 1
 
@@ -212,7 +240,7 @@ class ControllerCommandPublisher(Node):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gait_number == 4:
+            if self.gait_selection_msg.gait_number == 5:
                 self.gait_selection_msg.gait_number = 1
             else :
                 self.gait_selection_msg.gait_number += 1

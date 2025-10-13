@@ -44,14 +44,15 @@ gaits:
     - gait_2
     - gait_3
     - gait_4
+    - gait_5
   initial_gait: gait_1  # Default gait to use at startup
   
   # Detailed configuration for Gait 2
   gait_2:
     slow_ang: 40  # Angle at which whegs move slowly
     fast_ang: 320  # Angle at which whegs move quickly
-    low_pos: 160  # Motor position for slow movement
-    high_pos: 200  # Motor position for fast movement
+    low_pos: 136  # Motor position for slow movement
+    high_pos: 196  # Motor position for fast movement
     min_rpm: 20  # Minimum RPM for the gait
     max_rpm: 40  # Maximum RPM for the gait
     smoothness: 1  # Smoothness factor for speed transitions
@@ -73,6 +74,19 @@ gaits:
 
   # Detailed configuration for Gait 4
   gait_4:
+    fast_ang: 320
+    slow_ang: 40
+    low_pos: 160
+    mid_pos: 180
+    high_pos: 200
+    min_rpm: 20
+    max_rpm: 40
+    smoothness: 4
+    tolerance: 20
+    delay: 0.025
+
+  # Detailed configuration for Gait 5
+  gait_5:
     fast_ang: 320
     slow_ang: 40
     low_pos: 160

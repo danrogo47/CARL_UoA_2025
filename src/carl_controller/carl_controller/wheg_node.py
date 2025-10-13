@@ -81,6 +81,7 @@ class MotorDrive(Node):
     def setup_wheg_motors(self):
         # Set the motors to drive forward
         self.driving_forward = True
+        self.spin_mode = False
         self.dynamixel.set_drive_mode_group('Right_Whegs', True)
         self.dynamixel.set_drive_mode_group('Left_Whegs', False)
         self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
@@ -211,15 +212,23 @@ class MotorDrive(Node):
                 self.gait.body_number = msg.body_number
                 logging.info(f"Body compartment changed to: {self.gait.body_number}")
         
+        # If gait 4, let it change wheg control
+        if msg.gait_number == 4:
+            if msg.wheg_number != self.gait.wheg_number:
+                self.gait.wheg_number = msg.wheg_number
+                logging.info(f"Wheg control changed to: Wheg #{self.gait.wheg_number}")
+        
         # Check to ensure the gait index is actually changed
         if msg.gait_number == self.gait.current_gait_index:
             return
         
-        if msg.gait_number == 4:
-            self.driving_forward = False
+        if msg.gait_number == 5 and not self.spin_mode:
+            self.spin_mode = True
             self.safe_change_drive_direction(right_reverse=True, left_reverse=True)
+            self.driving_forward = True
             logging.info("Set to Spin")
-        else:
+        elif self.spin_mode:
+            self.spin_mode = False
             self.driving_forward = True
             self.safe_change_drive_direction(right_reverse=True, left_reverse=False)
 
@@ -233,6 +242,7 @@ class MotorDrive(Node):
         Executes the gait change by calling the gait controller's method.
         This method is called when the gait change is requested.
         """
+        self.dynamixel.reboot_all_motors()
         self.gait.execute_gait_change()
         
         self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
@@ -282,8 +292,9 @@ class MotorDrive(Node):
         
         # Speed throttle speed 
         x_cmd = msg.linear.x
+        z_cmd = msg.angular.z
         # If a change of direction for the whegs is being called, set the first velocity iuncermeent to 0 to allow for gait change to occur before motor spinning
-        if not self.gait.current_gait_index == 4:
+        if not self.spin_mode:
             if x_cmd > 0 and not self.driving_forward:
                 # Change to Forward movement
                 self.safe_change_drive_direction(right_reverse=True, left_reverse=False)
@@ -292,7 +303,15 @@ class MotorDrive(Node):
                 # Change to Reverse movement
                 self.safe_change_drive_direction(right_reverse=False, left_reverse=True)
                 self.driving_forward = False
-
+        elif self.spin_mode:
+            if x_cmd > 0 and not self.driving_forward:
+                # Change to Forward movement
+                self.safe_change_drive_direction(right_reverse=True, left_reverse=True)
+                self.driving_forward = True
+            elif x_cmd < 0 and self.driving_forward:
+                # Change to Reverse movement
+                self.safe_change_drive_direction(right_reverse=False, left_reverse=False)
+                self.driving_forward = False
         
         x_cmd = abs(x_cmd)
         
@@ -313,10 +332,39 @@ class MotorDrive(Node):
             for key, val in raw_velocities.items()
         }
         
+        if(z_cmd > 0 or z_cmd < 0):
+            adjusted_velocities = self.adjust_for_joystick(adjusted_velocities, z_cmd)
+        
         # Ease speed makes the maximum and averagage speed slower...
         # new_velocities = self.ease_speed(adjusted_velocities, prev_speed)
         
         return adjusted_velocities, wait_time
+    
+    def adjust_for_joystick(self, multiplier_velocities, z_cmd):
+        turn_factor = 0.4  # Adjust this factor to control turning sensitivity
+
+        # Calculate proportional reduction based on how far the joystick is turned
+        reduction = abs(z_cmd) * turn_factor
+
+        joystick_adjusted_velocities = {}
+        for key, val in multiplier_velocities.items():
+            adjusted_val = val  # Apply base speed scaling
+
+            # Apply turning effect based on direction
+            if z_cmd > 0:  # turning right → slow left side (0–2)
+                if key in [1, 2, 3]:
+                    adjusted_val *= (1 - reduction)
+                    logging.info(f"Adjusting for joystick with adjusted_val: {adjusted_val}")
+            elif z_cmd < 0:  # turning left → slow right side (3–5)
+                if key in [4, 5, 6]:
+                    adjusted_val *= (1 - reduction)
+                    logging.info(f"Adjusting for joystick with reduction: {reduction}")
+                    logging.info(f"Adjusting for joystick with adjusted_val: {adjusted_val}")
+
+            joystick_adjusted_velocities[key] = adjusted_val
+
+        return joystick_adjusted_velocities
+
     
     def drive_motors(self, velocities, wait_time):
         

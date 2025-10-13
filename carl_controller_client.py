@@ -16,9 +16,9 @@ joystick = pygame.joystick.Joystick(0)
 joystick.init()
 
 # Set up the socket connection
-# HOST = '10.13.72.108' # Daniel
-HOST = '172.20.10.2' # Jacob
-PORT = 8000
+HOST = '10.13.81.202' # Daniel
+# HOST = '172.20.10.2' # Jacob
+PORT = 8001
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("Attempting to connect to Raspberry Pi...")
 sock.connect((HOST, PORT))
