@@ -354,12 +354,9 @@ class MotorDrive(Node):
             if z_cmd > 0:  # turning right → slow left side (0–2)
                 if key in [1, 2, 3]:
                     adjusted_val *= (1 - reduction)
-                    logging.info(f"Adjusting for joystick with adjusted_val: {adjusted_val}")
             elif z_cmd < 0:  # turning left → slow right side (3–5)
                 if key in [4, 5, 6]:
                     adjusted_val *= (1 - reduction)
-                    logging.info(f"Adjusting for joystick with reduction: {reduction}")
-                    logging.info(f"Adjusting for joystick with adjusted_val: {adjusted_val}")
 
             joystick_adjusted_velocities[key] = adjusted_val
 
