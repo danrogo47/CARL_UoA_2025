@@ -46,8 +46,8 @@ try:
         # Send the controller state to the Raspberry Pi
         send_command(controller_state)
         
-        # If you have a good CPU, this can be redeuced or an old cpu can increase it it to 0.01 
-        time.sleep(0.005)  # Adjust the sleep time to allow local laptop CPU breathing room
+        # If you have a good CPU on your laptop this can be deleted
+        time.sleep(0.05)  # Adjust the sleep time as needed
 
 except KeyboardInterrupt:
     print("Exiting...")

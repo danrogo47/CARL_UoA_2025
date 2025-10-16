@@ -53,7 +53,7 @@ class ControllerCommandPublisher(Node):
 
         # speed mode message
         self.speed_mode_msg = Float32()
-        self.speed_mode_msg.data = 10.0
+        self.speed_mode_msg.data = 2.0
         
         self.joint_msg = Joint()
 
@@ -63,7 +63,7 @@ class ControllerCommandPublisher(Node):
 
         # Gait selection message
         self.gait_selection_msg = GaitCommand()
-        self.gait_selection_msg.gait_number = 0  # Default gait selection
+        self.gait_selection_msg.gait_number = 1  # Default gait selection
 
         # set flags for buttons pressed
         self.circle_button_pressed = False
@@ -137,28 +137,40 @@ class ControllerCommandPublisher(Node):
 
         # Set the speed multiplier for driving the wheels
         if data['buttons'][inputs.SHARE] == 1:
-            self.speed_mode_msg.data = 2.5
+            self.speed_mode_msg.data = 0.5
         elif data['buttons'][inputs.OPTIONS] == 1:
-            self.speed_mode_msg.data = 5.0
+            self.speed_mode_msg.data = 1.0
         elif data['buttons'][inputs.TOUCH_PAD] == 1:
-            self.speed_mode_msg.data = 10.0
+            self.speed_mode_msg.data = 2.0
 
         # velocity message (NOT RELEVANT?)
         velocity_msg = Twist()
-
+        R2 = (data['axes'][inputs.RIGHT_TRIGGER] + 1) / 2 # Scale from -1 to 1, to 0 to 1
+        L2 = (data['axes'][inputs.LEFT_TRIGGER] + 1) / 2  # Scale from -1 to 1, to 0 to 1
+        
         # must be pressing L2 and R2 to deliver power
-        if data['axes'][inputs.RIGHT_TRIGGER] > 0 and data['axes'][inputs.LEFT_TRIGGER] > 0:
+        if R2 > 0 and L2 > 0:
             # Stop conditions
             velocity_msg.linear.x = 0.0
-        elif data['axes'][inputs.RIGHT_TRIGGER] > 0:
+            velocity_msg.angular.z = 0.0
+        elif R2 > 0:
             # Forward movement
-            velocity_msg.linear.x = data['axes'][inputs.RIGHT_TRIGGER]
-        elif data['axes'][inputs.LEFT_TRIGGER] > 0:
+            velocity_msg.linear.x = R2
+            if (abs(data['axes'][inputs.LEFT_JOY_HORIZONTAL]) > 0.25):
+                velocity_msg.angular.z = data['axes'][inputs.LEFT_JOY_HORIZONTAL]
+            else:
+                velocity_msg.angular.z = 0.0
+        elif L2 > 0:
             # Reverse Movement
-            velocity_msg.linear.x = (data['axes'][inputs.LEFT_TRIGGER])*-1
+            velocity_msg.linear.x = (L2)*-1
+            if (abs(data['axes'][inputs.LEFT_JOY_HORIZONTAL]) > 0.25):
+                velocity_msg.angular.z = data['axes'][inputs.LEFT_JOY_HORIZONTAL]
+            else:
+                velocity_msg.angular.z = 0.0
         else:
             # No trigger input, stop the robot
             velocity_msg.linear.x = 0.0
+            velocity_msg.angular.z = 0.0
             
         if data['buttons'][inputs.CIRCLE] == 1 and (current_time - self.circle_last_pressed_time > self.debounce_time):
             self.circle_last_pressed_time = current_time
@@ -182,26 +194,44 @@ class ControllerCommandPublisher(Node):
         if(data['buttons'][inputs.R1] == 1) and (current_time - self.R1_last_pressed_time > self.debounce_time):
             self.R1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.body_number == 3:
-                self.gait_selection_msg.body_number = 1
-            else :
-                self.gait_selection_msg.body_number += 1
+            if self.gait_selection_msg.gait_number == 3:
+                
+                if self.gait_selection_msg.body_number == 3:
+                    self.gait_selection_msg.body_number = 1
+                else :
+                    self.gait_selection_msg.body_number += 1
+                    
+            if self.gait_selection_msg.gait_number == 4:
+                
+                if self.gait_selection_msg.wheg_number == 6:
+                    self.gait_selection_msg.wheg_number = 1
+                else :
+                    self.gait_selection_msg.wheg_number += 1
+                    
         elif(data['buttons'][inputs.L1] == 1) and (current_time - self.L1_last_pressed_time > self.debounce_time):
             self.L1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.body_number == 1:
-                self.gait_selection_msg.body_number = 3
-            else :
-                self.gait_selection_msg.body_number -= 1
+            if self.gait_selection_msg.gait_number == 3:
 
+                if self.gait_selection_msg.body_number == 1:
+                    self.gait_selection_msg.body_number = 3
+                else :
+                    self.gait_selection_msg.body_number -= 1
+        
+            if self.gait_selection_msg.gait_number == 4:
+                
+                if self.gait_selection_msg.wheg_number == 1:
+                    self.gait_selection_msg.wheg_number = 6
+                else :
+                    self.gait_selection_msg.wheg_number -= 1
 
         # Decrement the gait selection when pressing square
         if (data['buttons'][inputs.SQUARE] == 1) and (current_time - self.square_last_pressed_time > self.debounce_time):
             self.square_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gait_number == 0:
-                self.gait_selection_msg.gait_number = 3
+            if self.gait_selection_msg.gait_number == 1:
+                self.gait_selection_msg.gait_number = 5
             else :
                 self.gait_selection_msg.gait_number -= 1
 
@@ -210,8 +240,8 @@ class ControllerCommandPublisher(Node):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gait_number == 3:
-                self.gait_selection_msg.gait_number = 0
+            if self.gait_selection_msg.gait_number == 5:
+                self.gait_selection_msg.gait_number = 1
             else :
                 self.gait_selection_msg.gait_number += 1
                 
