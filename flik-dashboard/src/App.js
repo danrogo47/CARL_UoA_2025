@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { Gamepad2, Radio, Activity, Power, AlertCircle, Zap } from 'lucide-react';
+import { Radio, Activity, Power, AlertCircle, Zap, Settings, Gauge } from 'lucide-react';
+import whegImg from './assets/wheg.jpg';
 
 export default function CarlROS2Dashboard() {
+  // ---- state ----
   const [connected, setConnected] = useState(false);
   const [connectionError, setConnectionError] = useState('');
   const [controllerState, setControllerState] = useState({
@@ -9,27 +11,48 @@ export default function CarlROS2Dashboard() {
     buttons: Array(16).fill(0)
   });
   const [whegFeedback, setWhegFeedback] = useState({
-    front_left: 0,
-    middle_left: 0,
-    back_left: 0,
-    front_right: 0,
-    middle_right: 0,
-    back_right: 0
+    motor_id: [],
+    position_degrees: [],
+    velocity_rpm: [],
+    load_percentage: [],
+    error_status: []
   });
   const [cmdVel, setCmdVel] = useState({
     linear: { x: 0, y: 0, z: 0 },
     angular: { x: 0, y: 0, z: 0 }
   });
-  const [gaitSelection, setGaitSelection] = useState(0);
-  const [speedMode, setSpeedMode] = useState(0.25);
-  
+  const [gaitSelection, setGaitSelection] = useState({
+    gait_number: 1,
+    body_number: 1,
+    wheg_number: 1
+  });
+  const [speedMode, setSpeedMode] = useState(2.0);
+  const [jointCmd, setJointCmd] = useState({
+    front_up: 0,
+    front_down: 0,
+    back_up: 0,
+    back_down: 0
+  });
+
   const rosRef = useRef(null);
-  const [raspberryPiIP, setRaspberryPiIP] = useState('10.13.121.179');
+  const [raspberryPiIP, setRaspberryPiIP] = useState('10.13.89.222');
   const [showSettings, setShowSettings] = useState(false);
 
+  // ---- helpers ----
+  const safeNum = (v, fallback = 0) => {
+    if (typeof v === 'number' && isFinite(v)) return v;
+    const n = Number(v);
+    return isFinite(n) ? n : fallback;
+  };
+
+  const fmt = (v, decimals = 1) => {
+    const n = safeNum(v, null);
+    return n === null ? '--' : n.toFixed(decimals);
+  };
+
+  // ---- connect / websocket ----
   const connectToROS = () => {
     if (connected) {
-      // Disconnect
       if (rosRef.current) {
         rosRef.current.close();
         rosRef.current = null;
@@ -39,84 +62,99 @@ export default function CarlROS2Dashboard() {
       return;
     }
 
-    // Connect using native WebSocket
     try {
       const ws = new WebSocket(`ws://${raspberryPiIP}:9090`);
-      
+
       ws.onopen = () => {
         console.log('Connected to ROS bridge');
         setConnected(true);
         setConnectionError('');
-        
-        // Subscribe to controller_state topic
-        ws.send(JSON.stringify({
-          op: 'subscribe',
-          topic: '/controller_state',
-          type: 'std_msgs/String'
-        }));
-        
-        // Subscribe to wheg_feedback topic
-        ws.send(JSON.stringify({
-          op: 'subscribe',
-          topic: '/wheg_feedback',
-          type: 'custom_msgs/WhegFeedback'
-        }));
-        
-        // Subscribe to cmd_vel topic
-        ws.send(JSON.stringify({
-          op: 'subscribe',
-          topic: '/cmd_vel',
-          type: 'geometry_msgs/Twist'
-        }));
-        
-        // Subscribe to gait_selection topic
-        ws.send(JSON.stringify({
-          op: 'subscribe',
-          topic: '/gait_selection',
-          type: 'std_msgs/Int16'
-        }));
-        
-        // Subscribe to speed_mode topic
-        ws.send(JSON.stringify({
-          op: 'subscribe',
-          topic: '/speed_mode',
-          type: 'std_msgs/Float32'
-        }));
+
+        const subscribe = (topic, type) => ws.send(JSON.stringify({ op: 'subscribe', topic, type }));
+
+        subscribe('/controller_state', 'std_msgs/msg/String');
+        subscribe('/wheg_feedback', 'custom_msgs/msg/WhegFeedback');
+        subscribe('/cmd_vel', 'geometry_msgs/msg/Twist');
+        subscribe('/gait_selection', 'custom_msgs/msg/GaitCommand');
+        subscribe('/speed_mode', 'std_msgs/msg/Float32');
+        subscribe('/joint_cmd', 'custom_msgs/msg/Joint');
       };
-      
+
       ws.onmessage = (event) => {
         try {
           const data = JSON.parse(event.data);
-          
+
           if (data.topic === '/controller_state') {
-            const controllerData = JSON.parse(data.msg.data);
-            setControllerState(controllerData);
+            try {
+              const controllerData = typeof data.msg.data === 'string' ? JSON.parse(data.msg.data) : data.msg;
+              setControllerState(controllerData);
+            } catch (e) {
+              console.warn('Failed to parse controller_state payload', e, data.msg);
+            }
+
           } else if (data.topic === '/wheg_feedback') {
-            setWhegFeedback(data.msg);
+            const msg = data.msg || {};
+
+            const motor_id = Array.isArray(msg.motor_id) ? msg.motor_id.map((v) => safeNum(v, null)).filter(v => v !== null) : [];
+            const position_degrees = Array.isArray(msg.position_degrees) ? msg.position_degrees.map(v => safeNum(v, 0)) : [];
+            const velocity_rpm = Array.isArray(msg.velocity_rpm) ? msg.velocity_rpm.map(v => safeNum(v, 0)) : [];
+            const load_percentage = Array.isArray(msg.load_percentage) ? msg.load_percentage.map(v => safeNum(v, 0)) : [];
+
+            const length = motor_id.length || Math.max(position_degrees.length, velocity_rpm.length, load_percentage.length);
+
+            const normalized = {
+              motor_id: motor_id.length ? motor_id : Array.from({ length }, (_, i) => i + 1),
+              position_degrees: position_degrees.length ? position_degrees.slice(0, length) : Array(length).fill(0),
+              velocity_rpm: velocity_rpm.length ? velocity_rpm.slice(0, length) : Array(length).fill(0),
+              load_percentage: load_percentage.length ? load_percentage.slice(0, length) : Array(length).fill(0),
+            };
+
+            setWhegFeedback(normalized);
+
           } else if (data.topic === '/cmd_vel') {
-            setCmdVel(data.msg);
+            const m = data.msg || { linear: { x: 0, y: 0, z: 0 }, angular: { x: 0, y: 0, z: 0 } };
+            setCmdVel({
+              linear: { x: safeNum(m.linear?.x, 0), y: safeNum(m.linear?.y, 0), z: safeNum(m.linear?.z, 0) },
+              angular: { x: safeNum(m.angular?.x, 0), y: safeNum(m.angular?.y, 0), z: safeNum(m.angular?.z, 0) }
+            });
+
           } else if (data.topic === '/gait_selection') {
-            setGaitSelection(data.msg.data);
+            const m = data.msg || {};
+            setGaitSelection({
+              gait_number: safeNum(m.gait_number, 1),
+              body_number: safeNum(m.body_number, 1),
+              wheg_number: safeNum(m.wheg_number, 1)
+            });
+
           } else if (data.topic === '/speed_mode') {
-            setSpeedMode(data.msg.data);
+            setSpeedMode(safeNum(data.msg?.data, 2.0));
+
+          } else if (data.topic === '/joint_cmd') {
+            const m = data.msg || {};
+            setJointCmd({
+              front_up: safeNum(m.front_up, 0),
+              front_down: safeNum(m.front_down, 0),
+              back_up: safeNum(m.back_up, 0),
+              back_down: safeNum(m.back_down, 0)
+            });
           }
         } catch (e) {
-          console.error('Error parsing ROS message:', e);
+          console.error('Error parsing ROS message:', e, event.data);
         }
       };
-      
+
       ws.onerror = (error) => {
         console.error('WebSocket error:', error);
         setConnectionError('Failed to connect to ROS bridge at ws://' + raspberryPiIP + ':9090');
         setConnected(false);
       };
-      
+
       ws.onclose = () => {
         console.log('Disconnected from ROS bridge');
         setConnected(false);
         rosRef.current = null;
       };
-      
+
       rosRef.current = ws;
 
     } catch (error) {
@@ -125,304 +163,328 @@ export default function CarlROS2Dashboard() {
     }
   };
 
-  const buttonNames = [
-    'Cross', 'Circle', 'Square', 'Triangle', 'Share', 'PS', 'Options',
-    'L-Joy', 'R-Joy', 'L1', 'R1', 'Up', 'Down', 'Left', 'Right', 'Touchpad'
-  ];
-
-  const gaitNames = ['Gait 1', 'Gait 2', 'Gait 3', 'Gait 4'];
+  const motorNames = { 1: 'FL', 2: 'ML', 3: 'BL', 4: 'FR', 5: 'MR', 6: 'BR' };
+  const buttonLabels = ['×', '○', '□', '△', 'SH', 'PS', 'OP', 'L3', 'R3', 'L1', 'R1', '↑', '↓', '←', '→', 'TP'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white p-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-3">
-            <Activity className="w-8 h-8 text-purple-400" />
-            <h1 className="text-3xl font-bold">FLIK Robot Dashboard</h1>
+    <div className="min-h-screen bg-black text-blue-100 p-3">
+      <div className="max-w-[1600px] mx-auto">
+        {/* Compact Header */}
+        <div className="flex items-center justify-between mb-3 bg-blue-950/30 rounded-lg px-4 py-2 border border-blue-900">
+          <div className="flex items-center gap-2">
+            <Activity className="w-5 h-5 text-blue-400" />
+            <h1 className="text-xl font-bold">CARL Dashboard</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setShowSettings(!showSettings)}
-              className="px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 transition-all"
-            >
-              Settings
+          <div className="flex items-center gap-2">
+            {connected && (
+              <div className="flex items-center gap-2 text-xs text-green-400">
+                <Radio className="w-3 h-3 animate-pulse" />
+                Connected
+              </div>
+            )}
+            <button onClick={() => setShowSettings(!showSettings)} className="p-1.5 rounded bg-blue-900 hover:bg-blue-800">
+              <Settings className="w-4 h-4" />
             </button>
-            <button
-              onClick={connectToROS}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${
-                connected
-                  ? 'bg-red-600 hover:bg-red-700'
-                  : 'bg-green-600 hover:bg-green-700'
-              }`}
-            >
-              <Radio className="w-5 h-5" />
-              {connected ? 'Disconnect' : 'Connect to ROS'}
+            <button onClick={connectToROS} className={`px-3 py-1.5 rounded text-sm font-semibold ${connected ? 'bg-red-600 hover:bg-red-700' : 'bg-green-600 hover:bg-green-700'}`}>
+              {connected ? 'Disconnect' : 'Connect'}
             </button>
           </div>
         </div>
 
-        {/* Settings Panel */}
         {showSettings && (
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 mb-6 border border-slate-700">
-            <h3 className="text-lg font-semibold mb-4">Connection Settings</h3>
-            <div className="flex items-center gap-4">
-              <label className="text-sm text-gray-300">Raspberry Pi IP:</label>
-              <input
-                type="text"
-                value={raspberryPiIP}
-                onChange={(e) => setRaspberryPiIP(e.target.value)}
-                className="bg-slate-700 text-white px-4 py-2 rounded-lg border border-slate-600 focus:border-purple-500 focus:outline-none"
-                placeholder="10.13.121.179"
-              />
-              <span className="text-sm text-gray-400">Port: 9090</span>
+          <div className="bg-blue-950/30 rounded-lg p-3 mb-3 border border-blue-900">
+            <div className="flex items-center gap-3 text-sm">
+              <label>Raspberry Pi IP:</label>
+              <input type="text" value={raspberryPiIP} onChange={(e) => setRaspberryPiIP(e.target.value)}
+                className="bg-black text-blue-100 px-3 py-1 rounded border border-blue-800 focus:border-blue-500 focus:outline-none" />
+              <span className="text-blue-400">Port: 9090</span>
             </div>
           </div>
         )}
 
-        {/* Connection Status */}
-        {!connected && connectionError && (
-          <div className="bg-red-600/20 border border-red-600/50 rounded-lg p-4 mb-6 flex items-center gap-3">
-            <AlertCircle className="w-5 h-5 text-red-400" />
-            <p className="text-red-100">{connectionError}</p>
+        {connectionError && (
+          <div className="bg-red-900/20 border border-red-700 rounded-lg p-2 mb-3 flex items-center gap-2 text-sm">
+            <AlertCircle className="w-4 h-4 text-red-400" />
+            <p>{connectionError}</p>
           </div>
         )}
 
-        {!connected && !connectionError && (
-          <div className="bg-yellow-600/20 border border-yellow-600/50 rounded-lg p-4 mb-6 flex items-center gap-3">
-            <AlertCircle className="w-5 h-5 text-yellow-400" />
-            <p className="text-yellow-100">
-              Not connected to ROS bridge. Make sure rosbridge is running on your Raspberry Pi.
-            </p>
+        {/* Status Bar */}
+        <div className="grid grid-cols-4 gap-2 mb-3">
+          <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
+            <div className="text-xs text-blue-400">Gait</div>
+            <div className="text-lg font-bold text-blue-300">G{gaitSelection.gait_number}</div>
           </div>
-        )}
-
-        {connected && (
-          <div className="bg-green-600/20 border border-green-600/50 rounded-lg p-4 mb-6 flex items-center gap-3">
-            <Radio className="w-5 h-5 text-green-400 animate-pulse" />
-            <p className="text-green-100">Connected to ROS at ws://{raspberryPiIP}:9090</p>
+          <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
+            <div className="text-xs text-blue-400">Body</div>
+            <div className="text-lg font-bold text-blue-300">{gaitSelection.body_number}</div>
           </div>
-        )}
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Wheg Motor Status */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-            <div className="flex items-center gap-2 mb-4">
-              <Power className="w-6 h-6 text-cyan-400" />
-              <h2 className="text-xl font-semibold">Wheg Motors</h2>
-            </div>
-
-            <div className="space-y-4">
-              {Object.entries(whegFeedback).map(([key, value]) => (
-                <div key={key}>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300 capitalize">
-                      {key.replace('_', ' ')}
-                    </span>
-                    <span className="font-mono text-cyan-300">
-                      {value.toFixed(1)}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-slate-700/50 rounded-full h-2">
-                    <div
-                      className="bg-cyan-500 h-2 rounded-full transition-all"
-                      style={{ width: `${Math.min(100, Math.abs(value))}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Gait and Speed Info */}
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Current Gait</div>
-                  <div className="text-2xl font-bold text-purple-400">
-                    {gaitNames[gaitSelection] || 'N/A'}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Speed Mode</div>
-                  <div className="text-2xl font-bold text-green-400">
-                    {(speedMode * 100).toFixed(0)}%
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
+            <div className="text-xs text-blue-400">Wheg</div>
+            <div className="text-lg font-bold text-blue-300">{gaitSelection.wheg_number}</div>
           </div>
-
-          {/* PS4 Controller Status */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
-            <div className="flex items-center gap-2 mb-4">
-              <Gamepad2 className="w-6 h-6 text-purple-400" />
-              <h2 className="text-xl font-semibold">PS4 Controller</h2>
-            </div>
-
-            {/* Joysticks */}
-            <div className="grid grid-cols-2 gap-6 mb-6">
-              <div>
-                <h3 className="text-sm font-medium text-gray-300 mb-3">Left Stick</h3>
-                <div className="relative w-32 h-32 mx-auto bg-slate-700/50 rounded-full border-2 border-purple-500/30">
-                  <div
-                    className="absolute w-6 h-6 bg-purple-500 rounded-full shadow-lg transition-all"
-                    style={{
-                      left: `${(controllerState.axes[0] + 1) * 50}%`,
-                      top: `${(controllerState.axes[1] + 1) * 50}%`,
-                      transform: 'translate(-50%, -50%)',
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-1 h-1 bg-white/30 rounded-full" />
-                  </div>
-                </div>
-                <div className="mt-2 text-xs text-center font-mono text-gray-400">
-                  X: {controllerState.axes[0].toFixed(2)} Y: {controllerState.axes[1].toFixed(2)}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-gray-300 mb-3">Right Stick</h3>
-                <div className="relative w-32 h-32 mx-auto bg-slate-700/50 rounded-full border-2 border-cyan-500/30">
-                  <div
-                    className="absolute w-6 h-6 bg-cyan-500 rounded-full shadow-lg transition-all"
-                    style={{
-                      left: `${(controllerState.axes[2] + 1) * 50}%`,
-                      top: `${(controllerState.axes[3] + 1) * 50}%`,
-                      transform: 'translate(-50%, -50%)',
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-1 h-1 bg-white/30 rounded-full" />
-                  </div>
-                </div>
-                <div className="mt-2 text-xs text-center font-mono text-gray-400">
-                  X: {controllerState.axes[2].toFixed(2)} Y: {controllerState.axes[3].toFixed(2)}
-                </div>
-              </div>
-            </div>
-
-            {/* Triggers */}
-            <div className="mb-6">
-              <h3 className="text-sm font-medium text-gray-300 mb-3">Triggers</h3>
-              <div className="space-y-2">
-                <div>
-                  <div className="flex justify-between text-xs mb-1">
-                    <span>L2</span>
-                    <span className="font-mono">{controllerState.axes[4].toFixed(2)}</span>
-                  </div>
-                  <div className="w-full bg-slate-700/50 rounded-full h-2">
-                    <div
-                      className="bg-orange-500 h-2 rounded-full transition-all"
-                      style={{ width: `${((controllerState.axes[4] + 1) / 2) * 100}%` }}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between text-xs mb-1">
-                    <span>R2</span>
-                    <span className="font-mono">{controllerState.axes[5].toFixed(2)}</span>
-                  </div>
-                  <div className="w-full bg-slate-700/50 rounded-full h-2">
-                    <div
-                      className="bg-orange-500 h-2 rounded-full transition-all"
-                      style={{ width: `${((controllerState.axes[5] + 1) / 2) * 100}%` }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Buttons */}
-            <div>
-              <h3 className="text-sm font-medium text-gray-300 mb-3">Active Buttons</h3>
-              <div className="flex flex-wrap gap-2">
-                {controllerState.buttons.map((pressed, idx) => (
-                  pressed === 1 && (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-purple-600 rounded-full text-xs font-medium"
-                    >
-                      {buttonNames[idx]}
-                    </span>
-                  )
-                ))}
-                {controllerState.buttons.every(b => b === 0) && (
-                  <span className="text-sm text-gray-500">No buttons pressed</span>
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Velocity Command Display */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <Zap className="w-6 h-6 text-yellow-400" />
-              <h2 className="text-xl font-semibold">Velocity Command (cmd_vel)</h2>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              <div>
-                <div className="text-sm text-gray-400 mb-2">Linear X</div>
-                <div className="text-3xl font-bold font-mono text-cyan-400">
-                  {cmdVel.linear.x.toFixed(2)}
-                </div>
-                <div className="mt-2 w-full bg-slate-700/50 rounded-full h-3">
-                  <div
-                    className="bg-cyan-500 h-3 rounded-full transition-all"
-                    style={{ 
-                      width: `${Math.abs(cmdVel.linear.x) * 50}%`,
-                      marginLeft: cmdVel.linear.x < 0 ? `${50 - Math.abs(cmdVel.linear.x) * 50}%` : '50%'
-                    }}
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <div className="text-sm text-gray-400 mb-2">Linear Y</div>
-                <div className="text-3xl font-bold font-mono text-green-400">
-                  {cmdVel.linear.y.toFixed(2)}
-                </div>
-                <div className="mt-2 w-full bg-slate-700/50 rounded-full h-3">
-                  <div
-                    className="bg-green-500 h-3 rounded-full transition-all"
-                    style={{ width: `${Math.abs(cmdVel.linear.y) * 50}%` }}
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <div className="text-sm text-gray-400 mb-2">Angular Z</div>
-                <div className="text-3xl font-bold font-mono text-purple-400">
-                  {cmdVel.angular.z.toFixed(2)}
-                </div>
-                <div className="mt-2 w-full bg-slate-700/50 rounded-full h-3">
-                  <div
-                    className="bg-purple-500 h-3 rounded-full transition-all"
-                    style={{ width: `${Math.abs(cmdVel.angular.z) * 50}%` }}
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
+            <div className="text-xs text-blue-400">Speed</div>
+            <div className="text-lg font-bold text-blue-300">{fmt(speedMode, 1)}x</div>
           </div>
         </div>
 
-        {/* Setup Instructions */}
-        <div className="mt-6 bg-purple-900/30 backdrop-blur-lg rounded-xl p-6 border border-purple-500/30">
-          <h3 className="text-lg font-semibold mb-3 text-purple-300">Setup Instructions</h3>
-          <div className="text-sm text-gray-300 space-y-2">
-            <p><strong>1. Install rosbridge on Raspberry Pi:</strong></p>
-            <code className="block bg-slate-700 px-4 py-2 rounded mb-2">sudo apt install ros-humble-rosbridge-suite</code>
-            
-            <p><strong>2. Launch rosbridge on Raspberry Pi:</strong></p>
-            <code className="block bg-slate-700 px-4 py-2 rounded mb-2">ros2 run rosbridge_server rosbridge_websocket</code>
-            
-            <p><strong>3. Make sure your topics are running:</strong></p>
-            <code className="block bg-slate-700 px-4 py-2 rounded mb-2">ros2 launch carl_controller ps4_controller_launch.py</code>
-            
-            <p className="text-green-300 mt-4">
-              ✓ This dashboard uses native WebSockets - no additional libraries needed!
-            </p>
+        <div className="grid grid-cols-3 gap-3">
+          {/* Motor Data Table */}
+          <div className="col-span-2 bg-blue-950/30 rounded-lg p-3 border border-blue-900">
+            <div className="flex items-center gap-2 mb-2">
+              <Power className="w-4 h-4 text-blue-400" />
+              <h2 className="text-sm font-semibold">Motor Feedback</h2>
+            </div>
+            {whegFeedback.motor_id && whegFeedback.motor_id.length > 0 ? (
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-blue-900 text-blue-400">
+                      <th className="text-left py-1 px-2">ID</th>
+                      <th className="text-right py-1 px-2">Pos (°)</th>
+                      <th className="text-right py-1 px-2">Vel (RPM)</th>
+                      <th className="text-right py-1 px-2">Load (%)</th>
+                      <th className="text-center py-1 px-2">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {whegFeedback.motor_id.map((motorId, idx) => {
+                      const pos = whegFeedback.position_degrees?.[idx] ?? 0;
+                      const vel = whegFeedback.velocity_rpm?.[idx] ?? 0;
+                      const load = whegFeedback.load_percentage?.[idx] ?? 0;
+                      const err = whegFeedback.error_status?.[idx] ?? 0;
+                      return (
+                        <tr key={`motor-${motorId}-${idx}`} className="border-b border-blue-900/50 hover:bg-blue-900/20">
+                          <td className="py-1.5 px-2 font-mono font-semibold text-blue-300">{motorNames[motorId] || motorId}</td>
+                          <td className="text-right py-1.5 px-2 font-mono">{fmt(pos, 1)}</td>
+                          <td className="text-right py-1.5 px-2 font-mono">{fmt(vel, 1)}</td>
+                          <td className="text-right py-1.5 px-2 font-mono">{fmt(load, 1)}</td>
+                          <td className="text-center py-1.5 px-2">
+                            {err !== 0 ? (
+                              <span className="text-red-400 text-xs">⚠ {err}</span>
+                            ) : (
+                              <span className="text-green-400">✓</span>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <div className="text-center text-blue-500 py-4 text-xs">No motor data</div>
+            )}
+          </div>
+
+          {/* Controller & Commands */}
+          <div className="space-y-3">
+            {/* Velocity */}
+            <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
+              <div className="flex items-center gap-2 mb-2">
+                <Zap className="w-4 h-4 text-blue-400" />
+                <h2 className="text-sm font-semibold">Velocity</h2>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-blue-400">Linear X</span>
+                    <span className="font-mono">{fmt(cmdVel.linear.x, 2)}</span>
+                  </div>
+                  <div className="w-full bg-black rounded-full h-1.5">
+                    <div className="bg-blue-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.abs(safeNum(cmdVel.linear.x)) * 100}%` }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-blue-400">Angular Z</span>
+                    <span className="font-mono">{fmt(cmdVel.angular.z, 2)}</span>
+                  </div>
+                  <div className="w-full bg-black rounded-full h-1.5">
+                    <div className="bg-cyan-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.abs(safeNum(cmdVel.angular.z)) * 100}%` }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Joint Commands */}
+            <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
+              <div className="flex items-center gap-2 mb-2">
+                <Gauge className="w-4 h-4 text-blue-400" />
+                <h2 className="text-sm font-semibold">Joint Cmd</h2>
+              </div>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div>
+                  <div className="text-blue-400 mb-1">Front</div>
+                  <div className={`flex justify-between ${jointCmd.front_up ? 'text-green-400' : 'text-blue-700'}`}>
+                    <span>↑</span><span className="font-mono">{jointCmd.front_up}</span>
+                  </div>
+                  <div className={`flex justify-between ${jointCmd.front_down ? 'text-green-400' : 'text-blue-700'}`}>
+                    <span>↓</span><span className="font-mono">{jointCmd.front_down}</span>
+                  </div>
+                </div>
+                <div>
+                  <div className="text-blue-400 mb-1">Back</div>
+                  <div className={`flex justify-between ${jointCmd.back_up ? 'text-green-400' : 'text-blue-700'}`}>
+                    <span>↑</span><span className="font-mono">{jointCmd.back_up}</span>
+                  </div>
+                  <div className={`flex justify-between ${jointCmd.back_down ? 'text-green-400' : 'text-blue-700'}`}>
+                    <span>↓</span><span className="font-mono">{jointCmd.back_down}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Robot Visualisation */}
+            <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900 mt-3">
+              <div className="flex items-center gap-2 mb-2">
+                <Power className="w-4 h-4 text-blue-400" />
+                <h2 className="text-sm font-semibold">Robot View</h2>
+              </div>
+
+              <div className="flex flex-col items-center gap-4">
+                {/* Top Row (1-2-3) */}
+                <div className="flex justify-center gap-6">
+                  {[0, 1, 2].map((idx) => {
+                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
+                    return (
+                      <div key={`wheg-top-${idx}`} className="relative w-16 h-16">
+                        <img
+                          src={whegImg}
+                          alt={`Wheg ${idx + 1}`}
+                          className="w-16 h-16 opacity-90"
+                          style={{
+                            transform: `rotate(${position}deg)`,
+                            transition: 'transform 0.05s linear',
+                          }}
+                        />
+                        <div className="absolute bottom-0 w-full text-center text-[10px] text-blue-300 font-mono">
+                          {motorNames[whegFeedback.motor_id?.[idx]] || idx + 1}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Bottom Row (4-5-6) */}
+                <div className="flex justify-center gap-6">
+                  {[3, 4, 5].map((idx) => {
+                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
+                    return (
+                      <div key={`wheg-bottom-${idx}`} className="relative w-16 h-16">
+                        <img
+                          src={whegImg}
+                          alt={`Wheg ${idx + 1}`}
+                          className="w-16 h-16 opacity-90"
+                          style={{
+                            transform: `rotate(${position}deg)`,
+                            transition: 'transform 0.05s linear',
+                          }}
+                        />
+                        <div className="absolute bottom-0 w-full text-center text-[10px] text-blue-300 font-mono">
+                          {motorNames[whegFeedback.motor_id?.[idx]] || idx + 1}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+
+            {/* PS4 Controller */}
+            <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
+              <h2 className="text-sm font-semibold mb-2">Controller</h2>
+              <div className="w-full max-w-[280px] mx-auto">
+                <svg viewBox="0 0 441 383" width="100%" height="auto" fill="none">
+                  <g>
+                    {/* Controller outlines */}
+                    <path d="M220.5 294.5C220.5 294.5 195 294.5 150 294.5C105 294.5 81.5 378.5 49.5 378.5C17.5 378.5 4 363.9 4 317.5C4 271.1 43.5 165.5 55 137.5C66.5 109.5 95.5 92.0001 128 92.0001C154 92.0001 200.5 92.0001 220.5 92.0001" stroke="#60a5fa" strokeWidth="2" />
+                    <path d="M220 294.5C220 294.5 245.5 294.5 290.5 294.5C335.5 294.5 359 378.5 391 378.5C423 378.5 436.5 363.9 436.5 317.5C436.5 271.1 397 165.5 385.5 137.5C374 109.5 345 92.0001 312.5 92.0001C286.5 92.0001 240 92.0001 220 92.0001" stroke="#60a5fa" strokeWidth="2" />
+                    <circle cx="113" cy="160" r="37.5" stroke="#60a5fa" strokeWidth="2" />
+                    <circle cx="278" cy="238" r="37.5" stroke="#60a5fa" strokeWidth="2" />
+                    <circle cx="166" cy="238" r="37.5" stroke="#60a5fa" strokeWidth="2" />
+                    <circle cx="329" cy="160" r="37.5" stroke="#60a5fa" strokeWidth="2" />
+                    
+                    {/* D-pad (now at left stick position) */}
+                    <g transform="translate(93, 140)">
+                      <rect x="15" y="0" width="10" height="10" rx="2" fill={controllerState.buttons[11] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1" className="transition-all" />
+                      <rect x="15" y="30" width="10" height="10" rx="2" fill={controllerState.buttons[12] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1" className="transition-all" />
+                      <rect x="0" y="15" width="10" height="10" rx="2" fill={controllerState.buttons[13] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1" className="transition-all" />
+                      <rect x="30" y="15" width="10" height="10" rx="2" fill={controllerState.buttons[14] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1" className="transition-all" />
+                    </g>
+                    
+                    {/* Left Stick (now at d-pad position) */}
+                    <circle 
+                      cx={166 + safeNum(controllerState.axes[0], 0) * 15} 
+                      cy={238 + safeNum(controllerState.axes[1], 0) * 15} 
+                      r="20" 
+                      fill={controllerState.buttons[7] ? "#f97316" : "#1e40af"} 
+                      stroke="#60a5fa" 
+                      strokeWidth="2"
+                      className="transition-all"
+                    />
+                    
+                    {/* Right Stick */}
+                    <circle 
+                      cx={278 + safeNum(controllerState.axes[2], 0) * 15} 
+                      cy={238 + safeNum(controllerState.axes[3], 0) * 15} 
+                      r="20" 
+                      fill={controllerState.buttons[8] ? "#f97316" : "#1e40af"} 
+                      stroke="#60a5fa" 
+                      strokeWidth="2"
+                      className="transition-all"
+                    />
+                    
+                    {/* Action buttons */}
+                    <g transform="translate(309, 140)">
+                      <circle cx="20" cy="0" r="9" fill={controllerState.buttons[3] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1.5" className="transition-all" />
+                      <circle cx="40" cy="20" r="9" fill={controllerState.buttons[1] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1.5" className="transition-all" />
+                      <circle cx="20" cy="40" r="9" fill={controllerState.buttons[0] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1.5" className="transition-all" />
+                      <circle cx="0" cy="20" r="9" fill={controllerState.buttons[2] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1.5" className="transition-all" />
+                    </g>
+                    
+                    {/* Share/Options/PS */}
+                    <circle cx="160" cy="119" r="6" fill={controllerState.buttons[4] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1.5" className="transition-all" />
+                    <circle cx="284" cy="119" r="6" fill={controllerState.buttons[6] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1.5" className="transition-all" />
+                    
+                    {/* Touchpad */}
+                    <rect x="175" y="129" width="94" height="51" rx="6" fill={controllerState.buttons[15] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="2" className="transition-all" />
+                    
+                    {/* L1/R1 */}
+                    <rect x="111" y="61" width="41" height="13" rx="6" fill={controllerState.buttons[9] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="2" className="transition-all" />
+                    <rect x="289" y="61" width="41" height="13" rx="6" fill={controllerState.buttons[10] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="2" className="transition-all" />
+                    
+                    {/* L2/R2 - show fill based on trigger value */}
+                    <path d="M152.5 37C152.5 41.1421 149.142 44.5 145 44.5H132C127.858 44.5 124.5 41.1421 124.5 37V16.5C124.5 8.76801 130.768 2.5 138.5 2.5C146.232 2.5 152.5 8.76801 152.5 16.5V37Z" 
+                      fill={((safeNum(controllerState.axes[4], -1) + 1) / 2) > 0.5 ? "#f97316" : "#1e40af"} 
+                      stroke="#60a5fa" 
+                      strokeWidth="2"
+                      className="transition-all" />
+                    <path d="M317.5 37C317.5 41.1421 314.142 44.5 310 44.5H297C292.858 44.5 289.5 41.1421 289.5 37V16.5C289.5 8.76801 295.768 2.5 303.5 2.5C311.232 2.5 317.5 8.76801 317.5 16.5V37Z" 
+                      fill={((safeNum(controllerState.axes[5], -1) + 1) / 2) > 0.5 ? "#f97316" : "#1e40af"} 
+                      stroke="#60a5fa" 
+                      strokeWidth="2"
+                      className="transition-all" />
+                  </g>
+                </svg>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
+                <div>
+                  <div className="text-blue-400 mb-1">L2: {fmt(controllerState.axes[4], 2)}</div>
+                  <div className="w-full bg-black rounded-full h-1.5">
+                    <div className="bg-orange-500 h-1.5 rounded-full transition-all" style={{ width: `${((safeNum(controllerState.axes[4], -1) + 1) / 2) * 100}%` }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="text-blue-400 mb-1">R2: {fmt(controllerState.axes[5], 2)}</div>
+                  <div className="w-full bg-black rounded-full h-1.5">
+                    <div className="bg-orange-500 h-1.5 rounded-full transition-all" style={{ width: `${((safeNum(controllerState.axes[5], -1) + 1) / 2) * 100}%` }} />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
