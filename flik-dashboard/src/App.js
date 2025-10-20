@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Radio, Activity, Power, AlertCircle, Zap, Settings, Gauge } from 'lucide-react';
-import whegImg from './assets/wheg.jpg';
+import whegImg from './assets/wheg.png';
 
 export default function CarlROS2Dashboard() {
   // ---- state ----
@@ -35,7 +35,7 @@ export default function CarlROS2Dashboard() {
   });
 
   const rosRef = useRef(null);
-  const [raspberryPiIP, setRaspberryPiIP] = useState('10.13.89.222');
+  const [raspberryPiIP, setRaspberryPiIP] = useState('10.13.121.89');
   const [showSettings, setShowSettings] = useState(false);
 
   // ---- helpers ----
@@ -99,14 +99,16 @@ export default function CarlROS2Dashboard() {
             const position_degrees = Array.isArray(msg.position_degrees) ? msg.position_degrees.map(v => safeNum(v, 0)) : [];
             const velocity_rpm = Array.isArray(msg.velocity_rpm) ? msg.velocity_rpm.map(v => safeNum(v, 0)) : [];
             const load_percentage = Array.isArray(msg.load_percentage) ? msg.load_percentage.map(v => safeNum(v, 0)) : [];
+            const error_status = Array.isArray(msg.error_status) ? msg.error_status.map(v => parseInt(v, 10) || 0) : [];
 
-            const length = motor_id.length || Math.max(position_degrees.length, velocity_rpm.length, load_percentage.length);
+            const length = motor_id.length || Math.max(position_degrees.length, velocity_rpm.length, load_percentage.length, error_status.length);
 
             const normalized = {
               motor_id: motor_id.length ? motor_id : Array.from({ length }, (_, i) => i + 1),
               position_degrees: position_degrees.length ? position_degrees.slice(0, length) : Array(length).fill(0),
               velocity_rpm: velocity_rpm.length ? velocity_rpm.slice(0, length) : Array(length).fill(0),
               load_percentage: load_percentage.length ? load_percentage.slice(0, length) : Array(length).fill(0),
+              error_status: error_status.length ? error_status.slice(0, length) : Array(length).fill(0)
             };
 
             setWhegFeedback(normalized);
@@ -164,7 +166,6 @@ export default function CarlROS2Dashboard() {
   };
 
   const motorNames = { 1: 'FL', 2: 'ML', 3: 'BL', 4: 'FR', 5: 'MR', 6: 'BR' };
-  const buttonLabels = ['×', '○', '□', '△', 'SH', 'PS', 'OP', 'L3', 'R3', 'L1', 'R1', '↑', '↓', '←', '→', 'TP'];
 
   return (
     <div className="min-h-screen bg-black text-blue-100 p-3">
@@ -173,7 +174,7 @@ export default function CarlROS2Dashboard() {
         <div className="flex items-center justify-between mb-3 bg-blue-950/30 rounded-lg px-4 py-2 border border-blue-900">
           <div className="flex items-center gap-2">
             <Activity className="w-5 h-5 text-blue-400" />
-            <h1 className="text-xl font-bold">CARL Dashboard</h1>
+            <h1 className="text-xl font-bold">FLIK Dashboard</h1>
           </div>
           <div className="flex items-center gap-2">
             {connected && (
@@ -210,18 +211,10 @@ export default function CarlROS2Dashboard() {
         )}
 
         {/* Status Bar */}
-        <div className="grid grid-cols-4 gap-2 mb-3">
+        <div className="grid grid-cols-2 gap-2 mb-3">
           <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
             <div className="text-xs text-blue-400">Gait</div>
             <div className="text-lg font-bold text-blue-300">G{gaitSelection.gait_number}</div>
-          </div>
-          <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
-            <div className="text-xs text-blue-400">Body</div>
-            <div className="text-lg font-bold text-blue-300">{gaitSelection.body_number}</div>
-          </div>
-          <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
-            <div className="text-xs text-blue-400">Wheg</div>
-            <div className="text-lg font-bold text-blue-300">{gaitSelection.wheg_number}</div>
           </div>
           <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
             <div className="text-xs text-blue-400">Speed</div>
@@ -242,30 +235,32 @@ export default function CarlROS2Dashboard() {
                   <thead>
                     <tr className="border-b border-blue-900 text-blue-400">
                       <th className="text-left py-1 px-2">ID</th>
-                      <th className="text-right py-1 px-2">Pos (°)</th>
                       <th className="text-right py-1 px-2">Vel (RPM)</th>
                       <th className="text-right py-1 px-2">Load (%)</th>
-                      <th className="text-center py-1 px-2">Status</th>
                     </tr>
                   </thead>
                   <tbody>
                     {whegFeedback.motor_id.map((motorId, idx) => {
-                      const pos = whegFeedback.position_degrees?.[idx] ?? 0;
                       const vel = whegFeedback.velocity_rpm?.[idx] ?? 0;
                       const load = whegFeedback.load_percentage?.[idx] ?? 0;
-                      const err = whegFeedback.error_status?.[idx] ?? 0;
                       return (
                         <tr key={`motor-${motorId}-${idx}`} className="border-b border-blue-900/50 hover:bg-blue-900/20">
                           <td className="py-1.5 px-2 font-mono font-semibold text-blue-300">{motorNames[motorId] || motorId}</td>
-                          <td className="text-right py-1.5 px-2 font-mono">{fmt(pos, 1)}</td>
-                          <td className="text-right py-1.5 px-2 font-mono">{fmt(vel, 1)}</td>
-                          <td className="text-right py-1.5 px-2 font-mono">{fmt(load, 1)}</td>
-                          <td className="text-center py-1.5 px-2">
-                            {err !== 0 ? (
-                              <span className="text-red-400 text-xs">⚠ {err}</span>
-                            ) : (
-                              <span className="text-green-400">✓</span>
-                            )}
+                          <td className="text-right py-1.5 px-2">
+                            <div className="flex items-center justify-end gap-2">
+                              <div className="w-20 bg-black rounded-full h-1.5">
+                                <div className="bg-cyan-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.min(100, (Math.abs(vel) / 80) * 100)}%` }} />
+                              </div>
+                              <span className="font-mono w-12">{fmt(vel, 1)}</span>
+                            </div>
+                          </td>
+                          <td className="text-right py-1.5 px-2">
+                            <div className="flex items-center justify-end gap-2">
+                              <div className="w-20 bg-black rounded-full h-1.5">
+                                <div className="bg-orange-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.min(100, Math.abs(load))}%` }} />
+                              </div>
+                              <span className="font-mono w-12">{fmt(load, 1)}</span>
+                            </div>
                           </td>
                         </tr>
                       );
@@ -276,39 +271,120 @@ export default function CarlROS2Dashboard() {
             ) : (
               <div className="text-center text-blue-500 py-4 text-xs">No motor data</div>
             )}
+
+            {/* Robot Visualisation - moved under motor table */}
+            <div className="mt-4 pt-4 border-t border-blue-900">
+              <h3 className="text-sm font-semibold mb-3 text-blue-400">Wheg Positions</h3>
+              <div className="flex flex-col items-center gap-8">
+                {/* Top Row (1-2-3) - Front / Middle / Back (Left side) */}
+                <div className="flex justify-center gap-12">
+                  {[0, 1, 2].map((idx) => {
+                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
+                    const motorId = whegFeedback.motor_id?.[idx];
+
+                    // Determine body based on motor ID
+                    let bodyNum = 0;
+                    if ([1, 4].includes(motorId)) bodyNum = 1; // front
+                    else if ([2, 5].includes(motorId)) bodyNum = 2; // middle
+                    else if ([3, 6].includes(motorId)) bodyNum = 3; // back
+
+                    // Gait highlight logic
+                    const isGait3 = gaitSelection.gait_number === 3;
+                    const isGait4 = gaitSelection.gait_number === 4;
+
+                    let shouldHighlight = false;
+                    if (isGait3) shouldHighlight = gaitSelection.body_number === bodyNum;
+                    else if (isGait4) shouldHighlight = gaitSelection.wheg_number === motorId;
+
+                    return (
+                      <div key={`wheg-top-${idx}`} className="relative w-24 h-24">
+                        <div
+                          className={`w-24 h-24 rounded-full transition-all ${
+                            shouldHighlight
+                              ? 'ring-4 ring-yellow-400 shadow-lg shadow-yellow-400/50'
+                              : ''
+                          }`}
+                        >
+                          <img
+                            src={whegImg}
+                            alt={`Wheg ${idx + 1}`}
+                            className="w-24 h-24 opacity-90"
+                            style={{
+                              transform: `rotate(${position}deg)`,
+                              transition: 'transform 0.05s linear',
+                            }}
+                          />
+                        </div>
+                        <div
+                          className={`absolute -bottom-4 w-full text-center text-xs font-mono font-semibold ${
+                            shouldHighlight ? 'text-yellow-300' : 'text-blue-300'
+                          }`}
+                        >
+                          {motorNames[motorId] || idx + 1}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Bottom Row (4-5-6) - Front / Middle / Back (Right side) */}
+                <div className="flex justify-center gap-12">
+                  {[3, 4, 5].map((idx) => {
+                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
+                    const motorId = whegFeedback.motor_id?.[idx];
+
+                    // Determine body based on motor ID
+                    let bodyNum = 0;
+                    if ([1, 4].includes(motorId)) bodyNum = 1; // front
+                    else if ([2, 5].includes(motorId)) bodyNum = 2; // middle
+                    else if ([3, 6].includes(motorId)) bodyNum = 3; // back
+
+                    // Gait highlight logic
+                    const isGait3 = gaitSelection.gait_number === 3;
+                    const isGait4 = gaitSelection.gait_number === 4;
+
+                    let shouldHighlight = false;
+                    if (isGait3) shouldHighlight = gaitSelection.body_number === bodyNum;
+                    else if (isGait4) shouldHighlight = gaitSelection.wheg_number === motorId;
+
+                    return (
+                      <div key={`wheg-bottom-${idx}`} className="relative w-24 h-24">
+                        <div
+                          className={`w-24 h-24 rounded-full transition-all ${
+                            shouldHighlight
+                              ? 'ring-4 ring-yellow-400 shadow-lg shadow-yellow-400/50'
+                              : ''
+                          }`}
+                        >
+                          <img
+                            src={whegImg}
+                            alt={`Wheg ${idx + 1}`}
+                            className="w-24 h-24 opacity-90"
+                            style={{
+                              transform: `rotate(${position}deg)`,
+                              transition: 'transform 0.05s linear',
+                            }}
+                          />
+                        </div>
+                        <div
+                          className={`absolute -bottom-4 w-full text-center text-xs font-mono font-semibold ${
+                            shouldHighlight ? 'text-yellow-300' : 'text-blue-300'
+                          }`}
+                        >
+                          {motorNames[motorId] || idx + 1}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+            
           </div>
 
           {/* Controller & Commands */}
           <div className="space-y-3">
-            {/* Velocity */}
-            <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
-              <div className="flex items-center gap-2 mb-2">
-                <Zap className="w-4 h-4 text-blue-400" />
-                <h2 className="text-sm font-semibold">Velocity</h2>
-              </div>
-              <div className="space-y-2 text-xs">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-blue-400">Linear X</span>
-                    <span className="font-mono">{fmt(cmdVel.linear.x, 2)}</span>
-                  </div>
-                  <div className="w-full bg-black rounded-full h-1.5">
-                    <div className="bg-blue-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.abs(safeNum(cmdVel.linear.x)) * 100}%` }} />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-blue-400">Angular Z</span>
-                    <span className="font-mono">{fmt(cmdVel.angular.z, 2)}</span>
-                  </div>
-                  <div className="w-full bg-black rounded-full h-1.5">
-                    <div className="bg-cyan-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.abs(safeNum(cmdVel.angular.z)) * 100}%` }} />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Joint Commands */}
+            {/* Joint Commands - moved up */}
             <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
               <div className="flex items-center gap-2 mb-2">
                 <Gauge className="w-4 h-4 text-blue-400" />
@@ -336,62 +412,33 @@ export default function CarlROS2Dashboard() {
               </div>
             </div>
 
-            {/* Robot Visualisation */}
-            <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900 mt-3">
+            {/* Velocity */}
+            <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
               <div className="flex items-center gap-2 mb-2">
-                <Power className="w-4 h-4 text-blue-400" />
-                <h2 className="text-sm font-semibold">Robot View</h2>
+                <Zap className="w-4 h-4 text-blue-400" />
+                <h2 className="text-sm font-semibold">Velocity</h2>
               </div>
-
-              <div className="flex flex-col items-center gap-4">
-                {/* Top Row (1-2-3) */}
-                <div className="flex justify-center gap-6">
-                  {[0, 1, 2].map((idx) => {
-                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
-                    return (
-                      <div key={`wheg-top-${idx}`} className="relative w-16 h-16">
-                        <img
-                          src={whegImg}
-                          alt={`Wheg ${idx + 1}`}
-                          className="w-16 h-16 opacity-90"
-                          style={{
-                            transform: `rotate(${position}deg)`,
-                            transition: 'transform 0.05s linear',
-                          }}
-                        />
-                        <div className="absolute bottom-0 w-full text-center text-[10px] text-blue-300 font-mono">
-                          {motorNames[whegFeedback.motor_id?.[idx]] || idx + 1}
-                        </div>
-                      </div>
-                    );
-                  })}
+              <div className="space-y-2 text-xs">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-blue-400">Linear X</span>
+                    <span className="font-mono">{fmt(cmdVel.linear.x, 2)}</span>
+                  </div>
+                  <div className="w-full bg-black rounded-full h-1.5">
+                    <div className="bg-blue-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.abs(safeNum(cmdVel.linear.x)) * 100}%` }} />
+                  </div>
                 </div>
-
-                {/* Bottom Row (4-5-6) */}
-                <div className="flex justify-center gap-6">
-                  {[3, 4, 5].map((idx) => {
-                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
-                    return (
-                      <div key={`wheg-bottom-${idx}`} className="relative w-16 h-16">
-                        <img
-                          src={whegImg}
-                          alt={`Wheg ${idx + 1}`}
-                          className="w-16 h-16 opacity-90"
-                          style={{
-                            transform: `rotate(${position}deg)`,
-                            transition: 'transform 0.05s linear',
-                          }}
-                        />
-                        <div className="absolute bottom-0 w-full text-center text-[10px] text-blue-300 font-mono">
-                          {motorNames[whegFeedback.motor_id?.[idx]] || idx + 1}
-                        </div>
-                      </div>
-                    );
-                  })}
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-blue-400">Angular Z</span>
+                    <span className="font-mono">{fmt(cmdVel.angular.z, 2)}</span>
+                  </div>
+                  <div className="w-full bg-black rounded-full h-1.5">
+                    <div className="bg-cyan-500 h-1.5 rounded-full transition-all" style={{ width: `${Math.abs(safeNum(cmdVel.angular.z)) * 100}%` }} />
+                  </div>
                 </div>
               </div>
             </div>
-
 
             {/* PS4 Controller */}
             <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
