@@ -794,7 +794,8 @@ class DynamixelController:
                     print(f"[Motor {motor_id}] Motor error: {packet.getRxPacketError(dxl_error)}")
                 else:
                     print(f"[Motor {motor_id}] Motor rebooted successfully")
-                    packet.write1ByteTxRx(port, motor_id, TORQUE_ENABLE_ADDR, 1)
+                    packet.write1ByteTxRx(port, motor_id, ADDR_TORQUE_ENABLE, 1)
+                    time.sleep(1.0)
                 continue
             if status != 0:  # bit 3 = over-torque
                 print(f"[!] Motor {motor_id} over-torque! Rebooting...")
@@ -810,7 +811,7 @@ class DynamixelController:
             print(f"Check for Motor {motor_id} complete")
 
         self.torque_on_group('All_Motors')
-        time.sleep(0.02)
+        time.sleep(1.0)
 
     def reboot_all_motors(self):
         # Combine all groups

@@ -27,6 +27,7 @@ class MotorDrive(Node):
         self.debug = 1
         self.log = 0
         
+        self.whegs_stopped = False
         self.SHUT_DOWN = False
         
         # initialise the wheg controller functions
@@ -84,8 +85,11 @@ class MotorDrive(Node):
         # Set the motors to drive forward
         self.driving_forward = True
         self.spin_mode = False
+        self.whegs_stopped = False
         self.dynamixel.set_drive_mode_group('Right_Whegs', True)
+        self.is_right_reverse = True
         self.dynamixel.set_drive_mode_group('Left_Whegs', False)
+        self.is_left_reverse = False
         self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
         if self.log:
             logging.info("Set the right side whegs to reverse direction")
@@ -397,6 +401,7 @@ class MotorDrive(Node):
         if self.log:
             logging.info(f"Driving with velocities: {velocities} and increments: {increments}")
         
+        self.whegs_stopped = False
         self.dynamixel.set_group_profile_velocity('Wheg_Group', velocities)
         self.dynamixel.increment_group_position('Wheg_Group', increments)
         
@@ -432,7 +437,9 @@ class MotorDrive(Node):
 
             # 3) Update drive mode groups
             self.dynamixel.set_drive_mode_group('Right_Whegs', right_reverse)
+            self.is_right_reverse = right_reverse
             self.dynamixel.set_drive_mode_group('Left_Whegs', left_reverse)
+            self.is_left_reverse = right_reverse
 
             # 4) Keep motors in multi_turn (or set to multi_turn if you need velocity control to resume)
             self.dynamixel.set_operating_mode_group('Wheg_Group', 'multi_turn')
@@ -475,6 +482,9 @@ class MotorDrive(Node):
                     load_percentage = (load - 65536) / 10.0 if load > 32767 else (load / 10.0)
                 else:
                     load_percentage = 0.0
+                    
+                if velocity_rpm > 100 or self.whegs_stopped:
+                    velocity_rpm = 0.0
 
                 motor_data[motor_id] = {
                     "position_degrees": position_degrees,
@@ -488,6 +498,8 @@ class MotorDrive(Node):
             feedback_msg.position_degrees = [v["position_degrees"] for v in motor_data.values()]
             feedback_msg.velocity_rpm = [v["velocity_rpm"] for v in motor_data.values()]
             feedback_msg.load_percentage = [v["load_percentage"] for v in motor_data.values()]
+            feedback_msg.right_reverse = int(self.is_right_reverse)
+            feedback_msg.left_reverse = int(self.is_left_reverse)
 
             self.torque_publisher_.publish(feedback_msg)
             if self.log:
@@ -506,10 +518,13 @@ class MotorDrive(Node):
         try:
             direction = {1 : 0, 2 : 0, 3 : 0, 4 : 1, 5 : 1, 6 : 1}
             self.dynamixel.set_drive_mode_group('Wheg_Group', direction)
+            self.is_left_reverse = False
+            self.is_right_reverse = True
         except Exception as e:
             logging.error(f"Failed to set direction: {e}")
             
     def stop_whegs(self):
+        self.whegs_stopped = True
         """Stop all wheg motors immediately."""
         self.dynamixel.set_group_profile_velocity('Wheg_Group', {i: 0 for i in range(1, 7)})
         self.dynamixel.set_position_group('Wheg_Group', self.read_present_positions_ticks('Wheg_Group'))

@@ -77,7 +77,7 @@ class ControllerCommandPublisher(Node):
     def receive_data(self):
         # Set the IP address and port for the server
         server_ip = '0.0.0.0'  # Listen on all available network interfaces
-        server_port = 8000  # Choose a port number that is not in use
+        server_port = 8001  # Choose a port number that is not in use
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
             server_socket.bind((server_ip, server_port))
@@ -137,11 +137,11 @@ class ControllerCommandPublisher(Node):
 
         # Set the speed multiplier for driving the wheels
         if data['buttons'][inputs.SHARE] == 1:
-            self.speed_mode_msg.data = 0.5
+            self.speed_mode_msg.data = 0.25
         elif data['buttons'][inputs.OPTIONS] == 1:
-            self.speed_mode_msg.data = 1.0
+            self.speed_mode_msg.data = 0.5
         elif data['buttons'][inputs.TOUCH_PAD] == 1:
-            self.speed_mode_msg.data = 2.0
+            self.speed_mode_msg.data = 1.0
 
         # velocity message (NOT RELEVANT?)
         velocity_msg = Twist()
