@@ -9,7 +9,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String, Int16, Float32
 import time
-from geometry_msgs.msg import Twist # Not necessary for CARL
+from geometry_msgs.msg import Twist
 import json
 import yaml
 import carl_controller.lib.controller_input_defs as inputs
@@ -31,10 +31,10 @@ class ControllerCommandPublisher(Node):
         self.joint_publisher_ = self.create_publisher(Joint, 'joint_cmd', 10)
         self.gait_selection_publisher_ = self.create_publisher(GaitCommand, 'gait_selection', 10)
         self.shutdown_publisher_ = self.create_publisher(Int16, 'shutdown_cmd', 10)
-        self.resume_publisher_ = self.create_publisher(Int16, 'resume_cmd', 10)
+        self.compliant_morphing_publisher_ = self.create_publisher(Int16, 'compliant_morphing_cmd', 10)
         
-        self.resume_msg = Int16()
-        self.resume_msg.data = 0
+        self.compliant_morphing_msg = Int16()
+        self.compliant_morphing_msg.data = 0
         self.shutdown_msg = Int16()
         self.shutdown_msg.data = 0
 
@@ -177,11 +177,12 @@ class ControllerCommandPublisher(Node):
             self.shutdown_msg.data = 1
             self.shutdown_publisher_.publish(self.shutdown_msg)
             self.get_logger().info("Shutdown command sent.")
-        elif data['buttons'][inputs.CROSS] == 1 and (current_time - self.cross_last_pressed_time > self.debounce_time):
+        
+        if data['buttons'][inputs.CROSS] == 1 and (current_time - self.cross_last_pressed_time > self.debounce_time):
             self.cross_last_pressed_time = current_time
-            self.resume_msg.data = 1
-            self.resume_publisher_.publish(self.resume_msg)
-            self.get_logger().info("Resume command sent.")
+            self.compliant_morphing_msg.data = 1
+            self.compliant_morphing_publisher_.publish(self.compliant_morphing_msg)
+            self.get_logger().info("compliant morphing command sent.")
 
         self.velocity_publisher_.publish(velocity_msg)
         self.speed_mode_publisher_.publish(self.speed_mode_msg)

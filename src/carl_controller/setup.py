@@ -27,7 +27,6 @@ setup(
                             "controller_state_monitor = carl_controller.controller_state_monitor_node:main",
                             "motor = carl_controller.wheg_node:main",
                             "wheg = carl_controller.wheg_node3:main",
-                            "joint = carl_controller.joint_node:main",
                             "test_wheg = carl_controller.test.test_wheg_node:main"
         ],
     },
