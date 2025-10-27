@@ -230,15 +230,15 @@ class MotorDrive(Node):
             self.rear_pivot_angle = min(self.rear_pivot_angle + self.pivot_step, self.pivot_max_angle)
 
     def gait_mode_callback(self, msg):
-        # If gait 3, let it change body compartments
-        if msg.gait_number == 3:
+        # If gait 2, let it change body compartments
+        if msg.gait_number == 2:
             if msg.body_number != self.gait.body_number:
                 self.gait.body_number = msg.body_number
                 if self.log:
                     logging.info(f"Body compartment changed to: {self.gait.body_number}")
         
-        # If gait 4, let it change wheg control
-        if msg.gait_number == 4:
+        # If gait 3, let it change wheg control
+        if msg.gait_number == 3:
             if msg.wheg_number != self.gait.wheg_number:
                 self.gait.wheg_number = msg.wheg_number
                 if self.log:
@@ -248,7 +248,7 @@ class MotorDrive(Node):
         if msg.gait_number == self.gait.current_gait_index:
             return
         
-        if msg.gait_number == 5 and not self.spin_mode:
+        if msg.gait_number == 4 and not self.spin_mode:
             self.spin_mode = True
             self.safe_change_drive_direction(right_reverse=True, left_reverse=True)
             self.driving_forward = True

@@ -195,14 +195,14 @@ class ControllerCommandPublisher(Node):
         if(data['buttons'][inputs.R1] == 1) and (current_time - self.R1_last_pressed_time > self.debounce_time):
             self.R1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.gait_number == 3:
+            if self.gait_selection_msg.gait_number == 2:
                 
                 if self.gait_selection_msg.body_number == 3:
                     self.gait_selection_msg.body_number = 1
                 else :
                     self.gait_selection_msg.body_number += 1
                     
-            if self.gait_selection_msg.gait_number == 4:
+            if self.gait_selection_msg.gait_number == 3:
                 
                 if self.gait_selection_msg.wheg_number == 6:
                     self.gait_selection_msg.wheg_number = 1
@@ -212,14 +212,14 @@ class ControllerCommandPublisher(Node):
         elif(data['buttons'][inputs.L1] == 1) and (current_time - self.L1_last_pressed_time > self.debounce_time):
             self.L1_last_pressed_time = current_time
             
-            if self.gait_selection_msg.gait_number == 3:
+            if self.gait_selection_msg.gait_number == 2:
 
                 if self.gait_selection_msg.body_number == 1:
                     self.gait_selection_msg.body_number = 3
                 else :
                     self.gait_selection_msg.body_number -= 1
         
-            if self.gait_selection_msg.gait_number == 4:
+            if self.gait_selection_msg.gait_number == 3:
                 
                 if self.gait_selection_msg.wheg_number == 1:
                     self.gait_selection_msg.wheg_number = 6
@@ -232,7 +232,7 @@ class ControllerCommandPublisher(Node):
 
             # toggle the gait mode
             if self.gait_selection_msg.gait_number == 1:
-                self.gait_selection_msg.gait_number = 5
+                self.gait_selection_msg.gait_number = 4
             else :
                 self.gait_selection_msg.gait_number -= 1
 
@@ -241,7 +241,7 @@ class ControllerCommandPublisher(Node):
             self.triangle_last_pressed_time = current_time
 
             # toggle the gait mode
-            if self.gait_selection_msg.gait_number == 5:
+            if self.gait_selection_msg.gait_number == 4:
                 self.gait_selection_msg.gait_number = 1
             else :
                 self.gait_selection_msg.gait_number += 1
