@@ -303,18 +303,14 @@ class GaitController():
             # Example RPM-based alternating gait logic
             if self.odd_even % 2 == 0:
                 rpm_1 = self.wheg_rpm
-                rpm_2 = self.wheg_rpm * (self.gait4_params['fast_ang'] / self.gait4_params['slow_ang'])
-                inc_1 = self.gait4_params['slow_ang']
-                inc_2 = self.gait4_params['fast_ang']
-            else:
-                rpm_1 = self.wheg_rpm * (self.gait4_params['fast_ang'] / self.gait4_params['slow_ang'])
-                rpm_2 = self.wheg_rpm
                 inc_1 = self.gait4_params['fast_ang']
-                inc_2 = self.gait4_params['slow_ang']
+            else:
+                rpm_1 = self.wheg_rpm
+                inc_1 = self.gait4_params['fast_ang']
 
             # Set profile velocities and self.self.increments
-            self.velocities = {1: rpm_1, 2: rpm_2, 3: rpm_1, 4: rpm_2, 5: rpm_1, 6: rpm_2}
-            self.increments = {1: inc_1, 2: inc_2, 3: inc_1, 4: inc_2, 5: inc_1, 6: inc_2}
+            self.velocities = {1: rpm_1, 2: rpm_1, 3: rpm_1, 4: rpm_1, 5: rpm_1, 6: rpm_1}
+            self.increments = {1: inc_1, 2: inc_1, 3: inc_1, 4: inc_1, 5: inc_1, 6: inc_1}
 
             # Calculate wait time
             wait_time = (inc_1 / (6 * rpm_1))+self.gait4_params['delay']
