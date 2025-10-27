@@ -1,6 +1,5 @@
-float32 front_left
-float32 middle_left
-float32 back_left
-float32 front_right
-float32 middle_right
-float32 back_right
+int32[] motor_id
+float32[] position_degrees
+float32[] velocity_rpm
+float32[] load_percentage
+uint8[] error_status

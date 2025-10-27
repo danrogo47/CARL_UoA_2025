@@ -37,6 +37,7 @@ class DynamixelController:
         self.set_group_profile_acceleration("Wheg_Group", 15)
         self.set_group_velocity_i_gain("Wheg_Group", 500)
 
+        
     def load_config(self, config_path):
         """Load configuration from a YAML file."""
         try:
@@ -241,12 +242,6 @@ class DynamixelController:
                     logging.error(f"Failed to add motor {motor_id} for parameter '{parameter_name}'.")
                     raise Exception(f"Failed to add motor {motor_id} for parameter '{parameter_name}'.")
         
-        # TODO: This needs to be fixed before the motors can spin properly
-              
-        # for motor_id in motor_ids:
-        #     if not bulk_read.isAvailable(motor_id, control_item['address'], control_item['length']):
-        #         logging.error(f"Motor {motor_id} data not available after bulk read. Control_item:{control_item['address']}, {control_item['length']}")
-
         # Execute the bulk read command
         result = bulk_read.txRxPacket()
         if result != COMM_SUCCESS:
@@ -285,7 +280,7 @@ class DynamixelController:
         :param mode: The operating mode to set ('position', 'velocity', 'multi_turn').
         """
         # NOTE: Logging comment
-        # # logging.info(f"Setting operating mode '{mode}' for group '{group_name}'")
+        # logging.info(f"Setting operating mode '{mode}' for group '{group_name}'")
         OPERATING_MODES = {
             'position': 3,   # Position control mode
             'velocity': 1,   # Velocity control mode
@@ -381,7 +376,7 @@ class DynamixelController:
         if profile_velocity is None:
             profile_velocity = self.config.get('profile_velocities', {}).get(group_name, None)
             # NOTE: Logging comment
-            # # logging.info(f"Setting the profile velocity for group {group_name} from config.yaml: {profile_velocity}")
+            # logging.info(f"Setting the profile velocity for group {group_name} from config.yaml: {profile_velocity}")
             if profile_velocity is None:
                 logging.error(f"Profile velocity for group {group_name} not found in config.yaml and no value was provided.")
                 profile_velocity = 5
@@ -411,7 +406,7 @@ class DynamixelController:
         self.sync_write_group(group_name, 'profile_velocity', profile_velocities)
 
         # NOTE: Logging Comment
-        # # logging.info(f"Profile velocities set for group {group_name}: {profile_velocities}")
+        # logging.info(f"Profile velocities set for group {group_name}: {profile_velocities}")
 
     def torque_off_group(self, group_name):
         """Disable torque for all motors in the group."""
@@ -480,7 +475,9 @@ class DynamixelController:
         else:
             logging.error("Invalid type for 'positions'. Must be either an integer or a dictionary.")
             return
-
+        
+        self.set_group_position_p_gain(group_name, 250)
+        
         # Now let's sync write the positions
         try:
             self.sync_write_group(group_name, 'goal_position', position_goals)
@@ -737,6 +734,10 @@ class DynamixelController:
         gain_values = {motor_id: gain_value for motor_id in self.motor_groups[group_name]}
         self.sync_write_group(group_name, 'velocity_i_gain', gain_values)  
 
+    def set_group_position_p_gain(self, group_name, gain_value):
+        gain_values = {motor_id: gain_value for motor_id in self.motor_groups[group_name]}
+        self.sync_write_group(group_name, 'position_p_gain', gain_values)  
+        
     def close(self):
         """
         Closes the communication port and performs cleanup.

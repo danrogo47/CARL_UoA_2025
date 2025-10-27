@@ -24,7 +24,6 @@ class MotorDrive(Node):
             self.config = yaml.safe_load(file)
 
         self.setup_logging()
-
         self.debug = 1
         self.log = 0
         
@@ -66,16 +65,19 @@ class MotorDrive(Node):
         # subscribe to current sensing command
         self.subscription_1 = self.create_subscription(Int16, 'shutdown_cmd', self.shutdown_callback, 10)
         # subscribe to velocity cmds
-        self.subscription_2 = self.create_subscription(Twist, 'cmd_vel', self.listener_callback, 10)
+        self.subscription_2 = self.create_subscription(Twist, 'cmd_vel', self.listener_callback, 100)
         # subscribe to gait selection
         self.subscription_3 = self.create_subscription(GaitCommand, 'gait_selection', self.gait_mode_callback, 10)
         # subscribe to speed mode
         self.subscription_4 = self.create_subscription(Float32, 'speed_mode', self.speed_mode_callback, 10)
         # subscribe to resume mode
-        self.subscription_5 = self.create_subscription(Int16, 'resume_cmd', self.resume_callback, 10) # Does this need removing?
+        self.subscription_5 = self.create_subscription(Int16, 'compliant_morphing_cmd', self.compliant_morphing_callback, 10) # Does this need removing?
         self.subscription_6 = self.create_subscription(Joint, 'joint_cmd', self.joint_callback, 10)
         # publish motor torques
-        self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 100)
+        self.torque_publisher_ = self.create_publisher(WhegFeedback, 'wheg_feedback', 20)
+        # Publish feedback at 10 Hz (every 0.1 seconds)
+        self.feedback_timer = self.create_timer(0.05, self.publish_feedback_timer)
+
         
         
     def setup_wheg_motors(self):
@@ -127,12 +129,29 @@ class MotorDrive(Node):
             self.stand()
             logging.warning("Shutdown command received! Stopping all motors.")
             
-    def resume_callback(self, msg):
-
         if msg.data == 1 and self.SHUT_DOWN:
             self.SHUT_DOWN = False
             self.dynamixel.torque_on_group('Wheg_Group')
-            logging.info("Resume command received! Resuming motor operation.")
+            if self.log:
+                logging.info("Resume command received! Resuming motor operation.")
+                
+    def compliant_morphing_callback(self, msg):
+        if msg.data == 1 and not self.compliant_morphing:
+            self.compliant_morphing = True
+            self.dynamixel.torque_off_group('Pivot_Group')
+            if self.log:    
+                logging.info("Compliant morphing command received. (Placeholder functionality)")
+        elif msg.data == 1 and self.compliant_morphing:
+            self.compliant_morphing = False
+            self.dynamixel.torque_on_group('Pivot_Group')
+            if self.log:
+                logging.info("Compliant morphing command not active.")
+    
+    def publish_feedback_timer(self):
+        if not self.SHUT_DOWN:
+            # get motor feedback for streamlit
+            self.get_torque_feedback()
+
 
     def setup_pivots(self):
         # Initialize pivot motors and set their parameters
@@ -142,18 +161,23 @@ class MotorDrive(Node):
         self.pivot_max_angle = self.config['position_limits']['Hinges']['max_degrees']
         self.pivot_min_angle = self.config['position_limits']['Hinges']['min_degrees']
         self.pivot_step = self.config['pivot_parameters']['pivot_step']
-        self.allow_pivot_control = True
+        self.compliant_morphing = False
     
         # Set position limits for the pivot motors
         self.dynamixel.set_drive_mode_group('Pivot_Group', False)
         self.dynamixel.set_position_limits_group('Pivot_Group', self.config['position_limits']['Hinges']['min_degrees'], self.config['position_limits']['Hinges']['max_degrees'])
         self.dynamixel.set_operating_mode_group('Pivot_Group', 'position')
-        logging.info("Set position limits for the pivot motors")
+        if self.log:
+            logging.info("Set position limits for the pivot motors")
 
     def joint_callback(self, msg):
         
         # shutdown flag true: immediately stop motor movement
         if self.SHUT_DOWN:
+            self.dynamixel.torque_off_group("Pivot_Group")
+            return
+        
+        if self.compliant_morphing:
             self.dynamixel.torque_off_group("Pivot_Group")
             return
         
@@ -210,13 +234,15 @@ class MotorDrive(Node):
         if msg.gait_number == 3:
             if msg.body_number != self.gait.body_number:
                 self.gait.body_number = msg.body_number
-                logging.info(f"Body compartment changed to: {self.gait.body_number}")
+                if self.log:
+                    logging.info(f"Body compartment changed to: {self.gait.body_number}")
         
         # If gait 4, let it change wheg control
         if msg.gait_number == 4:
             if msg.wheg_number != self.gait.wheg_number:
                 self.gait.wheg_number = msg.wheg_number
-                logging.info(f"Wheg control changed to: Wheg #{self.gait.wheg_number}")
+                if self.log:
+                    logging.info(f"Wheg control changed to: Wheg #{self.gait.wheg_number}")
         
         # Check to ensure the gait index is actually changed
         if msg.gait_number == self.gait.current_gait_index:
@@ -226,7 +252,8 @@ class MotorDrive(Node):
             self.spin_mode = True
             self.safe_change_drive_direction(right_reverse=True, left_reverse=True)
             self.driving_forward = True
-            logging.info("Set to Spin")
+            if self.log:
+                logging.info("Set to Spin")
         elif self.spin_mode:
             self.spin_mode = False
             self.driving_forward = True
@@ -284,9 +311,6 @@ class MotorDrive(Node):
             self.last_called_time = current_time
             
             self.drive_motors(velocities, wait_time)
-            
-        # get motor feedback for streamlit
-        # self.get_torque_feedback()
 
     def calculate_gait_velocities(self, msg):
         
@@ -341,7 +365,7 @@ class MotorDrive(Node):
         return adjusted_velocities, wait_time
     
     def adjust_for_joystick(self, multiplier_velocities, z_cmd):
-        turn_factor = 0.4  # Adjust this factor to control turning sensitivity
+        turn_factor = 0.6  # Adjust this factor to control turning sensitivity
 
         # Calculate proportional reduction based on how far the joystick is turned
         reduction = abs(z_cmd) * turn_factor
@@ -352,10 +376,10 @@ class MotorDrive(Node):
 
             # Apply turning effect based on direction
             if z_cmd > 0:  # turning right → slow left side (0–2)
-                if key in [1, 2, 3]:
+                if key in [4, 5, 6]:
                     adjusted_val *= (1 - reduction)
             elif z_cmd < 0:  # turning left → slow right side (3–5)
-                if key in [4, 5, 6]:
+                if key in [1, 2, 3]:
                     adjusted_val *= (1 - reduction)
 
             joystick_adjusted_velocities[key] = adjusted_val
@@ -429,38 +453,50 @@ class MotorDrive(Node):
 
     def get_torque_feedback(self):
         try:
-            # Perform a bulk read for motor positions, velocities, loads, and hardware errors
             motor_positions = self.dynamixel.bulk_read_group('Wheg_Group', ['present_position'])
             motor_velocities = self.dynamixel.bulk_read_group('Wheg_Group', ['present_velocity'])
             motor_loads = self.dynamixel.bulk_read_group('Wheg_Group', ['present_load'])
-            hardware_errors = self.dynamixel.bulk_read_group('Wheg_Group', ['hardware_error_status'])
 
+            if not all([motor_positions, motor_velocities, motor_loads]):
+                logging.error("One or more bulk reads returned None.")
+                return {}
+
+            # Collect processed data
             motor_data = {}
 
             for motor_id in motor_positions.keys():
-                # Retrieve position, velocity, load, and error status
-                position_ticks = motor_positions[motor_id].get('present_position', 'N/A')
-                velocity = motor_velocities[motor_id].get('present_velocity', 'N/A')
-                load = motor_loads[motor_id].get('present_load', 'N/A')
-                error_status = hardware_errors[motor_id].get('hardware_error_status', 0)
+                position_ticks = motor_positions[motor_id].get('present_position')
+                velocity = motor_velocities[motor_id].get('present_velocity')
+                load = motor_loads[motor_id].get('present_load')
 
-                # Convert position to degrees, velocity to RPM, and load to percentage
-                position_degrees = ((position_ticks * 360) / 4096) % 359 if isinstance(position_ticks, (int, float)) else 'N/A'
-                velocity_rpm = (velocity * 0.229) if isinstance(velocity, (int, float)) else 'N/A'
-                load_percentage = (load - 65536) / 10.0 if load > 32767 else (load / 10.0 if isinstance(load, (int, float)) else 'N/A')
+                position_degrees = ((position_ticks * 360) / 4096) % 359 if isinstance(position_ticks, (int, float)) else 0.0
+                velocity_rpm = (velocity * 0.229) if isinstance(velocity, (int, float)) else 0.0
+                if isinstance(load, (int, float)):
+                    load_percentage = (load - 65536) / 10.0 if load > 32767 else (load / 10.0)
+                else:
+                    load_percentage = 0.0
 
-                # Store processed data in motor_data dictionary
                 motor_data[motor_id] = {
                     "position_degrees": position_degrees,
                     "velocity_rpm": velocity_rpm,
                     "load_percentage": load_percentage,
-                    "error_status": error_status
                 }
 
-            return motor_data
+            # --- Convert dict → ROS message ---
+            feedback_msg = WhegFeedback()
+            feedback_msg.motor_id = list(motor_data.keys())
+            feedback_msg.position_degrees = [v["position_degrees"] for v in motor_data.values()]
+            feedback_msg.velocity_rpm = [v["velocity_rpm"] for v in motor_data.values()]
+            feedback_msg.load_percentage = [v["load_percentage"] for v in motor_data.values()]
+
+            self.torque_publisher_.publish(feedback_msg)
+            if self.log:
+                logging.info(f"Published torque feedback {feedback_msg.position_degrees} message successfully.")
 
         except Exception as e:
             logging.error(f"Error retrieving motor data: {e}")
+            import traceback
+            logging.debug(traceback.format_exc())
             return {}
 
     def motor_shutdown(self):

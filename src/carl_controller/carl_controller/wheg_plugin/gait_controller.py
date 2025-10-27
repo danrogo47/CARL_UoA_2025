@@ -61,14 +61,14 @@ class GaitController():
     
     def stand(self):
         """Set the whegs to a standing position."""
-        logging.info("Setting whegs to standing position.")
+        # logging.info("Setting whegs to standing position.")
         self.positions = { 1: self.gait4_params['high_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['high_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['high_pos'], 6: self.gait4_params['high_pos'] }
         self.velocities = {i: 0 for i in range(1, 7)}
         self.increments = {i: 0 for i in range(1, 7)}
         time.sleep(1)  # Allow time for the motors to reach the position
      
     def init_turn_mode(self):
-        logging.info("Initialising Turn Mode")
+        # logging.info("Initialising Turn Mode")
         # Update the min and max RPM for this gait:
         self.MIN_RPM = self.gait4_params['min_rpm']
         self.MAX_RPM = self.gait4_params['max_rpm']
@@ -78,7 +78,7 @@ class GaitController():
         self.TOLERANCE = self.gait4_params['tolerance']
         self.positions = { 1: self.gait4_params['low_pos'], 2: self.gait4_params['low_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['low_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['low_pos'] }
         wait_time = 3
-        logging.info(f"Initialised turn mode, waiting for {wait_time} seconds")
+        # logging.info(f"Initialised turn mode, waiting for {wait_time} seconds")
         self.turn_mode_active = True
         self.turn_mode_requested = False
         return
@@ -91,20 +91,20 @@ class GaitController():
             wait_time = init_gait_function()           
             # Update current gait index
             self.current_gait_index = self.next_gait_index
-            logging.info(f"New gait {self.current_gait_index} is now active.")
+            # logging.info(f"New gait {self.current_gait_index} is now active.")
                 
         else:
             logging.debug("Emergency stop activated, gait change paused.")
         
     # Define the initialization for each gait (for whegs only, pivots are disabled)
     def gait_init_1(self):
-        logging.info("Initialising Gait 1")
+        # logging.info("Initialising Gait 1")
     
         self.positions = { 1: self.gait4_params['high_pos'], 2: self.gait4_params['high_pos'], 3: self.gait4_params['high_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['high_pos'], 6: self.gait4_params['high_pos'] }
         return 0
 
     def gait_init_2(self):
-        logging.info("Initialising Gait 2")
+        # logging.info("Initialising Gait 2")
         # Update the min and max RPM for this gait:
         self.MIN_RPM = self.gait2_params['min_rpm']
         self.MAX_RPM = self.gait2_params['max_rpm']
@@ -116,11 +116,11 @@ class GaitController():
         self.wheg_rpm = 0
         self.positions = { 1: self.LOW_POS, 2: self.HIGH_POS, 3: self.LOW_POS, 4: self.HIGH_POS, 5: self.LOW_POS, 6: self.HIGH_POS }
         wait_time = 0.5
-        logging.info(f"Initialised Gait 2, waiting for {wait_time} seconds")
+        # logging.info(f"Initialised Gait 2, waiting for {wait_time} seconds")
         return 0
 
     def gait_init_3(self):      
-        logging.info("Initialsing Gait 3")
+        # logging.info("Initialsing Gait 3")
         # Update the min, max and smoothness for this gait
         self.MIN_RPM = self.gait3_params['min_rpm']
         self.MAX_RPM = self.gait3_params['max_rpm']
@@ -131,11 +131,11 @@ class GaitController():
         self.body_number = 1  # Automatically on front body compartment
         self.positions = { 1: self.gait3_params['high_pos'], 2: self.gait3_params['low_pos'], 3: self.gait3_params['low_pos'], 4: self.gait3_params['high_pos'], 5: self.gait3_params['low_pos'], 6: self.gait3_params['low_pos']}
         wait_time = 0.5
-        logging.info(f"Initialised Gait 3, waiting for {wait_time} seconds")
+        # logging.info(f"Initialised Gait 3, waiting for {wait_time} seconds")
         return 0
 
     def gait_init_4(self):
-        logging.info("Initialsing Gait 4")
+        # logging.info("Initialsing Gait 4")
         # Update the min, max and smoothness for this gait
         self.MIN_RPM = self.gait4_params['min_rpm']
         self.MAX_RPM = self.gait4_params['max_rpm']
@@ -146,11 +146,11 @@ class GaitController():
         self.wheg_number = 1  # Automatically on front right motor
         self.positions = { 1: self.gait4_params['high_pos'], 2: self.gait4_params['low_pos'], 3: self.gait4_params['low_pos'], 4: self.gait4_params['high_pos'], 5: self.gait4_params['low_pos'], 6: self.gait4_params['low_pos']}
         wait_time = 0.5
-        logging.info(f"Initialised Gait 4, waiting for {wait_time} seconds")
+        # logging.info(f"Initialised Gait 4, waiting for {wait_time} seconds")
         return 0
     
     def gait_init_5(self):
-        logging.info("Initialising Gait 5")
+        # logging.info("Initialising Gait 5")
         # Update the min and max RPM for this gait:
         self.MIN_RPM = self.gait5_params['min_rpm']
         self.MAX_RPM = self.gait5_params['max_rpm']
@@ -160,7 +160,7 @@ class GaitController():
 
         self.positions = { 1: self.gait5_params['low_pos'], 2: self.gait5_params['high_pos'], 3: self.gait5_params['low_pos'], 4: self.gait5_params['high_pos'], 5: self.gait5_params['low_pos'], 6: self.gait5_params['high_pos'] }
         wait_time = 0.5
-        logging.info(f"Initialised Gait 5, waiting for {wait_time} seconds")
+        # logging.info(f"Initialised Gait 5, waiting for {wait_time} seconds")
         return 0
     
     
@@ -173,11 +173,11 @@ class GaitController():
                 turn_function = self.turn_mode()
                 if self.turn_mode_deactivate:
                     self.turn_mode_off()
-                    logging.info("Turn mode deactivating")
+                    # logging.info("Turn mode deactivating")
 
             # Get the current gait function and execute it
             self.velocity = throttle
-            logging.info(f"Throttle  {self.velocity} recieved for gait:  {self.current_gait_index}")
+            # logging.info(f"Throttle  {self.velocity} recieved for gait:  {self.current_gait_index}")
             gait_function = self.gait_methods[self.current_gait_index]
             
             wait_time = gait_function()
@@ -185,7 +185,7 @@ class GaitController():
             # Handle turn mode
             if self.turn_mode_requested:
                 self.init_turn_mode()
-                logging.info("Turn mode activated.")
+                # logging.info("Turn mode activated.")
             
             return wait_time
 
@@ -196,11 +196,11 @@ class GaitController():
     def gait_1(self):
         """Execute Gait 1 and return how long to wait before the next step."""
         logging.debug("Executing Gait 1")
-        logging.info(f"Current velocity input for Gait 1: {self.velocity}")
+        # logging.info(f"Current velocity input for Gait 1: {self.velocity}")
         self.wheg_rpm = self.adjust_wheg_rpm(self.velocity)
         if self.wheg_rpm > 1:
         
-            self.increment = 360  # Example movement angle
+            self.increment = 180  # Example movement angle
             
             self.velocities = {1: self.wheg_rpm, 2: self.wheg_rpm, 3: self.wheg_rpm, 4: self.wheg_rpm, 5: self.wheg_rpm, 6: self.wheg_rpm}
             logging
@@ -372,7 +372,7 @@ class GaitController():
     
     def adjust_wheg_rpm(self, trigger_value):
         """ Function to adjust the speed of the whegs based on how far the right trigger is pressed. Smooth transition to target RPM. """
-        logging.info(f"Adjusting wheg speed: trigger_value={trigger_value}, current_rpm={self.wheg_rpm}")
+        # logging.info(f"Adjusting wheg speed: trigger_value={trigger_value}, current_rpm={self.wheg_rpm}")
         target_rpm = (trigger_value) * (self.MAX_RPM - self.MIN_RPM) + self.MIN_RPM # Trigger value ranges from -1 to 1, map this to RPM range
 
         self.wheg_rpm = target_rpm
