@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Radio, Activity, Power, AlertCircle, Zap, Settings, Gauge } from 'lucide-react';
 import whegImg from './assets/wheg.png';
 
@@ -15,7 +15,9 @@ export default function CarlROS2Dashboard() {
     position_degrees: [],
     velocity_rpm: [],
     load_percentage: [],
-    error_status: []
+    error_status: [],
+    left_reverse: 0,
+    right_reverse: 0
   });
   const [cmdVel, setCmdVel] = useState({
     linear: { x: 0, y: 0, z: 0 },
@@ -26,17 +28,21 @@ export default function CarlROS2Dashboard() {
     body_number: 1,
     wheg_number: 1
   });
-  const [speedMode, setSpeedMode] = useState(2.0);
+  const [speedMode, setSpeedMode] = useState(1.00);
   const [jointCmd, setJointCmd] = useState({
     front_up: 0,
     front_down: 0,
     back_up: 0,
     back_down: 0
   });
+  
+  // Rotation state for wheels
+  const [wheelRotations, setWheelRotations] = useState({});
 
   const rosRef = useRef(null);
-  const [raspberryPiIP, setRaspberryPiIP] = useState('10.13.121.89');
+  const [raspberryPiIP, setRaspberryPiIP] = useState('172.20.10.2');
   const [showSettings, setShowSettings] = useState(false);
+  const rotationRef = useRef({});
 
   // ---- helpers ----
   const safeNum = (v, fallback = 0) => {
@@ -49,6 +55,43 @@ export default function CarlROS2Dashboard() {
     const n = safeNum(v, null);
     return n === null ? '--' : n.toFixed(decimals);
   };
+
+  // ---- rotation effect ----
+  useEffect(() => {
+    const animationFrameId = requestAnimationFrame(() => {
+      setWheelRotations({ ...rotationRef.current });
+    });
+
+    const interval = setInterval(() => {
+      // Update rotations based on velocities
+      whegFeedback.motor_id?.forEach((motorId, idx) => {
+        const velocity = whegFeedback.velocity_rpm?.[idx] ?? 0;
+        let direction = -1;
+        // Reverse direction for right side wheels (motors 4, 5, 6) if right_reverse is set
+        if ([4, 5, 6].includes(motorId) && whegFeedback.right_reverse) {
+          direction = -direction;
+        }
+        // Reverse direction for left side wheels (motors 1, 2, 3) if left_reverse is set
+        else if ([1, 2, 3].includes(motorId) && whegFeedback.left_reverse) {
+          direction = -direction;
+        }
+        const speed = Math.abs(velocity) * 0.15; // rotation speed multiplier
+        
+        if (!rotationRef.current[idx]) {
+          rotationRef.current[idx] = 0;
+        }
+        rotationRef.current[idx] += speed * direction;
+        rotationRef.current[idx] %= 360; // Keep within 0-360
+      });
+
+      setWheelRotations({ ...rotationRef.current });
+    }, 16); // ~60fps
+
+    return () => {
+      clearInterval(interval);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [whegFeedback]);
 
   // ---- connect / websocket ----
   const connectToROS = () => {
@@ -100,6 +143,8 @@ export default function CarlROS2Dashboard() {
             const velocity_rpm = Array.isArray(msg.velocity_rpm) ? msg.velocity_rpm.map(v => safeNum(v, 0)) : [];
             const load_percentage = Array.isArray(msg.load_percentage) ? msg.load_percentage.map(v => safeNum(v, 0)) : [];
             const error_status = Array.isArray(msg.error_status) ? msg.error_status.map(v => parseInt(v, 10) || 0) : [];
+            const left_reverse = safeNum(msg.left_reverse, 0);
+            const right_reverse = safeNum(msg.right_reverse, 0);
 
             const length = motor_id.length || Math.max(position_degrees.length, velocity_rpm.length, load_percentage.length, error_status.length);
 
@@ -108,7 +153,9 @@ export default function CarlROS2Dashboard() {
               position_degrees: position_degrees.length ? position_degrees.slice(0, length) : Array(length).fill(0),
               velocity_rpm: velocity_rpm.length ? velocity_rpm.slice(0, length) : Array(length).fill(0),
               load_percentage: load_percentage.length ? load_percentage.slice(0, length) : Array(length).fill(0),
-              error_status: error_status.length ? error_status.slice(0, length) : Array(length).fill(0)
+              error_status: error_status.length ? error_status.slice(0, length) : Array(length).fill(0),
+              left_reverse,
+              right_reverse
             };
 
             setWhegFeedback(normalized);
@@ -165,7 +212,60 @@ export default function CarlROS2Dashboard() {
     }
   };
 
-  const motorNames = { 1: 'FL', 2: 'ML', 3: 'BL', 4: 'FR', 5: 'MR', 6: 'BR' };
+  const motorNames = { 1: 'BL', 2: 'ML', 3: 'FL', 4: 'BR', 5: 'MR', 6: 'FR' };
+
+  const WhegVisualization = ({ indices, isTop = true }) => {
+    return (
+      <div className="flex justify-center gap-12">
+        {indices.map((idx) => {
+          const motorId = whegFeedback.motor_id?.[idx];
+          const rotation = wheelRotations[idx] ?? 0;
+
+          // Determine body based on motor ID
+          let bodyNum = 0;
+          if ([1, 4].includes(motorId)) bodyNum = 1; // front
+          else if ([2, 5].includes(motorId)) bodyNum = 2; // middle
+          else if ([3, 6].includes(motorId)) bodyNum = 3; // back
+
+          // Gait highlight logic
+          const isGait2 = gaitSelection.gait_number === 2;
+          const isGait3 = gaitSelection.gait_number === 3;
+
+          let shouldHighlight = false;
+          if (isGait2) shouldHighlight = gaitSelection.body_number === bodyNum;
+          else if (isGait3) shouldHighlight = gaitSelection.wheg_number === motorId;
+
+          return (
+            <div key={`wheg-${isTop ? 'top' : 'bottom'}-${idx}`} className="relative w-24 h-24">
+              <div
+                className={`w-24 h-24 rounded-full transition-all ${
+                  shouldHighlight
+                    ? 'ring-4 ring-yellow-400 shadow-lg shadow-yellow-400/50'
+                    : ''
+                }`}
+              >
+                <img
+                  src={whegImg}
+                  alt={`Wheg`}
+                  className="w-24 h-24 opacity-90"
+                  style={{
+                    transform: `rotate(${rotation}deg)`,
+                  }}
+                />
+              </div>
+              <div
+                className={`absolute -bottom-4 w-full text-center text-xs font-mono font-semibold ${
+                  shouldHighlight ? 'text-yellow-300' : 'text-blue-300'
+                }`}
+              >
+                {motorNames[motorId] || idx + 1}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black text-blue-100 p-3">
@@ -218,7 +318,7 @@ export default function CarlROS2Dashboard() {
           </div>
           <div className="bg-blue-950/30 rounded-lg p-2 border border-blue-900">
             <div className="text-xs text-blue-400">Speed</div>
-            <div className="text-lg font-bold text-blue-300">{fmt(speedMode, 1)}x</div>
+            <div className="text-lg font-bold text-blue-300">{fmt(speedMode, 2)}x</div>
           </div>
         </div>
 
@@ -272,119 +372,19 @@ export default function CarlROS2Dashboard() {
               <div className="text-center text-blue-500 py-4 text-xs">No motor data</div>
             )}
 
-            {/* Robot Visualisation - moved under motor table */}
+            {/* Robot Visualisation */}
             <div className="mt-4 pt-4 border-t border-blue-900">
               <h3 className="text-sm font-semibold mb-3 text-blue-400">Wheg Positions</h3>
               <div className="flex flex-col items-center gap-8">
-                {/* Top Row (1-2-3) - Front / Middle / Back (Left side) */}
-                <div className="flex justify-center gap-12">
-                  {[0, 1, 2].map((idx) => {
-                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
-                    const motorId = whegFeedback.motor_id?.[idx];
-
-                    // Determine body based on motor ID
-                    let bodyNum = 0;
-                    if ([1, 4].includes(motorId)) bodyNum = 1; // front
-                    else if ([2, 5].includes(motorId)) bodyNum = 2; // middle
-                    else if ([3, 6].includes(motorId)) bodyNum = 3; // back
-
-                    // Gait highlight logic
-                    const isGait3 = gaitSelection.gait_number === 3;
-                    const isGait4 = gaitSelection.gait_number === 4;
-
-                    let shouldHighlight = false;
-                    if (isGait3) shouldHighlight = gaitSelection.body_number === bodyNum;
-                    else if (isGait4) shouldHighlight = gaitSelection.wheg_number === motorId;
-
-                    return (
-                      <div key={`wheg-top-${idx}`} className="relative w-24 h-24">
-                        <div
-                          className={`w-24 h-24 rounded-full transition-all ${
-                            shouldHighlight
-                              ? 'ring-4 ring-yellow-400 shadow-lg shadow-yellow-400/50'
-                              : ''
-                          }`}
-                        >
-                          <img
-                            src={whegImg}
-                            alt={`Wheg ${idx + 1}`}
-                            className="w-24 h-24 opacity-90"
-                            style={{
-                              transform: `rotate(${position}deg)`,
-                              transition: 'transform 0.05s linear',
-                            }}
-                          />
-                        </div>
-                        <div
-                          className={`absolute -bottom-4 w-full text-center text-xs font-mono font-semibold ${
-                            shouldHighlight ? 'text-yellow-300' : 'text-blue-300'
-                          }`}
-                        >
-                          {motorNames[motorId] || idx + 1}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Bottom Row (4-5-6) - Front / Middle / Back (Right side) */}
-                <div className="flex justify-center gap-12">
-                  {[3, 4, 5].map((idx) => {
-                    const position = safeNum(whegFeedback.position_degrees?.[idx], 0);
-                    const motorId = whegFeedback.motor_id?.[idx];
-
-                    // Determine body based on motor ID
-                    let bodyNum = 0;
-                    if ([1, 4].includes(motorId)) bodyNum = 1; // front
-                    else if ([2, 5].includes(motorId)) bodyNum = 2; // middle
-                    else if ([3, 6].includes(motorId)) bodyNum = 3; // back
-
-                    // Gait highlight logic
-                    const isGait3 = gaitSelection.gait_number === 3;
-                    const isGait4 = gaitSelection.gait_number === 4;
-
-                    let shouldHighlight = false;
-                    if (isGait3) shouldHighlight = gaitSelection.body_number === bodyNum;
-                    else if (isGait4) shouldHighlight = gaitSelection.wheg_number === motorId;
-
-                    return (
-                      <div key={`wheg-bottom-${idx}`} className="relative w-24 h-24">
-                        <div
-                          className={`w-24 h-24 rounded-full transition-all ${
-                            shouldHighlight
-                              ? 'ring-4 ring-yellow-400 shadow-lg shadow-yellow-400/50'
-                              : ''
-                          }`}
-                        >
-                          <img
-                            src={whegImg}
-                            alt={`Wheg ${idx + 1}`}
-                            className="w-24 h-24 opacity-90"
-                            style={{
-                              transform: `rotate(${position}deg)`,
-                              transition: 'transform 0.05s linear',
-                            }}
-                          />
-                        </div>
-                        <div
-                          className={`absolute -bottom-4 w-full text-center text-xs font-mono font-semibold ${
-                            shouldHighlight ? 'text-yellow-300' : 'text-blue-300'
-                          }`}
-                        >
-                          {motorNames[motorId] || idx + 1}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                <WhegVisualization indices={[0, 1, 2]} isTop={true} />
+                <WhegVisualization indices={[3, 4, 5]} isTop={false} />
               </div>
             </div>
-            
           </div>
 
           {/* Controller & Commands */}
           <div className="space-y-3">
-            {/* Joint Commands - moved up */}
+            {/* Joint Commands */}
             <div className="bg-blue-950/30 rounded-lg p-3 border border-blue-900">
               <div className="flex items-center gap-2 mb-2">
                 <Gauge className="w-4 h-4 text-blue-400" />
@@ -454,7 +454,7 @@ export default function CarlROS2Dashboard() {
                     <circle cx="166" cy="238" r="37.5" stroke="#60a5fa" strokeWidth="2" />
                     <circle cx="329" cy="160" r="37.5" stroke="#60a5fa" strokeWidth="2" />
                     
-                    {/* D-pad (now at left stick position) */}
+                    {/* D-pad */}
                     <g transform="translate(93, 140)">
                       <rect x="15" y="0" width="10" height="10" rx="2" fill={controllerState.buttons[11] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1" className="transition-all" />
                       <rect x="15" y="30" width="10" height="10" rx="2" fill={controllerState.buttons[12] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1" className="transition-all" />
@@ -462,7 +462,7 @@ export default function CarlROS2Dashboard() {
                       <rect x="30" y="15" width="10" height="10" rx="2" fill={controllerState.buttons[14] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="1" className="transition-all" />
                     </g>
                     
-                    {/* Left Stick (now at d-pad position) */}
+                    {/* Left Stick */}
                     <circle 
                       cx={166 + safeNum(controllerState.axes[0], 0) * 15} 
                       cy={238 + safeNum(controllerState.axes[1], 0) * 15} 
@@ -503,7 +503,7 @@ export default function CarlROS2Dashboard() {
                     <rect x="111" y="61" width="41" height="13" rx="6" fill={controllerState.buttons[9] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="2" className="transition-all" />
                     <rect x="289" y="61" width="41" height="13" rx="6" fill={controllerState.buttons[10] ? "#f97316" : "#1e40af"} stroke="#60a5fa" strokeWidth="2" className="transition-all" />
                     
-                    {/* L2/R2 - show fill based on trigger value */}
+                    {/* L2/R2 */}
                     <path d="M152.5 37C152.5 41.1421 149.142 44.5 145 44.5H132C127.858 44.5 124.5 41.1421 124.5 37V16.5C124.5 8.76801 130.768 2.5 138.5 2.5C146.232 2.5 152.5 8.76801 152.5 16.5V37Z" 
                       fill={((safeNum(controllerState.axes[4], -1) + 1) / 2) > 0.5 ? "#f97316" : "#1e40af"} 
                       stroke="#60a5fa" 
