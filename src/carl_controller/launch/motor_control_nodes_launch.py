@@ -11,4 +11,9 @@ def generate_launch_description():
             package='carl_controller',
             executable='joint',
             name='joint'),
+        Node(
+            package='carl_controller',
+            executable='motor',
+            name='motor'
+        )
   ])

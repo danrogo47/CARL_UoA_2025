@@ -16,6 +16,7 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/WhegFeedback.msg"
   "msg/Joint.msg"
+  "msg/GaitCommand.msg"
   DEPENDENCIES std_msgs
 )
 

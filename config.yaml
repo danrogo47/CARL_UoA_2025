@@ -1,0 +1,264 @@
+# Configuration file for key parameters in main.py
+
+# Logging configuration
+logging:
+  log_directory: "Logs"  # Directory where log files will be stored
+  log_level_file: "INFO"  # Logging level for log files (e.g., INFO, DEBUG)
+  log_level_console: "INFO"  # Logging level for console output
+
+# Motor IDs for whegs (legs)
+motor_ids:
+  whegs:  # Motor IDs for the six whegs
+    LR_WHEG: 1  # Left rear wheg
+    LM_WHEG: 2  # Left middle wheg
+    LF_WHEG: 3  # Left front wheg
+    RR_WHEG: 4  # Right rear wheg
+    RM_WHEG: 5  # Right middle wheg
+    RF_WHEG: 6  # Right front wheg
+  pivots:  # Motor IDs for the two pivot motors
+    FRONT_PIVOT: 7  # Front pivot motor
+    REAR_PIVOT: 8  # Rear pivot motor
+
+# Parameters for controlling the wheg motors
+wheg_parameters:
+  max_rpm: 40  # Maximum revolutions per minute for wheg motors
+  min_rpm: 0  # Minimum RPM for wheg motors
+  smoothness: 5  # Speed increase smoothness factor
+  initial_rpm: 0  # Initial speed of the wheg motors (when starting)
+
+# Parameters for controlling the pivot motors
+pivot_parameters:
+  pivot_step: 1  # Step size for pivot control via D-pad (degrees per step)
+  initial_front_angle: 180  # Initial angle for the front pivot motor (degrees)
+  initial_rear_angle: 180  # Initial angle for the rear pivot motor (degrees)
+
+# Controller configuration (e.g., for communication with motors)
+controller:
+  device_name: "/dev/ttyACM0"  # Device path for the controller connection
+  baudrate: 1000000  # Baud rate for serial communication
+
+# Gait configurations (defines different movement patterns)
+gaits:
+  available_gaits:  # List of available gaits
+    - gait_1
+    - gait_2
+    - gait_3
+    - gait_4
+    - gait_5
+  initial_gait: gait_1  # Default gait to use at startup
+  
+  # Detailed configuration for Gait 2
+  gait_2:
+    slow_ang: 40  # Angle at which whegs move slowly
+    fast_ang: 320  # Angle at which whegs move quickly
+    low_pos: 136  # Motor position for slow movement
+    high_pos: 196  # Motor position for fast movement
+    min_rpm: 20  # Minimum RPM for the gait
+    max_rpm: 40  # Maximum RPM for the gait
+    smoothness: 1  # Smoothness factor for speed transitions
+    tolerance: 20  # Degree tolerance for position accuracy
+    delay: 0.025  # Delay (in seconds) to allow motors to finish moving
+
+  # Detailed configuration for Gait 3
+  gait_3:
+    fast_ang: 320
+    slow_ang: 40
+    low_pos: 160
+    mid_pos: 180
+    high_pos: 200
+    min_rpm: 20
+    max_rpm: 40
+    smoothness: 4
+    tolerance: 20
+    delay: 0.025
+
+  # Detailed configuration for Gait 4
+  gait_4:
+    fast_ang: 320
+    slow_ang: 40
+    low_pos: 160
+    mid_pos: 180
+    high_pos: 200
+    min_rpm: 20
+    max_rpm: 40
+    smoothness: 4
+    tolerance: 20
+    delay: 0.025
+
+  # Detailed configuration for Gait 5
+  gait_5:
+    fast_ang: 320
+    slow_ang: 40
+    low_pos: 160
+    high_pos: 200
+    right_pos: 180  # Specific position for the right whegs
+    min_rpm: 20
+    max_rpm: 40
+    smoothness: 1
+    tolerance: 5
+    delay: 0.5
+
+# Velocity limits for different motor groups
+velocity_limits:
+  Wheg_Group: 200  # Maximum velocity for the wheg motors
+  All_Motors: 200  # Global maximum velocity limit for all motors
+  Pivot_Group: 10  # Maximum velocity for the pivot motors
+
+# Profile velocity settings (predefined velocity configurations)
+profile_velocities:
+  Wheg_Group: 10  # Profile velocity for the wheg group
+  Right_Whegs: 8  # Profile velocity for the right whegs
+  Left_Whegs: 8  # Profile velocity for the left whegs
+  Pivot_Group: 10  # Profile velocity for the pivot group
+  All_Motors: 8  # Global profile velocity for all motors
+
+# Hard limits for velocity (safety parameters)
+hard_velocity_limit: 1000  # Maximum allowable velocity for any motor
+hard_profile_velocity_limit: 1000  # Maximum allowable profile velocity for any motor
+
+# Reporting configuration
+reporting:
+  motor_position_interval: 10  # Interval (in seconds) for logging motor positions
+
+# Position limits for different parts of the robot
+position_limits:
+  Hinges:
+    min_degrees: 45  # Minimum allowable hinge angle (degrees)
+    max_degrees: 315  # Maximum allowable hinge angle (degrees)
+
+# Control table addresses and lengths for different motor parameters
+control_table:
+  torque_enable:
+    address: 64
+    length: 1
+  goal_velocity:
+    address: 104
+    length: 4
+  goal_position:
+    address: 116
+    length: 4
+  present_position:
+    address: 132
+    length: 4
+  homing_offset:
+    address: 20
+    length: 4
+  operating_mode:
+    address: 11
+    length: 1
+  velocity_limit:
+    address: 44
+    length: 4
+  profile_velocity:
+    address: 112
+    length: 4
+  velocity_i_gain:
+    address: 76
+    length: 2 
+  position_p_gain:
+    address: 84
+    length: 2
+  profile_acceleration:
+    address: 108
+    length: 4
+  present_velocity:
+    address: 128
+    length: 4
+  max_position_limit:
+    address: 48
+    length: 4
+  min_position_limit:
+    address: 52
+    length: 4
+  drive_mode:
+    address: 10
+    length: 1
+  temperature_limit:
+    address: 31
+    length: 1
+  max_voltage_limit:
+    address: 32
+    length: 2
+  min_voltage_limit:
+    address: 34
+    length: 2
+  pwm_limit:
+    address: 36
+    length: 2
+  current_limit:
+    address: 38
+    length: 2
+  acceleration_limit:
+    address: 40
+    length: 4
+  shutdown:
+    address: 63
+    length: 1
+  moving_status:
+    address: 123
+    length: 1
+  moving:
+    address: 122
+    length: 1
+  hardware_error_status:
+    address: 70
+    length: 1
+  indirect_address_1:
+    address: 168
+    length: 2
+  indirect_data_1:
+    address: 224
+    length: 1
+  status_return_level:
+    address: 68
+    length: 1
+  present_load:
+    address: 126
+    length: 2
+
+# Motor groupings for synchronized and bulk write commands
+motor_groups:
+  Wheg_Group:  # Motors involved in wheg movement
+    - LR_WHEG
+    - LM_WHEG
+    - LF_WHEG
+    - RR_WHEG
+    - RM_WHEG
+    - RF_WHEG
+  All_Motors:  # All motors in the system
+    - LR_WHEG
+    - LM_WHEG
+    - LF_WHEG
+    - RR_WHEG
+    - RM_WHEG
+    - RF_WHEG
+    - FRONT_PIVOT
+    - REAR_PIVOT
+  Left_Whegs:  # Motors controlling the left whegs
+    - LR_WHEG
+    - LM_WHEG
+    - LF_WHEG
+  Right_Whegs:  # Motors controlling the right whegs
+    - RR_WHEG
+    - RM_WHEG
+    - RF_WHEG
+  Front_Whegs:  # Motors controlling the front whegs
+    - LF_WHEG
+    - RF_WHEG
+  Rear_Whegs:  # Motors controlling the rear whegs
+    - LR_WHEG
+    - RR_WHEG
+  Middle_Whegs:  # Motors controlling the middle whegs
+    - LM_WHEG
+    - RM_WHEG
+  Two_Right_One_Left:  # Custom group for two right whegs and one left wheg
+    - LM_WHEG
+    - RR_WHEG
+    - RF_WHEG
+  Two_Left_One_Right:  # Custom group for two left whegs and one right wheg
+    - RM_WHEG
+    - LR_WHEG
+    - LF_WHEG
+  Pivot_Group:  # Motors involved in pivoting
+    - FRONT_PIVOT
+    - REAR_PIVOT

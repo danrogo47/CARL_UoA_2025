@@ -1,0 +1,3 @@
+int16 gait_number
+int16 body_number
+int16 wheg_number

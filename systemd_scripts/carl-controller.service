@@ -3,9 +3,9 @@ After=network-online.target
 Description=ROS2 controller service
 
 [Service]
-User=re-rassor
-Group=re-rassor
-ExecStart=/bin/bash -c 'source ~/ros2_ws/install/setup.bash; ros2 launch re_rassor_controller ps4_controller_launch.py;'
+User=carl
+Group=carl
+ExecStart=/bin/bash -c 'source ~/ros2_ws/install/local_setup.bash; ros2 launch carl_controller ps4_controller_node.py;'
 Restart=on-failure
 RestartSec=5s
 

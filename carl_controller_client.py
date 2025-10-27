@@ -7,6 +7,7 @@ via USB or Bluetooth.
 import pygame
 import socket
 import json
+import time
 
 # Initialise pygame
 pygame.init()
@@ -16,8 +17,8 @@ joystick.init()
 
 # Set up the socket connection
 # HOST = '10.13.72.108' # Daniel
-# HOST = '172.20.10.2' # Jacob
-HOST = '10.13.121.179' # UofA
+HOST = '172.20.10.2' # Jacob
+# HOST = '10.13.72.40' # Carl
 PORT = 8000
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("Attempting to connect to Raspberry Pi...")
@@ -44,6 +45,9 @@ try:
         }
         # Send the controller state to the Raspberry Pi
         send_command(controller_state)
+        
+        # If you have a good CPU on your laptop this can be deleted
+        time.sleep(0.05)  # Adjust the sleep time as needed
 
 except KeyboardInterrupt:
     print("Exiting...")
